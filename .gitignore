@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 
-config/config.json
+*config.json
 node_modules
 
+*.eslintrc.js

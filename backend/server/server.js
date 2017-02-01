@@ -14,8 +14,6 @@ app.use(bodyparser.json());
 
 
 
-
-
 db.sequelize.sync().then(()=>{
 	app.listen(2222)
 	console.log('Listening at https://localhost:2222')
