@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Recipes.hasMany(models.Steps)
-        Recipes.hasMany(models.Ingredient)
+        Recipes.hasMany(models.Ingredients)
         Recipes.belongsTo(models.Experiences)
       }
     }
