@@ -3,7 +3,7 @@ var app = express();
 var bodyparser = require('body-parser');
 var path = require('path');
 var db = require('./models');
-
+var seedFunction = require('./seeds')
 
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
@@ -14,7 +14,8 @@ app.use(bodyparser.json());
 
 
 
-db.sequelize.sync().then(()=>{
+db.sequelize.sync({force:true}).then(()=>{
+	seedFunction()
 	app.listen(2222)
 	console.log('Listening at https://localhost:2222')
 });
