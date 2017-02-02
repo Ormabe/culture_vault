@@ -10,7 +10,7 @@ let neworleans = {
 	continent: "North America",
 	country: "United States of America",
 	state: "Louisiana",
-	region: "Mississippi Delta"
+	region: "Mississippi Delta",
 	city: "New Orleans"
 }
 
