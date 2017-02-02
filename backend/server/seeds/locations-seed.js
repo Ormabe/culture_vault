@@ -33,4 +33,10 @@ let london = {
 	city: "London"
 }
 
-module.exports = [newyorkcity, neworleans, tokyo, cartagena, london]
+let sydney = {
+	continent: "Australia",
+	country: "Australia",
+	city: "Sydney"
+}
+
+module.exports = [newyorkcity, neworleans, tokyo, cartagena, london, sydney]
