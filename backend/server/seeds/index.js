@@ -2,7 +2,7 @@
 let users = require('./users-seed.js');
 let locations = require('./locations-seed.js');
 let ingredient = require('./ingredient-seed.js')
-//let experiences = require('/experiences-seed.js');
+let experiences = require('./experiences-seed.js');
 let recipes = require('./recipes-seed.js');
 let steps = require('./steps-seed.js');
 
@@ -24,9 +24,9 @@ const seedFunction = () => {
 	models.Locations.create(locations[4])
 	models.Locations.create(locations[5])
 
-	// models.Experiences.create(experiences[0])
-	// models.Experiences.create(experiences[1])	
-	// models.Experiences.create(experiences[2])
+	models.Experiences.create(experiences[0])
+	models.Experiences.create(experiences[1])	
+	models.Experiences.create(experiences[2])
 
 	models.Ingredient.create(ingredients[0])
 	models.Ingredient.create(ingredients[1])

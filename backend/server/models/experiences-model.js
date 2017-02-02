@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     fav: DataTypes.INTEGER,
+    
     quote: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,19 +14,23 @@ module.exports = function(sequelize, DataTypes) {
         len:[2,250]
       }
     },
+
     story: {
       type: DataTypes.BLOB,
       allowNull: false
     },
+    
     image: {
       type: DataTypes.STRING,
       allowNull: false
     }
   },
-     {
+    {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Experiences.belongsTo(models.Users)
+        Experiences.hasMany(models.ExperiencesLocations)
+        Experiences.hasMany(models.Recipes)
       }
     }
   });

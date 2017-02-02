@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Ingredient = sequelize.define('Ingredient', {
+  var Ingredients = sequelize.define('Ingredients', {
     name: {
       type:DataTypes.STRING,
       required:true,
@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     quantity: {
-      type:DataTypes.BIGINT,
+      type:DataTypes.INTEGER,
       allowNull:false
     },
     unit:{
@@ -20,9 +20,9 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        // Ingredient.belongsTo(models.Recipe)
+        Ingredients.belongsTo(models.Recipes)
       }
     }
   });
-  return Ingredient;
+  return Ingredients;
 };

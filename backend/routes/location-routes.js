@@ -5,13 +5,13 @@ const models = require('../server/models');
 
 //FUNCTIONS
 
-const functionNameGoesHere (request, response) {
+// const functionNameGoesHere (request, response) {
 
-};
+// };
 
 //ROUTES
 router.route('/path/goes/here')
-	.get(functionNameGoesHere)
+	// .get(functionNameGoesHere)
 
 //EXPORTS
 module.exports = router;
