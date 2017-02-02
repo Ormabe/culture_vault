@@ -3,8 +3,11 @@ let users = require('./users-seed.js');
 let locations = require('./locations-seed.js');
 let ingredient = require('./ingredient-seed.js')
 //let experiences = require('/experiences-seed.js');
+let recipes = require('./recipes-seed.js');
+let steps = require('./steps-seed.js');
 
 //Import Models
+<<<<<<< HEAD
 let models = require('../models');
 
 
@@ -31,6 +34,18 @@ const seedFunction = () => {
 	models.Ingredient.create(ingredients[2])
 	models.Ingredient.create(ingredients[3])
 	models.Ingredient.create(ingredients[4])
+
+models.Recipes.create(recipes[0])
+models.Recipes.create(recipes[1])
+models.Recipes.create(recipes[2])
+models.Recipes.create(recipes[3])
+models.Recipes.create(recipes[4])
+
+models.Steps.create(steps[0])
+models.Steps.create(steps[1])
+models.Steps.create(steps[2])
+models.Steps.create(steps[3])
+models.Steps.create(steps[4])
 
 }
 
