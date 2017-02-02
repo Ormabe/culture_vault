@@ -16,10 +16,17 @@ const seedFunction = () => {
 	Users.create(users[4])
 
 	Locations.create(locations[0])
+<<<<<<< HEAD
 	Locations.create(locations[1])
 	Locations.create(locations[2])
 	Locations.create(locations[3])
 	Locations.create(locations[4])
+=======
+	//Locations.create(locations[1])
+	//Locations.create(locations[2])
+	//Locations.create(locations[3])
+	//Locations.create(locations[4])
+>>>>>>> 1ab1c0062cd31071a99bcd3dadcec0c1565a45a1
 
 	//Experiences.create(experiences[0])
 	//Experiences.create(experiences[1])	
