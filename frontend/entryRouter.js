@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 //Import React-Router Dependencies
-import { Router, Route, IndexRoute, history } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 //Import Components
 import CultureVault from './cultureVault.js';
@@ -12,7 +12,7 @@ import CultureVault from './cultureVault.js';
 
 //Build Router Component
 const router = (
-	<Router history={history}>
+	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault}>
 		</Route>
 	</Router>

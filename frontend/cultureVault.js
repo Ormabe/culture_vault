@@ -5,6 +5,7 @@ const CultureVault = React.createClass({
 		return(
 			<div>
 				App
+				{this.props.children}
 
 			</div>
 		)
