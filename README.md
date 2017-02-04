@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-You will need to have Node.js installed.
+You will need Node.js installed.
 
 ## Getting Started
 
