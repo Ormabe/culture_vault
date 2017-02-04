@@ -1,51 +1,157 @@
-//Import Seed Files
-let users = require('./users-seed.js');
-let locations = require('./locations-seed.js');
-let ingredient = require('./ingredient-seed.js')
-let experiences = require('./experiences-seed.js');
-let recipes = require('./recipes-seed.js');
-let steps = require('./steps-seed.js');
+// //Import Seed Files
+// let users = require('./users-seed.js');
+// let locations = require('./locations-seed.js');
+// let ingredient = require('./ingredient-seed.js')
+// let experiences = require('./experiences-seed.js');
+// let recipes = require('./recipes-seed.js');
+// let steps = require('./steps-seed.js');
 
 //Import Models
 let models = require('../models');
 
 
 const seedFunction = () => {
-	models.Users.create(users[0])
-	models.Users.create(users[1])
-	models.Users.create(users[2])
-	models.Users.create(users[3])
-	models.Users.create(users[4])
+	models.Users.bulkCreate([
+	{
+	first_name: "Chanice",
+	last_name: "Stlouis",
+	username: "chanicestlouis",
+	password: "gangstaboo45",
+	email: "chanicestlouis@gmail.com",
+	image: "https://s25.postimg.org/si7uajpun/chanice_stlouis.jpg",
+	location: "Brooklyn",
+	bio: "My presence is a present"
+	},
 
-	models.Locations.create(locations[0])
-	models.Locations.create(locations[1])
-	models.Locations.create(locations[2])
-	models.Locations.create(locations[3])
-	models.Locations.create(locations[4])
-	models.Locations.create(locations[5])
+	{
+	first_name: "Rabiya",
+	last_name: "Watson",
+	username: "ormabe",
+	password: "mkdhRE45jk#$v0",
+	email: "ormabe@gmail.com",
+	image: "https://s25.postimg.org/5usl4eaan/rabiya_watson.jpg",
+	location: "Manhattan, NY",
+	bio: "Politics or bust!"
+	}
+	]).then(data => {
+		models.Experiences.bulkCreate([
+		{
+		name: 'Life lesson soup',
+		fav: 4,
+		quote: "My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://unsplash.com/search/soup?photo=XoByiBymX20",
+		UserId:1
+		},
 
-	models.Experiences.create(experiences[0])
-	models.Experiences.create(experiences[1])	
-	models.Experiences.create(experiences[2])
+		{
+		name: 'Fueling school success with canned pasta',
+		fav: 3,
+		quote: "My programming instructor Charles taught us this tasty 'struggle recipe' to fuel our studies when hunger is serious but money and time are tight",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://unsplash.com/search/pasta?photo=nVPfPXc3eis",
+		UserId:3
+		}
+	])
+	}).then(data => {
+	models.Locations.bulkCreate([
+	{
+	continent: "North America",
+	country: "United States of America",
+	state: "New York",
+	region: "Tri-State Area",
+	city: "New York City"
+	},
 
-	models.Ingredient.create(ingredients[0])
-	models.Ingredient.create(ingredients[1])
-	models.Ingredient.create(ingredients[2])
-	models.Ingredient.create(ingredients[3])
-	models.Ingredient.create(ingredients[4])
+	{
+	continent: "North America",
+	country: "United States of America",
+	state: "Louisiana",
+	region: "Mississippi Delta",
+	city: "New Orleans"
+	}
 
-	models.Recipes.create(recipes[0])
-	models.Recipes.create(recipes[1])
-	models.Recipes.create(recipes[2])
-	models.Recipes.create(recipes[3])
-	models.Recipes.create(recipes[4])
+	])
+	}).then(data => {
+	models.Recipes.bulkCreate([
+	
+	{
+	name: 'Charle\'s Survival Pasta',
+	ExperiencesId:2
+	},
 
-	models.Steps.create(steps[0])
-	models.Steps.create(steps[1])
-	models.Steps.create(steps[2])
-	models.Steps.create(steps[3])
-	models.Steps.create(steps[4])
+	{
+	name: 'Humpty Dumpty\'s Wall Flower',
+	ExperiencesId:1
+	}
+		])
+	}).then(data => {
+		models.Ingredient.bulkCreate([
+		{
+		name:"paprika",
+		quantity:2,
+		unit:'tablespoons',
+		RecipesId:2
+		},
 
+		{
+		name:"cumin seeds, toasted" ,
+		quantity:1,
+		unit:"tablespoon",
+		RecipesId:2
+		},
+
+		{
+		name:"coriander seeds, toasted",
+		quantity:2,
+		unit:"teaspoons",
+		RecipesId:2
+		},
+
+		{
+		name:"black peppercorns",
+		quantity:2,
+		unit:"teaspoons",
+		RecipesId:2
+		},
+
+		{
+		name:"sea salt, coarse",
+		quantity:1.5,
+		unit:"teaspoons",
+		RecipesId:2
+		}
+
+	])
+	}).then(data => {
+		models.Steps.bulkCreate([
+		{
+		steps: 'boil shit in a pot',
+		RecipesId:2
+		},
+
+		{
+		steps: 'mix some seasoned rice',
+		RecipesId:2
+		},
+
+		{
+		steps: 'put some cheese and hot sauce on canned pasta',
+		RecipesId:2
+		},
+
+		{
+		steps: 'boil chicken in a pot',
+		RecipesId:2
+		},
+
+		{
+		steps: 'scramble some eggs',
+		RecipesId:2
+		}
+	])
+	})
 }
+
 
 module.exports = seedFunction
