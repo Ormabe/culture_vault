@@ -6,12 +6,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     fav: DataTypes.INTEGER,
-    
+
     quote: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len:[2,250]
+        len:[2,280]
       }
     },
 
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BLOB,
       allowNull: false
     },
-    
+
     image: {
       type: DataTypes.STRING,
       allowNull: false
