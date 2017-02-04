@@ -28,7 +28,7 @@ const seedFunction = () => {
 	last_name: "Watson",
 	username: "ormabe",
 	password: "mkdhRE45jk#$v0",
-	email: "ormabe@gmail.com",
+	email: "ormabe@erols.com",
 	image: "https://s25.postimg.org/5usl4eaan/rabiya_watson.jpg",
 	location: "Manhattan, NY",
 	bio: "Politics or bust!"
