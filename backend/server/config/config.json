@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "SueWoo",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "SueWoo",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "SueWoo",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
