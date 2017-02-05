@@ -50,7 +50,7 @@ const seedFunction = () => {
 		quote: "My programming instructor Charles taught us this tasty 'struggle recipe' to fuel our studies when hunger is serious but money and time are tight",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
 		image: "https://unsplash.com/search/pasta?photo=nVPfPXc3eis",
-		UserId:3
+		UserId:2
 		}
 	])
 	}).then(data => {
@@ -86,7 +86,7 @@ const seedFunction = () => {
 	}
 		])
 	}).then(data => {
-		models.Ingredient.bulkCreate([
+		models.Ingredients.bulkCreate([
 		{
 		name:"paprika",
 		quantity:2,
@@ -150,6 +150,16 @@ const seedFunction = () => {
 		RecipesId:2
 		}
 	])
+	}).then(data => {
+		models.ExperiencesLocations.bulkCreate([
+		{LocationId:1,
+			ExperienceId:2
+		},
+
+		{LocationId:2,
+			ExperienceId:1
+		}
+			])
 	})
 }
 

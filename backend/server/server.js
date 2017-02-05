@@ -4,7 +4,7 @@ const app = express();
 const bodyparser = require('body-parser');
 const path = require('path');
 const db = require('./models');
-// const seedFunction = require('./seeds')
+const seedFunction = require('./seeds')
 // const indexRouter = require('../routes').routes;
 
 //BODY PARSER
@@ -27,8 +27,8 @@ app.get('/*', function(req, res) {
 })
 
 //DATABASE SYNC & START
-db.sequelize.sync().then(()=>{ 
-	// seedFunction()
+db.sequelize.sync({force:true}).then(()=>{ 
+	seedFunction()
 	app.listen(2222)
 	console.log('Listening at https://localhost:2222')
 });
