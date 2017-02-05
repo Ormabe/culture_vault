@@ -21,7 +21,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loaders: ["style", "css", "sass"]
-    }, ]
+    }, ] 
   },
   devtool: 'source-map',
   resolve: {

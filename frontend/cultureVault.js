@@ -1,5 +1,5 @@
 import React from 'react';
-
+ 
 const CultureVault = React.createClass({
 	render() {
 		return(
