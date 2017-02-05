@@ -1,7 +1,7 @@
 # Compiled source #
 ###################
 *.com
-*.class
+*.class 
 *.dll
 *.exe
 *.o
@@ -36,7 +36,9 @@
 ehthumbs.db
 Thumbs.db
 
-*config.json
+config/config.json
 node_modules
 
 *.eslintrc.js
+frontend/public/bundle.js
+frontend/public/bundle.js.map

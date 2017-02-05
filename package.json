@@ -1,11 +1,11 @@
 {
   "name": "culture_vault",
   "version": "1.0.0",
-  "description": "",
+  "description": "", 
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch && nodemon backend/server/server.js"
+    "start": "webpack --watch & nodemon backend/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "ISC", 
   "bugs": {
     "url": "https://github.com/Ormabe/culture_vault/issues"
   },
