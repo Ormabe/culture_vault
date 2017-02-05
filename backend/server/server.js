@@ -27,7 +27,7 @@ app.get('/*', function(req, res) {
 })
 
 //DATABASE SYNC & START
-db.sequelize.sync().then(()=>{
+db.sequelize.sync().then(()=>{ 
 	// seedFunction()
 	app.listen(2222)
 	console.log('Listening at https://localhost:2222')

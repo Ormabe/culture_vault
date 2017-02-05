@@ -40,3 +40,5 @@ Thumbs.db
 node_modules
 
 *.eslintrc.js
+frontend/public/bundle.js
+frontend/public/bundle.js.map

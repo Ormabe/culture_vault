@@ -12,4 +12,4 @@ const CultureVault = React.createClass({
 	}
 });
 
-export default CultureVault;
+export default CultureVault; 

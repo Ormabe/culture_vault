@@ -15,7 +15,7 @@ const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault}>
 		</Route>
-	</Router>
+	</Router> 
 );
 
 //Render Component
