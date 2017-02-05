@@ -14,12 +14,23 @@ You will need Node.js installed.
 
 
 
-## Built With
+## Technologies
+
+Back-end:
+
+* [Node.js](https://nodejs.org/en/)
+* [PostgresSQL](https://www.postgresql.org/)
+* [Express](http://expressjs.com/)
+* [Sequelize](http://docs.sequelizejs.com/en/v3/)
+
+
+Front-end:
+
 
 * [React.js](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
-* [PostgresSQL](https://www.postgresql.org/)
-* [Sequelize](http://docs.sequelizejs.com/en/v3/)
+* [React Router](https://www.npmjs.com/package/react-router)
+* [Sass](http://sass-lang.com/guide)
 
 ## Contributers
 
