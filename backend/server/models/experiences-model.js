@@ -1,28 +1,20 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Experiences = sequelize.define('Experiences', {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    name: DataTypes.STRING,
+
     fav: DataTypes.INTEGER,
 
     quote: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len:[2,280]
-      }
+      type:DataTypes.STRING(2000)
     },
 
     story: {
-      type: DataTypes.BLOB,
-      allowNull: false
+      type:DataTypes.STRING(2000)
     },
 
     image: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type:DataTypes.STRING(2000)
     }
   },
     {

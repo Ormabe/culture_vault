@@ -5,20 +5,29 @@ module.exports = function(sequelize, DataTypes) {
     last_name: DataTypes.STRING,
     username: {
       type: DataTypes.STRING,
-      notNull: true
+      validate:{
+        notNull: true
+      }
     },
     password: {
       type: DataTypes.STRING,
-      notNull: true
+      validate:{
+        notNull: true
+      }
     },
     email: {
       type: DataTypes.STRING,
-      notNull: true,
       validate: {
-        isEmail: true
+        isEmail: true,
+        notNull: true
       }
     },
-    image: DataTypes.STRING,
+    image: {
+      type:DataTypes.STRING,
+      validate:{
+        len:[2,1000]
+      }
+    },
     location: DataTypes.STRING,
     bio: DataTypes.STRING,
     likes: DataTypes.INTEGER,
