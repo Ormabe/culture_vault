@@ -1,17 +1,160 @@
-// //IMPORT MODULES 
-// const router = require('express').Router;
-// const models = require('../server/models');
+//IMPORT MODULES
+const express = require('express')
+const router = express.Router();
+const models = require('../server/models');
 
+//FUNCTIONS
+const findAllContinents = ((req,res) => {
+  return models.Locations.findAll({
+    order: [['continent', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
 
-// //FUNCTIONS
+const findByContinent = ((req, res) => {
+		models.Locations.findAll({
+      where: {
+        continent: req.params.continent
+      }
+    })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	});
 
-// // const functionNameGoesHere (request, response) {
+const findAllCountries = ((req,res) => {
+  return models.Locations.findAll({
+    order: [['country', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
 
-// // };
+const findByCountry = ((req, res) => {
+		models.Locations.findAll({
+      where: {
+        country: req.params.country
+      }
+    })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	});
 
-// //ROUTES
-// router.route('/path/goes/here')
-// 	// .get(functionNameGoesHere)
+const findAllStates = ((req,res) => {
+  return models.Locations.findAll({
+    order: [['state', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
 
-// //EXPORTS
-// module.exports = router
+const findByState = ((req, res) => {
+		models.Locations.findAll({
+      where: {
+        state: req.params.state
+      }
+    })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	});
+
+const findAllRegions = ((req,res) => {
+  return models.Locations.findAll({
+    order: [['region', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
+
+const findByRegion = ((req, res) => {
+		models.Locations.findAll({
+      where: {
+        region: req.params.region
+      }
+    })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	});
+
+const findAllCities = ((req,res) => {
+  return models.Locations.findAll({
+    order: [['city', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
+
+const findByCity = ((req, res) => {
+		models.Locations.findAll({
+      where: {
+        city: req.params.city
+      }
+    })
+		.then((data) => {
+			res.send(data);
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	});
+
+//ROUTES
+router.route('/continents')
+  .get(findAllContinents)
+router.route('/continents/:continent')
+  .get(findByContinent)
+router.route('/countries')
+  .get(findAllCountries)
+router.route('/countries/:country')
+  .get(findByCountry)
+router.route('/states')
+  .get(findAllStates)
+router.route('/states/:state')
+  .get(findByState)
+router.route('/regions')
+  .get(findAllRegions)
+router.route('/regions/:region')
+  .get(findByRegion)
+router.route('/cities')
+  .get(findAllCities)
+router.route('/cities/:city')
+  .get(findByCity)
+
+//EXPORTS
+module.exports = router

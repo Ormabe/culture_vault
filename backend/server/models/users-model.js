@@ -6,20 +6,20 @@ module.exports = function(sequelize, DataTypes) {
     username: {
       type: DataTypes.STRING,
       validate:{
-        notNull: true
+        notEmpty: true
       }
     },
     password: {
       type: DataTypes.STRING,
       validate:{
-        notNull: true
+        notEmpty: true
       }
     },
     email: {
       type: DataTypes.STRING,
       validate: {
         isEmail: true,
-        notNull: true
+        notEmpty: true
       }
     },
     image: {
