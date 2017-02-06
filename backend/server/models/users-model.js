@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     username: {
       type: DataTypes.STRING,
       validate:{
-        notEmpty: true
+        notEmpty: true //notNull deprecated, use notEmpty
       }
     },
     password: {
