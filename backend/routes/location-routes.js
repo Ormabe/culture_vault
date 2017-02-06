@@ -3,7 +3,8 @@ const express = require('express')
 const router = express.Router();
 const models = require('../server/models');
 
-//FUNCTIONS
+//=====================================
+// BY CONTINENT
 const findAllContinents = ((req,res) => {
   return models.Locations.findAll({
     order: [['continent', 'ASC']]
@@ -30,6 +31,8 @@ const findByContinent = ((req, res) => {
 		})
 	});
 
+  //=====================================
+  // BY COUNTRY
 const findAllCountries = ((req,res) => {
   return models.Locations.findAll({
     order: [['country', 'ASC']]
@@ -56,6 +59,8 @@ const findByCountry = ((req, res) => {
 		})
 	});
 
+  //=====================================
+  // BY STATE
 const findAllStates = ((req,res) => {
   return models.Locations.findAll({
     order: [['state', 'ASC']]
@@ -82,6 +87,8 @@ const findByState = ((req, res) => {
 		})
 	});
 
+  //=====================================
+  // BY REGION
 const findAllRegions = ((req,res) => {
   return models.Locations.findAll({
     order: [['region', 'ASC']]
@@ -108,6 +115,9 @@ const findByRegion = ((req, res) => {
 		})
 	});
 
+  //=====================================
+  // BY CITY
+   
 const findAllCities = ((req,res) => {
   return models.Locations.findAll({
     order: [['city', 'ASC']]

@@ -3,7 +3,8 @@ const express = require('express')
 const router = express.Router();
 const models = require('../server/models');
 
-//FUNCTIONS
+//=====================================
+// ALL USERS
 const usersAll = ((req,res) => {
   return models.Users.findAll({
     order: [['username', 'ASC']]
@@ -15,6 +16,9 @@ const usersAll = ((req,res) => {
     console.log(err)
   })
 });
+
+//=====================================
+// NEW USER
 
 const userSignUp = ((req,res) => {
   return models.Users.findOrCreate({
@@ -32,6 +36,9 @@ const userSignUp = ((req,res) => {
   })
 });
 
+//=====================================
+// SEARCH BY USERNAME
+
 const findUserByUsername = ((req, res) => {
 		models.Users.findAll({
       where: {
@@ -45,6 +52,9 @@ const findUserByUsername = ((req, res) => {
 			console.log(err);
 		})
 	})
+
+  //=====================================
+  // TO BE COMPLETED DURING SPRINT 2
 
 //   const deleteByUsername = ((req, res, next) => {
 //   	return models.Users.findAll({
