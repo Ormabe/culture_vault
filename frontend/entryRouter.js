@@ -7,6 +7,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 //Import Components
 import CultureVault from './cultureVault.js';
+import SignUp from './components/main/signup.js'
 // import Welcome from './components/main/welcome.js';
 // import Explore from './components/main/explore.js';
 
@@ -14,6 +15,7 @@ import CultureVault from './cultureVault.js';
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault}>
+		<Route path='/signup' component={SignUp}/>
 		</Route>
 	</Router> 
 );
