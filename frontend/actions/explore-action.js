@@ -1,6 +1,5 @@
-export const createLocationsList = (locations)=>{
-	return {
-		type: 'CREATE_LOCATIONS_LIST',
-		locations = locations
-	}
-};
+export const createLocationsList = locations => {
+	type: "LOCATIONS_LIST",
+	data:locations
+}
+
