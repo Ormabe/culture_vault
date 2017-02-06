@@ -77,12 +77,12 @@ const seedFunction = () => {
 	
 	{
 	name: 'Charle\'s Survival Pasta',
-	ExperiencesId:2
+	ExperienceId:2
 	},
 
 	{
 	name: 'Humpty Dumpty\'s Wall Flower',
-	ExperiencesId:1
+	ExperienceId:1
 	}
 		])
 	}).then(data => {
@@ -91,35 +91,35 @@ const seedFunction = () => {
 		name:"paprika",
 		quantity:2,
 		unit:'tablespoons',
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		name:"cumin seeds, toasted" ,
 		quantity:1,
 		unit:"tablespoon",
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		name:"coriander seeds, toasted",
 		quantity:2,
 		unit:"teaspoons",
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		name:"black peppercorns",
 		quantity:2,
 		unit:"teaspoons",
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		name:"sea salt, coarse",
 		quantity:1.5,
 		unit:"teaspoons",
-		RecipesId:2
+		RecipeId:2
 		}
 
 	])
@@ -127,27 +127,27 @@ const seedFunction = () => {
 		models.Steps.bulkCreate([
 		{
 		steps: 'boil shit in a pot',
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		steps: 'mix some seasoned rice',
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		steps: 'put some cheese and hot sauce on canned pasta',
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		steps: 'boil chicken in a pot',
-		RecipesId:2
+		RecipeId:2
 		},
 
 		{
 		steps: 'scramble some eggs',
-		RecipesId:2
+		RecipeId:2
 		}
 	])
 	}).then(data => {
