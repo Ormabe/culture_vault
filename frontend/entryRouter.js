@@ -1,7 +1,7 @@
-//Import Modules 
+//Import Modules
 import React from 'react';
 import { render } from 'react-dom';
- 
+
 //Import React-Router Dependencies
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
@@ -9,15 +9,16 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import CultureVault from './cultureVault.js';
 import SignUp from './components/main/signup.js'
 // import Welcome from './components/main/welcome.js';
-// import Explore from './components/main/explore.js';
+import Explore from './components/main/explore.js';
 
 //Build Router Component
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault}>
 		<Route path='/signup' component={SignUp}/>
+		<Route path = '/explore' component={Explore} />
 		</Route>
-	</Router> 
+	</Router>
 );
 
 //Render Component
