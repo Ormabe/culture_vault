@@ -1,17 +1,86 @@
-// //IMPORT MODULES 
-// const router = require('express').Router;
-// const models = require('../server/models');
+//IMPORT MODULES 
+const router = require('express').Router();
+const models = require('../server/models');
+
+ 
+/////////////////
+////FUNCTION/////
+/////////////////
+const getExperience = (req, res) => {
+	let data ={user:null,location:null,recipe:null,experience:null,steps:null,ingredients:null,sneakUserId:null};
+
+	 models.ExperiencesLocations.findOne({
+		where:{
+		ExperienceId:req.params.experienceId
+	},
+	include:[models.Experiences,models.Locations]
+})
+	.then(experienceLocation => {
+		// freezing the Experience object and Location
+		data.experience = experienceLocation.Experience
+		data.location = experienceLocation.Location
+		data.sneakUserId = experienceLocation.Experience.UserId
+
+		let experienceId = experienceLocation.Experience.id
 
 
-// //FUNCTIONS
+		return models.Recipes.findById(experienceId)
+	})
+	.then(recipe => {
+		//freeze recipe object
+		data.recipe = recipe
 
-// // const functionNameGoesHere (request, response) {
+		let recipeId = 2
 
-// // };
+		return models.Steps.findAll({
+			where:{
+			RecipeId:recipeId
+			},
+			order:[['id', 'ASC']]
+		})
+	})
+	.then(steps => {
+		data.steps = steps
+		
+		let recipeId = 2
 
-// //ROUTES
-// router.route('/path/goes/here')
-// 	// .get(functionNameGoesHere)
+		return models.Ingredients.findAll({
+			where:{
+				RecipeId:recipeId
+			},
+			order:[['id', 'ASC']]
+		})
+	})
+	.then(ingredients => {
+		data.ingredients = ingredients
 
-// //EXPORTS
-// module.exports = router
+		return models.Users.findOne({
+			where: {
+				id:data.sneakUserId
+			}
+		})
+	})
+	.then(user => {
+		data.user = user
+	})
+
+
+	.then(() => res.send(data))
+	.catch(error => res.status(500).send(error))
+};
+
+
+
+/////////////////
+////ROUTER///////
+/////////////////
+router.route('/:experienceId')
+	.get(getExperience)
+
+// router.route('./experience')
+
+/////////////////
+////EXPORTS//////
+/////////////////
+module.exports = router
+

@@ -12,13 +12,11 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname,'../../frontend/public')))
 //ROUTES
-// app.use('/api/experiences', indexRouter.Experiences);
-// app.use('/api/ingredients', indexRouter.Ingredients);
-// app.use('/api/recipes', indexRouter.Recipes);
 
-
+app.use('/api/explore/country', indexRouter.Experiences);
 app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
+// app.use('/api/recipes', indexRouter.Recipes);
 // we need an instance of express to know when there are no routes hit in the backend to look in the front
 
 
