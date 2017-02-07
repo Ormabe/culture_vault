@@ -7,15 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const muiTheme = getMuiTheme();
 
-
-const styles = {
-  floatingLabelStyle: {
-    color: "#999999"
-  },
-  floatingLabelFocusStyle: {
-    color: "#0045FF"
-  }
-};
+const styles = require('./signup-style').formStyles
 
 const SignUpForm = React.createClass({
   getInitialState() {
@@ -34,9 +26,9 @@ const SignUpForm = React.createClass({
     this.setState({ [name]: value })
 	},
   enterUser(e) {
-  e.preventDefault()
-  const info = this.state
-  const that = this
+    e.preventDefault()
+    const info = this.state
+    const that = this
 
     $.ajax({
       url: 'api/users',
@@ -45,7 +37,6 @@ const SignUpForm = React.createClass({
       success: function(data) {
         console.log('posted',data)
         that.setState({username:"",email:"",password:""})
-
       }
     })
   },
@@ -84,7 +75,6 @@ const SignUpForm = React.createClass({
           label="Submit"
           type="submit"
           backgroundColor={'#AA0000'}
-          color={'#FFFFFF'}
           style={{color: '#FFFFFF'}}
         />
       </form>
