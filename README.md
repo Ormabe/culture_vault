@@ -6,11 +6,11 @@
 
 * Culture Vault Video Demo: https://vimeo.com/#
 
-* code style:
+* Code Style:
 
-React: https://github.com/facebook/react/wiki/Complementary-Tools
-Redux: https://github.com/ghengeveld/react-redux-styleguide
-ES5: https://github.com/airbnb/javascript
+    - React: https://github.com/facebook/react/wiki/Complementary-Tools
+    - Redux: https://github.com/ghengeveld/react-redux-styleguide
+    - ES5: https://github.com/airbnb/javascript
 
 ## Description
 
