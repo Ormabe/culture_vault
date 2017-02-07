@@ -14,13 +14,11 @@ var FaGoogle = require('react-icons/lib/fa/google-plus-square')
 injectTapEventPlugin();
 import path from 'path';
 import SignUpForm from './signupform'
+const styles = require('./signup-style').signUpStyles
+const customContentStyle = require('./signup-style').customContentStyle
 
 
 const muiTheme = getMuiTheme();
-
-const customContentStyle = {
-  width: '40%'
-};
 
 const SignUp = React.createClass({
   getInitialState() {
@@ -32,10 +30,7 @@ const SignUp = React.createClass({
   handleDialogClose () {
     this.setState({open: false});
   },
-
-
   render(){
-    // const expanded = this.state.expanded
 
     const actions = [
       <FlatButton
@@ -44,30 +39,6 @@ const SignUp = React.createClass({
         onTouchTap={this.handleDialogClose}
       />
     ];
-  const styles = {
-      button: {
-        margin: 12,
-        width: 200,
-        lineHeight: '18px',
-        verticalAlign: 'middle'
-      },
-      exampleImageInput: {
-        cursor: 'pointer',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        width: '100%',
-        opacity: 0,
-      },
-      floatingLabelStyle: {
-        color: "#444444",
-      },
-      floatingLabelFocusStyle: {
-        color: "#000000",
-      }
-    };
 
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -80,17 +51,15 @@ const SignUp = React.createClass({
             open={this.state.open}
             contentStyle={customContentStyle}
             onRequestClose={this.handleDialogClose}
-            style={{textAlign: "center"}}
+            style={{textAlign: styles.textAlign}}
           >
           <RaisedButton
-            labelStyle={{fontSize: '20px'}}
+            labelStyle={{fontSize: styles.fontSize}}
             target="_blank"
             label="Email Link"
             style={styles.button}
-            icon={<FaEmail style={{fontSize: '20px'}}/>}
-            // onTouchTap={this.form}
-          >
-          </RaisedButton>
+            icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
+          />
           <br />
           <RaisedButton
             href="https://www.facebook.com"
@@ -101,8 +70,6 @@ const SignUp = React.createClass({
             icon={<FaFacebook />}
           />
           <br />
-
-
           <RaisedButton
             href="https://www.google.com"
             disabled={true}
