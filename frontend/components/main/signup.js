@@ -51,17 +51,15 @@ const SignUp = React.createClass({
             open={this.state.open}
             contentStyle={customContentStyle}
             onRequestClose={this.handleDialogClose}
-            style={{textAlign: "center"}}
+            style={{textAlign: styles.textAlign}}
           >
           <RaisedButton
-            labelStyle={{fontSize: '20px'}}
+            labelStyle={{fontSize: styles.fontSize}}
             target="_blank"
             label="Email Link"
             style={styles.button}
-            icon={<FaEmail style={{fontSize: '20px'}}/>}
-            // onTouchTap={this.form}
-          >
-          </RaisedButton>
+            icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
+          />
           <br />
           <RaisedButton
             href="https://www.facebook.com"

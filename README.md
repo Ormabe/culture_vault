@@ -40,7 +40,6 @@ The Food Experiences are stored on our database and searchable by the members' u
 
     - http://localhost:2222/explore
 
-
 ## Technologies
 
 Back-end (for MAC):

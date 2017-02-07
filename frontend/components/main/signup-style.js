@@ -4,7 +4,9 @@ const formStyles = {
   },
   floatingLabelFocusStyle: {
     color: "#0045FF"
-  }
+  },
+  backgroundColor: "#AA0000",
+  color: "#FFFFFF"
 }
 
 const signUpStyles = {
@@ -29,7 +31,9 @@ const signUpStyles = {
     },
     floatingLabelFocusStyle: {
       color: "#000000",
-    }
+    },
+    textAlign: "center",
+    fontSize: 20
   };
 
   const customContentStyle = {
