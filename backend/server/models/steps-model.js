@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Steps = sequelize.define('Steps', {
     steps: {
-        type: DataTypes.BLOB
+        type: DataTypes.TEXT('medium')
     }
   }, {
     classMethods: {
@@ -13,3 +13,6 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Steps;
 };
+
+
+//DataTypes.ARRAY(DataTypes.String)
