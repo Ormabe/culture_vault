@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname,'../../frontend/public')))
 // app.use('/api/experiences', indexRouter.Experiences);
 // app.use('/api/ingredients', indexRouter.Ingredients);
 // app.use('/api/recipes', indexRouter.Recipes);
-// app.use('/api/steps', indexRouter.Steps);
+
 
 app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
