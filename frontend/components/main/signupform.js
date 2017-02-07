@@ -5,6 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+
 const muiTheme = getMuiTheme();
 
 const styles = require('./signup-style').formStyles
@@ -31,7 +32,7 @@ const SignUpForm = React.createClass({
     const that = this
 
     $.ajax({
-      url: 'api/users',
+      url: 'api/explore/users',
       type: 'POST',
       data: info,
       success: function(data) {
@@ -43,7 +44,7 @@ const SignUpForm = React.createClass({
   render () {
     return (
     <MuiThemeProvider muiTheme={muiTheme}>
-      <form onSubmit={this.enterUser}>
+      <form onSubmit={this.enterUser} autoComplete="off">
         <TextField
           name="username"
           value={this.state.username}
@@ -74,8 +75,8 @@ const SignUpForm = React.createClass({
         <FlatButton
           label="Submit"
           type="submit"
-          backgroundColor={'#AA0000'}
-          style={{color: '#FFFFFF'}}
+          backgroundColor={styles.backgroundColor}
+          style={{color: styles.color}}
         />
       </form>
     </MuiThemeProvider>
