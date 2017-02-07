@@ -7,7 +7,7 @@ const models = require('../server/models');
 // ALL USERS
 const usersAll = ((req,res) => {
   return models.Users.findAll({
-    order: [['username', 'ASC']]
+    order: [['id', 'ASC']]
   })
   .then((data) => {
     res.send(data)
