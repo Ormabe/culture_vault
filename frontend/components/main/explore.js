@@ -1,7 +1,9 @@
 import React from 'react';
-
+import store from '../../store/store.js'
+// import { } from  '../../actions/     '
 
 const Explore = React.createClass({
+	// console.log('EXPLORE ===>',this.props.    )
 	render() {
 		return(
 			<div>
@@ -12,3 +14,7 @@ const Explore = React.createClass({
 });
 
 export default Explore;
+
+
+
+
