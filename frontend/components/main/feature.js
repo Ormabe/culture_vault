@@ -3,19 +3,26 @@ import store from '../../store/store.js'
 import {getFeature} from '../../actions/feature-action.js'
 
 const Feature = React.createClass({
+	componentWillMount(){
+		store.dispatch(getFeature())
+	},
 	render(){
-		console.log('FEATURE ===>',this.props.featureProps)
-		// let feature = this.props.featureProps[0]
+		console.log('FEATURE ===>',this.props.featureProps.data)
+		let feature = this.props.featureProps.data
+		if(feature[0]){
 		return(
 			<div>
-			Feature
-			Name: 
-			Quote: 
+
+			Featured
+			Name:
+			Quote:  
 			Image: 
-			{store.dispatch(getFeature(2))}
 			</div>
 			)
+	} else {
+		return <div> ... Loading </div>
 		}
+	}
 	
 }) 
 

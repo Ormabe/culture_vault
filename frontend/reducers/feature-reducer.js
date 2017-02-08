@@ -1,14 +1,13 @@
-const _defaultState = {
-	feature:null
-}
 
-const featureReducer = (state = _defaultState , action) => {
+
+const featureReducer = (state = {} , action) => {
 switch(action.type){
 		case "FETCH_DATA" :
-			return Object.assign({}, state, {feature: action.feature.data})
+		return action.feature
+
 		default:
 			return state;
 	}
 }
 
-export default featureReducer;
+export default featureReducer; 

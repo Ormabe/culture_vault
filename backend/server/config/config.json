@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "Chanice",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "Chanice",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "Chanice",
+    "password": null,
+    "database": "culture-vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+
+}

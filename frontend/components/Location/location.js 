@@ -1,0 +1,15 @@
+import React from 'react'
+import Feature from './feature.js'
+
+const Location = React.createClass({
+	render(){
+		return (
+			<div>
+				Location
+				<Feature />
+			</div>	
+			)
+	}
+})
+
+export default Location;
