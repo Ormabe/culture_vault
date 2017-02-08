@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 //import reducers file
-import featureReducer from './feature-reducer.js'
-import exploreReducer from './explore-reducer.js'
+import feature from './feature-reducer.js'
+import explore from './explore-reducer.js'
 
 const allReducers = combineReducers({
-	featureReducer,
-	exploreReducer
+	feature,
+	explore
 
 })
 

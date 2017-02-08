@@ -1,11 +1,12 @@
 const _defaultState = {
-	feature:null
+	feature:{}
 }
 
 const featureReducer = (state = _defaultState , action) => {
+	console.log("========> FEATURE REDUCER", action)
 switch(action.type){
 		case "FETCH_DATA" :
-			return Object.assign({}, state, {feature: action.feature.data})
+			return Object.assign({}, state, {feature: action.feature})
 		default:
 			return state;
 	}

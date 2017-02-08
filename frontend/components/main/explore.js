@@ -4,11 +4,17 @@ import { getLocations } from '../../actions/explore-action.js'
 
 
 const Explore = React.createClass({
+	componentDidMount(){
+		console.log("============>>> DID MOUNT")
+		store.dispatch(getLocations())
+	},
+
 	render() {
+
 		return(
 			<div>
 				I'm the Explore component. I will map a list of location links.
-				{store.dispatch(getLocations())}
+
 			</div>
 		)
 	}

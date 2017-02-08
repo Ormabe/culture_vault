@@ -7,8 +7,8 @@ export const fetchData = feature => ({
 
 export const getFeature = () => dispatch => {
 	axios.get("/api/explore/country/experience")
-	.then(data => {
-		console.log('ACTION ===>' , data)
-		dispatch(fetchData(data))
+	.then(response => {
+		console.log('data ===>' , response.data)
+		dispatch(fetchData(response.data[0]))
 	})
 }
