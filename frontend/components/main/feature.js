@@ -9,18 +9,22 @@ const Feature = React.createClass({
 	},
 	render(){
 		console.log('FEATURE ===>',this.props.feature)
-
-		// let feature = this.props.featureProps[0]
+		let feature = this.props.feature
+		if(feature){
 		return(
 			<div>
-			Feature
-			Name:{this.props.feature.name}
-			Quote:
-			Image:
+			<h1>Feature</h1>
+			<p>Name: {this.props.feature.name}</p>
+			<p>Quote: {this.props.feature.quote}</p>
+			Image: <img src={this.props.feature.image} />
+
 			</div>
 			)
+		}else{
+		  return <div> ...Loading </div>
 		}
 
+}
 })
 
 export default Feature;
