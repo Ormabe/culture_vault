@@ -69,7 +69,6 @@ const getExperience = (req, res) => {
 	.catch(error => res.status(500).send(error))
 };
 
-
 const getFeature = (req,res) => {
 	models.Experiences.findAll()
 	.then(data => res.send(data))
@@ -84,9 +83,7 @@ router.route('/experience/:experienceId')
 
 router.route('/experience')
 	.get(getFeature)
-
 /////////////////
-////EXPORTS//////
+/////EXPORTS/////
 /////////////////
-module.exports = router
-
+module.exports = router;
