@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUp from './components/main/signup'
 import SignUpForm from './components/main/signupform'
+import Recipe from './components/experiences/recipe'
 
 const CultureVault = React.createClass({
 	render() {
@@ -9,6 +10,7 @@ const CultureVault = React.createClass({
 				App
         <SignUp />
         <SignUpForm />
+				<Recipe />
 				{this.props.children}
 
 			</div>
