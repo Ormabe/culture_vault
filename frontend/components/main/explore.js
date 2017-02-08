@@ -10,11 +10,13 @@ const Explore = React.createClass({
 	},
 
 	render() {
-
+console.log(this.props.explore)
 		return(
 			<div>
 				I'm the Explore component. I will map a list of location links.
-
+        {this.props.explore.map(
+        	location => <button> {location.country} </button>
+        )}
 			</div>
 		)
 	}

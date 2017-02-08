@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const fetchData = feature => ({
-	type:'FETCH_DATA',
+	type:'FETCH_FEATURE',
 	feature
 })
 

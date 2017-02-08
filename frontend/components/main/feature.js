@@ -8,13 +8,13 @@ const Feature = React.createClass({
 		store.dispatch(getFeature())
 	},
 	render(){
-		console.log('FEATURE ===>',this.props.featureProps)
+		console.log('FEATURE ===>',this.props.feature)
 
 		// let feature = this.props.featureProps[0]
 		return(
 			<div>
 			Feature
-			Name:
+			Name:{this.props.feature.name}
 			Quote:
 			Image:
 			</div>
