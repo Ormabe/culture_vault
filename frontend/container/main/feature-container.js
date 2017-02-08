@@ -10,4 +10,4 @@ const mapStateToProps = state => ({
 })
 	//can put another reducer in here, if you want component to have access to that part of the store. 
 
-export default connect(mapStateToProps)(Feature);
+export default connect(mapStateToProps)(Feature); 

@@ -15,7 +15,7 @@ const Feature = React.createClass({
 
 			Featured
 			Name:
-			Quote: 
+			Quote:  
 			Image: 
 			</div>
 			)

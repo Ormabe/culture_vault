@@ -8,4 +8,4 @@ export const getFeature = () => dispatch => {
 				feature:data
 	}))
 	.catch(error => console.log(error))
-}
+} 

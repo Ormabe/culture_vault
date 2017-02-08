@@ -10,4 +10,4 @@ switch(action.type){
 	}
 }
 
-export default featureReducer;
+export default featureReducer; 
