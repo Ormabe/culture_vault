@@ -86,7 +86,6 @@ router.route('/experience')
 	.get(getFeature)
 
 /////////////////
-////EXPORTS//////
+/////EXPORTS/////
 /////////////////
-module.exports = router
-
+module.exports = router;
