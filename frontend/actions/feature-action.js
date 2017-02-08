@@ -1,14 +1,10 @@
 import axios from 'axios'
 
-export const fetchData = feature => ({
-	type:'FETCH_DATA',
-	feature
-})
-
 export const getFeature = () => dispatch => {
 	axios.get("/api/explore/country/experience")
-	.then(data => {
-		console.log('ACTION ===>' , data)
-		dispatch(fetchData(data))
-	})
+	.then(data => dispatch ({
+			type:'FETCH_DATA',
+			data
+	}))
+	.catch(error => console.log(error))
 }

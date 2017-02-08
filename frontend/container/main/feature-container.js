@@ -6,9 +6,7 @@ import Feature from '../../components/main/feature.js'
 
 //mapStateToProps is just a word, that passes state and makes it available to our component. 
 const mapStateToProps = state => ({
-
-	featureProps:state.featureReducer.feature
+	featureProps:state.featureReducer
 })
 	//can put another reducer in here, if you want component to have access to that part of the store. 
-
 export default connect(mapStateToProps)(Feature);
