@@ -8,7 +8,8 @@ const Feature = React.createClass({
 	},
 	render(){
 		console.log('FEATURE ===>',this.props.featureProps)
-		// let feature = this.props.featureProps[0]
+		let feature = this.props.featureProps
+		if(feature){
 		return(
 			<div>
 			Feature
@@ -17,7 +18,10 @@ const Feature = React.createClass({
 			Image: 
 			</div>
 			)
+		}else{
+		  return <div> ...Loading </div>
 		}
+	}
 	
 }) 
 
