@@ -1,5 +1,14 @@
-// export const createLocationsList = locations => {
-// 	type: "LOCATIONS_LIST",
-// 	data:locations
-// }
+import axios from 'axios'
 
+export const fetchData = explore => ({
+	type:'FETCH_DATA',
+	explore
+})
+
+export const getLocations = () => dispatch => {
+	axios.get('/api/explore/countries')
+	.then(data => {
+		console.log('ACTION ===>' , data)
+		dispatch(fetchData(data))
+	})
+}

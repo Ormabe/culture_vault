@@ -7,6 +7,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // Import Container
 import FeatureContainer from './container/main/feature-container.js'
+import ExploreContainer from './container/explore-container.js'
 
 //Import Components
 // import CultureVault from './cultureVault.js';
@@ -23,7 +24,8 @@ import { Provider } from 'react-redux'
 const router = (
 <Provider store={store}>
 	<Router history={browserHistory}>
-		<Route path='/' component={FeatureContainer}/>
+		<Route path='/' component={FeatureContainer} />
+		<Route path='/explore' component={ExploreContainer}/>
 	</Router>
 </Provider>
 );

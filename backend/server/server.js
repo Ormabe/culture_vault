@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname,'../../frontend/public')))
 app.use('/api/explore/country', indexRouter.Experiences);
 app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
+
 // app.use('/api/recipes', indexRouter.Recipes);
 // we need an instance of express to know when there are no routes hit in the backend to look in the front
 
