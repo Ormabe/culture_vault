@@ -1,8 +1,8 @@
-//IMPORT MODULES 
+//IMPORT MODULES
 const router = require('express').Router();
 const models = require('../server/models');
 
- 
+
 /////////////////
 ////FUNCTION/////
 /////////////////
@@ -41,7 +41,7 @@ const getExperience = (req, res) => {
 	})
 	.then(steps => {
 		data.steps = steps
-		
+
 		let recipeId = 2
 
 		return models.Ingredients.findAll({
