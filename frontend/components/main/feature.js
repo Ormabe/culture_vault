@@ -3,6 +3,9 @@ import store from '../../store/store.js'
 import {getFeature} from '../../actions/feature-action.js'
 
 const Feature = React.createClass({
+	componentDidMount(){
+		store.dispatch(getFeature())
+	},
 	render(){
 		console.log('FEATURE ===>',this.props.featureProps)
 		// let feature = this.props.featureProps[0]
@@ -12,7 +15,6 @@ const Feature = React.createClass({
 			Name: 
 			Quote: 
 			Image: 
-			{store.dispatch(getFeature(2))}
 			</div>
 			)
 		}
