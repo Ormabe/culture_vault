@@ -11,7 +11,7 @@ const CultureVault = React.createClass({
         <SignUp />
         <SignUpForm />
 				<Recipe />
-				{this.props.children}
+			
 
 			</div>
 		)
