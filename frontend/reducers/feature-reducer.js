@@ -1,14 +1,4 @@
-
-const _defaultState = {
-	feature:{
-		name: '',
-		quote: '',
-		image: ''
-	}
-}
-
-const featureReducer = (state = _defaultState , action) => {
-
+const featureReducer = (state = {} , action) => {
 switch(action.type){
 		case "FETCH_FEATURE":
 			return action.feature
