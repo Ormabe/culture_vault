@@ -6,7 +6,25 @@ const formStyles = {
     color: "#0045FF"
   },
   backgroundColor: "#AA0000",
-  color: "#FFFFFF"
+  color: "#FFFFFF",
+  textAlign: "center",
+  fontSize: 20,
+  button: {
+    margin: 12,
+    width: 200,
+    lineHeight: '18px',
+    verticalAlign: 'middle'
+  },
+  exampleImageInput: {
+    cursor: 'pointer',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0,
+  }
 }
 
 const signUpStyles = {

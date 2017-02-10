@@ -74,7 +74,7 @@ const seedFunction = () => {
 	])
 	}).then(data => {
 	models.Recipes.bulkCreate([
-	
+
 	{
 	name: 'Charle\'s Survival Pasta',
 	ExperienceId:2

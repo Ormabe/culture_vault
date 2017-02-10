@@ -4,31 +4,42 @@ import { createUserForm } from '../../actions/signup-action';
 import { bindActionCreators } from 'redux';
 
 import axios from 'axios';
-import TextField from 'material-ui/TextField';
+
+import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import TextField from 'material-ui/TextField';
 
+injectTapEventPlugin();
 
 const muiTheme = getMuiTheme();
 
 const styles = require('./signup-style').formStyles
+// const styles = require('./signup-style').signUpStyles
+const customContentStyle = require('./signup-style').customContentStyle
 
-explore default class SignUpForm extends Component {
+var FaEmail= require('react-icons/lib/fa/envelope')
+var FaFacebook = require('react-icons/lib/fa/facebook-square')
+var FaGoogle = require('react-icons/lib/fa/google-plus-square')
+
+class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
+this.handleChange = this.handleChange.bind(this)
+this.enterUser = this.enterUser.bind(this)
+this.handleDialogOpen = this.handleDialogOpen.bind(this)
+this.handleDialogClose = this.handleDialogClose.bind(this)
+
     this.state = {
-      username:"",
       email:"",
-      password:""
+      password:"",
+      open: false
     }
   }
-  handleKeyPress(e) {
-		if (e.key === 'Enter') {
-			this.handleChange()
-		}
-	}
 	handleChange (e) {
     const target = e.target
     const value = target.value
@@ -38,41 +49,44 @@ explore default class SignUpForm extends Component {
 	}
   enterUser(e) {
     e.preventDefault()
-    const info = this.state
+
     // const that = this
 
-    axios.post('api/explore/users') // State for the store
-      let user = {
-        username: null,
-        email: null,
-        password: null
-      }
-        .then(() => {
-          user.username: this.state.username,
-          user.email: this.state.email,
-          user.password: this.state.password
-        })
-        .then(data => {
-          store.dispatch(createUserForm(user))
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    // $.ajax({
-    //   url: 'api/explore/users',
-    //   type: 'POST',
-    //   data: info,
-    //   success: function(data) {
-    //     console.log('posted',data)
-    //     that.setState({username:"",email:"",password:""})
-    //   }
-    // })
+    this.props.createUserForm(this.state.email,this.state.password)
+    this.setState({
+      email:"",
+      password:""
+    })
+  }
+  handleDialogOpen () {
+    this.setState({open: true});
+  }
+  handleDialogClose () {
+    this.setState({open: false});
   }
   render () {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleDialogClose}
+      />
+    ];
     return (
     <MuiThemeProvider muiTheme={muiTheme}>
+      <div>
+        <RaisedButton label="SIGN UP" onTouchTap={this.handleDialogOpen} />
+        <Dialog
+          title="SIGN UP TO CULTURE VAULT"
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          contentStyle={customContentStyle}
+          onRequestClose={this.handleDialogClose}
+          style={{textAlign: styles.textAlign}}
+        >
       <form onSubmit={this.enterUser} autoComplete="off">
-        <TextField
+        {/* <TextField
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
@@ -80,7 +94,7 @@ explore default class SignUpForm extends Component {
           floatingLabelStyle={styles.floatingLabelStyle}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
         />
-        <br />
+        <br /> */}
         <TextField
           name="email"
           value={this.state.email}
@@ -99,24 +113,43 @@ explore default class SignUpForm extends Component {
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
         />
         <br />
-        <FlatButton
+        <RaisedButton
           label="Submit"
+          labelStyle={{fontSize: styles.fontSize}}
           type="submit"
           backgroundColor={styles.backgroundColor}
-          style={{color: styles.color}}
+          style={{color: "#FFFFFF"}}
+          icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
         />
       </form>
+      <h3>OR</h3>
+      <br />
+      <RaisedButton
+        href="https://www.facebook.com"
+        disabled={true}
+        target="_blank"
+        label="Facebook Sign-In"
+        style={styles.button}
+        icon={<FaFacebook />}
+      />
+      <br />
+      <RaisedButton
+        href="https://www.google.com"
+        disabled={true}
+        target="_blank"
+        label="Google Sign-In"
+        style={styles.button}
+        icon={<FaGoogle />}
+      />
+    </Dialog>
+    </div>
     </MuiThemeProvider>
     )
   }
 };
 
-function mapStateToProps(state) {
-  return {
-    username: state.username,
-    email: state.email,
-    password: state.password
-  }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ createUserForm  }, dispatch);
 }
 
-export default connect(mapStateToProps, { createUserForm })(SignUpForm)
+export default connect(null, mapDispatchToProps)(SignUpForm)

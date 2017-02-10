@@ -48,7 +48,7 @@ const findAllCountries = ((req,res) => {
 const findByCountry = ((req, res) => {
 		models.Locations.findAll({
       where: {
-        country: req.params.country
+        id: req.params.id
       }
     })
 		.then((data) => {
@@ -117,7 +117,7 @@ const findByRegion = ((req, res) => {
 
   //=====================================
   // BY CITY
-   
+
 const findAllCities = ((req,res) => {
   return models.Locations.findAll({
     order: [['city', 'ASC']]
@@ -144,6 +144,21 @@ const findByCity = ((req, res) => {
 		})
 	});
 
+  const getExperiences = (req,res) => {
+    models.ExperiencesLocations.findAll({
+      where:{
+        LocationId:req.params.locationId
+      },
+      include:[models.Experiences]
+    })
+    .then(data => res.send(data))
+    .catch(err => res.status(500).send(err))
+  };
+
+
+  router.route('/country/:locationId')
+    .get(getExperiences)
+
 //ROUTES
 router.route('/continents')
   .get(findAllContinents)
@@ -151,7 +166,7 @@ router.route('/continents/:continent')
   .get(findByContinent)
 router.route('/countries')
   .get(findAllCountries)
-router.route('/countries/:country')
+router.route('/countries/:id')
   .get(findByCountry)
 router.route('/states')
   .get(findAllStates)

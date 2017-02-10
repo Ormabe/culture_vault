@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       steps: {
-        type: Sequelize.BLOB
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

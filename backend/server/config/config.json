@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "Rabiya",
+    "password": null,
+    "database": "culture_vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "Rabiya",
+    "password": null,
+    "database": "culture_vault",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "Rabiya",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

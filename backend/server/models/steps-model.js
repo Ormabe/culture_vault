@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Steps = sequelize.define('Steps', {
     steps: {
-        type: DataTypes.TEXT()
+        type: DataTypes.TEXT
     }
   }, {
     classMethods: {

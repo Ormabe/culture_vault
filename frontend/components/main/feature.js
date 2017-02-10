@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../../store/store.js'
 import {getFeature} from '../../actions/feature-action.js'
+import SignUpForm from './signupform'
 
 const Feature = React.createClass({
 	componentDidMount() {
@@ -17,7 +18,7 @@ const Feature = React.createClass({
 			<p>Name: {this.props.feature.name}</p>
 			<p>Quote: {this.props.feature.quote}</p>
 			Image: <img src={this.props.feature.image} />
-
+			{/* <SignUpForm /> */}
 			</div>
 			)
 		}else{

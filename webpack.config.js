@@ -20,7 +20,7 @@ module.exports = {
       }
     }, {
       test: /\.scss$/,
-      loaders: ["style", "css", "sass"]
+      loaders: ["style-loader", "cssloader", "sass-loader"]
     }, {
 			test: [/\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|ico)(\?.*$|$)/i],
 			loader: 'file-loader?name=[name].[ext]'
@@ -28,7 +28,7 @@ module.exports = {
 				test: /\.html$/,
 				loader: ['file?name=[name].[ext]']
 			}
-    ] 
+    ]
   },
   devtool: 'source-map',
   resolve: {

@@ -4,11 +4,11 @@ module.exports = function(sequelize, DataTypes) {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     username: {
-      type: DataTypes.STRING,
-      validate:{
-        notEmpty: true //notNull deprecated, use notEmpty
-
-      }
+      type: DataTypes.STRING
+      // validate:{
+      //   notEmpty: true //notNull deprecated, use notEmpty
+      //
+      // }
     },
     password: {
       type: DataTypes.STRING,
