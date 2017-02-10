@@ -1,11 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router'
-// import SignUp from './components/main/signup'
-import SignUpForm from './components/main/signupform'
-// import ExploreBTN from './components/main/explore-btn'
-import store from './store/store.js';
-// import { getLocations } from './actions/explore-action.js'
-//
+import SignUpForm from './components/main/signupform';
+
+
 
 const CultureVault = React.createClass({
 
@@ -40,7 +36,6 @@ const CultureVault = React.createClass({
 				<div >
 						{this.props.children}
 			</div>
-
 			</div>
 		)
 	}

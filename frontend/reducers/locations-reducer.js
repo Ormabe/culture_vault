@@ -1,9 +1,10 @@
-const locationReducer = (state = [] , action) => {
+const locationReducer = (state = {} , action) => {
 switch(action.type){
 		case "FETCH_COUNTRY":
-			return [...state, action.location]
+			return action.location
 		default:
 			return state;
 	}
 }
+
 export default locationReducer;

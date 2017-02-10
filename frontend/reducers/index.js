@@ -1,16 +1,16 @@
 import {combineReducers} from 'redux';
-//import reducers file
-
 import feature from './feature-reducer.js'
 import explore from './explore-reducer.js'
+import experiences from './reducer-experiences';
 import signup from './signup-reducer.js'
 import location from './locations-reducer.js'
 
-const allReducers = combineReducers({
-	feature,
+const rootReducer = combineReducers({
+	feature ,
 	explore,
+	experiences,
 	signup,
-	location
+	location,
 })
 
-export default allReducers;
+export default rootReducer;

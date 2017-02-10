@@ -4,6 +4,7 @@ import { getLocations } from '../../actions/explore-action.js'
 import { Link } from 'react-router'
 import FeatureContainer from '../../container/main/feature-container.js'
 
+
 const Explore = React.createClass({
 	componentDidMount(){
 		console.log("============>>> DID MOUNT")
@@ -22,7 +23,6 @@ console.log(this.props.explore[0])
 				<ul>
         		{explore}
         		</ul>
-						<FeatureContainer/>
 			</div>
 		)
 		}else {

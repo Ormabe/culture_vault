@@ -18,7 +18,7 @@ const seedFunction = () => {
 	username: "chanicestlouis",
 	password: "gangstaboo45",
 	email: "chanicestlouis@gmail.com",
-	image: "https://s25.postimg.org/si7uajpun/chanice_stlouis.jpg",
+	image: "https://s25.postimg.org/5i4wwqw0v/chanice_stlouis.png",
 	location: "Brooklyn",
 	bio: "My presence is a present"
 	},
@@ -29,7 +29,7 @@ const seedFunction = () => {
 	username: "ormabe",
 	password: "mkdhRE45jk#$v0",
 	email: "ormabe@erols.com",
-	image: "https://s25.postimg.org/5usl4eaan/rabiya_watson.jpg",
+	image: "https://s25.postimg.org/45n7uuylb/rabiya_watson.png",
 	location: "Manhattan, NY",
 	bio: "Politics or bust!"
 	}
@@ -38,9 +38,10 @@ const seedFunction = () => {
 		{
 		name: 'Life lesson soup',
 		fav: 4,
-		quote: "My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: "https://unsplash.com/search/soup?photo=XoByiBymX20",
+		quote: `"My gran once told me that, "People are like ingredients. If we made a soup with with just potatoes, it'll taste too bland. But if you mix a variety of ingredients, your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too..."`,
+		story: " more story blah blah.....Every Sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: 'https://s25.postimg.org/hla8kb733/chanice_soup.jpg',
+		// image: "https://unsplash.com/search/soup?photo=XoByiBymX20",
 		UserId:1
 		},
 
@@ -49,7 +50,8 @@ const seedFunction = () => {
 		fav: 3,
 		quote: "My programming instructor Charles taught us this tasty 'struggle recipe' to fuel our studies when hunger is serious but money and time are tight",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: "https://unsplash.com/search/pasta?photo=nVPfPXc3eis",
+		image: "https://s25.postimg.org/or1zmrg67/rabiya_struggle_recipe.jpg",
+		// image: "https://unsplash.com/search/pasta?photo=nVPfPXc3eis",
 		UserId:2
 		}
 	])
@@ -57,7 +59,7 @@ const seedFunction = () => {
 	models.Locations.bulkCreate([
 	{
 	continent: "North America",
-	country: "United States of America",
+	country: "USA",
 	state: "New York",
 	region: "Tri-State Area",
 	city: "New York City"
@@ -65,7 +67,7 @@ const seedFunction = () => {
 
 	{
 	continent: "North America",
-	country: "United States of America",
+	country: "USA",
 	state: "Louisiana",
 	region: "Mississippi Delta",
 	city: "New Orleans"
