@@ -4,11 +4,9 @@ import {getFeature} from '../../actions/feature-action.js'
 
 const Feature = React.createClass({
 	componentDidMount() {
-		console.log("============>>> DID MOUNT")
 		store.dispatch(getFeature())
 	},
 	render(){
-		console.log('FEATURE ===>',this.props.feature)
 		let feature = this.props.feature
 		if(feature){
 		return(
