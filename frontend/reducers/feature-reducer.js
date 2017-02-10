@@ -1,4 +1,3 @@
-
 const featureReducer = (state = {} , action) => {
 switch(action.type){
 		case "FETCH_FEATURE":
