@@ -5,6 +5,7 @@ const Welcome = React.createClass({
 		return(
 			<div>
 				I'm the Welcome component.
+				{this.props.children}
 			</div>
 		)
 	}

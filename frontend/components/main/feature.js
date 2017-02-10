@@ -15,7 +15,7 @@ const Feature = React.createClass({
 			<p>Name: {this.props.feature.name}</p>
 			<p>Quote: {this.props.feature.quote}</p>
 			Image: <img src={this.props.feature.image} />
-
+			
 			</div>
 			)
 		}else{
