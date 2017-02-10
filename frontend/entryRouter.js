@@ -1,34 +1,26 @@
 //Import Modules
 import React from 'react';
 import { render } from 'react-dom';
-
-//Import React-Router Dependencies
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
-// Import Container
-import FeatureContainer from './container/main/feature-container.js'
-import ExploreContainer from './container/explore-container.js'
-
-//Import Components
-// import CultureVault from './cultureVault.js';
-// import SignUp from './components/main/signup.js'
-// import Welcome from './components/main/welcome.js';
-// import Explore from './components/main/explore.js';
-
-//import store to wrap around router
-import store from './store/store.js'
-//import provider to connect store to components
+import reducers from './reducers'
 import { Provider } from 'react-redux'
-//Build Router Component
+import promise from 'redux-promise';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { createStore, applyMiddleware } from 'redux';
+
+import FeatureContainer from './container/main/feature-container'
+import ExploreContainer from './container/explore-container'
+import Experience from './container/experiences/experience.js'
+
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 const router = (
-<Provider store={store}>
+<Provider store={createStoreWithMiddleware(reducers)}>
 	<Router history={browserHistory}>
 		<Route path='/' component={FeatureContainer} />
-		<Route path='/explore' component={ExploreContainer}/>
+		<Route path='explore' component={ExploreContainer}/>
+		<Route path="experience/:id" component={Experience} />
 	</Router>
 </Provider>
 );
 
-//Render Component
 render(router, document.getElementById('root'));

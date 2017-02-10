@@ -1,12 +1,13 @@
 import {combineReducers} from 'redux';
 //import reducers file
-import feature from './feature-reducer.js'
-import explore from './explore-reducer.js'
+import Feature from './feature-reducer.js'
+import Explore from './explore-reducer.js'
+import Experiences from './reducer-experiences';
 
-const allReducers = combineReducers({
-	feature,
-	explore
-
+const rootReducer = combineReducers({
+	feature: Feature,
+	explore: Explore,
+	experiences: Experiences
 })
 
-export default allReducers;
+export default rootReducer;
