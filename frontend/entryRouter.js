@@ -18,6 +18,7 @@ const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault} >
 			<IndexRoute component={ExploreContainer} />
+			<Route path="explore" component={ExploreContainer} />
 			<Route path="discover" component={Feature} />	
 			<Route path="experience/:id" component={Experience} />
 			<Route path='/country/:countryId' component={LocationContainer}/>
