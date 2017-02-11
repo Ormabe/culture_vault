@@ -1,13 +1,17 @@
-import React from 'react';
-import store from '../../store/store.js'
-import {getFeature} from '../../actions/feature-action.js'
+import React, { Component } from 'react';
+import store from '../../store/store.js';
+import {getFeature} from '../../actions/feature-action.js';
 
-const Feature = React.createClass({
+const Feature extends Component {
 	componentDidMount() {
-		store.dispatch(getFeature())
-	},
+		let { getFeature } = this.props;
+
+		getFeature();
+	}
+
 	render(){
-		let feature = this.props.feature
+		let { feature } = this.props;
+
 		if(feature){
 		return(
 			<div>
@@ -23,6 +27,6 @@ const Feature = React.createClass({
 		}
 
 }
-})
+}
 
 export default Feature;
