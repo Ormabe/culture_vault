@@ -9,5 +9,5 @@ export function getFeature() {
 	return {
 		type: 'FETCH_FEATURES',
 		payload: request
-	}
+	} 
 }

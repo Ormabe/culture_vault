@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router();
 const models = require('../server/models');
-
+ 
 //=====================================
 // BY CONTINENT
 const findAllContinents = ((req,res) => {

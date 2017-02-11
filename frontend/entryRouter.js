@@ -12,7 +12,7 @@ import LocationContainer from './container/main/location-container.js'
 import CultureVault from './cultureVault.js';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-
+ 
 const router = (
 <Provider store={createStoreWithMiddleware(rootReducer)}>
 	<Router history={browserHistory}>

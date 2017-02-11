@@ -9,7 +9,7 @@ class Feature extends Component{
 		console.log("Component Is Mounted")
 		getFeature()
 	}
-
+ 
 		getName() {
 			const { features } = this.props;
 
