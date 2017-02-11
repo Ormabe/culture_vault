@@ -4,10 +4,11 @@ const signupReducer = (state = {}, action) => {
 
   switch(action.type) {
     case CREATE_USER:
-      console.log('ACTION:',action)
+      return Object.assign({}, state, action.payload)
     default:
       return state
   }
 }
 
 export default signupReducer;
+ 
