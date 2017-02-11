@@ -39,6 +39,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Users.hasMany(models.Experiences)
+        Users.hasMany(models.Comment)
       }
     }
   });

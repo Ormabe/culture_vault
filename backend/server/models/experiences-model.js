@@ -23,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
         Experiences.belongsTo(models.Users)
         Experiences.hasMany(models.ExperiencesLocations)
         Experiences.hasMany(models.Recipes)
+        Experiences.hasMany(models.Comment)
       }
     }
   });
