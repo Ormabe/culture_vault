@@ -12,3 +12,4 @@ export function fetchExploreLocations() {
 		payload: request
 	}
 };
+
