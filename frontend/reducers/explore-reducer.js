@@ -1,13 +1,12 @@
-const _defaultState = []
+import { FETCH_LOCATION } from '../actions/explore-action';
 
-const exploreReducer = (state = _defaultState , action) => {
+const INITIAL_STATE = { locations: null };
 
-switch(action.type){
-		case "FETCH_LOCATION":
-			return action.explore
+export default function(state = INITIAL_STATE, action) {
+	switch(action.type) {
+		case FETCH_LOCATION:
+			return { locations: action.payload.data }
 		default:
-			return state;
+			return state
 	}
 }
-
-export default exploreReducer;

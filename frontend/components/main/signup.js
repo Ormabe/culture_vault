@@ -60,6 +60,7 @@ const SignUp = React.createClass({
             style={styles.button}
             icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
           />
+          <h3>OR</h3>
           <br />
           <RaisedButton
             href="https://www.facebook.com"

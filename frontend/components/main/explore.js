@@ -1,12 +1,12 @@
 import React from 'react';
-import store from '../../store/store.js';
+
 import { getLocations } from '../../actions/explore-action.js'
 import { Link } from 'react-router'
+
 
 const Explore = React.createClass({
 	componentDidMount(){
 		console.log("============>>> DID MOUNT")
-		store.dispatch(getLocations())
 	},
 
 	render() {
@@ -28,5 +28,8 @@ console.log(this.props.explore[0])
 		}
 }
 });
-
 export default Explore;
+
+
+
+

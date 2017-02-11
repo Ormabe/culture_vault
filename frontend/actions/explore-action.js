@@ -1,16 +1,15 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const fetchData = explore => ({
-	type:'FETCH_LOCATION',
-	explore: explore
-})
+export const FETCH_LOCATION = 'FETCH_LOCATION';
 
-export const getLocations = () => dispatch => {
-	axios.get('/api/explore/countries')
-	.then(response => {
-		console.log('ACTION ===>' , response.data)
-			dispatch(fetchData(response.data))
+const ROOT_URL = 'http://localhost:2222/api/explore/countries';
 
+export function fetchExploreLocations() {
+	const request = axios.get(ROOT_URL)
 
-	})
-}
+	return {
+		type: FETCH_LOCATION,
+		payload: request
+	}
+};
+

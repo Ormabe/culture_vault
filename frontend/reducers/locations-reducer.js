@@ -1,4 +1,3 @@
-
 const locationReducer = (state = {} , action) => {
 switch(action.type){
 		case "FETCH_COUNTRY":
@@ -7,4 +6,5 @@ switch(action.type){
 			return state;
 	}
 }
+
 export default locationReducer;

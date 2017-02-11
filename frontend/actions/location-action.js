@@ -6,10 +6,11 @@ export const fetchData = location => ({
 	location
 })
 
-export const getExperience = () => dispatch => {
-	axios.get("/api/explore/country/1")
+
+export const getExperience = (id) => dispatch => {
+	axios.get(`/api/explore/countries/${id}`)
 	.then(response => {
-		console.log('data ===>' , response.data)
-		dispatch(fetchData(response.data))
+		console.log('dataFuck ===>' , response.data)
+
 	})
 }

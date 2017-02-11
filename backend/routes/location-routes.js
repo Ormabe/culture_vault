@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router();
 const models = require('../server/models');
-
+ 
 //=====================================
 // BY CONTINENT
 const findAllContinents = ((req,res) => {
@@ -48,7 +48,7 @@ const findAllCountries = ((req,res) => {
 const findByCountry = ((req, res) => {
 		models.Locations.findAll({
       where: {
-        country: req.params.country
+        id: req.params.id
       }
     })
 		.then((data) => {
@@ -117,7 +117,7 @@ const findByRegion = ((req, res) => {
 
   //=====================================
   // BY CITY
-   
+
 const findAllCities = ((req,res) => {
   return models.Locations.findAll({
     order: [['city', 'ASC']]
@@ -144,17 +144,7 @@ const findByCity = ((req, res) => {
 		})
 	});
 
-// const getAllExperienceLocations = (req,res) => {
 
-//   models.ExperiencesLocations.findAll({
-//     where: {
-//       LocationId: req.params.countryId
-//     },
-//     include:[models.Experiences,models.Locations]
-//   })
-//   .then(data => res.send(data))
-//   .catch(error => res.status(500).send(error))
-// }
 const getExperiences = (req,res) => {
   models.ExperiencesLocations.findAll({
     where:{
@@ -166,6 +156,7 @@ const getExperiences = (req,res) => {
   .catch(err => res.status(500).send(err))
 };
 
+
 //ROUTES
 router.route('/country/:locationId')
   .get(getExperiences)
@@ -176,7 +167,7 @@ router.route('/continents/:continent')
   .get(findByContinent)
 router.route('/countries')
   .get(findAllCountries)
-router.route('/countries/:country')
+router.route('/countries/:id')
   .get(findByCountry)
 router.route('/states')
   .get(findAllStates)
