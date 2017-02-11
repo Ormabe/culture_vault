@@ -1,11 +1,6 @@
-//IMPORT MODULES
 const router = require('express').Router();
 const models = require('../server/models');
 
-
-/////////////////
-////FUNCTION/////
-/////////////////
 const getExperience = (req, res) => {
 	let data ={user:null,location:null,recipe:null,experience:null,steps:null,ingredients:null,sneakUserId:null};
 

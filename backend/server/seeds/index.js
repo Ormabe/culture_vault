@@ -124,7 +124,82 @@ const seedFunction = () => {
 		RecipeId:2
 		}
 
-	])
+	]).then(data => {
+		models.Comment.bulkCreate([
+			{
+		    "id": 8,
+		    "comment": "This is my fourth comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:07:08.136Z",
+		    "updatedAt": "2017-02-11T21:07:08.136Z",
+		    "UserId": null,
+		    "ExperienceId": 2,
+		    "User": null
+		  },
+		  {
+		    "id": 7,
+		    "comment": "This is my third comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:07:01.535Z",
+		    "updatedAt": "2017-02-11T21:07:01.535Z",
+		    "UserId": null,
+		    "ExperienceId": 2,
+		    "User": null
+		  },
+		  {
+		    "id": 6,
+		    "comment": "This is my second comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:06:55.825Z",
+		    "updatedAt": "2017-02-11T21:06:55.825Z",
+		    "UserId": null,
+		    "ExperienceId": 2,
+		    "User": null
+		  },
+		  {
+		    "id": 5,
+		    "comment": "This is my first comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:06:50.626Z",
+		    "updatedAt": "2017-02-11T21:06:50.626Z",
+		    "UserId": null,
+		    "ExperienceId": 2,
+		    "User": null
+		  },
+		  {
+		    "id": 4,
+		    "comment": "This is my fourth comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:06:39.215Z",
+		    "updatedAt": "2017-02-11T21:06:39.215Z",
+		    "UserId": null,
+		    "ExperienceId": 1,
+		    "User": null
+		  },
+		  {
+		    "id": 3,
+		    "comment": "This is my third comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:05:57.695Z",
+		    "updatedAt": "2017-02-11T21:05:57.695Z",
+		    "UserId": null,
+		    "ExperienceId": 1,
+		    "User": null
+		  },
+		  {
+		    "id": 2,
+		    "comment": "This is my second comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:05:49.586Z",
+		    "updatedAt": "2017-02-11T21:05:49.586Z",
+		    "UserId": null,
+		    "ExperienceId": 1,
+		    "User": null
+		  },
+		  {
+		    "id": 1,
+		    "comment": "This is my first comment. Woo hoo!",
+		    "createdAt": "2017-02-11T21:05:39.826Z",
+		    "updatedAt": "2017-02-11T21:05:39.826Z",
+		    "UserId": null,
+		    "ExperienceId": 1,
+		    "User": null
+		  }
+		])
+	})
 	}).then(data => {
 		models.Steps.bulkCreate([
 		{
