@@ -36,6 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
+backend/server/config/
+
 config/config.json
 node_modules
 
