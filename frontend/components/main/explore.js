@@ -32,30 +32,6 @@ console.log(this.props.explore[0])
 });
 export default Explore;
 
-// import React from 'react';
-// import store from '../../store/store.js';
-// import { getLocations } from '../../actions/explore-action.js'
-// import RaisedButton from 'material-ui/RaisedButton';
-// import { Link } from 'react-router'
-//
-// const Explore = React.createClass({
-// 	componentDidMount(){
-// 		console.log("============>>> DID MOUNT")
-// 		store.dispatch(getLocations())
-// 	},
-//
-// 	render() {
-//
-// 		return(
-// 			<div>
-//
-//         {this.props.explore && this.props.explore.map(
-//         	(location, index) => <button key={index}> <Link to="">{location.country}</Link> </button>
-//         )}
-// 			</div>
-// 		)
-// 	}
-// });
-//
-// export default Explore;
-//
+
+
+
