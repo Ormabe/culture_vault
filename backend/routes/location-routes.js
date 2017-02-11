@@ -144,17 +144,7 @@ const findByCity = ((req, res) => {
 		})
 	});
 
-// const getAllExperienceLocations = (req,res) => {
 
-//   models.ExperiencesLocations.findAll({
-//     where: {
-//       LocationId: req.params.countryId
-//     },
-//     include:[models.Experiences,models.Locations]
-//   })
-//   .then(data => res.send(data))
-//   .catch(error => res.status(500).send(error))
-// }
 const getExperiences = (req,res) => {
   models.ExperiencesLocations.findAll({
     where:{

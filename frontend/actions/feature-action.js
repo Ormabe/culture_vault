@@ -1,15 +1,13 @@
-import axios from 'axios'
+import axios from 'axios';
 
+export const FETCH_FEATURES = 'FETCH_FEATURES';
 
-export const fetchData = feature => ({
-	type:'FETCH_FEATURE',
-	feature
-})
+const ROOT_URL = 'http://localhost:2222/api/explore/country/experience';
 
-export const getFeature = () => dispatch => {
-	axios.get("/api/explore/country/experience")
-	.then(response => {
-		console.log('data ===>' , response.data)
-		dispatch(fetchData(response.data[0]))
-	})
+export function getFeature() {
+ const request = axios.get(ROOT_URL);
+	return {
+		type: 'FETCH_FEATURES',
+		payload: request
+	}
 }

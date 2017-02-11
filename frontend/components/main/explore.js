@@ -1,14 +1,12 @@
 import React from 'react';
-import store from '../../store/store.js';
+
 import { getLocations } from '../../actions/explore-action.js'
 import { Link } from 'react-router'
-import FeatureContainer from '../../container/main/feature-container.js'
 
 
 const Explore = React.createClass({
 	componentDidMount(){
 		console.log("============>>> DID MOUNT")
-		store.dispatch(getLocations())
 	},
 
 	render() {

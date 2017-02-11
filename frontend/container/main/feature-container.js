@@ -1,13 +1,54 @@
-//this is how we connect component to container by importing it into the container.
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import {getFeature} from '../../actions/feature-action.js'
+import { Link } from 'react-router'
 
-//import the component to have reference to what you are connecting to..
-import Feature from '../../components/main/feature.js'
+class Feature extends Component{
+	componentDidMount() {
+		let { getFeature } = this.props;
+		console.log("Component Is Mounted")
+		getFeature()
+	}
 
-//mapStateToProps is just a word, that passes state and makes it available to our component.
-const mapStateToProps = state => ({
-	feature:state.feature
-})
-	//can put another reducer in here, if you want component to have access to that part of the store.
+		getName() {
+			const { features } = this.props;
 
-export default connect(mapStateToProps)(Feature);
+			return (
+				<div>
+					<ul>
+						{features.map(feature => {
+							return (
+								<li key={feature.id}>
+									<Link to={`/experience/${feature.id}`}>
+										<img src={feature.image} alt={feature.id} />
+										<br />
+										<strong>{feature.name}</strong>
+										<br />
+										<br />
+									</Link>
+								</li>	
+							)
+						})}
+					</ul>
+				</div>
+			)
+		}	
+		
+		get
+		
+	render(){
+		let { features } = this.props;
+		if(!features){
+			return <div>...Loading</div>
+		} 
+
+		return <div>{this.getName()}</div>
+	}
+}
+
+function mapStateToProps(state) {
+	return { features: state.feature.features }
+}
+
+export default connect(mapStateToProps, { getFeature })(Feature);
+
