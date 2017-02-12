@@ -19,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        Ingredients.belongsTo(models.Recipes)
+        Ingredients.belongsTo(models.Recipes,{foreignKey: 'RecipeId',
+        constraints: false,})
       }
     }
   });
