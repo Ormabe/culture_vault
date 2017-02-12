@@ -149,7 +149,7 @@ const seedFunction = () => {
 		}
 
 	])
-		.then(data => {
+	}).then(data => {
 		models.Comment.bulkCreate([
 			{
 		  

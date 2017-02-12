@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';	
@@ -26,13 +27,21 @@ class Comments extends Component {
 
 	onFormSubmit(e) {
 		e.preventDefault()
-		console.log("Form Submitted: " + this.state.comment)
-		const { createComment } = this.props;
+		const ROOT_URL = 'http://localhost:2222/api/comments/'
 		const comment = this.state.comment;
 		const experience = this.props.id;
 
-		createComment(comment, experience)
-		this.setState({ comment: '' });
+		const request = axios.post(`${ROOT_URL}experience/${experience}`, { comment })
+		.then(response => {
+			console.log(response);
+		})
+		.catch(error => {
+			console.log(error);
+		})
+			.then(() => {
+				this.props.fetchComments(this.props.id)
+			})
+		this.setState({ comment: '' })
 	}
 
 	createAComment() {
