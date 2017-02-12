@@ -149,7 +149,7 @@ const seedFunction = () => {
 		}
 
 	])
-		.then(data => {
+	}).then(data => {
 		models.Comment.bulkCreate([
 			{
 		  
@@ -229,31 +229,31 @@ const seedFunction = () => {
 		{
 		UserLiked:true,
 		counter:0,
-		CommentId:1,
+		ExperienceId:1,
 		UserId:3
 		},
 		{
 		UserLiked:true,
 		counter:0,
-		CommentId:1,
+		ExperienceId:1,
 		UserId:3
 		},
 		{
 		UserLiked:true,
 		counter:0,
-		CommentId:2,
+		ExperienceId:2,
 		UserId:2
 		},
 		{
 		UserLiked:true,
 		counter:0,
-		CommentId:3,
+		ExperienceId:3,
 		UserId:1
 		},
 		{
 		UserLiked:true,
 		counter:0,
-		CommentId:4,
+		ExperienceId:1,
 		UserId:1
 		},
 			])

@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         Ingredients.belongsTo(models.Recipes,{foreignKey: 'RecipeId',
-        constraints: false,})
+        constraints: false})
       }
     }
   });

@@ -18,9 +18,9 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Likes.belongsTo(models.Users,{foreignKey: 'UserId',
-        constraints: false,})
-        Likes.belongsTo(models.Comment,{foreignKey: 'CommentId',
-        constraints: false,})
+        constraints: false})
+        Likes.belongsTo(models.Experiences,{foreignKey: 'ExperienceId',
+        constraints: false})
       }
     }
   });

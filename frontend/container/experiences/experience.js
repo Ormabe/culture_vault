@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExperience } from '../../actions/action-experiences';
 import Comments from './experience-comments';
+import Likes from './experience-likes.js'
 
 class Experience extends Component {
 	componentWillMount() { 
@@ -110,6 +111,8 @@ class Experience extends Component {
 					{this.story()}
 					<br />
 					{this.recipe()}
+					<br />
+					<Likes id={this.props.params.id}/>
 					<br />
 					<Comments id={this.props.params.id}/>
 			</div>
