@@ -32,6 +32,16 @@ const seedFunction = () => {
 	image: "https://s25.postimg.org/45n7uuylb/rabiya_watson.png",
 	location: "Manhattan, NY",
 	bio: "Politics or bust!"
+	},
+	{
+	first_name: "Niko",
+	last_name: "Bella",
+	username: "nikobellalew",
+	password: "ihatepasswords",
+	email: "nikobellabew@gmail.com",
+	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
+	location: "Brooklyn",
+	bio: "Devs Do It Better"
 	}
 	]).then(data => {
 		models.Experiences.bulkCreate([
@@ -53,6 +63,14 @@ const seedFunction = () => {
 		image: "https://s25.postimg.org/or1zmrg67/rabiya_struggle_recipe.jpg",
 		// image: "https://unsplash.com/search/pasta?photo=nVPfPXc3eis",
 		UserId:2
+		},
+		{
+		name: 'cross-cultural bonds',
+		fav: 2,
+		quote: "When you're stuck with a group of people repeatedly for hours on end, you're not friends until you've shared food. My co-worker Shazia introducing me to Pakistani briyani has changed my life",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://unsplash.com/search/rice?photo=Pt_YmiYm7a4",
+		UserId:3
 		}
 	])
 	}).then(data => {
@@ -64,13 +82,15 @@ const seedFunction = () => {
 	region: "Tri-State Area",
 	city: "New York City"
 	},
-
 	{
-	continent: "North America",
-	country: "USA",
-	state: "Louisiana",
-	region: "Mississippi Delta",
-	city: "New Orleans"
+	continent: "Asia",
+	country: "Japan",
+	city: "Tokyo"
+	},
+	{
+	continent: "Europe",
+	country: "United Kingdom",
+	city: "London"
 	}
 
 	])
@@ -85,6 +105,10 @@ const seedFunction = () => {
 	{
 	name: 'Humpty Dumpty\'s Wall Flower',
 	ExperienceId:1
+	},
+	{
+  name: 'Shazia\'s Briyani',
+  ExperienceId:3
 	}
 		])
 	}).then(data => {
@@ -123,83 +147,107 @@ const seedFunction = () => {
 		unit:"teaspoons",
 		RecipeId:2
 		}
-
-	]).then(data => {
+	])
+	}).then(data => {
 		models.Comment.bulkCreate([
-			{
-		    "id": 8,
-		    "comment": "This is my fourth comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:07:08.136Z",
-		    "updatedAt": "2017-02-11T21:07:08.136Z",
-		    "UserId": null,
-		    "ExperienceId": 2,
-		    "User": null
-		  },
-		  {
-		    "id": 7,
-		    "comment": "This is my third comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:07:01.535Z",
-		    "updatedAt": "2017-02-11T21:07:01.535Z",
-		    "UserId": null,
-		    "ExperienceId": 2,
-		    "User": null
-		  },
-		  {
-		    "id": 6,
-		    "comment": "This is my second comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:06:55.825Z",
-		    "updatedAt": "2017-02-11T21:06:55.825Z",
-		    "UserId": null,
-		    "ExperienceId": 2,
-		    "User": null
-		  },
-		  {
-		    "id": 5,
-		    "comment": "This is my first comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:06:50.626Z",
-		    "updatedAt": "2017-02-11T21:06:50.626Z",
-		    "UserId": null,
-		    "ExperienceId": 2,
-		    "User": null
-		  },
-		  {
-		    "id": 4,
-		    "comment": "This is my fourth comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:06:39.215Z",
-		    "updatedAt": "2017-02-11T21:06:39.215Z",
-		    "UserId": null,
-		    "ExperienceId": 1,
-		    "User": null
-		  },
-		  {
-		    "id": 3,
-		    "comment": "This is my third comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:05:57.695Z",
-		    "updatedAt": "2017-02-11T21:05:57.695Z",
-		    "UserId": null,
-		    "ExperienceId": 1,
-		    "User": null
-		  },
-		  {
-		    "id": 2,
-		    "comment": "This is my second comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:05:49.586Z",
-		    "updatedAt": "2017-02-11T21:05:49.586Z",
-		    "UserId": null,
-		    "ExperienceId": 1,
-		    "User": null
-		  },
-		  {
-		    "id": 1,
-		    "comment": "This is my first comment. Woo hoo!",
-		    "createdAt": "2017-02-11T21:05:39.826Z",
-		    "updatedAt": "2017-02-11T21:05:39.826Z",
-		    "UserId": null,
-		    "ExperienceId": 1,
-		    "User": null
-		  }
+		{
+		id: 8,
+		comment: "This is my fourth comment. Woo hoo!",
+		createdAt: "2017-02-11T21:07:08.136Z",
+		updatedAt: "2017-02-11T21:07:08.136Z",
+		UserId: null,
+		ExperienceId: 2
+		},
+		{
+		id: 7,
+		comment: "This is my third comment. Woo hoo!",
+		createdAt: "2017-02-11T21:07:01.535Z",
+		updatedAt: "2017-02-11T21:07:01.535Z",
+		UserId: null,
+		ExperienceId: 2
+		},
+		{
+		id: 6,
+		comment: "This is my second comment. Woo hoo!",
+		createdAt: "2017-02-11T21:06:55.825Z",
+		updatedAt: "2017-02-11T21:06:55.825Z",
+		UserId: null,
+		ExperienceId: 2
+		},
+		{
+		id: 5,
+		comment: "This is my first comment. Woo hoo!",
+		createdAt: "2017-02-11T21:06:50.626Z",
+		updatedAt: "2017-02-11T21:06:50.626Z",
+		UserId: null,
+		ExperienceId: 2
+		},
+		{
+		id: 4,
+		comment: "This is my fourth comment. Woo hoo!",
+		createdAt: "2017-02-11T21:06:39.215Z",
+		updatedAt: "2017-02-11T21:06:39.215Z",
+		UserId: null,
+		ExperienceId: 1
+		},
+		{
+		id: 3,
+		comment: "This is my third comment. Woo hoo!",
+		createdAt: "2017-02-11T21:05:57.695Z",
+		updatedAt: "2017-02-11T21:05:57.695Z",
+		UserId: null,
+		ExperienceId: 1 
+		},
+		{
+		id: 2,
+		comment: "This is my second comment. Woo hoo!",
+		createdAt: "2017-02-11T21:05:49.586Z",
+		updatedAt: "2017-02-11T21:05:49.586Z",
+		UserId: null,
+		ExperienceId: 1
+		},
+		{
+		id: 1,
+		comment: "This is my first comment. Woo hoo!",
+		createdAt: "2017-02-11T21:05:39.826Z",
+		updatedAt: "2017-02-11T21:05:39.826Z",
+		UserId: null,
+		ExperienceId: 1
+		}
 		])
-	})
+	}).then(data => {
+		models.Likes.bulkCreate([
+		{
+		UserLiked:true,
+		counter:0,
+		CommentId:1,
+		UserId:3
+		},
+		{
+		UserLiked:true,
+		counter:0,
+		CommentId:1,
+		UserId:3
+		},
+		{
+		UserLiked:true,
+		counter:0,
+		CommentId:2,
+		UserId:2
+		},
+		{
+		UserLiked:true,
+		counter:0,
+		CommentId:3,
+		UserId:1
+		},
+		{
+		UserLiked:true,
+		counter:0,
+		CommentId:4,
+		UserId:1
+		},
+			])
 	}).then(data => {
 		models.Steps.bulkCreate([
 		{
@@ -229,16 +277,24 @@ const seedFunction = () => {
 	])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
-		{LocationId:1,
-			ExperienceId:2
+		{
+		LocationId:1,
+		ExperienceId:2
 		},
 
-		{LocationId:2,
-			ExperienceId:1
+		{
+		LocationId:2,
+		ExperienceId:1
+		},
+
+		{
+		LocationId:3,
+		ExperienceId:3
 		}
-			])
+
+		])
 	})
-}
+};
 
 
 module.exports = seedFunction

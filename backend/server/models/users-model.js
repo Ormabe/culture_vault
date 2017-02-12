@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     email: {
       type: DataTypes.STRING,
+      unique: true,
       validate: {
         isEmail: true,
         notEmpty: true
@@ -31,7 +32,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     location: DataTypes.STRING,
     bio: DataTypes.STRING,
-    likes: DataTypes.INTEGER,
     posts: DataTypes.INTEGER,
     following: DataTypes.INTEGER,
     followers: DataTypes.INTEGER
@@ -40,6 +40,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Users.hasMany(models.Experiences)
         Users.hasMany(models.Comment)
+        Users.hasMany(models.Likes)
       }
     }
   });

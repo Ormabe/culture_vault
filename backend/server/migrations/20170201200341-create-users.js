@@ -32,9 +32,6 @@ module.exports = {
       bio: {
         type: Sequelize.STRING
       },
-      likes: {
-        type: Sequelize.INTEGER
-      },
       posts: {
         type: Sequelize.INTEGER
       },
