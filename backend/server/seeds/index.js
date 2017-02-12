@@ -124,10 +124,11 @@ const seedFunction = () => {
 		RecipeId:2
 		}
 
-	]).then(data => {
+	])
+		.then(data => {
 		models.Comment.bulkCreate([
 			{
-		    "id": 8,
+		  
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:08.136Z",
 		    "updatedAt": "2017-02-11T21:07:08.136Z",
@@ -136,7 +137,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 7,
+		  
 		    "comment": "This is my third comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:01.535Z",
 		    "updatedAt": "2017-02-11T21:07:01.535Z",
@@ -145,7 +146,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 6,
+		  
 		    "comment": "This is my second comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:55.825Z",
 		    "updatedAt": "2017-02-11T21:06:55.825Z",
@@ -154,7 +155,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 5,
+		  
 		    "comment": "This is my first comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:50.626Z",
 		    "updatedAt": "2017-02-11T21:06:50.626Z",
@@ -163,7 +164,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 4,
+		  
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:39.215Z",
 		    "updatedAt": "2017-02-11T21:06:39.215Z",
@@ -172,7 +173,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 3,
+		  
 		    "comment": "This is my third comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:57.695Z",
 		    "updatedAt": "2017-02-11T21:05:57.695Z",
@@ -181,7 +182,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 2,
+		  
 		    "comment": "This is my second comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:49.586Z",
 		    "updatedAt": "2017-02-11T21:05:49.586Z",
@@ -190,7 +191,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		    "id": 1,
+		  
 		    "comment": "This is my first comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:39.826Z",
 		    "updatedAt": "2017-02-11T21:05:39.826Z",
@@ -200,7 +201,8 @@ const seedFunction = () => {
 		  }
 		])
 	})
-	}).then(data => {
+	})
+	.then(data => {
 		models.Steps.bulkCreate([
 		{
 		steps: 'boil shit in a pot',
