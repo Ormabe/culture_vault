@@ -147,7 +147,6 @@ const seedFunction = () => {
 		unit:"teaspoons",
 		RecipeId:2
 		}
-<<<<<<< HEAD
 
 	])
 		.then(data => {
