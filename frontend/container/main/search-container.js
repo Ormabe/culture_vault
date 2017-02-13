@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchByInputTerm } from ',,/actions/index';
+import { exploreSearch } from '../../actions/search-action';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ onChange(e) {
 }
 onFormSubmit(e){
   e.preventDefault()
-  this.props.searchByInputTerm(this.state.search);
+  this.props.exploreSearch(this.state.search);
   this.setState({ search: "" });
 }
 render() {
@@ -35,7 +35,7 @@ render() {
   )
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchByInputTerm }, dispatch);
+  return bindActionCreators({ exploreSearch }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar)
