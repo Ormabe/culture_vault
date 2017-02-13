@@ -7,7 +7,6 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Comment.belongsTo(models.Users)
         Comment.belongsTo(models.Experiences)
-        Comment.hasMany(models.Likes)
       }
     }
   });
