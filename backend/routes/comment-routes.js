@@ -33,10 +33,24 @@ const postAComment = ((request, response) => {
 		})
 })
 
+const deleteAComment = ((request, response) => {
+	Comment.destroy({
+		where: {
+			id: request.params.commentId
+		}
+	})
+		.then( function() {
+			response.send('Post has been deleted.');
+		})
+})
+
 router.route('/:experienceId')
 	.get(getAllComments)
 
 router.route('/experience/:experienceId')
 	.post(postAComment)
+
+router.route('/delete/:commentId')
+	.delete(deleteAComment)
 
 module.exports = router;

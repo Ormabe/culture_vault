@@ -1,4 +1,5 @@
 import axios from 'axios';
+import $ from 'jquery';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';	
@@ -12,6 +13,8 @@ class Comments extends Component {
 
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onFormSubmit = this.onFormSubmit.bind(this);
+		this.generateComments = this.generateComments.bind(this);
+		this.onDeleteClick = this.onDeleteClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -31,7 +34,7 @@ class Comments extends Component {
 		const comment = this.state.comment;
 		const experience = this.props.id;
 
-		const request = axios.post(`${ROOT_URL}experience/${experience}`, { comment })
+		axios.post(`${ROOT_URL}experience/${experience}`, { comment })
 		.then(response => {
 			console.log(response);
 		})
@@ -56,6 +59,15 @@ class Comments extends Component {
 		)
 	}
 
+	onDeleteClick(commentId) {
+		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
+
+		axios.delete(`${ROOT_URL}/${commentId}`)
+				.then(() => {
+					this.props.fetchComments(this.props.id)
+				})
+	}
+
 	generateComments() {
 		const { comments } = this.props;
 
@@ -65,7 +77,10 @@ class Comments extends Component {
 				<ul>
 					{comments.map(comment => {
 						return(
-							<li key={comment.id}>{comment.comment}</li>
+							<li key={comment.id}>
+								{comment.comment}
+								<button onClick={this.onDeleteClick.bind(this, comment.id)}>DELETE</button>
+							</li>
 						)
 					})}
 				</ul>

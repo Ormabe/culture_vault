@@ -24,6 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         Experiences.hasMany(models.ExperiencesLocations)
         Experiences.hasMany(models.Recipes)
         Experiences.hasMany(models.Comment)
+        Experiences.hasMany(models.Likes)
       }
     }
   });
