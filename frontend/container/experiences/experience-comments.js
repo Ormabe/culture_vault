@@ -60,21 +60,12 @@ class Comments extends Component {
 	}
 
 	onDeleteClick(commentId) {
-		console.log("Deleting Comment #" + commentId)
 		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
-		console.log(`${ROOT_URL}/${commentId}`)
-		// const id = {commentId: commentId}
 
-		// $.ajax({
-		// 	url: ROOT_URL,
-		// 	type: 'DELETE', 
-		// 	data: id, 
-		// })
 		axios.delete(`${ROOT_URL}/${commentId}`)
 				.then(() => {
-				console.log("Refreshing Comments");
-				this.props.fetchComments(this.props.id)
-			})
+					this.props.fetchComments(this.props.id)
+				})
 	}
 
 	generateComments() {
