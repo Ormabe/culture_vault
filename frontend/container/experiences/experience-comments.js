@@ -101,11 +101,10 @@ class Comments extends Component {
 
 		return (
 			<div >
-				{this.createAComment()};
+				{this.createAComment()}
 				<br />
 				{this.generateComments()}
-				}
-			}
+
 			</div>
 		)
 	}
