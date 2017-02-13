@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUpForm from './components/main/signupform';
-
+import NavBar from "./components/navigation/navbar.js"
+import Footer from "./components/navigation/footer.js"
 
 
 const CultureVault = React.createClass({
@@ -23,6 +24,7 @@ const CultureVault = React.createClass({
 			marginLeft: -30
 		}
 
+
 		return(
 			<div>
 				<div style={outer}>
@@ -33,9 +35,11 @@ const CultureVault = React.createClass({
 						Culture Vault
 					</div>
 				</div>
+					<NavBar />
 				<div >
 						{this.props.children}
 			</div>
+			<Footer />
 			</div>
 		)
 	}
