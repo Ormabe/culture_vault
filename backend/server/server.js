@@ -15,6 +15,7 @@ app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
 app.use('/api/comments/', indexRouter.Comments);
 
+// app.get('auth/twitter', passport.authenticate('twitter'));
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'))
 })
