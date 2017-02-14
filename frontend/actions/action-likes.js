@@ -12,3 +12,32 @@ export function fetchLikes(id) {
 		payload: request
 	}
 }
+
+/***************************************************/
+
+export const ADD_LIKES = 'ADD_LIKE';
+
+export function addLikes(experienceId,userId) {
+	const request2 = axios.post(`${ROOT_URL}/${experienceId}/${userId}`);
+
+	return {
+		type: ADD_LIKES,
+		payload: request2
+	}
+}
+
+/***************************************************/
+
+export const REMOVE_LIKES = 'REMOVE_LIKE';
+
+export function deleteLikes(experienceId,userId) {
+	const request3 = axios.delete(`${ROOT_URL}/${experienceId}/${userId}`);
+
+	return {
+		type: REMOVE_LIKES,
+		payload: request3
+	}
+}
+
+
+

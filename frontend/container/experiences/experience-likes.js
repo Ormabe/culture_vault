@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchLikes } from '../../actions/action-likes';
+import LikesImage from './likes-image';
+import LikesCounter from './likes-counter';
+import axios from 'axios'
 
 
 class Likes extends Component {
 	constructor(props){
 		super(props)
 
-		this.state = { likes: [] }
-		// this.likesCounter = this.likesCounter.bind(this);
+		this.state = { likes: []}
+			
+		this.likesCounter = this.likesCounter.bind(this)
+
 	}
 
 	componentWillMount(){
@@ -21,26 +26,38 @@ class Likes extends Component {
 
  	likesCounter() {
  		let { likes } = this.props;
-		
- 		return (
-				<div>
-					{likes.map(like => {
-						like.map(newLike => {
-							console.log("NewLike!", newLike.id)
-							return (
-								<div>
-								HELLO!
-								</div>
-							)
-						})
-					})}
-				</div>
- 		)
+		let counter = likes.length
+		console.log(counter)
+		return (
+			<div>
+			{counter}
+			</div>
+		)
  	}
+
+ 	addLikes(experienceId,userId) {
+		let ROOT_URL = `http://localhost:2222/api/likes/`
+		
+		console.log('im likeing this experience')
+		axios.post(`${ROOT_URL}${experienceId}/${userId}`)
+		.then(() => {
+			this.props.fetchLikes()
+		})
+	}
+	
+	deleteLikes(experienceId,userId) {
+		let ROOT_URL = `http://localhost:2222/api/likes/`
+
+		console.log("i am unlikeing this experience")
+		axios.delete(`${ROOT_URL}${experienceId}/${userId}`)
+		.then(() => {
+			this.props.fetchLikes()
+		})
+	}
 
  	render(){
 	let { likes } = this.props;
-		console.log(likes[0])
+		console.log(likes)
  		if(!likes[0]){
  		return(
 			<div>...Loading</div>
@@ -50,7 +67,15 @@ class Likes extends Component {
  		return (
  		 	<div>
  				Hello from the likes Component
- 				{this.likesCounter()}
+ 				
+ 				<LikesCounter likesCounter={this.likesCounter.bind(this)} />
+ 				<LikesImage 
+	 				likes={this.state.likes}
+	 				addLikes={this.addLikes.bind(this)} 
+	 				deleteLikes={this.deleteLikes.bind(this)}
+					experienceId={this.props.id}
+					userId= {1}
+	 				 />
  			</div>
 		)
  	}

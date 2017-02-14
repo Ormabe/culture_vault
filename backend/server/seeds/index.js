@@ -147,9 +147,8 @@ const seedFunction = () => {
 		unit:"teaspoons",
 		RecipeId:2
 		}
-
-	])
-	}).then(data => {
+		])
+		}).then(data => {
 		models.Comment.bulkCreate([
 			{
 		  
@@ -227,32 +226,18 @@ const seedFunction = () => {
 	}).then(data => {
 		models.Likes.bulkCreate([
 		{
-		UserLiked:true,
-		counter:0,
 		ExperienceId:1,
 		UserId:3
 		},
 		{
-		UserLiked:true,
-		counter:0,
-		ExperienceId:1,
-		UserId:3
-		},
-		{
-		UserLiked:true,
-		counter:0,
 		ExperienceId:2,
 		UserId:2
 		},
 		{
-		UserLiked:true,
-		counter:0,
 		ExperienceId:3,
 		UserId:1
 		},
 		{
-		UserLiked:true,
-		counter:0,
 		ExperienceId:1,
 		UserId:1
 		},

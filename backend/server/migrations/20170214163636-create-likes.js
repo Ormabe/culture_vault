@@ -7,19 +7,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      UserLiked: { 
-        type: Sequelize.BOOLEAN,
-         allowNull: false,
-         defaultValue: false
-        },
-      counter:{
-        type: DataTypes.BIGINT,
-          defaultValue:0
-          validate:{
-           isInt:true
-         }
-      },
+      }
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
