@@ -45,12 +45,10 @@ this.handleDialogClose = this.handleDialogClose.bind(this)
     const value = target.value
     const name = target.name
 
-    this.setState({ [name]: value }) // Local react state
+    this.setState({ [name]: value }) 
 	}
   enterUser(e) {
     e.preventDefault()
-
-    // const that = this
 
     this.props.createUserForm(this.state.email,this.state.password)
     this.setState({
@@ -124,7 +122,7 @@ this.handleDialogClose = this.handleDialogClose.bind(this)
                 labelColor={styles.color}
               />
             </div>
-            <div >
+            <div>
                <RaisedButton
                 label="Sign Up"
                 labelStyle={{fontSize: styles.fontSize}}

@@ -21,12 +21,13 @@ const allSearchTerms = ((req,res) => {
 // NEW SEARCH
 
 const newSearchTerm = ((req,res) => {
-  return models.Search.create({
+  return models.Search.findOrCreate({
     where: {
       search: req.body.search
     }
   })
   .then((data) => {
+    console.log('[=== SEARCH ROUTE FIRED ===]]')
     res.send(data)
   })
   .catch((err) => {
@@ -34,7 +35,7 @@ const newSearchTerm = ((req,res) => {
   })
 });
 
-router.route('/explore/search')
+router.route('/')
   .get(allSearchTerms)
 	.post(newSearchTerm)
 

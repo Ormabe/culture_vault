@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExploreLocations } from '../../actions/explore-action';
+import SearchBar from './search-container'
 
 
 
@@ -41,6 +42,7 @@ class Explore extends Component {
 
 		return (
 			<div>
+				<SearchBar />
 				{this.generateLocations()}
 			</div>
 		)
