@@ -25,7 +25,7 @@ class Explore extends Component {
 
 						return(
 							<li key={location.id}>
-								<Link to={"" + /country/ + location.id +""}>
+								<Link to={`/country/${location.id}`}>
 									{location.country}
 								</Link>
 							</li>
