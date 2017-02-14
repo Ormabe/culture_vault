@@ -9,7 +9,7 @@ class Comments extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { comment: '' , isEditing: false }
+		this.state = { comment: '' }
 
 		this.onDeleteClick = this.onDeleteClick.bind(this);
 		this.onInputChange = this.onInputChange.bind(this);
@@ -49,7 +49,6 @@ class Comments extends Component {
 	}
 
 	onSaveClick(commentId, newComment) {
-		console.log("Updating Comment#:" + commentId)
 		const ROOT_URL = 'http://localhost:2222/api/comments/edit';
 
 		axios.put(`${ROOT_URL}/${commentId}`, { comment: newComment })
@@ -59,7 +58,6 @@ class Comments extends Component {
 	}
 
 	onDeleteClick(commentId) {
-		console.log("Deleting Comment#:" + commentId)
 		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
 
 		axios.delete(`${ROOT_URL}/${commentId}`)

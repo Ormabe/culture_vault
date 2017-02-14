@@ -18,11 +18,10 @@ export default class ExperienceButtons extends Component {
 	}
 
 	onCancelClick() {
-		this.setState({ isEditing: false })
+		this.setState({ isEditing: false, newComment: this.props.commentComment })
 	}
 
 	onSaveClick() {
-		console.log("Save Click from Experience Buttons")
 		this.props.onSaveClick(this.props.commentId, this.state.newComment)
 		this.setState({ isEditing: false })
 	}
@@ -68,7 +67,6 @@ export default class ExperienceButtons extends Component {
 	}
 
 	render() {
-		console.log(this.state.newComment)
 		return (
 			<div >
 				{this.generateComment()}
@@ -77,5 +75,4 @@ export default class ExperienceButtons extends Component {
 			</div>
 		)
 	}
-
 } 
