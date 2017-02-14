@@ -9,16 +9,28 @@ const getExperienceLikes = (req,res) => {
 		where:{
 			ExperienceId:req.params.experienceId
 		}
-	}).then(data => res.send(data))
-		.catch(err => res.status(500).send(err))
+	})
+	.then(data => {
+		console.log("FROM ROUTES:" + data)
+		res.send(data)
+	})
+	.catch(error => {
+		res.send(error)
+	})	
 }
 
 const createLike = (req,res) => {
 	models.Likes.create({
 		ExperienceId:req.params.experienceId,
 		UserId:req.params.userId
-	}).then(data => res.send(data)) 
-		.catch(err => res.status(500).send(err))
+	})
+	.then(data => {
+		console.log("FROM ROUTES:" + data)
+		res.send(data)
+	})
+		.catch(error => {
+		res.send(error)
+	})
 }
 
 const deleteLike = (req,res)=> {
@@ -27,8 +39,13 @@ const deleteLike = (req,res)=> {
 			ExperienceId:req.params.experienceId,
 			UserId:req.params.userId
 		}
-	}).then(data => res.send(data))
-		.catch(err => res.status(500).send(err))
+	})
+	.then(data => {
+		res.send(data)
+	})
+		.catch(error => {
+		res.send(error)
+	})
 }
 ///////////////
 ///ROUTES//////
@@ -37,8 +54,8 @@ router.route('/:experienceId')
 	.get(getExperienceLikes)
 
 router.route('/:experienceId/:userId')
-.post(createLike)
-.delete(deleteLike)
+	.post(createLike)
+	.delete(deleteLike)
 ///////////////
 ////EXPORTS////
 ///////////////

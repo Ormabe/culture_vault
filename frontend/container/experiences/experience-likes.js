@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { fetchLikes } from '../../actions/action-likes';
 import LikesImage from './likes-image';
 import LikesCounter from './likes-counter';
@@ -13,7 +14,8 @@ class Likes extends Component {
 		this.state = { likes: []}
 			
 		this.likesCounter = this.likesCounter.bind(this)
-
+		this.addLikes = this.addLikes.bind(this);
+		this.deleteLikes = this.deleteLikes.bind(this);
 	}
 
 	componentWillMount(){
@@ -36,22 +38,30 @@ class Likes extends Component {
  	}
 
  	addLikes(experienceId,userId) {
-		let ROOT_URL = `http://localhost:2222/api/likes/`
+		let ROOT_URL = `/api/likes/`
 		
 		console.log('im likeing this experience')
 		axios.post(`${ROOT_URL}${experienceId}/${userId}`)
-		.then(() => { 
-			this.props.fetchLikes()
+		.then((data) => { 
+			console.log("ADD LIKE DATA:" + data)
+			this.props.fetchLikes(this.props.id)
+		})
+		.catch((error) => {
+			console.log(error)
 		})
 	}
-	
+
 	deleteLikes(experienceId,userId) {
-		let ROOT_URL = `http://localhost:2222/api/likes/`
+		let ROOT_URL = `/api/likes/`
 
 		console.log("i am unlikeing this experience")
 		axios.delete(`${ROOT_URL}${experienceId}/${userId}`)
-		.then(() => {
-			this.props.fetchLikes()
+		.then((data) => {
+			console.log("DELETE LIKE DATA:" + data)
+			this.props.fetchLikes(this.props.id)
+		})
+		.catch((error) => {
+			console.log(error)
 		})
 	}
 
@@ -74,7 +84,7 @@ class Likes extends Component {
 	 				addLikes={this.addLikes.bind(this)} 
 	 				deleteLikes={this.deleteLikes.bind(this)}
 					experienceId={this.props.id}
-					userId= {1}
+					userId={4}
 	 				 />
  			</div>
 		)
@@ -85,4 +95,8 @@ function mapStateToProps(state) {
 	return { likes: state.likes.likes }
 }
 
-export default connect(mapStateToProps, { fetchLikes })(Likes);
+function mapDispatchtoProps(dispatch) {
+	return bindActionCreators({ fetchLikes }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Likes);

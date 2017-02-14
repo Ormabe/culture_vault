@@ -42,6 +42,16 @@ const seedFunction = () => {
 	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
+	},
+	{
+	first_name: "Victor",
+	last_name: "Amos",
+	username: "victorbrooklyn",
+	password: "bkisthebest7102",
+	email: "victoramosbk@gmail.com",
+	image: "https://s25.postimg.org/g116nduov/victor_amos.jpg",
+	location: "New York City",
+	bio: "There's nothing not to love about me..."
 	}
 	]).then(data => {
 		models.Experiences.bulkCreate([

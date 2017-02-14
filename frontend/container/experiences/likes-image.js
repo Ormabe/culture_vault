@@ -7,7 +7,8 @@ export default class LikesImage extends Component {
 
 		this.state = { isLiked:false };
 
-		
+		this.onLikeClick = this.onLikeClick.bind(this);
+		this.onUnlikeClick = this.onUnlikeClick.bind(this);
 	} 
 	
 	onLikeClick(experienceId,userId) {

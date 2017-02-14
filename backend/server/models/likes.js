@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
   var Likes = sequelize.define('Likes', {}, {
      indexes: [
     {
-      unique: true,
       fields: ['UserId', 'ExperienceId']
     }
     ],
