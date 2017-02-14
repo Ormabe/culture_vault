@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Recipes.hasMany(models.Steps)
         Recipes.hasMany(models.Ingredients)
-        Recipes.belongsTo(models.Experiences)
+        Recipes.belongsTo(models.Experiences,{foreignKey: 'ExperienceId',
+        constraints: false})
       }
     }
   });
