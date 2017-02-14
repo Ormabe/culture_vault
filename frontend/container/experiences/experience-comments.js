@@ -1,20 +1,21 @@
 import axios from 'axios';
-import $ from 'jquery';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';	
 import { fetchComments, createComment } from '../../actions/action-comments'
+import ExperienceButtons from './experience-buttons';
 
 class Comments extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { comment: '' }
+		this.state = { comment: '' , isEditing: false }
 
+		this.onDeleteClick = this.onDeleteClick.bind(this);
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 		this.generateComments = this.generateComments.bind(this);
-		this.onDeleteClick = this.onDeleteClick.bind(this);
+		this.onSaveClick = this.onSaveClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -47,6 +48,26 @@ class Comments extends Component {
 		this.setState({ comment: '' })
 	}
 
+	onSaveClick(commentId, newComment) {
+		console.log("Updating Comment#:" + commentId)
+		const ROOT_URL = 'http://localhost:2222/api/comments/edit';
+
+		axios.put(`${ROOT_URL}/${commentId}`, { comment: newComment })
+			.then(() => {
+				this.props.fetchComments(this.props.id)
+			})
+	}
+
+	onDeleteClick(commentId) {
+		console.log("Deleting Comment#:" + commentId)
+		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
+
+		axios.delete(`${ROOT_URL}/${commentId}`)
+				.then(() => {
+					this.props.fetchComments(this.props.id)
+				})
+	}
+
 	createAComment() {
 		return (
 			<form onSubmit={this.onFormSubmit}>
@@ -59,17 +80,9 @@ class Comments extends Component {
 		)
 	}
 
-	onDeleteClick(commentId) {
-		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
-
-		axios.delete(`${ROOT_URL}/${commentId}`)
-				.then(() => {
-					this.props.fetchComments(this.props.id)
-				})
-	}
-
 	generateComments() {
 		const { comments } = this.props;
+		const { fetchComments } = this.props;
 
 		return(
 			<div >
@@ -78,8 +91,13 @@ class Comments extends Component {
 					{comments.map(comment => {
 						return(
 							<li key={comment.id}>
-								{comment.comment}
-								<button onClick={this.onDeleteClick.bind(this, comment.id)}>DELETE</button>
+								<ExperienceButtons
+									commentComment={comment.comment}
+									commentId={comment.id}
+									fetchComments={fetchComments}
+									onDeleteClick={this.onDeleteClick.bind(this)}
+									onSaveClick={this.onSaveClick.bind(this)}
+									/>
 							</li>
 						)
 					})}
