@@ -33,10 +33,40 @@ const postAComment = ((request, response) => {
 		})
 })
 
+const deleteAComment = ((request, response) => {
+	Comment.destroy({
+		where: {
+			id: request.params.commentId
+		}
+	})
+		.then( function() {
+			response.send('Post has been deleted.');
+		})
+})
+
+const editAComment = ((request, response) => {
+	let values = { comment: request.body.comment };
+	let selector = { where: { id: request.params.commentId }};
+
+	Comment.update(values, selector)
+		.then((data) => {
+			response.send(data);
+		})
+		.catch((error) => {
+			response.send(error)
+		})
+})
+
 router.route('/:experienceId')
 	.get(getAllComments)
 
 router.route('/experience/:experienceId')
 	.post(postAComment)
+
+router.route('/delete/:commentId')
+	.delete(deleteAComment)
+
+router.route('/edit/:commentId')
+	.put(editAComment)
 
 module.exports = router;

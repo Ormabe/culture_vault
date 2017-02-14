@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExploreLocations } from '../../actions/explore-action';
+import SearchBar from './search-container'
+import {Link} from 'react-router';
+
 
 
 
@@ -19,10 +22,18 @@ class Explore extends Component {
 			<div>
 				<ul>
 					{locations.map(location => {
+						console.log(location.id)
+						console.log("link", "" + /country/ + location.id +"")
+
 						return(
-							<li key={location.id}>{location.city}</li>
+							<li key={location.id}>
+								<Link to={`/country/${location.id}`}>
+									{location.country}
+								</Link>
+							</li>
 						)
-					})}
+					    })
+					}
 				</ul>
 			</div>
 		)
@@ -41,6 +52,7 @@ class Explore extends Component {
 
 		return (
 			<div>
+				<SearchBar />
 				{this.generateLocations()}
 			</div>
 		)

@@ -1,7 +1,9 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';	
 import { fetchComments, createComment } from '../../actions/action-comments'
+import ExperienceButtons from './experience-buttons';
 
 class Comments extends Component {
 	constructor(props) {
@@ -9,8 +11,11 @@ class Comments extends Component {
 
 		this.state = { comment: '' }
 
+		this.onDeleteClick = this.onDeleteClick.bind(this);
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onFormSubmit = this.onFormSubmit.bind(this);
+		this.generateComments = this.generateComments.bind(this);
+		this.onSaveClick = this.onSaveClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -26,13 +31,39 @@ class Comments extends Component {
 
 	onFormSubmit(e) {
 		e.preventDefault()
-		console.log("Form Submitted: " + this.state.comment)
-		const { createComment } = this.props;
+		const ROOT_URL = 'http://localhost:2222/api/comments/'
 		const comment = this.state.comment;
 		const experience = this.props.id;
 
-		createComment(comment, experience)
-		this.setState({ comment: '' });
+		axios.post(`${ROOT_URL}experience/${experience}`, { comment })
+		.then(response => {
+			console.log(response);
+		})
+		.catch(error => {
+			console.log(error);
+		})
+			.then(() => {
+				this.props.fetchComments(this.props.id)
+			})
+		this.setState({ comment: '' })
+	}
+
+	onSaveClick(commentId, newComment) {
+		const ROOT_URL = 'http://localhost:2222/api/comments/edit';
+
+		axios.put(`${ROOT_URL}/${commentId}`, { comment: newComment })
+			.then(() => {
+				this.props.fetchComments(this.props.id)
+			})
+	}
+
+	onDeleteClick(commentId) {
+		const ROOT_URL = 'http://localhost:2222/api/comments/delete';
+
+		axios.delete(`${ROOT_URL}/${commentId}`)
+				.then(() => {
+					this.props.fetchComments(this.props.id)
+				})
 	}
 
 	createAComment() {
@@ -49,6 +80,7 @@ class Comments extends Component {
 
 	generateComments() {
 		const { comments } = this.props;
+		const { fetchComments } = this.props;
 
 		return(
 			<div >
@@ -56,7 +88,15 @@ class Comments extends Component {
 				<ul>
 					{comments.map(comment => {
 						return(
-							<li key={comment.id}>{comment.comment}</li>
+							<li key={comment.id}>
+								<ExperienceButtons
+									commentComment={comment.comment}
+									commentId={comment.id}
+									fetchComments={fetchComments}
+									onDeleteClick={this.onDeleteClick.bind(this)}
+									onSaveClick={this.onSaveClick.bind(this)}
+									/>
+							</li>
 						)
 					})}
 				</ul>
@@ -77,11 +117,10 @@ class Comments extends Component {
 
 		return (
 			<div >
-				{this.createAComment()};
+				{this.createAComment()}
 				<br />
 				{this.generateComments()}
-				}
-			}
+
 			</div>
 		)
 	}
