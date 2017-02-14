@@ -30,7 +30,8 @@ class Explore extends Component {
 								</Link>
 							</li>
 						)
-					})}
+					    })
+					}
 				</ul>
 			</div>
 		)
