@@ -44,6 +44,19 @@ const deleteAComment = ((request, response) => {
 		})
 })
 
+const editAComment = ((request, response) => {
+	let values = { comment: request.body.comment };
+	let selector = { where: { id: request.params.commentId }};
+
+	Comment.update(values, selector)
+		.then((data) => {
+			response.send(data);
+		})
+		.catch((error) => {
+			response.send(error)
+		})
+})
+
 router.route('/:experienceId')
 	.get(getAllComments)
 
@@ -52,5 +65,8 @@ router.route('/experience/:experienceId')
 
 router.route('/delete/:commentId')
 	.delete(deleteAComment)
+
+router.route('/edit/:commentId')
+	.put(editAComment)
 
 module.exports = router;

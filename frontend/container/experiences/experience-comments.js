@@ -15,6 +15,7 @@ class Comments extends Component {
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 		this.generateComments = this.generateComments.bind(this);
+		this.onSaveClick = this.onSaveClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -45,6 +46,16 @@ class Comments extends Component {
 				this.props.fetchComments(this.props.id)
 			})
 		this.setState({ comment: '' })
+	}
+
+	onSaveClick(commentId, newComment) {
+		console.log("Updating Comment#:" + commentId)
+		const ROOT_URL = 'http://localhost:2222/api/comments/edit';
+
+		axios.put(`${ROOT_URL}/${commentId}`, { comment: newComment })
+			.then(() => {
+				this.props.fetchComments(this.props.id)
+			})
 	}
 
 	onDeleteClick(commentId) {
@@ -80,11 +91,12 @@ class Comments extends Component {
 					{comments.map(comment => {
 						return(
 							<li key={comment.id}>
-								{comment.comment}
 								<ExperienceButtons
+									commentComment={comment.comment}
 									commentId={comment.id}
 									fetchComments={fetchComments}
 									onDeleteClick={this.onDeleteClick.bind(this)}
+									onSaveClick={this.onSaveClick.bind(this)}
 									/>
 							</li>
 						)
