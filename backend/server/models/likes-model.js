@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Likes.belongsTo(models.Users,{foreignKey: 'UserId',
         constraints: false,})
-        Likes.belongsTo(models.Comment,{foreignKey: 'CommentId',
+        Likes.belongsTo(models.Experiences,{foreignKey: 'ExperienceId',
         constraints: false,})
       }
     }

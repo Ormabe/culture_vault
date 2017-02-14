@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchExperience } from '../../actions/action-experiences';
+import Comments from './experience-comments';
 
 class Experience extends Component {
 	componentWillMount() { 
 		const { fetchExperience } = this.props;
-		const experience = this.props.params.id
+		const id = this.props.params.id
 		
-		fetchExperience(experience);
+		fetchExperience(id);
 	}
 
 	user() {
@@ -49,11 +50,11 @@ class Experience extends Component {
 		<div>
 			<h3>{recipeName}</h3>
 			<img src={recipeImage} alt={recipeName} />
-			
-			<h5>INGREDIENTS:</h5>
+			<br />
+			<strong>INGREDIENTS:</strong>
 			{this.generateIngredients()}
 			
-			<h5>STEPS:</h5>
+			<strong>STEPS:</strong>
 			{this.generateSteps()}
 		</div>
 		)
@@ -109,6 +110,8 @@ class Experience extends Component {
 					{this.story()}
 					<br />
 					{this.recipe()}
+					<br />
+					<Comments id={this.props.params.id}/>
 			</div>
 		)
 	}
@@ -118,4 +121,4 @@ function mapStateToProps(state) {
 	return { experience: state.experiences.experience }
 }
 
-export default connect(mapStateToProps, { fetchExperience })(Experience)
+export default connect(mapStateToProps, { fetchExperience })(Experience);
