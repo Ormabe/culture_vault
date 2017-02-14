@@ -132,7 +132,7 @@ const seedFunction = () => {
 		quantity:2,
 		unit:"teaspoons",
 		RecipeId:2
-		},
+		}, 
 
 		{
 		name:"black peppercorns",
@@ -147,8 +147,8 @@ const seedFunction = () => {
 		unit:"teaspoons",
 		RecipeId:2
 		}
-		])
-		}).then(data => {
+	])
+	}).then(data => {
 		models.Comment.bulkCreate([
 			{
 		  

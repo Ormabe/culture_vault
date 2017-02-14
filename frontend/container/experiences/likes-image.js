@@ -8,7 +8,7 @@ export default class LikesImage extends Component {
 		this.state = { isLiked:false };
 
 		
-	}
+	} 
 	
 	onLikeClick(experienceId,userId) {
 		this.props.addLikes(this.props.experienceId,this.props.userId)

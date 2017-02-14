@@ -40,7 +40,7 @@ class Likes extends Component {
 		
 		console.log('im likeing this experience')
 		axios.post(`${ROOT_URL}${experienceId}/${userId}`)
-		.then(() => {
+		.then(() => { 
 			this.props.fetchLikes()
 		})
 	}

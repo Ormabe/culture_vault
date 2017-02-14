@@ -17,7 +17,7 @@ const createLike = (req,res) => {
 	models.Likes.create({
 		ExperienceId:req.params.experienceId,
 		UserId:req.params.userId
-	}).then(data => res.send(data))
+	}).then(data => res.send(data)) 
 		.catch(err => res.status(500).send(err))
 }
 
