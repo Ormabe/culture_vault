@@ -1,21 +1,21 @@
 import axios from 'axios'
 
-export const CREATE_USER = 'CREATE_USER'
+export const EXPLORE_SEARCH = 'EXPLORE_SEARCH'
 
 
-export function createUserForm (email,password) {
-const postUser = axios.post('api/explore/users', {
-                        email,
-                        password
+export function exploreSearch (search) {
+const postSearch = axios.post('api/explore/search', {
+                        search
                       })
                       .then(function (response) {
+                        console.log('[=== SEARCH ACTION FIRED ===]')
                         console.log(response);
                       })
                       .catch(function (error) {
                         console.log(error);
                       });
   return {
-    type: CREATE_USER,
-    payload: postUser
+    type: EXPLORE_SEARCH,
+    payload: postSearch
   }
 }

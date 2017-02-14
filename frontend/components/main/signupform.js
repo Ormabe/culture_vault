@@ -45,12 +45,10 @@ this.handleDialogClose = this.handleDialogClose.bind(this)
     const value = target.value
     const name = target.name
 
-    this.setState({ [name]: value }) // Local react state
+    this.setState({ [name]: value }) 
 	}
   enterUser(e) {
     e.preventDefault()
-
-    // const that = this
 
     this.props.createUserForm(this.state.email,this.state.password)
     this.setState({
@@ -113,14 +111,29 @@ this.handleDialogClose = this.handleDialogClose.bind(this)
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
         />
         <br />
-        <RaisedButton
-          label="Submit"
-          labelStyle={{fontSize: styles.fontSize}}
-          type="submit"
-          backgroundColor={styles.backgroundColor}
-          style={{color: "#FFFFFF"}}
-          icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
-        />
+
+          <div>
+            <div >
+              <RaisedButton
+                label="Log In"
+                labelStyle={{fontSize: styles.fontSize}}
+                type="submit"
+                backgroundColor={styles.backgroundLogIn}
+                labelColor={styles.color}
+              />
+            </div>
+            <div>
+               <RaisedButton
+                label="Sign Up"
+                labelStyle={{fontSize: styles.fontSize}}
+                type="submit"
+                backgroundColor={styles.backgroundSignUp}
+                labelColor={styles.color}
+                // icon={<FaEmail style={{fontSize: styles.fontSize}}/>}
+              />
+            </div>
+          </div>
+
       </form>
       <h3>OR</h3>
       <br />
