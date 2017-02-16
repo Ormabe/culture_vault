@@ -49,7 +49,7 @@ app.use('/api/explore/search', indexRouter.Search);
 app.use('/api/experiences', indexRouter.Experiences)
 app.use('/api/', indexRouter.Login)
 
-app.get('auth/twitter', passport.authenticate('twitter'));
+
 app.get('/*', function(req, res) {
 
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'))
