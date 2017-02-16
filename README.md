@@ -49,6 +49,8 @@ Back-end (for MAC):
 * [Postico](https://eggerapps.at/postico/)
 * [Express](http://expressjs.com/)
 * [Sequelize](http://docs.sequelizejs.com/en/v3/)
+* [Passport](http://passportjs.org)
+* [BCrypt](https://github.com/shaneGirish/bcrypt-nodejs)
 
 
 Front-end:
@@ -73,6 +75,10 @@ This is a simple web-based app that uses restful API to create, retrieve, update
 
 - **Express.js** or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It is the de facto standard server framework for Node.js.
 
+- **Passportjs** An authentication middleware for Node.js.
+
+- **BCrypt** An adaptive hash function based on the Blowfish symmetric block cipher cryptographic algorithm.
+
 - **Material-UI** A Set of React Components that Implement Google's Material Design.
 
 ## Credits
@@ -81,7 +87,7 @@ To our awesome core team with help of our contributors which have made this proj
 
 * [Victor Amos](https://github.com/victoramosjr)
 * [Niko Lewis](https://github.com/NikoLewis)
-* [Chanice Stlouis](https://github.com/ChaniceStl)
+* [Chanice St. Louis](https://github.com/ChaniceStl)
 * [Rabiya Watson](https://github.com/Ormabe)
 
 ## Special Thanks

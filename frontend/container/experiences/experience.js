@@ -14,9 +14,13 @@ class Experience extends Component {
 
 	user() {
 		const { experience } = this.props;
+		if(!experience.user){
+			return null;
+		}
 		const userName = `${experience.user.first_name} ${experience.user.last_name}`;
 		const userImage = experience.user.image;
 		const userLocation = experience.user.location;
+		
 
 		return (
 			<div >

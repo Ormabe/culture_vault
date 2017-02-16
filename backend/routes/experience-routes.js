@@ -1,5 +1,85 @@
 const router = require('express').Router();
-const models = require('../server/models');
+const Locations = require('../server/models').Locations;
+const Experiences = require('../server/models').Experiences;
+const models = require('../server/models')
+
+const ExperiencesLocations = require('../server/models').ExperiencesLocations;
+
+const createAnExperience = (req, res) => {
+	let storage ={
+		locationId:null,
+		quote: req.body.quote,
+		story: req.body.story,
+		image: req.body.image,
+		UserId: req.params.userId,
+		//*******LOCATION*********//
+		country: req.body.country,
+		city: req.body.city,
+		//*****INGREDIENTS********//
+		ingredients:req.body.ingredients,
+		recipeId:null,
+		//*********STEPS*********//
+		steps: req.body.steps,
+		//********RECIPE*********//
+		recipe:req.body.name,
+		experienceId:null
+	};
+	
+
+	 Experiences.create({
+				quote: storage.quote,
+				story: storage.story,
+				image: storage.image,
+				UserId: storage.userId
+	})
+	 .then(data => storage.experienceId = data.id)
+
+	 .then(data => {
+		 return Locations.create({
+				country: storage.country,
+				city: storage.city 
+		})
+	})
+	 .then(location => storage.locationId = location.id)
+
+	 .then(data => {
+	 	 ExperiencesLocations.create({
+	 		ExperienceId:storage.experienceId,
+	 		LocationId:storage.locationId
+	 	})
+	 })
+	 .then(data => {
+	 	return models.Recipes.create({
+	 		name:storage.recipe,
+	 		ExperienceId:storage.experienceId
+	 	})
+	 })
+	 .then(recipe => storage.recipeId = recipe.id)
+
+	 .then(data => {
+	 
+	 	return	models.Ingredients.bulkCreate(
+	 		storage.ingredients.map(val => {
+	 			val.RecipeId = storage.recipeId;
+
+	 			return val;
+	 		})
+	 	)
+ })
+	 .then(data => {
+	 	return models.Steps.bulkCreate(
+	 			storage.steps.map(val => {
+	 				val.RecipeId = storage.recipeId;
+
+	 				return val
+	 			})
+	 		)
+	 })
+	.then(sometin => {
+		res.send(storage)
+	})
+		.catch(error => console.log(error))
+}
 
 const getExperience = (req, res) => {
 	let data ={user:null,location:null,recipe:null,experience:null,steps:null,ingredients:null,sneakUserId:null};
@@ -70,14 +150,25 @@ const getFeature = (req,res) => {
 	.catch(error => res.status(500).send(error))
 };
 
+const createExperience = (req,res) => {
+	models.ExperiencesLocations.create({
+
+	})
+}
+
 /////////////////
 ////ROUTER///////
 /////////////////
+router.route('/create/:userId')
+	.post(createAnExperience)
+
 router.route('/experience/:experienceId')
 	.get(getExperience)
+	.post(createExperience)
 
 router.route('/experience')
 	.get(getFeature)
+
 /////////////////
 /////EXPORTS/////
 /////////////////
