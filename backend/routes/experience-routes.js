@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const Locations = require('../server/models').Locations;
 const Experiences = require('../server/models').Experiences;
-const models = require('../server/models')
+const Recipes = require('../server/models').Recipes;
+const Ingredients = require('../server/models').Ingredients;
+const Steps = require('../server/models').Steps;
+const Users = require('../server/models').Users;
 
 const ExperiencesLocations = require('../server/models').ExperiencesLocations;
 
@@ -49,7 +52,7 @@ const createAnExperience = (req, res) => {
 	 	})
 	 })
 	 .then(data => {
-	 	return models.Recipes.create({
+	 	return Recipes.create({
 	 		name:storage.recipe,
 	 		ExperienceId:storage.experienceId
 	 	})
@@ -58,7 +61,7 @@ const createAnExperience = (req, res) => {
 
 	 .then(data => {
 	 
-	 	return	models.Ingredients.bulkCreate(
+	 	return	Ingredients.bulkCreate(
 	 		storage.ingredients.map(val => {
 	 			val.RecipeId = storage.recipeId;
 
@@ -67,7 +70,7 @@ const createAnExperience = (req, res) => {
 	 	)
  })
 	 .then(data => {
-	 	return models.Steps.bulkCreate(
+	 	return Steps.bulkCreate(
 	 			storage.steps.map(val => {
 	 				val.RecipeId = storage.recipeId;
 
@@ -84,11 +87,11 @@ const createAnExperience = (req, res) => {
 const getExperience = (req, res) => {
 	let data ={user:null,location:null,recipe:null,experience:null,steps:null,ingredients:null,sneakUserId:null};
 
-	 models.ExperiencesLocations.findOne({
+	 ExperiencesLocations.findOne({
 		where:{
 		ExperienceId:req.params.experienceId
 	},
-	include:[models.Experiences,models.Locations]
+	include:[Experiences,Locations]
 })
 	.then(experienceLocation => {
 		// freezing the Experience object and Location
@@ -107,7 +110,7 @@ const getExperience = (req, res) => {
 
 		let recipeId = 2
 
-		return models.Steps.findAll({
+		return Steps.findAll({
 			where:{
 			RecipeId:recipeId
 			},
@@ -119,7 +122,7 @@ const getExperience = (req, res) => {
 
 		let recipeId = 2
 
-		return models.Ingredients.findAll({
+		return Ingredients.findAll({
 			where:{
 				RecipeId:recipeId
 			},
@@ -129,7 +132,7 @@ const getExperience = (req, res) => {
 	.then(ingredients => {
 		data.ingredients = ingredients
 
-		return models.Users.findOne({
+		return Users.findOne({
 			where: {
 				id:data.sneakUserId
 			}
@@ -145,31 +148,18 @@ const getExperience = (req, res) => {
 };
 
 const getFeature = (req,res) => {
-	models.Experiences.findAll()
+	Experiences.findAll()
 	.then(data => res.send(data))
 	.catch(error => res.status(500).send(error))
 };
 
-const createExperience = (req,res) => {
-	models.ExperiencesLocations.create({
-
-	})
-}
-
-/////////////////
-////ROUTER///////
-/////////////////
 router.route('/create/:userId')
 	.post(createAnExperience)
 
 router.route('/experience/:experienceId')
 	.get(getExperience)
-	.post(createExperience)
 
-router.route('/experience')
+router.route('/featured')
 	.get(getFeature)
 
-/////////////////
-/////EXPORTS/////
-/////////////////
 module.exports = router;

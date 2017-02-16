@@ -1,12 +1,10 @@
-//IMPORT MODULES
-const express = require('express')
-const router = express.Router();
-const models = require('../server/models');
+const router = require('express').Router();
+const Locations = require('../server/models').Locations;
+const Search = require('../server/models').Search;
+
  
-//=====================================
-// BY CONTINENT
 const findAllContinents = ((req,res) => {
-  return models.Locations.findAll({
+  return Locations.findAll({
     order: [['continent', 'ASC']]
   })
   .then((data) => {
@@ -18,7 +16,7 @@ const findAllContinents = ((req,res) => {
 });
 
 const findByContinent = ((req, res) => {
-		models.Locations.findAll({
+		Locations.findAll({
       where: {
         continent: req.params.continent
       }
@@ -31,10 +29,8 @@ const findByContinent = ((req, res) => {
 		})
 	});
 
-  //=====================================
-  // BY COUNTRY
 const findAllCountries = ((req,res) => {
-  return models.Locations.findAll({
+  return Locations.findAll({
     order: [['country', 'ASC']]
   })
   .then((data) => {
@@ -46,7 +42,7 @@ const findAllCountries = ((req,res) => {
 });
 
 const findByCountry = ((req, res) => {
-		models.Locations.findAll({
+		Locations.findAll({
       where: {
         id: req.params.id
       }
@@ -59,10 +55,8 @@ const findByCountry = ((req, res) => {
 		})
 	});
 
-  //=====================================
-  // BY STATE
 const findAllStates = ((req,res) => {
-  return models.Locations.findAll({
+  return Locations.findAll({
     order: [['state', 'ASC']]
   })
   .then((data) => {
@@ -74,7 +68,7 @@ const findAllStates = ((req,res) => {
 });
 
 const findByState = ((req, res) => {
-		models.Locations.findAll({
+		Locations.findAll({
       where: {
         state: req.params.state
       }
@@ -87,10 +81,8 @@ const findByState = ((req, res) => {
 		})
 	});
 
-  //=====================================
-  // BY REGION
 const findAllRegions = ((req,res) => {
-  return models.Locations.findAll({
+  return Locations.findAll({
     order: [['region', 'ASC']]
   })
   .then((data) => {
@@ -102,7 +94,7 @@ const findAllRegions = ((req,res) => {
 });
 
 const findByRegion = ((req, res) => {
-		models.Locations.findAll({
+		Locations.findAll({
       where: {
         region: req.params.region
       }
@@ -115,11 +107,8 @@ const findByRegion = ((req, res) => {
 		})
 	});
 
-  //=====================================
-  // BY CITY
-
 const findAllCities = ((req,res) => {
-  return models.Locations.findAll({
+  return Locations.findAll({
     order: [['city', 'ASC']]
   })
   .then((data) => {
@@ -131,7 +120,7 @@ const findAllCities = ((req,res) => {
 });
 
 const findByCity = ((req, res) => {
-		models.Locations.findAll({
+		Locations.findAll({
       where: {
         city: req.params.city
       }
@@ -144,41 +133,78 @@ const findByCity = ((req, res) => {
 		})
 	});
 
-
 const getExperiences = (req,res) => {
-  models.ExperiencesLocations.findAll({
+  ExperiencesLocations.findAll({
     where:{
       LocationId:req.params.locationId
     },
-    include:[models.Experiences]
+    include:[Experiences]
   })
   .then(data => res.send(data))
   .catch(err => res.status(500).send(err))
 };
 
+const allSearchTerms = ((req,res) => {
+  return Search.findAll({
+    order: [['id', 'ASC']]
+  })
+  .then((data) => {
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
 
-//ROUTES
+const newSearchTerm = ((req,res) => {
+  return Search.findOrCreate({
+    where: {
+      search: req.body.search
+    }
+  })
+  .then((data) => {
+    console.log('[=== SEARCH ROUTE FIRED ===]]')
+    res.send(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
+
+router.route('/search')
+  .get(allSearchTerms)
+  .post(newSearchTerm)
+
 router.route('/country/:locationId')
   .get(getExperiences)
 
 router.route('/continents')
   .get(findAllContinents)
+
 router.route('/continents/:continent')
   .get(findByContinent)
+
 router.route('/countries')
   .get(findAllCountries)
+
 router.route('/countries/:id')
   .get(findByCountry)
+
 router.route('/states')
   .get(findAllStates)
+
 router.route('/states/:state')
   .get(findByState)
+
 router.route('/regions')
   .get(findAllRegions)
+
 router.route('/regions/:region')
   .get(findByRegion)
+
 router.route('/cities')
   .get(findAllCities)
+
 router.route('/cities/:city')
   .get(findByCity)
 

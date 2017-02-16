@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const models = require('../server/models');
+const Likes = require('../server/models').Likes;
 
-///////////////
-//FUNCTION/////
-///////////////
+
 const getExperienceLikes = (req,res) => {
-	models.Likes.findAll({
+	Likes.findAll({
 		where:{
 			ExperienceId:req.params.experienceId
 		}
@@ -20,7 +18,7 @@ const getExperienceLikes = (req,res) => {
 }
 
 const createLike = (req,res) => {
-	models.Likes.create({
+	Likes.create({
 		ExperienceId:req.params.experienceId,
 		UserId:req.user.id
 	})
@@ -34,7 +32,7 @@ const createLike = (req,res) => {
 }
 
 const deleteLike = (req,res)=> {
-	models.Likes.destroy({
+	Likes.destroy({
 		where:{
 			ExperienceId:req.params.experienceId,
 			UserId:req.user.id
@@ -47,16 +45,14 @@ const deleteLike = (req,res)=> {
 		res.send(error)
 	})
 }
-///////////////
-///ROUTES//////
-///////////////
+
+
 router.route('/:experienceId')
 	.get(getExperienceLikes)
 
 router.route('/:experienceId/:userId')
 	.post(createLike)
 	.delete(deleteLike)
-///////////////
-////EXPORTS////
-///////////////
+
+
 module.exports = router
