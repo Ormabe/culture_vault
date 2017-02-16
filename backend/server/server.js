@@ -39,8 +39,6 @@ app.use((req, res, next) => {
 });
 
 
-
-// app.use('/api/explore/country', indexRouter.Experiences);
 app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
 app.use('/api/comments/', indexRouter.Comments);

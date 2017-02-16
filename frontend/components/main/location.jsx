@@ -1,16 +1,8 @@
-import React from 'react'
-import {getExperience} from '../../actions/location-action.js'
-import CreateExperience from './experience-create';
-
-const Locations = React.createClass({
-	// componentDidMount(){
-	
-	// },
-	render(){
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { getExperience } from '../../actions/location-action.js'
+import CreateExperience from './experience-create';
 
 class Locations extends Component {
 
@@ -21,7 +13,7 @@ class Locations extends Component {
 
 	render() {
 		return (
-		<div>...Loading
+		<div>
 		<CreateExperience />
 		</div>
 			)
@@ -33,4 +25,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {getExperience})(Locations);
-
