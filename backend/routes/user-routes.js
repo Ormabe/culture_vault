@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router();
 const models = require('../server/models');
 
+
 //=====================================
 // ALL USERS
 const usersAll = ((req,res) => {
@@ -87,6 +88,8 @@ const findUserByUsername = ((req, res) => {
 // 			res.send(err)
 // 		})
 // 	})
+
+
 
 //ROUTES
 router.route('/')
