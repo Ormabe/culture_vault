@@ -2,13 +2,14 @@ import axios from 'axios'
 
 export const FETCH_LOCATION = 'FETCH_LOCATION';
 
-const ROOT_URL = 'http://localhost:2222/api/explore/countries/';
+const ROOT_URL = 'http://localhost:2222/api/explore/country/';
 
 
-export function getFeature() {
- const request = axios.get(ROOT_URL);
+export function getCountryExperience(countryId) {
+ const request = axios.get(`ROOT_URL${countryId}`);
+ 
 	return {
-		type: 'FETCH_FEATURES',
+		type: 'FETCH_LOCATION',
 		payload: request
 	} 
 }

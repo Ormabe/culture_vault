@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import Experience from './container/experiences/experience.js'
 import Feature from './container/main/feature-container.js'
 import ExploreContainer from './container/main/explore-container.js'
-import LocationContainer from './container/main/location-container.js'
+import LocationContainer from './container/main/location.jsx'
 import CultureVault from './cultureVault.js';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
