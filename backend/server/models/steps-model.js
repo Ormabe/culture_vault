@@ -7,8 +7,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Steps.belongsTo(models.Recipes,{foreignKey:'RecipeId',
-        constraints: false})
+        Steps.belongsTo(models.Recipes)
       }
     }
   });
@@ -16,4 +15,3 @@ module.exports = function(sequelize, DataTypes) {
 };
 
 
-//DataTypes.ARRAY(DataTypes.String)

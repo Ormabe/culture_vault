@@ -40,7 +40,8 @@ Thumbs.db
 backend/server/config/config.json
 node_modules
 
-*.env
 *.eslintrc.js
 frontend/public/bundle.js
 frontend/public/bundle.js.map
+*.env
+
