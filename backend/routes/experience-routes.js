@@ -150,6 +150,12 @@ const getFeature = (req,res) => {
 	.catch(error => res.status(500).send(error))
 };
 
+const createExperience = (req,res) => {
+	models.ExperiencesLocations.create({
+
+	})
+}
+
 /////////////////
 ////ROUTER///////
 /////////////////
@@ -158,9 +164,11 @@ router.route('/create/:userId')
 
 router.route('/experience/:experienceId')
 	.get(getExperience)
+	.post(createExperience)
 
 router.route('/experience')
 	.get(getFeature)
+
 /////////////////
 /////EXPORTS/////
 /////////////////

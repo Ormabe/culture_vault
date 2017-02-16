@@ -1,20 +1,13 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Likes = sequelize.define('Likes', {
-    UserLiked:{
-     type: DataTypes.BOOLEAN,
-      allowNull: false, 
-      defaultValue: false
-    },
-
-    counter:{
-      type: DataTypes.BIGINT,
-      defaultValue:0,
-      validate:{
-        isInt:true
-      }
+  var Likes = sequelize.define('Likes', {}, {
+      indexes: [
+    // Create a unique index on email
+    {
+      unique: true,
+      fields: ['ExperienceId',"UserId"]
     }
-  }, {
+    ],
     classMethods: {
       associate: function(models) {
         Likes.belongsTo(models.Users,{foreignKey: 'UserId',

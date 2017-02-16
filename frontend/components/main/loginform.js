@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createUserForm } from '../../actions/signup-action';
+import { loginUserFunc } from '../../actions/login-action';
 import { bindActionCreators } from 'redux';
 
 import axios from 'axios';
@@ -13,7 +13,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import TextField from 'material-ui/TextField';
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 
 const muiTheme = getMuiTheme();
 
@@ -23,12 +23,12 @@ const customContentStyle = require('./signup-style').customContentStyle
 var FaFacebook = require('react-icons/lib/fa/facebook-square')
 var FaGoogle = require('react-icons/lib/fa/google-plus-square')
 
-class SignUpForm extends Component {
+class LogInForm extends Component {
   constructor(props) {
     super(props);
 
   this.handleChange = this.handleChange.bind(this)
-  this.enterUser = this.enterUser.bind(this)
+  this.loginUser = this.loginUser.bind(this)
   this.handleDialogOpen = this.handleDialogOpen.bind(this)
   this.handleDialogClose = this.handleDialogClose.bind(this)
 
@@ -45,10 +45,10 @@ class SignUpForm extends Component {
 
     this.setState({ [name]: value })
 	}
-  enterUser(e) {
+  loginUser(e) {
     e.preventDefault()
 
-    this.props.createUserForm(this.state.email,this.state.password)
+    this.props.loginUserFunc(this.state.email,this.state.password)
     this.setState({
       email:"",
       password:""
@@ -71,9 +71,9 @@ class SignUpForm extends Component {
     return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        <RaisedButton label="SIGN UP" onTouchTap={this.handleDialogOpen} />
+        <RaisedButton label="LOG IN" onTouchTap={this.handleDialogOpen} />
         <Dialog
-          title="SIGN UP TO CULTURE VAULT"
+          title="LOG IN TO CULTURE VAULT"
           actions={actions}
           modal={false}
           open={this.state.open}
@@ -81,7 +81,7 @@ class SignUpForm extends Component {
           onRequestClose={this.handleDialogClose}
           style={{textAlign: styles.textAlign}}
         >
-      <form onSubmit={this.enterUser} autoComplete="off">
+      <form onSubmit={this.loginUser} autoComplete="off">
         <TextField
           name="email"
           value={this.state.email}
@@ -100,14 +100,33 @@ class SignUpForm extends Component {
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
         />
         <br />
-         <RaisedButton
-          label="Sign Up"
-          labelStyle={{fontSize: styles.fontSize}}
-          type="submit"
-          backgroundColor={styles.backgroundSignUp}
-          labelColor={styles.color}
-        />
+          <RaisedButton
+            label="Log In"
+            labelStyle={{fontSize: styles.fontSize}}
+            type="submit"
+            backgroundColor={styles.backgroundLogIn}
+            labelColor={styles.color}
+          />
       </form>
+      <h3>OR</h3>
+      <br />
+      <RaisedButton
+        href="https://www.facebook.com"
+        disabled={true}
+        target="_blank"
+        label="Facebook Sign-In"
+        style={styles.button}
+        icon={<FaFacebook />}
+      />
+      <br />
+      <RaisedButton
+        href="https://www.google.com"
+        disabled={true}
+        target="_blank"
+        label="Google Sign-In"
+        style={styles.button}
+        icon={<FaGoogle />}
+      />
     </Dialog>
     </div>
     </MuiThemeProvider>
@@ -116,7 +135,7 @@ class SignUpForm extends Component {
 };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createUserForm  }, dispatch);
+  return bindActionCreators({ loginUserFunc  }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SignUpForm)
+export default connect(null, mapDispatchToProps)(LogInForm)
