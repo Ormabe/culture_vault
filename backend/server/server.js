@@ -10,12 +10,13 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname,'../../frontend/public')))
 
-app.use('/api/explore/country', indexRouter.Experiences);
+// app.use('/api/explore/country', indexRouter.Experiences);
 app.use('/api/explore/users', indexRouter.Users);
 app.use('/api/explore/', indexRouter.Locations);
 app.use('/api/comments/', indexRouter.Comments);
 app.use('/api/likes', indexRouter.Likes)
 app.use('/api/explore/search', indexRouter.Search);
+app.use('/api/experiences', indexRouter.Experiences)
 
 // app.get('auth/twitter', passport.authenticate('twitter'));
 app.get('/*', function(req, res) {

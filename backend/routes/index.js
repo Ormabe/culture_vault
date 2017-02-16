@@ -13,7 +13,6 @@ module.exports = {
 		Users,
 		Comments,
 		Likes,
-		// Authentication,
 		Search
 	}
 }

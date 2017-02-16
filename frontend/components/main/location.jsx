@@ -1,13 +1,16 @@
 import React from 'react'
 import {getExperience} from '../../actions/location-action.js'
+import CreateExperience from './experience-create';
 
 const Locations = React.createClass({
-	componentDidMount(){
+	// componentDidMount(){
 	
-	},
+	// },
 	render(){
 		return (
-		<div>...Loading</div>
+		<div>...Loading
+		<CreateExperience />
+		</div>
 			)
 	}
 })

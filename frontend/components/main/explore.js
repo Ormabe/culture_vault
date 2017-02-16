@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CreateExperience from './experience-create';
 import { getLocations } from '../../actions/explore-action.js'
 import { Link } from 'react-router'
 
@@ -18,6 +18,7 @@ console.log(this.props.explore[0])
 		return(
 			<div>
 				I'm the Explore component. I will map a list of location links.
+				<CreateExperience />
 				<ul>
         		{explore}
         		</ul>
