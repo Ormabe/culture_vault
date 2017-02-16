@@ -18,8 +18,8 @@ passport.use('local', new LocalStrategy({
     passwordField: 'password'
   },
   function(email, password, done) {
-    console.log("<====== TRYING TO AUTHENTICATE ======>")
-    console.log('< ****** LOOK AT ME ****** >',email, password)
+    // <====== BEGIN AUTHENTICATION ======>"
+
     models.Users.findOne({
       where: {
         email: email
@@ -27,23 +27,23 @@ passport.use('local', new LocalStrategy({
     })
     .then( function(user) {
       if (!user) {
-        console.log("<====== NOT FOUND ======>")
+        // <====== EMAIL NOT FOUND ======>
         return done(null, false, {
           message: 'Email does not exist.'
         });
       }
       if (!user.validPassword(password)) {
-        console.log("<====== INVALID PASSWORD ======>")
+        // <====== INVALID PASSWORD ======>
         return done(null, false, {
           message: 'Incorrect password.'
         });
       }
-      console.log("<====== WOOHOO ======>")
+      // <====== AUTHENTICATION COMPLETE ======>
       return done(null, user);
     })
     .catch((err) => {
       if (err) {
-        console.log("<====== ERROR ======>", err)
+        // <====== ERROR ======>
         return done(err);
       }
     });
