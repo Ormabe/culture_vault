@@ -108,7 +108,7 @@ const getExperience = (req, res) => {
 		//freeze recipe object
 		data.recipe = recipe
 
-		let recipeId = 2
+		let recipeId = data.recipe.id
 
 		return Steps.findAll({
 			where:{
@@ -120,7 +120,7 @@ const getExperience = (req, res) => {
 	.then(steps => {
 		data.steps = steps
 
-		let recipeId = 2
+		let recipeId = data.recipe.id
 
 		return Ingredients.findAll({
 			where:{
