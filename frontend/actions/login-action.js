@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-//const passport = require('passport')
-
 export const LOGIN_USER = 'LOGIN_USER'
 
 
@@ -16,7 +14,7 @@ const loginUser = axios.post('api/login', {
                       .catch(function (error) {
                         console.log(error);
                       });
-                    
+
   return {
     type: LOGIN_USER,
     payload: loginUser

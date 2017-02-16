@@ -43,9 +43,8 @@ app.use('/api/explore', indexRouter.Locations);
 app.use('/api/comments', indexRouter.Comments);
 app.use('/api/likes', indexRouter.Likes);
 app.use('/api/experiences', indexRouter.Experiences);
-app.use('/api/login', indexRouter.Login);
+app.use('/api/', indexRouter.Login);
 
-app.get('auth/twitter', passport.authenticate('twitter'));
 app.get('/*', function(req, res) {
 
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'))

@@ -14,10 +14,11 @@ const seedFunction = () => {
 	models.Users.bulkCreate([
 	{
 	first_name: "Chanice",
-	last_name: "Stlouis",
+	last_name: "St. Louis",
 	username: "chanicestlouis",
-	password: "gangstaboo45",
-	email: "chanicestlouis@gmail.com",
+	// PASSWORD: gangstaboo45
+	password: "$2a$10$sVGZGrr4Psswx/6jgSvBe.ok1.EEAUfrFM7GNY1fr336qaHT4rTGK",
+	email: "chanice@zol.com",
 	image: "https://s25.postimg.org/5i4wwqw0v/chanice_stlouis.png",
 	location: "Brooklyn",
 	bio: "My presence is a present"
@@ -27,8 +28,9 @@ const seedFunction = () => {
 	first_name: "Rabiya",
 	last_name: "Watson",
 	username: "ormabe",
-	password: "mkdhRE45jk#$v0",
-	email: "ormabe@erols.com",
+	// PASSWORD: darthcheeto2017
+	password: "$2a$10$jGz5PkNbw8USxid6cvyzR.hO6WroPwGNT3GGs89zse43sD.ZmeiyC",
+	email: "rabiya@zol.com",
 	image: "https://s25.postimg.org/45n7uuylb/rabiya_watson.png",
 	location: "Manhattan, NY",
 	bio: "Politics or bust!"
@@ -37,8 +39,9 @@ const seedFunction = () => {
 	first_name: "Niko",
 	last_name: "Bella",
 	username: "nikobellalew",
-	password: "ihatepasswords",
-	email: "nikobellabew@gmail.com",
+	// PASSWORD: ihatepasswords31-00
+	password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
+	email: "niko@zol.com",
 	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
@@ -47,8 +50,9 @@ const seedFunction = () => {
 	first_name: "Victor",
 	last_name: "Amos",
 	username: "victorbrooklyn",
-	password: "bkisthebest7102",
-	email: "victoramosbk@gmail.com",
+	// PASSWORD: bkisthebest7102
+	password: "$2a$10$5pLqKLaxsMsBAdjZ/m.CNOB6GO7FH7qYHO0Xo/UsBPysVVgbmKIYm",
+	email: "victor@zol.com",
 	image: "https://s25.postimg.org/g116nduov/victor_amos.jpg",
 	location: "New York City",
 	bio: "There's nothing not to love about me..."
@@ -142,7 +146,7 @@ const seedFunction = () => {
 		quantity:2,
 		unit:"teaspoons",
 		RecipeId:2
-		}, 
+		},
 
 		{
 		name:"black peppercorns",
@@ -161,7 +165,7 @@ const seedFunction = () => {
 	}).then(data => {
 		models.Comment.bulkCreate([
 			{
-		  
+
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:08.136Z",
 		    "updatedAt": "2017-02-11T21:07:08.136Z",
@@ -170,7 +174,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my third comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:07:01.535Z",
 		    "updatedAt": "2017-02-11T21:07:01.535Z",
@@ -179,7 +183,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my second comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:55.825Z",
 		    "updatedAt": "2017-02-11T21:06:55.825Z",
@@ -188,7 +192,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my first comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:50.626Z",
 		    "updatedAt": "2017-02-11T21:06:50.626Z",
@@ -197,7 +201,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my fourth comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:06:39.215Z",
 		    "updatedAt": "2017-02-11T21:06:39.215Z",
@@ -206,7 +210,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my third comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:57.695Z",
 		    "updatedAt": "2017-02-11T21:05:57.695Z",
@@ -215,7 +219,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my second comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:49.586Z",
 		    "updatedAt": "2017-02-11T21:05:49.586Z",
@@ -224,7 +228,7 @@ const seedFunction = () => {
 		    "User": null
 		  },
 		  {
-		  
+
 		    "comment": "This is my first comment. Woo hoo!",
 		    "createdAt": "2017-02-11T21:05:39.826Z",
 		    "updatedAt": "2017-02-11T21:05:39.826Z",
