@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Ingredients = sequelize.define('Ingredients', {
-    name: {
+    ingredients: {
       type:DataTypes.STRING,
       required:true,
       validate:{
