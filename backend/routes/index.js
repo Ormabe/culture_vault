@@ -3,7 +3,6 @@ const Explore = require('./explore-routes.js');
 const Users = require('./user-routes.js');
 const Comments = require('./comment-routes.js');
 const Likes = require('./like-routes.js');
-const Search = require('./search-routes.js');
 const Login = require('./login-routes.js');
 
 module.exports = {
@@ -13,7 +12,6 @@ module.exports = {
 		Users,
 		Comments,
 		Login,
-		Likes,
-		Search
+		Likes
 	}
 }
