@@ -1,13 +1,9 @@
-//IMPORT MODULES
-const express = require('express')
-const router = express.Router();
-const models = require('../server/models');
+const router = require('express').Router();
+const Users = require('../server/models').Users;
 
 
-//=====================================
-// ALL USERS
-const usersAll = ((req,res) => {
-  return models.Users.findAll({
+const getAllUsers = ((req,res) => {
+  return Users.findAll({
     order: [['id', 'ASC']]
   })
   .then((data) => {
@@ -18,11 +14,8 @@ const usersAll = ((req,res) => {
   })
 });
 
-//=====================================
-// NEW USER
-
-const userSignUp = ((req,res) => {
-  return models.Users.findOrCreate({
+const createNewUser = ((req,res) => {
+  return Users.findOrCreate({
     where: {
       username: req.body.username,
       email: req.body.email,
@@ -37,11 +30,8 @@ const userSignUp = ((req,res) => {
   })
 });
 
-//=====================================
-// SEARCH BY USERNAME
-
 const findUserByUsername = ((req, res) => {
-		models.Users.findAll({
+		Users.findAll({
       where: {
         username: req.params.username
       }
@@ -89,16 +79,13 @@ const findUserByUsername = ((req, res) => {
 // 		})
 // 	})
 
-
-
-//ROUTES
 router.route('/')
-  .get(usersAll)
-	.post(userSignUp)
+  .get(getAllUsers)
+	.post(createNewUser)
+
 router.route('/:username')
   .get(findUserByUsername)
   // .delete(deleteByUsername)
   // .put(updateUserByURL)
 
-//EXPORTS
 module.exports = router

@@ -38,15 +38,12 @@ app.use((req, res, next) => {
 	next();
 });
 
-
-app.use('/api/explore/users', indexRouter.Users);
-app.use('/api/explore/', indexRouter.Locations);
-app.use('/api/comments/', indexRouter.Comments);
-app.use('/api/likes', indexRouter.Likes)
-app.use('/api/explore/search', indexRouter.Search);
-app.use('/api/experiences', indexRouter.Experiences)
-app.use('/api/', indexRouter.Login)
-
+app.use('/api/users', indexRouter.Users);
+app.use('/api/explore', indexRouter.Explore);
+app.use('/api/comments', indexRouter.Comments);
+app.use('/api/likes', indexRouter.Likes);
+app.use('/api/experiences', indexRouter.Experiences);
+app.use('/api/', indexRouter.Login);
 
 app.get('/*', function(req, res) {
 
