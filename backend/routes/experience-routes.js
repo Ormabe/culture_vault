@@ -102,13 +102,13 @@ const getExperience = (req, res) => {
 		let experienceId = experienceLocation.Experience.id
 
 
-		return models.Recipes.findById(experienceId)
+		return Recipes.findById(experienceId)
 	})
 	.then(recipe => {
 		//freeze recipe object
 		data.recipe = recipe
 
-		let recipeId = data.recipe.id
+		let recipeId = 2
 
 		return Steps.findAll({
 			where:{
@@ -120,7 +120,7 @@ const getExperience = (req, res) => {
 	.then(steps => {
 		data.steps = steps
 
-		let recipeId = data.recipe.id
+		let recipeId = 2
 
 		return Ingredients.findAll({
 			where:{
@@ -156,7 +156,7 @@ const getFeature = (req,res) => {
 router.route('/create/:userId')
 	.post(createAnExperience)
 
-router.route('/experience/:experienceId')
+router.route('/:experienceId')
 	.get(getExperience)
 
 router.route('/featured')

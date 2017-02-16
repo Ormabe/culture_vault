@@ -99,6 +99,7 @@ class Experience extends Component {
 
 	render() {
 		const { experience } = this.props;
+		console.log(experience)
 
 		if(!experience) {
 			return (
