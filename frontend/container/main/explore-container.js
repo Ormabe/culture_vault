@@ -4,10 +4,6 @@ import { fetchExploreLocations } from '../../actions/explore-action';
 import SearchBar from './search-container'
 import {Link} from 'react-router';
 
-
-
-
-
 class Explore extends Component {
 	componentWillMount() {
 		let { fetchExploreLocations } = this.props
