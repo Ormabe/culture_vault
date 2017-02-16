@@ -42,6 +42,16 @@ const seedFunction = () => {
 	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
+	},
+	{
+	first_name: "Victor",
+	last_name: "Amos",
+	username: "victorbrooklyn",
+	password: "bkisthebest7102",
+	email: "victoramosbk@gmail.com",
+	image: "https://s25.postimg.org/g116nduov/victor_amos.jpg",
+	location: "New York City",
+	bio: "There's nothing not to love about me..."
 	}
 	]).then(data => {
 		models.Experiences.bulkCreate([
@@ -132,7 +142,7 @@ const seedFunction = () => {
 		quantity:2,
 		unit:"teaspoons",
 		RecipeId:2
-		},
+		}, 
 
 		{
 		name:"black peppercorns",
@@ -147,7 +157,6 @@ const seedFunction = () => {
 		unit:"teaspoons",
 		RecipeId:2
 		}
-
 	])
 	}).then(data => {
 		models.Comment.bulkCreate([
@@ -227,33 +236,19 @@ const seedFunction = () => {
 	}).then(data => {
 		models.Likes.bulkCreate([
 		{
-		UserLiked:true,
-		counter:0,
-		CommentId:1,
+		ExperienceId:1,
 		UserId:3
 		},
 		{
-		UserLiked:true,
-		counter:0,
-		CommentId:1,
-		UserId:3
-		},
-		{
-		UserLiked:true,
-		counter:0,
-		CommentId:2,
+		ExperienceId:2,
 		UserId:2
 		},
 		{
-		UserLiked:true,
-		counter:0,
-		CommentId:3,
+		ExperienceId:3,
 		UserId:1
 		},
 		{
-		UserLiked:true,
-		counter:0,
-		CommentId:4,
+		ExperienceId:1,
 		UserId:1
 		},
 			])
