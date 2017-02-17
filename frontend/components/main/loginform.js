@@ -33,15 +33,15 @@ class LogInForm extends Component {
   this.handleDialogClose = this.handleDialogClose.bind(this)
 
     this.state = {
-      email:"",
-      password:"",
+      email: "",
+      password: "",
       open: false
     }
   }
 	handleChange (e) {
-    const target = e.target
-    const value = target.value
-    const name = target.name
+  const target = e.target;
+  const value = target.value;
+  const name = target.name;
 
     this.setState({ [name]: value })
 	}

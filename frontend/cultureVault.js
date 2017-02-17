@@ -38,7 +38,9 @@ const CultureVault = React.createClass({
 					</div>
 				</div>
 					<NavBar />
+
 				<div >
+
 						{this.props.children}
 			</div>
 			<Footer />

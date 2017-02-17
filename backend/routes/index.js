@@ -6,12 +6,11 @@ const Likes = require('./like-routes.js');
 const Login = require('./login-routes.js');
 
 module.exports = {
-	routes: {
-	  Experiences,
-	  Explore,
-		Users,
-		Comments,
-		Login,
-		Likes
-	}
-}
+  routes: {
+    Experiences,
+    Explore,
+    Users,
+    Comments,
+    Login,
+    Likes,
+  } };
