@@ -10,6 +10,7 @@ import Feature from './container/main/feature-container.js'
 import ExploreContainer from './container/main/explore-container.js'
 import LocationContainer from './container/main/location.jsx'
 import CultureVault from './cultureVault.js';
+import CreateExperience from './container/experiences/experience-create';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -18,6 +19,7 @@ const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault} >
 			<IndexRoute component={ExploreContainer} />
+			<Route path="create/:userId" component={CreateExperience} />
 			<Route path="explore" component={ExploreContainer} />
 			<Route path="discover" component={Feature} />
 			<Route path="experience/:id" component={Experience} />

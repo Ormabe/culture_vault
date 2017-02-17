@@ -128,35 +128,35 @@ const seedFunction = () => {
 	}).then(data => {
 		models.Ingredients.bulkCreate([
 		{
-		name:"paprika",
+		ingredients:"paprika",
 		quantity:2,
 		unit:'tablespoons',
 		RecipeId:2
 		},
 
 		{
-		name:"cumin seeds, toasted" ,
+		ingredients:"cumin seeds, toasted" ,
 		quantity:1,
 		unit:"tablespoon",
 		RecipeId:2
 		},
 
 		{
-		name:"coriander seeds, toasted",
+		ingredients:"coriander seeds, toasted",
 		quantity:2,
 		unit:"teaspoons",
 		RecipeId:2
 		},
 
 		{
-		name:"black peppercorns",
+		ingredients:"black peppercorns",
 		quantity:2,
 		unit:"teaspoons",
 		RecipeId:2
 		},
 
 		{
-		name:"sea salt, coarse",
+		ingredients:"sea salt, coarse",
 		quantity:1.5,
 		unit:"teaspoons",
 		RecipeId:2
