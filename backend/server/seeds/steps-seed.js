@@ -1,22 +1,22 @@
-let soup = {
+const soup = {
   steps: 'boil shit in a pot'
-}
+};
 
-let briyani = {
+const briyani = {
   steps: 'mix some seasoned rice'
-}
+};
 
-let rigatoni = {
+const rigatoni = {
   steps: 'put some cheese and hot sauce on canned pasta'
-}
+};
 
-let chicken = {
+const chicken = {
   steps: 'boil chicken in a pot'
-}
+};
 
-let eggs = {
+const eggs = {
   steps: 'scramble some eggs'
-}
+};
 
 
-module.exports = [soup, briyani, rigatoni, chicken, eggs]
+module.exports = [soup, briyani, rigatoni, chicken, eggs];
