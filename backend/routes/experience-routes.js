@@ -5,8 +5,10 @@ const Recipes = require('../server/models').Recipes;
 const Ingredients = require('../server/models').Ingredients;
 const Steps = require('../server/models').Steps;
 const Users = require('../server/models').Users;
-
 const ExperiencesLocations = require('../server/models').ExperiencesLocations;
+const models = require('../server/models')
+
+// const ExperiencesLocations = require('../server/models').ExperiencesLocations;
 
 const createAnExperience = (req, res) => {
 	let storage ={
@@ -28,17 +30,16 @@ const createAnExperience = (req, res) => {
 		experienceId:null
 	};
 	
-
-	 Experiences.create({
+	 models.Experiences.create({
 				quote: storage.quote,
 				story: storage.story,
 				image: storage.image,
-				UserId: storage.userId
+				UserId: storage.UserId
 	})
 	 .then(data => storage.experienceId = data.id)
 
 	 .then(data => {
-		 return Locations.create({
+		 return models.Locations.create({
 				country: storage.country,
 				city: storage.city 
 		})
@@ -46,13 +47,13 @@ const createAnExperience = (req, res) => {
 	 .then(location => storage.locationId = location.id)
 
 	 .then(data => {
-	 	 ExperiencesLocations.create({
+	 	 models.ExperiencesLocations.create({
 	 		ExperienceId:storage.experienceId,
 	 		LocationId:storage.locationId
 	 	})
 	 })
 	 .then(data => {
-	 	return Recipes.create({
+	 	return models.Recipes.create({
 	 		name:storage.recipe,
 	 		ExperienceId:storage.experienceId
 	 	})
@@ -61,7 +62,7 @@ const createAnExperience = (req, res) => {
 
 	 .then(data => {
 	 
-	 	return	Ingredients.bulkCreate(
+	 	return	models.Ingredients.bulkCreate(
 	 		storage.ingredients.map(val => {
 	 			val.RecipeId = storage.recipeId;
 
@@ -70,7 +71,7 @@ const createAnExperience = (req, res) => {
 	 	)
  })
 	 .then(data => {
-	 	return Steps.bulkCreate(
+	 	return models.Steps.bulkCreate(
 	 			storage.steps.map(val => {
 	 				val.RecipeId = storage.recipeId;
 
@@ -149,6 +150,9 @@ const getExperience = (req, res) => {
 
 const getFeature = (req,res) => {
 	Experiences.findAll()
+	// { offset: 5, limit: 5 }
+	// when we have more data 
+	// offset skips than it will get us the next so we look cool 
 	.then(data => res.send(data))
 	.catch(error => res.status(500).send(error))
 };
@@ -159,7 +163,7 @@ router.route('/create/:userId')
 router.route('/:experienceId')
 	.get(getExperience)
 
-router.route('/featured')
+router.route('/discover/featured')
 	.get(getFeature)
 
 module.exports = router;

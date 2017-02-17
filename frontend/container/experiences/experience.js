@@ -73,7 +73,7 @@ class Experience extends Component {
 				<ul>
 					{experience.ingredients.map(ingredient => {
 						return (
-						<li key={ingredient.id}>{ingredient.name}</li>
+						<li key={ingredient.id}>{ingredient.ingredients}</li>
 						)
 					})}
 				</ul>

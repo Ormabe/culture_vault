@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { getCountryExperience } from '../../actions/location-action.js';
 
 class LocationContainer extends Component {
@@ -8,47 +7,42 @@ class LocationContainer extends Component {
 	componentDidMount() {
 		let { getCountryExperience } = this.props;
 			console.log("Component Is Mounted")
-		getCountryExperience(this.props.params.country)
+		getCountryExperience(this.props.params.countryId)
 
-	}
+	} 
 
-	showMeLocations() {
-		console.log("SHOW ME LOCATIONS IS TRIGGERED!")
-		const { location } = this.props;
-		// console.log(location)
-		if(!location) {
+	renderLocations() {
+		let { location } = this.props;  
 			return (
 				<div>
-					...Loading
+					<ul>
+						{location.map(place => {
+							return (
+								<img 
+								onClick={() => this.props.router.push(`/experience/${place.ExperienceId}`)}
+								key={place.ExperienceId} 
+								src={place.Experience.image}>
+								</img>	
+								)
+						})}
+					</ul>	
 				</div>
-			)
-		}
+				)
+	}
 
-		return (
-			<ul>
-				{ location.map(place => {
-					<li key={place.id}>
-						<img src={place.Experience.image} alt={place.id} />
-					</li>
-				})}
-			</ul>
-		)
+	renderLoading() {
+		console.log('LOADING')
+		return <h1>Loading...</h1>
 	}
 
 	render() {
 		const { location } = this.props;
-		console.log("THIS IS THE LOCATION: " + location)
-		if(!location) {
-			return (
-				<div>
-					Loading...
-				</div>
-			)
-		}
+		console.log(this.props)
+		console.log("THIS IS THE LOCATION: " , location)
 
 		return (
 			<div>
-				{this.showMeLocations()}
+				{location.length > 0 ? this.renderLocations() : this.renderLoading()}
 			</div>
 		)
 	}
