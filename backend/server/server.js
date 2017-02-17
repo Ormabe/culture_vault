@@ -53,11 +53,11 @@ app.get('/*', (req, res) => {
   console.log(req.user);
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
+
+db.sequelize.sync({ force: true }).then(() => {
+  seedFunction();
   app.listen(2222);
-// db.sequelize.sync({ force: true }).then(() => {
-//   seedFunction();
-//   app.listen(2222);
-//   console.log('Listening at https://localhost:2222');
-// });
+  console.log('Listening at https://localhost:2222');
+});
 
 module.exports = app;
