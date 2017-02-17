@@ -112,7 +112,9 @@ class CreateExperience extends Component {
 	newStep(e) {
 		e.preventDefault()
 
-		const newStep = this.state.currentStep;
+		const newStep = {}
+
+		newStep.steps = this.state.currentStep
 
 		this.setState({ steps: this.state.steps.concat(newStep) })
 		this.setState({ currentStep: '' })
@@ -148,7 +150,7 @@ class CreateExperience extends Component {
 					{this.state.steps.map((step, index) => {
 						return (
 							<div key={index}>
-								{step}
+								{step.steps}
 							</div>
 						)
 					})}
@@ -174,8 +176,7 @@ class CreateExperience extends Component {
 				<br />
 				<br />
 
-				<input 
-					type="text" 
+				<textarea 
 					placeholder="Tell Me Your Story" 
 					value={this.state.story} 
 					onChange={this.handleChange.bind(this, "story")} 
@@ -227,20 +228,17 @@ class CreateExperience extends Component {
 				<input type="text"
 					placeholder="Quantity"
 					value={this.state.currentQuantity}
-					onChange={this.handleChange.bind(this, "currentQuantity")} 
-					required/>
+					onChange={this.handleChange.bind(this, "currentQuantity")} />
 
 				<input type="text"
 					placeholder="Unit"
 					value={this.state.currentUnit}
-					onChange={this.handleChange.bind(this, "currentUnit")} 
-					required/>
+					onChange={this.handleChange.bind(this, "currentUnit")} />
 
 				<input type="text"
 					placeholder="Ingredient"
 					value={this.state.currentIngredient}
-					onChange={this.handleChange.bind(this, "currentIngredient")} 
-					required/>
+					onChange={this.handleChange.bind(this, "currentIngredient")} />
 
 				<button onClick={this.newIngredient}>ADD INGREDIENT</button>
 
@@ -253,11 +251,10 @@ class CreateExperience extends Component {
 				<br />
 				<br />
 
-				<input type="text"
+				<textarea
 					placeholder="Add A Step"
 					value={this.state.currentStep}
-					onChange={this.handleChange.bind(this, "currentStep")}
-					required />
+					onChange={this.handleChange.bind(this, "currentStep")} />
 
 				<button onClick={this.newStep}>ADD STEP</button>
 
