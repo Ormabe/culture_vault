@@ -68,12 +68,6 @@ class Likes extends Component {
  	render(){
 	let { likes } = this.props;
 		console.log(likes)
- 		if(!likes[0]){
- 		return(
-			<div>...Loading</div>
- 			)
- 		} 
- 		
  		return (
  		 	<div>
  				Hello from the likes Component
