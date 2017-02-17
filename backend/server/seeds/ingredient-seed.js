@@ -1,31 +1,31 @@
-let paprika = {
+const paprika = {
 	name:"paprika",
 	quanity:2,
 	unit:'tablespoons'
-}
+};
 
-let cumin = {
+const cumin = {
 	name:"cumin seeds, toasted" ,
 	quanity:1,
 	unit:"tablespoon"
-}
+};
 
-let coriander = {
+const coriander = {
 	name:"coriander seeds, toasted",
 	quanity:2,
 	unit:"teaspoons"
-}
+};
 
-let blackPepperCorns = {
+const blackPepperCorns = {
 	name:"black peppercorns",
 	quanity:2,
 	unit:"teaspoons"
-}
+};
 
-let seaSalt = {
+const seaSalt = {
 	name:"sea salt, coarse",
 	quanity:1.5,
 	unit:"teaspoons"
-}
+};
 
-module.exports = [paprika, cumin, coriander, blackPepperCorns,seaSalt]
+module.exports = [paprika, cumin, coriander, blackPepperCorns,seaSalt];

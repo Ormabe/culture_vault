@@ -1,21 +1,21 @@
-let soup = {
+const soup = {
   name: 'Variety Soup'
-}
+};
 
-let briyani = {
+const briyani = {
   name: 'Shazia\'s Briyani'
-}
+};
 
-let rigatoni = {
+const rigatoni = {
   name: 'Charle\'s Survival Pasta'
-}
+};
 
-let chicken = {
+const chicken = {
   name: 'Billy\'s Road Crosser'
-}
+};
 
-let eggs = {
+const eggs = {
   name: 'Humpty Dumpty\'s Wall Flower'
-}
+};
 
-module.exports = [soup, briyani, rigatoni, chicken, eggs]
+module.exports = [soup, briyani, rigatoni, chicken, eggs];

@@ -1,42 +1,42 @@
-let newyorkcity = {
+const newyorkcity = {
 	continent: "North America",
 	country: "United States of America",
 	state: "New York",
 	region: "Tri-State Area",
 	city: "New York City"
-}
+};
 
-let neworleans = {
+const neworleans = {
 	continent: "North America",
 	country: "United States of America",
 	state: "Louisiana",
 	region: "Mississippi Delta",
 	city: "New Orleans"
-}
+};
 
-let tokyo = {
+const tokyo = {
 	continent: "Asia",
 	country: "Japan",
 	city: "Tokyo"
-}
+};
 
-let cartagena = {
+const cartagena = {
 	continent: "South America",
 	country: "Colombia",
 	city: "Cartagena"
-}
+};
 
 
-let london = {
+const london = {
 	continent: "Europe",
 	country: "United Kingdom",
 	city: "London"
-}
+};
 
-let sydney = {
+const sydney = {
 	continent: "Australia",
 	country: "Australia",
 	city: "Sydney"
-}
+};
 
-module.exports = [newyorkcity, neworleans, tokyo, cartagena, london, sydney]
+module.exports = [newyorkcity, neworleans, tokyo, cartagena, london, sydney];
