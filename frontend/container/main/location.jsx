@@ -9,16 +9,20 @@ class LocationContainer extends Component {
 			console.log("Component Is Mounted")
 		getCountryExperience(this.props.params.countryId)
 
-	}
+	} 
 
 	renderLocations() {
 		let { location } = this.props;  
 			return (
 				<div>
 					<ul>
-						{location.map((place,key) => {
+						{location.map(place => {
 							return (
-								<img onClick={() => this.props.router.push(`/experience/${place.ExperienceId}`)}key={place.ExperienceId}src={place.Experience.image}></img>	
+								<img 
+								onClick={() => this.props.router.push(`/experience/${place.ExperienceId}`)}
+								key={place.ExperienceId} 
+								src={place.Experience.image}>
+								</img>	
 								)
 						})}
 					</ul>	

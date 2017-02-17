@@ -150,6 +150,9 @@ const getExperience = (req, res) => {
 
 const getFeature = (req,res) => {
 	Experiences.findAll()
+	// { offset: 5, limit: 5 }
+	// when we have more data 
+	// offset skips than it will get us the next so we look cool 
 	.then(data => res.send(data))
 	.catch(error => res.status(500).send(error))
 };
@@ -160,7 +163,7 @@ router.route('/create/:userId')
 router.route('/:experienceId')
 	.get(getExperience)
 
-router.route('/featured')
+router.route('/discover/featured')
 	.get(getFeature)
 
 module.exports = router;

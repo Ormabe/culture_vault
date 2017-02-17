@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {getFeature} from '../../actions/feature-action.js'
-import { Link } from 'react-router'
+
 
 class Feature extends Component{
 	componentDidMount() {
@@ -18,14 +18,14 @@ class Feature extends Component{
 					<ul>
 						{features.map(feature => {
 							return (
-								<li key={feature.id}>
-									<Link to={`/experience/${feature.id}`}>
+								<li key={feature.id}
+										onClick={() => this.props.router.push(`/experience/${feature.id}`)}
+								>
 										<img src={feature.image} alt={feature.id} />
 										<br />
 										<strong>{feature.name}</strong>
 										<br />
 										<br />
-									</Link>
 								</li>	
 							)
 						})}
