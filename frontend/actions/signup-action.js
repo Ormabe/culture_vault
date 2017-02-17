@@ -1,21 +1,20 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const CREATE_USER = 'CREATE_USER'
+export const CREATE_USER = 'CREATE_USER';
 
-
-export function createUserForm (email,password) {
-const postUser = axios.post('api/explore/users', {
-                        email,
-                        password
-                      })
-                      .then(function (response) {
-                        console.log(response);
-                      })
-                      .catch(function (error) {
-                        console.log(error);
-                      });
+export function createUserForm(email, password) {
+  const postUser = axios.post('api/users', {
+    email,
+    password,
+  })
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
   return {
     type: CREATE_USER,
-    payload: postUser
-  }
+    payload: postUser,
+  };
 }
