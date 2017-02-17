@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Locations = require('../server/models').Locations;
 const Search = require('../server/models').Search;
-
+const models = require('../server/models')
  
 const findAllContinents = ((req,res) => {
   return Locations.findAll({
@@ -134,11 +134,11 @@ const findByCity = ((req, res) => {
 	});
 
 const getExperiences = (req,res) => {
-  ExperiencesLocations.findAll({
+  models.ExperiencesLocations.findAll({
     where:{
       LocationId:req.params.locationId
     },
-    include:[Experiences]
+    include:[models.Experiences]
   })
   .then(data => res.send(data))
   .catch(err => res.status(500).send(err))
