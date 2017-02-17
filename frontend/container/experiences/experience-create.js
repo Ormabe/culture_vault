@@ -19,7 +19,7 @@ class CreateExperience extends Component {
 			recipeTitle: '',
 			ingredients: [],
 			steps: [],
-			currentQuantity: 0,
+			currentQuantity: '',
 			currentUnit: '',
 			currentIngredient: '',
 			currentStep: ''
@@ -29,6 +29,9 @@ class CreateExperience extends Component {
 		this.createExperience = this.createExperience.bind(this)
 		this.axiosCall = this.axiosCall.bind(this);
 		this.newIngredient = this.newIngredient.bind(this)
+		this.showIngredients = this.showIngredients.bind(this)
+		this.newStep = this.newStep.bind(this)
+		this.showSteps = this.showSteps.bind(this)
 
 	}
 
@@ -51,7 +54,9 @@ class CreateExperience extends Component {
 			this.setState({ currentUnit: event.target.value })
 		} else if (input === 'currentIngredient') {
 			this.setState({ currentIngredient: event.target.value })
-		} 
+		} else if (input === 'currentStep') {
+			this.setState({ currentStep: event.target.value })
+		}
 	}
 
 	createExperience(userId, state) {
@@ -90,9 +95,6 @@ class CreateExperience extends Component {
 	newIngredient(e) {
 		e.preventDefault()
 
-		console.log("Ingredient Added!")
-		// Create an object here
-
 		const newIngredient = {}
 		
 		const ingredients = this.state.currentIngredient;
@@ -103,82 +105,165 @@ class CreateExperience extends Component {
 		newIngredient.quantity = quantity;
 		newIngredient.unit = unit
 
+		this.setState({ ingredients: this.state.ingredients.concat(newIngredient) })
+		this.setState({ currentQuantity: '', currentUnit: '', currentIngredient: '' })
+	}
 
-		//Push into ingredients array
-		this.setState({ingredients: this.state.ingredients.concat(newIngredient)})
-		this.setState({ currentQuantity: 0, currentUnit: '', currentIngredient: '' })
+	newStep(e) {
+		e.preventDefault()
 
-		//Clear input
+		const newStep = this.state.currentStep;
 
+		this.setState({ steps: this.state.steps.concat(newStep) })
+		this.setState({ currentStep: '' })
+	}
+
+	showIngredients() {
+		if (this.state.ingredients.length > 0) {
+			return (
+				<div>
+					{this.state.ingredients.map((ingredient, index) => {
+						return (
+							<div key={index}>
+								{ingredient.quantity} {ingredient.unit} {ingredient.ingredients}
+							</div>
+						)
+					})}
+				</div>
+			)
+		}
+
+		return (
+			<div>
+			</div>
+		)
 
 
 	}
 
+	showSteps() {
+		if (this.state.steps.length > 0) {
+			return (
+				<div>
+					{this.state.steps.map((step, index) => {
+						return (
+							<div key={index}>
+								{step}
+							</div>
+						)
+					})}
+				</div>
+			)
+		}
+
+		return ( 
+			<div>
+			</div>
+		)
+	}
+
 	render() {
-		console.log(this.state.ingredients)
 		return (
 			<form onSubmit={this.axiosCall}>
 				<input
 					type="text"
 					placeholder="Enter A Quote"
 					value={this.state.quote}
-					onChange={this.handleChange.bind(this, "quote")} />
-				<br /><br />
+					onChange={this.handleChange.bind(this, "quote")} 
+					required />
+				<br />
+				<br />
+
 				<input 
 					type="text" 
 					placeholder="Tell Me Your Story" 
 					value={this.state.story} 
-					onChange={this.handleChange.bind(this, "story")} />
-				<br /><br />	
+					onChange={this.handleChange.bind(this, "story")} 
+					required/>
+				<br />
+				<br />	
+
 				<input 
 					type="text"
 					placeholder="Upload An Image"
 					value={this.state.image}
-					onChange={this.handleChange.bind(this, "image")} />
-				<br /><br />
+					onChange={this.handleChange.bind(this, "image")} 
+					required/>
+				<br />
+				<br />
 
 				<input
 					type="text"
 					placeholder="Country of Origin"
 					value={this.state.country}
-					onChange={this.handleChange.bind(this, "country")} />
-				<br /><br />
+					onChange={this.handleChange.bind(this, "country")} 
+					required/>
+				<br />
+				<br />
 
 				<input 
 					type="text"
 					placeholder="City of Origin"
 					value={this.state.city}
-					onChange={this.handleChange.bind(this, "city")} />
-				<br /><br />
+					onChange={this.handleChange.bind(this, "city")} 
+					required/>
+				<br />
+				<br />
 
 				<input 
 					type="text"
 					placeholder="Recipe Title"
 					value={this.state.recipeTitle}
-					onChange={this.handleChange.bind(this, "recipeTitle")} />
-				<br /><br />
+					onChange={this.handleChange.bind(this, "recipeTitle")} 
+					required/>
+				<br />
+				<br />
 
-				<br /><br />
+				INGREDIENTS:
+				{this.showIngredients()}
+				
+				<br />
 
-					Enter An Ingredient:
-					<input type="text"
-					placeholder="Amount"
+				<input type="text"
+					placeholder="Quantity"
 					value={this.state.currentQuantity}
-					onChange={this.handleChange.bind(this, "currentQuantity")} />
+					onChange={this.handleChange.bind(this, "currentQuantity")} 
+					required/>
 
-					<input type="text"
-					placeholder="Amount"
+				<input type="text"
+					placeholder="Unit"
 					value={this.state.currentUnit}
-					onChange={this.handleChange.bind(this, "currentUnit")} />
+					onChange={this.handleChange.bind(this, "currentUnit")} 
+					required/>
 
-					<input type="text"
-					placeholder="Amount"
+				<input type="text"
+					placeholder="Ingredient"
 					value={this.state.currentIngredient}
-					onChange={this.handleChange.bind(this, "currentIngredient")} />
+					onChange={this.handleChange.bind(this, "currentIngredient")} 
+					required/>
 
-					<button onClick={this.newIngredient}>ADD INGREDIENT</button>
+				<button onClick={this.newIngredient}>ADD INGREDIENT</button>
 
-				<br /><br />
+				<br />
+				<br />
+
+				STEPS:
+				{this.showSteps()}
+					
+				<br />
+				<br />
+
+				<input type="text"
+					placeholder="Add A Step"
+					value={this.state.currentStep}
+					onChange={this.handleChange.bind(this, "currentStep")}
+					required />
+
+				<button onClick={this.newStep}>ADD STEP</button>
+
+				<br />
+				<br />
+
 				<button type="submit">SUBMIT</button>
 			</form>
 		)
