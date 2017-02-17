@@ -10,11 +10,9 @@ import Feature from './container/main/feature-container.js'
 import ExploreContainer from './container/main/explore-container.js'
 import LocationContainer from './container/main/location.jsx'
 import CultureVault from './cultureVault.js';
-<<<<<<< HEAD
 import UserProfile from './container/main/userProfile-container.js';
-=======
 import CreateExperience from './container/experiences/experience-create';
->>>>>>> master
+
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
