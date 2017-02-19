@@ -3,30 +3,30 @@ const LocalStrategy = require('passport-local').Strategy;
 const models = require('../models');
 
 // passport.serializeUser((user, done) => {
-//   console.log('<===== SERIALIZER =====>')
-//   console.log('<== USER ======>>>',user.dataValues.id)
+//   // console.log("SERIALIZE SESSION ID ====>", req.sessionID)
+//   console.log("SERIALIZE USER ====>", user.id)
+//   // console.log("USER OBJECT ====>", user)
+//   // const sessionUser = req.user.id ;
 //   done(null, user.id);
 // });
 //
-// passport.deserializeUser((id, done) => {
-//   console.log('<===== DESERIALIZER =====>')
-//   models.Users.findById(id, (err, user) => {
-//     done(err, user);
-//   });
-// });
-
-passport.serializeUser((req, user, done) => {
-  console.log("SERIALIZE SESSION ID ====>", req.sessionID)
-  console.log("SERIALIZE USER ====>", user.id)
-  console.log("SERIALIZE REQ ====>", req.user.id)
-  const sessionUser = req.user.id ;
-  done(null, sessionUser);
-});
-
-passport.deserializeUser((req, sessionUser) => {
-  console.log("DESERIALIZE SESSION ====>", req)
-  // done(null, sessionUser)
-})
+// passport.deserializeUser( function (id, done) {
+//         console.log("DESERIALIZE USER ======>", id);
+//             models.Users.findOne({
+//               where: {
+//                 id
+//               }
+//             })
+//             .then((user) => {
+//                 console.log('USERNAME:',user.username);
+//                 // done(null, user);
+//                 return user
+//             })
+//             .catch((err) => {
+//                 console.error('ERR:',err);
+//                 done(err);
+//             });
+//     });
 
 passport.use('local', new LocalStrategy({
   usernameField: 'email',

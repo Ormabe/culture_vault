@@ -47,7 +47,7 @@ class LogInForm extends Component {
 	}
   loginUser(e) {
     e.preventDefault()
-
+    console.log("<====== LOGIN ======>")
     this.props.loginUserFunc(this.state.email,this.state.password)
     this.setState({
       email:"",
@@ -82,6 +82,7 @@ class LogInForm extends Component {
           style={{textAlign: styles.textAlign}}
         >
       <form onSubmit={this.loginUser} autoComplete="off">
+
         <TextField
           name="email"
           value={this.state.email}
