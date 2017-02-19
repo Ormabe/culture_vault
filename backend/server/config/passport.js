@@ -19,11 +19,11 @@ passport.serializeUser((req, user, done) => {
   console.log("SERIALIZE SESSION ID ====>", req.sessionID)
   console.log("SERIALIZE USER ====>", user.id)
   console.log("SERIALIZE REQ ====>", req.user.id)
-  // const sessionUser = { id: user.id };
-  done(null, req.user.id);
+  const sessionUser = req.user.id ;
+  done(null, sessionUser);
 });
 
-passport.deserializeUser((req, done) => {
+passport.deserializeUser((req, sessionUser) => {
   console.log("DESERIALIZE SESSION ====>", req)
   // done(null, sessionUser)
 })
