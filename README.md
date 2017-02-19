@@ -32,13 +32,17 @@ The Food Experiences are stored on our database and searchable by the members' u
 
 * Step 2. Get Culture Vault source code and install package
 
-    - Clone Culture Vault from github: $ git clone https://github.com/Ormabe/culture_vault.git
-    - Go into culture_vault folder and install node package: cd culture_vault && npm install
-    - Run culture_vault: npm start
+    - Clone Culture Vault from github: $ **git clone** https://github.com/Ormabe/culture_vault.git
+    - Go into culture_vault folder and install node package: **cd culture_vault && npm install**
+    - Run culture_vault: **npm start**
 
 * Step 3. Pull up Culture Vault in your browser
 
-    - http://localhost:2222/explore
+    - http://localhost:2222/
+
+* Step 4. Populate seed data from file
+
+    - **node populateData.js**
 
 ## Technologies
 

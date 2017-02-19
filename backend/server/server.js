@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-
+const Sequelize = require('sequelize');
 const session = require('express-session');
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,13 +10,11 @@ const db = require('./models');
 const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 // const uuid = require('uuid');
-// const passport = require('passport');
 const passport = require('./config/passport');
 
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
-// const models = require('./models');
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
@@ -50,14 +48,11 @@ app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
   console.log('tao');
-  console.log(req.user);
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-db.sequelize.sync({ force: true }).then(() => {
-  seedFunction();
-  app.listen(2222);
-  console.log('Listening at https://localhost:2222');
-});
+app.listen(2222);
+console.log('Listening at https://localhost:2222');
+
 
 module.exports = app;

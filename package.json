@@ -30,6 +30,7 @@
     "bluebird": "^3.4.7",
     "body-parser": "^1.16.0",
     "bootstrap": "^3.3.7",
+    "connect-session-sequelize": "^4.1.0",
     "cookie-parser": "^1.4.3",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
