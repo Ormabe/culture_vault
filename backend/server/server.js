@@ -3,7 +3,10 @@ require('dotenv').config();
 const express = require('express');
 const Sequelize = require('sequelize');
 const session = require('express-session');
+
 const app = express();
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./models');
@@ -11,9 +14,9 @@ const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 // const uuid = require('uuid');
 const passport = require('./config/passport');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 
 app.use(morgan('dev'));
@@ -24,6 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: process.env.SECRET_LOGIN_KEY,
+  store: new SequelizeStore({
+    db: 'culture_vault'
+  }),
   saveUninitialized: true,
   resave: false
 }));
