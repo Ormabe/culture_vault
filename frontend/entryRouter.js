@@ -10,7 +10,7 @@ import Feature from './container/main/feature-container.js'
 import ExploreContainer from './container/main/explore-container.js'
 import LocationContainer from './container/main/location.jsx'
 import CultureVault from './cultureVault.js';
-import UserProfile from './container/main/userProfile-container.js';
+import UserProfile from './container/main/userProfile.jsx';
 import CreateExperience from './container/experiences/experience-create';
 
 
