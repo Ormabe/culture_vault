@@ -7,7 +7,8 @@ import location from './locations-reducer.js'
 import comments from './reducer-comments.js'
 import login from './login-reducer.js';
 import search from './search-reducer.js';
-import likes from './likes-reducer.js'
+import likes from './likes-reducer.js';
+import user from './userProfile-reducer.js';
 
 const rootReducer = combineReducers({
 	feature ,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
 	login,
 	search,
 	comments,
-	likes
+	likes,
+	user
 })
 
 export default rootReducer;
