@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Users = require('../server/models').Users;
+const models = require('../server/models')
 
 const getAllUsers = ((req, res) => {
   return Users.findAll({
@@ -59,20 +60,19 @@ const findUserByUsername = ((req, res) => {
 //   })
 // }
 
-const getUserById = ((req, res) => {
-  Users.findAll({
-    where: {
-      id: req.params.id
-    }
-  })
-  .then((user) => {
-    res.json(user)
-  })
-  .catch((err) => {
-    console.log(err)
-  })
-});
-
+// const getUserById = ((req, res) => {
+//   Users.findAll({
+//     where: {
+//       id: req.params.id
+//     }
+//   })
+//   .then((user) => {
+//     res.json(user)
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//   })
+// });
   // =====================================
   // TO BE COMPLETED DURING SPRINT 2
 
@@ -109,6 +109,48 @@ const updateUserById = ((req, res) => {
   })
 })
 
+
+const findLoginUser = (req,res) => {
+  let userProfile = {user:null, experiences:null, likes:[]}
+  Users.findOne({
+    where:{
+      id:req.params.userId
+    }
+  }).then(userInfo => userProfile.user = userInfo)
+
+    .then(experience => {
+      return models.Experiences.findAll({
+        where: {
+          UserId: userProfile.user.id
+        }
+      })
+    })
+
+    .then(experience => userProfile.experiences = experience)
+
+    .then(likes => {
+      return models.Likes.findAll({
+        where: {
+          UserId: userProfile.user.id
+        },
+        include:[models.Experiences]
+      })
+    })
+
+    .then(likes => userProfile.likes = likes)
+
+    .then(data => res.send(userProfile))
+    .catch(err => res.status(500).send(err));
+}
+
+
+
+/////////////
+///ROUTES////
+/////////////
+router.route('/profile/:userId')
+  .get(findLoginUser)
+
 router.route('/')
   .get(getAllUsers)
   .post(createNewUser);
@@ -118,8 +160,9 @@ router.route('/:username')
 
   // .delete(deleteByUsername)
 
+//this needs another another path or it will mean the same thing as '/:username'
 router.route('/:id')
-  .get(getUserById)
+  // .get(getUserById)
   .put(updateUserById)
 
 
