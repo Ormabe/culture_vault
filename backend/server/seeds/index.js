@@ -91,22 +91,42 @@ const seedFunction = () => {
 	models.Locations.bulkCreate([
 	{
 	continent: "North America",
-	country: "USA",
+	country: "United States",
 	state: "New York",
 	region: "Tri-State Area",
-	city: "New York City"
+	city: "New York City",
+	image: "https://s25.postimg.org/wdzo70vq7/united_states.png"
 	},
 	{
 	continent: "Asia",
 	country: "Japan",
-	city: "Tokyo"
+	city: "Tokyo",
+	image: "https://s25.postimg.org/t4l90k7mn/japan.png"
 	},
 	{
 	continent: "Europe",
 	country: "United Kingdom",
-	city: "London"
+	city: "London",
+	image: "https://s25.postimg.org/6h5zues2n/united_kingdom.png"
+	},
+	{
+	continent: "Africa",
+	country: "South Africa",
+	city: "Cape Town",
+	image: "https://s25.postimg.org/60g6u8exr/south_africa.png"
+	},
+	{
+	continent: "Australia",
+	country: "Australia",
+	city: "Sydney",
+	image: "https://s25.postimg.org/kxt98zhjz/australia.png"
+	},
+	{
+	continent: "South America",
+	country: "Colombia",
+	city: "Cartagena",
+	image: "https://s25.postimg.org/rycno0ty7/colombia.png"
 	}
-
 	])
 	}).then(data => {
 	models.Recipes.bulkCreate([
@@ -291,7 +311,7 @@ const seedFunction = () => {
 		},
 
 		{
-		LocationId:2,
+		LocationId:1,
 		ExperienceId:1
 		},
 
