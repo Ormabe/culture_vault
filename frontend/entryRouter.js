@@ -11,6 +11,7 @@ import ExploreContainer from './container/main/explore-container.js'
 import LocationContainer from './container/main/location.jsx'
 import CultureVault from './cultureVault.js';
 import CreateExperience from './container/experiences/experience-create';
+import MusicContainter from './container/main/music-container.js'
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -24,6 +25,7 @@ const router = (
 			<Route path="discover" component={Feature} />
 			<Route path="experience/:id" component={Experience} />
 			<Route path='/country/:countryId' component={LocationContainer}/>
+			<Route path="music" component={MusicContainter} />
 		</Route>
 	</Router>
 </Provider>
