@@ -60,16 +60,16 @@ const seedFunction = () => {
 	]).then(data => {
 		models.Experiences.bulkCreate([
 		{
-		name: 'Life lesson soup',
+		name: "Mamasan's Chanko Nabe",
 		fav: 4,
 		quote: `"My gran once told me that, "People are like ingredients. If we made a soup with with just potatoes, it'll taste too bland. But if you mix a variety of ingredients, your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too..."`,
 		story: " more story blah blah.....Every Sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: 'https://s25.postimg.org/hla8kb733/chanice_soup.jpg',
+		image: 'https://s25.postimg.org/bwhxmzu73/chanko_nabe.jpg',
 		UserId:1
 		},
 
 		{
-		name: 'Fueling school success with canned pasta',
+		name: 'Fueling School Success with Canned Pasta',
 		fav: 3,
 		quote: "My programming instructor Charles taught us this tasty 'struggle recipe' to fuel our studies when hunger is serious but money and time are tight",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
@@ -77,7 +77,7 @@ const seedFunction = () => {
 		UserId:2
 		},
 		{
-		name: 'cross-cultural bonds',
+		name: 'Cross-cultural Bonds',
 		fav: 2,
 		quote: "When you're stuck with a group of people repeatedly for hours on end, you're not friends until you've shared food. My co-worker Shazia introducing me to Pakistani briyani has changed my life",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
@@ -309,7 +309,7 @@ const seedFunction = () => {
 		},
 
 		{
-		LocationId:1,
+		LocationId:2,
 		ExperienceId:1
 		},
 
