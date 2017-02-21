@@ -2,24 +2,22 @@ require('dotenv').config();
 
 const express = require('express');
 const Sequelize = require('sequelize');
-
-const app = express();
-const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./models');
 const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 // const uuid = require('uuid');
-const passport = require('passport')
-const auth = require('./config/passport');
-const models = require('./models')
-
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const passport = require('./config/passport');
 
 const morgan = require('morgan');
-const flash = require('express-flash');
+const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
+
+// INITIALIZE SEQUELIZESTORE
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
@@ -29,40 +27,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: process.env.SECRET_LOGIN_KEY,
-  db: db.sequelize,
+  saveUninitialized: true,
+  resave: true,
   cookie: {
-    secure: true
-  }
+    path: '/',
+    httpOnly: true,
+    secure: process.env.COOKIE_SECURE
+  },
+  store: new SequelizeStore({
+    genid: function(req) {
+      return genuuid() 
+    },
+    db: db.sequelize,
+    table: 'Session',
+    extendDefaultFields: db.Session.extendDefaultFields
+  })
 }));
 
-passport.serializeUser((user, done) => {
-  // console.log("SERIALIZE SESSION ID ====>", req.sessionID)
-  console.log("SERIALIZE USER ====>", user.id)
-  // console.log("USER OBJECT ====>", user)
-  // const sessionUser = req.user.id ;
-  done(null, user.id);
-});
-
-passport.deserializeUser( function (id, done) {
-        console.log("DESERIALIZE USER ======>", id);
-            models.Users.findOne({
-              where: {
-                id
-              }
-            })
-            .then((user) => {
-                console.log('USERNAME:',user.username);
-                // done(null, user);
-                return user
-            })
-            .catch((err) => {
-                console.error('ERR:',err);
-                done(err);
-            });
-    });
-
-app.use(auth.initialize());
-app.use(auth.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 app.use((req, res, next) => {
@@ -81,7 +64,6 @@ app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
   console.log('tao');
-  console.log('PASSPORT ======>',req.user);
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 

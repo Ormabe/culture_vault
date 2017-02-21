@@ -8,19 +8,19 @@ module.exports = function(sequelize, DataTypes) {
     userId: DataTypes.STRING,
     expires: DataTypes.DATE,
     data: DataTypes.STRING(50000)
-    },{
+  }, {
     classMethods: {
       associate: function(models) {
-        Session.belongsTo(models.Users)
+
       }
     },
     instanceMethods: {
-      extendDefaultFields(defaults, session) {
+      extendDefaultFields: function ( defaults, session) {
         return {
           data: defaults.data,
           expires: defaults.expires,
-          userId: session.userId
-        }
+          userId: (session.passport && session.passport['user']) ? session.passport['user'] : null
+        };
       }
     }
   });

@@ -5,8 +5,8 @@ const formStyles = {
   floatingLabelFocusStyle: {
     color: "#0045FF"
   },
-  backgroundSignUp: "#AA0000",
-  backgroundLogIn: "#0000AA",
+  backgroundSignUp: "#FF4100",
+  backgroundLogIn: "#4A97C9",
   color: "#FFFFFF",
   textAlign: "center",
   fontSize: 20,

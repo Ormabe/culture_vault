@@ -53,6 +53,7 @@ class LogInForm extends Component {
       email:"",
       password:""
     })
+    this.handleDialogClose()
   }
   handleDialogOpen () {
     this.setState({open: true});
