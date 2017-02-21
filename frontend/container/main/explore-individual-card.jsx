@@ -12,8 +12,8 @@ export default class ExploreIndividual extends Component {
 
     return (
       <div className="flip-container" onTouchStart="this.classList.toggle('hover')">
-        <div className="flipper">  
-          
+        <div className="flipper">
+
           <div className="front">
             <div className="explore-location" key={locationId}>
               <img src={image} alt={country} />
@@ -29,7 +29,7 @@ export default class ExploreIndividual extends Component {
           <div className="back">
             <div className="explore-location-back">
 
-                <ExploreLocations key={this.props.locationId} locationId={this.props.locationId}/>
+              <ExploreLocations key={this.props.locationId} locationId={this.props.locationId}/>
 
             </div>
           </div>

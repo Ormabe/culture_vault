@@ -105,6 +105,7 @@
 }
 
 .welcome-text{
+	min-width: 850px;
 	position: relative;
 	z-index: 2;
 	color: white;
@@ -114,8 +115,13 @@
 	justify-content: center;
 	margin-top: 250px;
 	font-family: 'Rock Salt';
-	margin-top: -750px;
+	margin-top: -1050px;
 	text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.welcome-spacer {
+	width: 100%;
+	height: 500px;
 }
 
 .headline {
@@ -135,9 +141,13 @@
 }
 
 .welcome-button{
-	background-color: #FF4100;
-	width: 250px;
-	margin-top: 70px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 300px;
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	border: none;
@@ -149,6 +159,18 @@
 
 .welcome-button a:link, a:hover, a:visited, a:active {
 	text-decoration: none;
+	color: white;
+}
+
+.white-text {
+	color: white;
+}
+
+.white-text a:link {
+	color: white;
+}
+
+.white-text a:hover {
 	color: white;
 }
 

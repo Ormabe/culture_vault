@@ -42,6 +42,9 @@ class ExploreLocations extends Component {
 
     return (
       <div className="explore-locations-back-container">
+        <div className="most-recent-post">
+          MOST RECENT POST:
+        </div>
         <div className="explore-back-most-recent" key={this.state.location[0].ExperienceId}>
           <Link to={'/experience/' + this.state.location[0].ExperienceId }>
             <div className="pic-and-text">

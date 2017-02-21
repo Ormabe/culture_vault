@@ -11,15 +11,16 @@ export default class Welcome extends Component {
       </div>
 
       <div className="welcome-text">
+        <div className="welcome-spacer"></div>
       	<div className="headline">Take Back Your Story</div>
-        <div className="secondary-text">
+        <div className="secondary-text white-text">
           Kitten Ipsum dolor sit amet discovered siamesecalico peaceful her Gizmo peaceful boy
           rutrum caturday enim lived quis Mauris sit malesuada gf's saved fringilla enim. 
           
         </div>
-        <button className="welcome-button">
-          <Link to="/explore">Take Me On A Journey</Link>
-        </button>
+        <div className="welcome-button">
+          <Link to="/explore"><img src="https://s25.postimg.org/wnwmcrgrj/welcome_journey_button.png" alt="Explore Culture Vault" /></Link>
+        </div>
       </div>
       </div>
     );
