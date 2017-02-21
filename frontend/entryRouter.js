@@ -12,8 +12,10 @@ import LocationContainer from './container/main/location';
 import CultureVault from './cultureVault';
 import UserProfile from './container/main/userProfile.jsx';
 import CreateExperience from './container/experiences/experience-create';
+import MusicContainter from './container/main/music-container.js';
 import Welcome from './components/main/welcome';
 import '../favicon.ico';
+
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -24,10 +26,11 @@ const router = (
 		<Route path="/" component={CultureVault} >
 			<IndexRoute component={Welcome} />
 			<Route path="create/:userId" component={CreateExperience} />
-			<Route path="explore" component={ExploreContainer} />
 			<Route path="discover" component={Feature} />
 			<Route path="experience/:id" component={Experience} />
-			<Route path='/country/:countryId' component={LocationContainer}/>
+			<Route path="explore" component={ExploreContainer} />
+			<Route path='explore/:countryId' component={LocationContainer}/>
+			<Route path="music" component={MusicContainter} />
 			<Route path="users/:id" component={UserProfile} />
 		</Route>
 	</Router>

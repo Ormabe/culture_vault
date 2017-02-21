@@ -42,10 +42,13 @@ class ExploreLocations extends Component {
 
     return (
       <div className="explore-locations-back-container">
+        <div className="most-recent-post">
+          MOST RECENT POST:
+        </div>
         <div className="explore-back-most-recent" key={this.state.location[0].ExperienceId}>
           <Link to={'/experience/' + this.state.location[0].ExperienceId }>
             <div className="pic-and-text">
-              <div> 
+              <div className="center-image"> 
                 <img src={this.state.location[0].Experience.image} alt={this.state.location[0].Experience.name} />
               </div>
               <div className="text-center explore-link">
@@ -55,7 +58,7 @@ class ExploreLocations extends Component {
           </Link>
         </div>
         <div>
-          <Link to={'/country/' + this.state.location[0].LocationId }><button className="orange-button">
+          <Link to={'/explore/' + this.state.location[0].LocationId }><button className="orange-button">
             SEE ALL
           </button></Link>
         </div>

@@ -74,8 +74,13 @@
 }
 
 .explore-back-most-recent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 	width: 330px;
-	height: 190px;
+	height: 180px;
+	padding: 5px;
 	background-color: white;
 	margin-left: auto;
 	margin-right: auto;
@@ -84,21 +89,29 @@
 }
 
 .explore-back-most-recent img {
-	height: 150px;
-	width: auto;
-	border-radius: 50%;
+	max-height: 150px;
+	max-width: 150px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pic-and-text {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100%;
 	height: auto;
 }
 
 .text-center {
+	width: 100%;
 	text-align: center;
 	padding: 5px 5px;
+}
+
+.center-image {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .orange-button {
@@ -106,6 +119,7 @@
 	width: 250px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 5px;
 	border: none;
 	color: white;
 	font-size: 20px;
@@ -196,7 +210,13 @@
 	height: 280px;
 }
 
-
+.most-recent-post {
+	text-align: center;
+	width: 100%;
+	padding: 5px 5px;
+	background-color: #4cb748;
+	color: white;
+}
 
 
 
