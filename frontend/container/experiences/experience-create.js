@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createNewExperience } from '../../actions/action-experiences';
 import { Link } from 'react-router';
 import axios from 'axios';
+import _ from 'lodash';
 
 class CreateExperience extends Component {
 	constructor(props) {
@@ -87,6 +88,7 @@ class CreateExperience extends Component {
 						country: 'success',
 						city: 'success',
 						name: 'success',
+						recipeTitle: 'success'
 					}
 				)
 	
@@ -162,6 +164,10 @@ class CreateExperience extends Component {
 			<div>
 			</div>
 		)
+	}
+
+	deleteIngredient() {
+
 	}
 
 	render() {

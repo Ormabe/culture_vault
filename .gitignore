@@ -45,3 +45,4 @@ frontend/public/bundle.js
 frontend/public/bundle.js.map
 *.env
 
+	frontend/assets/
