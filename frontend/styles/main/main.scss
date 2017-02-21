@@ -91,21 +91,27 @@
 .explore-back-most-recent img {
 	max-height: 150px;
 	max-width: 150px;
-	width: 100%;
 	height: auto;
-	margin: auto auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pic-and-text {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100%;
 	height: auto;
 }
 
 .text-center {
+	width: 100%;
 	text-align: center;
 	padding: 5px 5px;
+}
+
+.center-image {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .orange-button {

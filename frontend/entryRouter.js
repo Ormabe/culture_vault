@@ -25,10 +25,10 @@ const router = (
 		<Route path="/" component={CultureVault} >
 			<IndexRoute component={Welcome} />
 			<Route path="create/:userId" component={CreateExperience} />
-			<Route path="explore" component={ExploreContainer} />
 			<Route path="discover" component={Feature} />
 			<Route path="experience/:id" component={Experience} />
-			<Route path='/country/:countryId' component={LocationContainer}/>
+			<Route path="explore" component={ExploreContainer} />
+			<Route path='explore/:countryId' component={LocationContainer}/>
 			<Route path="music" component={MusicContainter} />
 			<Route path="users/:id" component={UserProfile} />
 		</Route>
