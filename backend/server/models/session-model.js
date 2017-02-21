@@ -13,15 +13,6 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
 
       }
-    },
-    instanceMethods: {
-      extendDefaultFields: function ( defaults, session) {
-        return {
-          data: defaults.data,
-          expires: defaults.expires,
-          userId: (session.passport && session.passport['user']) ? session.passport['user'] : null
-        };
-      }
     }
   });
   return Session;

@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const Sequelize = require('sequelize');
+
 const session = require('express-session');
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,13 +10,14 @@ const db = require('./models');
 const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
 // const uuid = require('uuid');
+// const passport = require('passport');
 const passport = require('./config/passport');
 
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const flash = require('connect-flash');
+const flash = require('express-flash');
+// const models = require('./models');
 
-// INITIALIZE SEQUELIZESTORE
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(morgan('dev'));
@@ -28,19 +29,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
   secret: process.env.SECRET_LOGIN_KEY,
   saveUninitialized: true,
-  resave: true,
-  cookie: {
-    path: '/',
-    httpOnly: true,
-    secure: process.env.COOKIE_SECURE
-  },
+  resave: false,
   store: new SequelizeStore({
-    genid: function(req) {
-      return genuuid() 
-    },
     db: db.sequelize,
-    table: 'Session',
-    extendDefaultFields: db.Session.extendDefaultFields
+    table: 'Session'
   })
 }));
 
@@ -64,11 +56,13 @@ app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
   console.log('tao');
+  console.log("Session", session)
+  // console.log('User ID:',user.id);
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-app.listen(2222);
-console.log('Listening at https://localhost:2222');
+  app.listen(2222);
+  console.log('Listening at https://localhost:2222');
 
 
 module.exports = app;

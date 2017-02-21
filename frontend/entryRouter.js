@@ -13,6 +13,7 @@ import CultureVault from './cultureVault';
 import UserProfile from './container/main/userProfile.jsx';
 import CreateExperience from './container/experiences/experience-create';
 import Welcome from './components/main/welcome';
+import '../favicon.ico';
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
