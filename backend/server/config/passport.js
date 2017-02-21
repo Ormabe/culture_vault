@@ -2,52 +2,66 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const models = require('../models');
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+// passport.serializeUser((user, done) => {
+//   console.log('<===== SERIALIZER =====>')
+//   console.log('<== USER ======>>>',user.dataValues.id)
+//   done(null, user.id);
+// });
+//
+// passport.deserializeUser((id, done) => {
+//   console.log('<===== DESERIALIZER =====>')
+//   models.Users.findById(id, (err, user) => {
+//     done(err, user);
+//   });
+// });
+
+passport.serializeUser((req, user, done) => {
+  console.log("SERIALIZE SESSION ID ====>", req.sessionID)
+  console.log("SERIALIZE USER ====>", user.id)
+  console.log("SERIALIZE REQ ====>", req.user.id)
+  const sessionUser = req.user.id ;
+  done(null, sessionUser);
 });
 
-passport.deserializeUser(function(id, done) {
-  models.Users.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
-
+passport.deserializeUser((req, sessionUser) => {
+  console.log("DESERIALIZE SESSION ====>", req)
+  // done(null, sessionUser)
+})
 
 passport.use('local', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-  },
-  function(email, password, done) {
-    // <====== BEGIN AUTHENTICATION ======>"
-
-    models.Users.findOne({
-      where: {
-        email: email
-      }
-    })
-    .then( function(user) {
+  usernameField: 'email',
+  passwordField: 'password',
+}, (email, password, done) => {
+    console.log('<====== BEGIN AUTHENTICATION ======>')
+  models.Users.findOne({
+    where: {
+      email,
+    },
+  })
+    .then((user) => {
       if (!user) {
-        // <====== EMAIL NOT FOUND ======>
+        console.log('<====== EMAIL NOT FOUND ======>')
         return done(null, false, {
-          message: 'Email does not exist.'
+          message: 'Email does not exist.',
         });
       }
       if (!user.validPassword(password)) {
-        // <====== INVALID PASSWORD ======>
+        console.log('<====== INVALID PASSWORD ======>')
         return done(null, false, {
-          message: 'Incorrect password.'
+          message: 'Incorrect password.',
         });
       }
-      // <====== AUTHENTICATION COMPLETE ======>
+      console.log('<====== AUTHENTICATION COMPLETE ======>')
       return done(null, user);
     })
     .catch((err) => {
       if (err) {
-        // <====== ERROR ======>
+        console.log('<====== ERROR ======>')
         return done(err);
       }
+      return done(err);
     });
-  }
+}
 ));
 
-module.exports = passport
+module.exports = passport;

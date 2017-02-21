@@ -18,14 +18,15 @@ class Feature extends Component{
 					<ul>
 						{features.map(feature => {
 							return (
-								<li key={feature.id}
-										onClick={() => this.props.router.push(`/experience/${feature.id}`)}
+								<li 
+								key={feature.id}
+								onClick={() => this.props.router.push(`/experience/${feature.id}`)}
 								>
-										<img src={feature.image} alt={feature.id} />
-										<br />
-										<strong>{feature.name}</strong>
-										<br />
-										<br />
+									<img src={feature.image} alt={feature.id} />
+									<br />
+									<strong>{feature.name}</strong>
+									<br />
+									<br />
 								</li>	
 							)
 						})}

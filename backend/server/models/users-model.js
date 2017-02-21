@@ -3,7 +3,7 @@ const Promise = require('bluebird');
 const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 
 module.exports = function(sequelize, DataTypes) {
-  var Users = sequelize.define('Users', {
+  const Users = sequelize.define('Users', {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     username: {
@@ -65,30 +65,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  // {
-  //   classMethods: {
-  //     associate: function(models) {
-  //       Users.hasMany(models.Experiences)
-  //       Users.hasMany(models.Comment)
-  //       Users.hasMany(models.Likes)
-  //     }
-  //   }
-  // ,
-  //   hooks: {
-  //     beforeCreate : function(user, options, next) {
-  //       bcrypt.genSalt(10, function(err, salt) {
-  //         bcrypt.hash(user.password, salt, function(err, hash) {
-  //           user.password = hash;
-  //           next(null, user);
-  //         });
-  //       });
-  //     }
-  //   },
-  //   instanceMethods: {
-  //     validPassword: function(password) {
-  //       return bcrypt.compareSync(password, this.password);
-  //     }
-  //   }
-  // });
   return Users;
 };

@@ -32,13 +32,59 @@ The Food Experiences are stored on our database and searchable by the members' u
 
 * Step 2. Get Culture Vault source code and install package
 
-    - Clone Culture Vault from github: $ git clone https://github.com/Ormabe/culture_vault.git
-    - Go into culture_vault folder and install node package: cd culture_vault && npm install
-    - Run culture_vault: npm start
+    - Clone Culture Vault from github: $ **git clone** https://github.com/Ormabe/culture_vault.git
+    - Go into culture_vault folder and install node package: **cd culture_vault && npm install**
 
-* Step 3. Pull up Culture Vault in your browser
+* Step 3. Populate seed data from file
 
-    - http://localhost:2222/explore
+    - **node populateData.js**
+
+* Step 4. Create an `.env` file at your root directory. Set your **SECRET LOGIN SECURITY KEY**, the demo was designed with a 24-digit password. You can generate a truly random secret key yourself: https://lastpass.com/generatepassword.php
+
+    - SECRET_LOGIN_KEY=**Replace with your new 24-digit password**
+
+* Step 5. Turn on **PostgreSQL**
+
+* Step 6. Create a new database in **Postico** named `culture_vault`.
+
+* Step 7. Create a `config.json` file in the `backend/server/config` folder.
+
+    - Insert the following code into the newly created `config.json` file:
+
+    ```
+        {
+          "development": {
+            "username": "root",
+            "password": null,
+            "database": "culture_vault",
+            "host": "127.0.0.1",
+            "dialect": "postgres"
+          },
+          "test": {
+            "username": "root",
+            "password": null,
+            "database": "culture_vault",
+            "host": "127.0.0.1",
+            "dialect": "postgres"
+          },
+          "production": {
+            "username": "root",
+            "password": null,
+            "database": "culture_vault",
+            "host": "127.0.0.1",
+            "dialect": "postgres"
+          }
+        }
+    ```
+    - Replace `"root"` with the name that appears before the `$` in your terminal.
+
+* Step 8. Start the server
+
+    - Run culture_vault: **npm start**
+
+* Step 9. Pull up Culture Vault in your browser
+
+    - http://localhost:2222/
 
 ## Technologies
 
@@ -51,6 +97,7 @@ Back-end (for MAC):
 * [Sequelize](http://docs.sequelizejs.com/en/v3/)
 * [Passport](http://passportjs.org)
 * [BCrypt](https://github.com/shaneGirish/bcrypt-nodejs)
+* [DotEnv](https://www.npmjs.com/package/dotenv)
 
 
 Front-end:
