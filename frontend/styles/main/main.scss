@@ -1,1 +1,202 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+.explore-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 1200px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.explore-location {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 380px;
+	height: 280px;
+	margin: 15px 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: -30px;
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+}
+
+.explore-location img {
+	border-radius: 6px;
+	margin-top: 15px;
+}
+
+.explore-location a:link, a:hover, a:visited, a:active {
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.explore-link {
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.explore-location-back {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 380px;
+	height: 280px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	margin-left: -30px;
+	margin-right: 10px;
+	border-radius: 6px;
+	cursor: pointer;
+	background-color: #4cb748;
+	position: relative;
+	z-index: 1;
+}
+
+.explore-locations-back-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 350px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #e8e8ee;
+}
+
+.explore-back-most-recent {
+	width: 330px;
+	height: 190px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.explore-back-most-recent img {
+	height: 150px;
+	width: auto;
+	border-radius: 50%;
+}
+
+.pic-and-text {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+}
+
+.text-center {
+	text-align: center;
+	padding: 5px 5px;
+}
+
+.orange-button {
+	background-color: #FF4100;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	color: white;
+	font-size: 20px;
+	padding: 5px 5px;
+	border-radius: 6px;
+}
+
+.blue-gradient {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(74,151,201,0.67) 59%, rgba(74,151,201,1) 88%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(74,151,201,0.67) 59%,rgba(74,151,201,1) 88%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(74,151,201,0.67) 59%,rgba(74,151,201,1) 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#4a97c9',GradientType=0 );
+	position: relative;
+	z-index: 2;
+	width: 380px;
+	height: 80px;
+	margin-left: -30px;
+	margin-right: auto;
+	border-radius: 0px 0px 6px 6px;
+	margin-top: -85px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.explore-card-text {
+	color: white;
+	font-size: 40px;
+	margin-top: -25px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+}
+
+.flip-container {
+	perspective: 1000px;
+	height: 280px;
+	margin-bottom: -170px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+		height: 280px;
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	height: 280px;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.nothing-to-show {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 30px;
+	width: 380px;
+	height: 280px;
+}
+
+
+
+
+

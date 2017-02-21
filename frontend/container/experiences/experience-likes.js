@@ -21,7 +21,6 @@ class Likes extends Component {
 	componentWillMount(){
 		let { fetchLikes } = this.props
 		let id = this.props.id
-		console.log("componentWillMount")
 		
 		fetchLikes(id)
  	}
@@ -29,7 +28,7 @@ class Likes extends Component {
  	likesCounter() {
  		let { likes } = this.props;
 		let counter = likes.length
-		console.log(counter)
+
 		return (
 			<div>
 			{counter}
@@ -40,10 +39,8 @@ class Likes extends Component {
  	addLikes(experienceId,userId) {
 		let ROOT_URL = `/api/likes/`
 		
-		console.log('im likeing this experience')
 		axios.post(`${ROOT_URL}${experienceId}/${userId}`)
 		.then((data) => { 
-			console.log("ADD LIKE DATA:" + data)
 			this.props.fetchLikes(this.props.id)
 		})
 		.catch((error) => {
@@ -54,10 +51,8 @@ class Likes extends Component {
 	deleteLikes(experienceId,userId) {
 		let ROOT_URL = `/api/likes/`
 
-		console.log("i am unlikeing this experience")
 		axios.delete(`${ROOT_URL}${experienceId}/${userId}`)
 		.then((data) => {
-			console.log("DELETE LIKE DATA:" + data)
 			this.props.fetchLikes(this.props.id)
 		})
 		.catch((error) => {
@@ -67,11 +62,9 @@ class Likes extends Component {
 
  	render(){
 	let { likes } = this.props;
-		console.log(likes)
+
  		return (
  		 	<div>
- 				Hello from the likes Component
- 				
  				<LikesCounter likesCounter={this.likesCounter.bind(this)} />
  				<LikesImage 
 	 				likes={this.state.likes}

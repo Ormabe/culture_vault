@@ -1,1 +1,162 @@
-navigation.scss
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+.navbar-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: white;
+	-webkit-box-shadow: 0 8px 6px -2px #888888;
+	-moz-box-shadow: 0 8px 6px -2px #888888;
+	box-shadow: 0 8px 6px -2px #888888;
+	z-index: 100;
+}
+
+.navbar-container {
+	font-family: 'Montserrat';
+	font-size: 20px;
+	color: #585A5B;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 1200px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+.navbar-container a:link {
+	text-decoration: none;
+	font-family: 'Montserrat';
+	font-size: 20px;
+	color: #585A5B;
+}
+
+.navbar-explore {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 200px;
+	height: auto;
+}
+
+.navbar-container .navbar-explore a:link, a:hover, a:visited, a:active {
+	text-decoration: none;
+	font-family: 'Montserrat' !important;
+	font-size: 20px;
+	color: #585A5B !important;
+}
+
+.navbar-discover {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 200px;
+	height: auto;
+}
+
+.navbar-logo {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 10px;
+	margin-bottom: auto;
+	width: 400px;
+	height: auto;
+}
+
+.navbar-about {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 200px;
+	height: auto;
+}
+
+.navbar-login {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 200px;
+	height: auto;
+}
+
+.navbar-logo img {
+	height: 70px;
+	width: auto;
+}
+
+.site-container {
+	height: 100%;
+	width: auto;
+	font-family: 'Montserrat' !important;
+}
+
+.welcome-container {
+	width: 100%;
+	height: 100%;
+}
+
+.welcome-text{
+	position: relative;
+	z-index: 2;
+	color: white;
+	font-size: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 250px;
+	font-family: 'Rock Salt';
+	margin-top: -750px;
+	text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.headline {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.secondary-text{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	width: 500px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.welcome-button{
+	background-color: #FF4100;
+	width: 250px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	color: white;
+	font-size: 15px;
+	padding: 20px 5px;
+	border-radius: 6px;
+}
+
+.welcome-button a:link, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: white;
+}
+
+video {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: relative;
+	z-index: 1;
+}
