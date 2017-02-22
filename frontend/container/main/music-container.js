@@ -14,26 +14,24 @@ class AddSong extends Component{
 		this.showStuff = this.showStuff.bind(this)
 		this.handleArtistChange = this.handleArtistChange.bind(this)
 		this.handleTrackChange = this.handleTrackChange.bind(this)
-		this.controlMusic = this.controlMusic.bind(this)
+		this.playMusic = this.playMusic.bind(this)
+		this.stopMusic = this.stopMusic.bind(this)
 
 
 		this.state ={
 			songs:[],
 			artist: "",
 			track:"",
-			artistInfo: [],
-			playing: false
+			artistInfo: []
 		}
 	}
 
-	controlMusic(audioObject){
-		if(this.state.playing === false){
+	playMusic(audioObject){
 			audioObject.play();
-			this.setState({playing: true});
-		}else if (this.state.playing === true){
+	}
+
+		stopMusic(audioObject){
 			audioObject.pause();
-			this.setState({playing: false});
-		}
 	}
 
 
@@ -82,11 +80,16 @@ class AddSong extends Component{
 
 						{track.name}
 						<br/>
-						<div id={index} onClick={() => this.controlMusic(audioObject)}>
+						<img src={track.album.images[1].url} />
+						<br/>
+						<button id={index} onClick={() => this.playMusic(audioObject)}>
+							Play
+						</button>
 
-						  <img src={track.album.images[1].url} />
-						</div>
-
+						<button id={index} onClick={() => this.stopMusic(audioObject)}>
+							Stop
+						</button>
+						<br/>
 						{track.artists[0].name}
 						<br/>
 
