@@ -264,6 +264,30 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		unit:"pound",
 		RecipeId:2
 		}
+		,
+
+		{
+		ingredients:"Chorizo",
+		quantity:8,
+		unit:"ounces",
+		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Chicarron",
+		quantity:2,
+		unit:"tablespoons",
+		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Eggs",
+		quantity:3/4,
+		unit:"pound",
+		RecipeId:5
+		}
 	])
 	}).then(data => {
 		models.Comment.bulkCreate([
@@ -368,6 +392,11 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		ExperienceId:4,
 		UserId:2
 		}
+		,
+		{
+		ExperienceId:5,
+		UserId:2
+		}
 			])
 	}).then(data => {
 		models.Steps.bulkCreate([
@@ -418,6 +447,24 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		{
 		steps: 'Cook then enjoy',
 		RecipeId:1
+		}
+		,
+
+		{
+		steps: 'Fry all meats',
+		RecipeId:5
+		}
+		,
+
+		{
+		steps: 'Prepare eggs sunny-side up',
+		RecipeId:5
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:5
 		}
 	])
 	}).then(data => {
