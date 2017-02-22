@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     story: {
-      type:DataTypes.STRING(2000)
+      type:DataTypes.STRING(50000)
     },
 
     image: {

@@ -57,10 +57,11 @@ const seedFunction = () => {
 	location: "New York City",
 	bio: "There's nothing not to love about me..."
 	}
+
 	]).then(data => {
 		models.Experiences.bulkCreate([
 		{
-		name: "Mamasan's Chanko Nabe",
+		name: "Oba No Chanko Nabe",
 		fav: 4,
 		quote: `"My gran once told me that, "People are like ingredients. If we made a soup with with just potatoes, it'll taste too bland. But if you mix a variety of ingredients, your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too..."`,
 		story: " more story blah blah.....Every Sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
@@ -76,6 +77,24 @@ const seedFunction = () => {
 		image: "https://s25.postimg.org/hzuwt5v33/spaghettios.jpg",
 		UserId:2
 		},
+		{
+		name: 'Cross-cultural Bonds',
+		fav: 2,
+		quote: "When you're stuck with a group of people repeatedly for hours on end, you're not friends until you've shared food. My co-worker Shazia introducing me to Pakistani briyani has changed my life",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+		UserId:3
+		}
+		,
+		{
+		name: 'SABILLAH FAMILY TAJJIN',
+		fav: 44,
+		quote: "Nothing is better that eating your favorite meal with your favorite person.",
+story: "This meal represents family to me. We always have it at  gatherings and festivals .I'm from Rabat, Morocco originally,  I immigrated to  New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating  out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart  and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of.  She brought this same  creativity to the previous careers as a seamstress  and accountant.  and now pursuing  becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are  passed  from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is  quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly.  traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin,  I have no doubt of who I am and that I'm where I belong.",
+			image: "https://es1-ladleandspricell.netdna-ssl.com/wp-content/uploads/2013/12/tagine-chicken-1.jpg",
+		UserId:3
+		}
+		,
 		{
 		name: 'Cross-cultural Bonds',
 		fav: 2,
@@ -109,7 +128,7 @@ const seedFunction = () => {
 	},
 	{
 	continent: "Africa",
-	country: "South Africa",
+	country: "Morocco",
 	city: "Cape Town",
 	image: "https://s25.postimg.org/60g6u8exr/south_africa.png"
 	},
@@ -141,6 +160,11 @@ const seedFunction = () => {
 	{
   name: 'Shazia\'s Briyani',
   ExperienceId:3
+	}
+	,
+	{
+  name: 'Tajjin',
+  ExperienceId:4
 	}
 		])
 	}).then(data => {
@@ -178,6 +202,38 @@ const seedFunction = () => {
 		quantity:1.5,
 		unit:"teaspoons",
 		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"lamb",
+		quantity:1.5,
+		unit:"pounds",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"sea salt, coarse",
+		quantity:1,
+		unit:"teaspoon",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"prunes",
+		quantity:4,
+		unit:"ounces",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"cinnamon",
+		quantity:2,
+		unit:"sticks",
+		RecipeId:4
 		}
 	])
 	}).then(data => {
@@ -273,6 +329,12 @@ const seedFunction = () => {
 		ExperienceId:1,
 		UserId:1
 		},
+		,
+		{
+		ExperienceId:4,
+		UserId:3
+		},
+
 			])
 	}).then(data => {
 		models.Steps.bulkCreate([
@@ -300,6 +362,18 @@ const seedFunction = () => {
 		steps: 'scramble some eggs',
 		RecipeId:2
 		}
+		,
+
+		{
+		steps: 'Place ingredients and water in tajjin',
+		RecipeId:4
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:4
+		}
 	])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
@@ -316,6 +390,12 @@ const seedFunction = () => {
 		{
 		LocationId:3,
 		ExperienceId:3
+		}
+		,
+
+		{
+		LocationId:4,
+		ExperienceId:4
 		}
 
 		])
