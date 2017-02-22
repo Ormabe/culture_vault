@@ -17,6 +17,7 @@ class LocationContainer extends Component {
 
   renderLocations() {
     let { location } = this.props; 
+    console.log('Render Component')
       return (
         <div className="location-row">
             {location.map(place => {
