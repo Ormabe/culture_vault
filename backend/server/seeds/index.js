@@ -63,9 +63,9 @@ const seedFunction = () => {
 		{
 		name: "Oba No Chanko Nabe",
 		fav: 4,
-		quote: `"My gran once told me that, "People are like ingredients. If we made a soup with with just potatoes, it'll taste too bland. But if you mix a variety of ingredients, your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too..."`,
-		story: " more story blah blah.....Every Sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: 'https://s25.postimg.org/bwhxmzu73/chanko_nabe.jpg',
+		quote: `"My Aunt once told me that, "People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorful"`,
+		story: "My favorite person in the world is my Aunt, she has encouraged my individuality like no one else. I was never girly even as a little girl. Dolls and cute sweets didn’t thrill me, it hinted at tendencies to my immediate family that were unacceptable. While others tried to discourage me from being my authentic self to protect me from society's disapproval at the cost of smothering my light. My aunt always encouraged my interests and expression. My Aunt once told me that, People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorfulShe was a career woman that married but never had children, wild and daring for her generation. She taught me that there were different types of strength. That being yourself in a world intent on you being anything but was quiet bravery. Chanko Nabe, well known for being a core diet component of sumo wrestlers is heaven. It’s a hearty mixture of vegetables, meats, and tofu in a miso ( fermented soybean and barley/rice malt) based broth and is nothing like the airy miso soups you’ve likely tried at japanese restaurants outside of Japan.Chanko Nabe became my favorite dish the first time she made it for me when I was 7 years old. I can still remember the rich and almost buttery, yet clear broth. It tasted like bones had been boiling for years to create such a powerful flavor. My aunt would make it with strips of pork, a lot of napa cabbage, some mushrooms, tofu and a variety of extras that changed each time. I always felt like it was her way of acknowledging my differences, nourishing me with the soup of warriors, and urging me to be strong without words. Years later when I came-out of the closet as a lesbian to my family, she was the first person to accept me. And while I waited in the cold for the rest of my family to come to terms ( and mourned those that couldn’t),she continued to love and comfort me with large bowls of soup that represent the same simple honest authentic warmth she always gave to her niece.",
+		image: 'http://www.gotokyo.org/en/tourists/topics_event/topics/150115/images/150115_main.jpg',
 		UserId:1
 		},
 
@@ -90,7 +90,7 @@ const seedFunction = () => {
 		name: 'SABILLAH FAMILY TAJJIN',
 		fav: 44,
 		quote: "Nothing is better that eating your favorite meal with your favorite person.",
-story: "This meal represents family to me. We always have it at  gatherings and festivals .I'm from Rabat, Morocco originally,  I immigrated to  New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating  out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart  and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of.  She brought this same  creativity to the previous careers as a seamstress  and accountant.  and now pursuing  becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are  passed  from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is  quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly.  traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin,  I have no doubt of who I am and that I'm where I belong.",
+story: "This meal represents family to me. We always have it at gatherings and festivals .I'm from Rabat, Morocco originally, I immigrated to New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of. She brought this same creativity to the previous careers as a seamstress and accountant. and now pursuing becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are passed from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly. traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin, I have no doubt of who I am and that I'm where I belong.",
 			image: "https://es1-ladleandspricell.netdna-ssl.com/wp-content/uploads/2013/12/tagine-chicken-1.jpg",
 		UserId:3
 		}
@@ -154,7 +154,7 @@ story: "This meal represents family to me. We always have it at  gatherings and 
 	},
 
 	{
-	name: 'Humpty Dumpty\'s Wall Flower',
+	name: 'Chanko Nabe',
 	ExperienceId:1
 	},
 	{
@@ -234,6 +234,30 @@ story: "This meal represents family to me. We always have it at  gatherings and 
 		quantity:2,
 		unit:"sticks",
 		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"Shrimp",
+		quantity:8,
+		unit:"ounces",
+		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"miso paste",
+		quantity:2,
+		unit:"tablespoons",
+		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"chicken meatballs",
+		quantity:3/4,
+		unit:"pound",
+		RecipeId:2
 		}
 	])
 	}).then(data => {
@@ -315,7 +339,7 @@ story: "This meal represents family to me. We always have it at  gatherings and 
 		models.Likes.bulkCreate([
 		{
 		ExperienceId:1,
-		UserId:3
+		UserId:1
 		},
 		{
 		ExperienceId:2,
@@ -374,6 +398,18 @@ story: "This meal represents family to me. We always have it at  gatherings and 
 		steps: 'Cook then enjoy',
 		RecipeId:4
 		}
+		,
+
+		{
+		steps: 'Boil in stone pot',
+		RecipeId:1
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:1
+		}
 	])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
@@ -384,7 +420,7 @@ story: "This meal represents family to me. We always have it at  gatherings and 
 
 		{
 		LocationId:2,
-		ExperienceId:1
+		ExperienceId:2
 		},
 
 		{
