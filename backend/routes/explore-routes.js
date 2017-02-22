@@ -134,7 +134,15 @@ const findByCity = ((req, res) => {
 	});
 
 const getExperiences = (req,res) => {
-  let dopeObj = {User:null, LocationId:req.params.locationId, Experience:null};
+  let dopeObj = {
+    User:null, 
+    LocationId:req.params.locationId, 
+    Experience:null, 
+    LikesCounter:null,
+    Recipe:null,
+    CommentsCounter:null
+  }
+  
   models.ExperiencesLocations.findAll({
     where:{
       LocationId:dopeObj.LocationId
@@ -153,9 +161,50 @@ const getExperiences = (req,res) => {
   })
 
   .then(user => dopeObj.User = user)
+
+  .then(like => {
+    return models.Likes.findAll({
+      where: {
+        ExperienceId:dopeObj.Experience.id
+      }
+    })
+  })
+
+  .then(like => dopeObj.LikesCounter = like)
+
+  .then(like => {
+
+   let data = {counter:0}
+   for(var i = 0; i< dopeObj.LikesCounter.length ; i++){
+    data.counter +=1
+   }
+    dopeObj.LikesCounter = data.counter
+  })
+
+  .then(recipe => {
+    return models.Recipes.findAll({
+      where: {
+        ExperienceId: dopeObj.Experience.id
+      }
+    })
+  })
+
+  .then(recipe => dopeObj.Recipe = recipe)
+
+  // .then(comment => {
+  //   return models.Comments.findAll({
+  //     where: {
+  //       Experience: dopeObj.Experience.id
+  //     }
+  //   })
+  // })
+
+  // .then(comment => dopeObj.CommentsCounter = comment)
+  
   .then(data => res.send(dopeObj))
   .catch(err => res.status(500).send(err))
 };
+
 
 const allSearchTerms = ((req,res) => {
   return Search.findAll({
