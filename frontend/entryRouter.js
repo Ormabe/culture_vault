@@ -18,6 +18,9 @@ import LogInForm from './components/main/loginform.js';
 import SignUpForm from './components/main/signupform.js';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import '../favicon.ico';
+
+
 
 injectTapEventPlugin();
 

@@ -7,6 +7,7 @@ const formStyles = {
   },
   backgroundSignUp: "#FF4100",
   backgroundLogIn: "#4A97C9",
+  backgroundWelcome: "#FF4100",
   color: "#FFFFFF",
   textAlign: "center",
   fontSize: 18,

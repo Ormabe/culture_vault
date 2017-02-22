@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginUserFunc } from '../../actions/login-action';
 import { bindActionCreators } from 'redux';
+import SignUpForm from './signupform.js';
 
 import axios from 'axios';
 
@@ -47,7 +48,7 @@ class LogInForm extends Component {
 	}
   loginUser(e) {
     e.preventDefault()
-
+    console.log("<====== LOGIN ======>")
     this.props.loginUserFunc(this.state.email,this.state.password)
     this.setState({
       email:"",
@@ -89,6 +90,7 @@ class LogInForm extends Component {
           style={{textAlign: styles.textAlign}}
         >
       <form onSubmit={this.loginUser} autoComplete="off">
+
         <TextField
           name="email"
           value={this.state.email}

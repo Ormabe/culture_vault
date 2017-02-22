@@ -1,3 +1,7 @@
+//  https://github.com/gregwym/tractor/blob/596341206d417a7f4a2115e71c267a8efa14d7a3/server/auth/auth.service.js
+//  https://scotch.io/tutorials/route-middleware-to-check-if-a-user-is-authenticated-in-node-js
+//  http://danialk.github.io/blog/2013/02/23/authentication-using-passportjs/
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const models = require('../models');

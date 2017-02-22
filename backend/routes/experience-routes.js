@@ -29,7 +29,7 @@ const createAnExperience = (req, res) => {
 		recipe:req.body.name,
 		experienceId:null
 	};
-	
+
 	 models.Experiences.create({
 				quote: storage.quote,
 				story: storage.story,
@@ -41,7 +41,7 @@ const createAnExperience = (req, res) => {
 	 .then(data => {
 		 return models.Locations.create({
 				country: storage.country,
-				city: storage.city 
+				city: storage.city
 		})
 	})
 	 .then(location => storage.locationId = location.id)
@@ -61,7 +61,7 @@ const createAnExperience = (req, res) => {
 	 .then(recipe => storage.recipeId = recipe.id)
 
 	 .then(data => {
-	 
+
 	 	return	models.Ingredients.bulkCreate(
 	 		storage.ingredients.map(val => {
 	 			val.RecipeId = storage.recipeId;
@@ -148,13 +148,11 @@ const getExperience = (req, res) => {
 	.catch(error => res.status(500).send(error))
 };
 
-const getFeature = (req,res) => {
-	Experiences.findAll()
-	// { offset: 5, limit: 5 }
-	// when we have more data 
-	// offset skips than it will get us the next so we look cool 
-	.then(data => res.send(data))
-	.catch(error => res.status(500).send(error))
+const getFeature = (req, res) => {
+  console.log('Tao in here, you got user ID');
+  const userId = req.user && req.user.dataValues && req.user.dataValues.id;
+  console.log(userId);
+  Experiences.findAll().then(data => res.send(data)).catch(error => res.status(500).send(error))
 };
 
 router.route('/create/:userId')

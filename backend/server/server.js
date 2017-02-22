@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const Sequelize = require('sequelize');
+
 const session = require('express-session');
 const app = express();
 const bodyParser = require('body-parser');
@@ -17,6 +17,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
+// const models = require('./models');
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
@@ -32,7 +35,7 @@ app.use(session({
     },
   db: db.sequelize,
     table: 'Session'
-}),
+  }),
   saveUninitialized: true,
   resave: false
 }));
@@ -61,8 +64,8 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-app.listen(2222);
-console.log('Listening at https://localhost:2222');
+  app.listen(2222);
+  console.log('Listening at https://localhost:2222');
 
 
 module.exports = app;
