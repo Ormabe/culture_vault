@@ -1,3 +1,7 @@
+//  https://github.com/gregwym/tractor/blob/596341206d417a7f4a2115e71c267a8efa14d7a3/server/auth/auth.service.js
+//  https://scotch.io/tutorials/route-middleware-to-check-if-a-user-is-authenticated-in-node-js
+//  http://danialk.github.io/blog/2013/02/23/authentication-using-passportjs/
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const models = require('../models');
@@ -15,18 +19,23 @@ const models = require('../models');
 //   });
 // });
 
-passport.serializeUser((req, user, done) => {
-  console.log("SERIALIZE SESSION ID ====>", req.sessionID)
+
+
+passport.serializeUser(function(user, done) {
   console.log("SERIALIZE USER ====>", user.id)
-  console.log("SERIALIZE REQ ====>", req.user.id)
-  const sessionUser = req.user.id ;
-  done(null, sessionUser);
+  done(null, user.id);
 });
 
-passport.deserializeUser((req, sessionUser) => {
-  console.log("DESERIALIZE SESSION ====>", req)
-  // done(null, sessionUser)
-})
+passport.deserializeUser(function(id, done) {
+  console.log("DESERIALIZE USER ====>", id)
+  models.Users.findOne({
+    where: {
+      id,
+    }
+  }).then((user) => {
+    done(null, user);
+  })
+});
 
 passport.use('local', new LocalStrategy({
   usernameField: 'email',

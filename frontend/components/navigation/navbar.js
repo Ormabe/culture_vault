@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import LogInForm from '../main/loginform.js';
+import SignUpForm from '../main/signupform.js';
 import css from '../../styles/navigation/navigation.scss';
 
 export default class NavBar extends Component {
@@ -20,10 +22,15 @@ export default class NavBar extends Component {
         		<Link to="#">About</Link>
         	</div>
         	<div className="navbar-login">
-        		<button>LOGIN</button>
+            <div>
+        		<LogInForm />
+          </div>
+          <div>
+            <SignUpForm />
+          </div>
         	</div>
         </div>
-      </div>  
+      </div>
     );
   }
 }
@@ -42,7 +49,3 @@ export default class NavBar extends Component {
 //    )
 //  }
 // }
-
-
-
-

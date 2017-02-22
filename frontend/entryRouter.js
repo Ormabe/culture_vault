@@ -14,6 +14,7 @@ import UserProfile from './container/main/userProfile.jsx';
 import CreateExperience from './container/experiences/experience-create';
 import MusicContainter from './container/main/music-container.js';
 import Welcome from './components/main/welcome';
+import '../favicon.ico';
 
 
 

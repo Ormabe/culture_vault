@@ -40,6 +40,7 @@ module.exports = function(sequelize, DataTypes) {
         Users.hasMany(models.Experiences)
         Users.hasMany(models.Comment)
         Users.hasMany(models.Likes)
+
       }
     },
     instanceMethods: {
