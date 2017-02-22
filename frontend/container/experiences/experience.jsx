@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fetchExperience } from '../../actions/action-experiences';
 import Comments from './experience-comments';
 import Likes from './experience-likes';
+import css from '../../styles/experiences/experiences.scss';
 
 class Experience extends Component {
   componentWillMount() {
@@ -13,6 +14,42 @@ class Experience extends Component {
     const id = this.props.params.id;
 
     fetchExperience(id);
+  }
+
+  header() {
+    const { experience } = this.props;
+    const recipeName = experience.recipe.name;
+    const recipeImage = experience.experience.image;
+    const userName = `${experience.user.first_name} ${experience.user.last_name}`;
+    const userImage = experience.user.image;
+    const userLocation = experience.user.location;
+    
+    return (
+      <div>
+        <div className="recipe-image-header">
+          <div className="recipe-image">
+            <img src={recipeImage}/>
+          </div>
+          <div className="recipe-header-text-box card-5">
+            <div className="center-text recipe-title">
+              {recipeName}
+            </div>
+            <div className="horizontal-line">
+            </div>
+            <div className="user-header-image">
+              <img src={userImage} alt={userName} />
+            </div>
+            <div> 
+              by {userName}
+            </div>
+            <div>
+              {userLocation}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    )
   }
 
   user() {
@@ -124,8 +161,8 @@ class Experience extends Component {
     }
 
     return (
-      <div>
-        {this.user()}
+      <div className="experience-page-container">
+        {this.header()}
         <br />
         {this.story()}
         <br />

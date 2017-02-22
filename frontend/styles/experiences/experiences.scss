@@ -1,1 +1,89 @@
-experiences.scss
+.experience-page-container {
+	width: 1200px;
+	height: auto;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.recipe-image-header {
+	width: 650px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+}
+
+.recipe-image img {
+	border-radius: 2px;
+	max-width: 640px;
+}
+
+.recipe-image {
+	width: 640px;
+	height: auto;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: red;
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
+.recipe-header-text-box {
+	width: 500px;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	display: flex;
+	flex-direction: column;
+	margin-top: -75px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	background-color: white;
+	border-radius: 2px;
+	z-index: 4;
+	text-align: center;
+	justify-content: center;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.recipe-title {
+	margin: 5px 5px 15px 5px;
+	font-size: 30px;
+}
+
+.horizontal-line {
+	width: 400px;
+	height: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	background-color: #82878B;
+
+}
+.user-header-image img {
+	width: 50px;
+	height: auto;
+	margin-bottom: 5px;
+}
+
+.card-5 {
+	position: relative;
+	z-index: 2;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
