@@ -14,15 +14,10 @@ import UserProfile from './container/main/userProfile.jsx';
 import CreateExperience from './container/experiences/experience-create';
 import MusicContainter from './container/main/music-container.js';
 import Welcome from './components/main/welcome';
-import LogInForm from './components/main/loginform.js';
-import SignUpForm from './components/main/signupform.js';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
 import '../favicon.ico';
 
 
 
-injectTapEventPlugin();
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);

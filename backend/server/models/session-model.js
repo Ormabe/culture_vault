@@ -5,7 +5,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    userId: DataTypes.STRING,
     expires: DataTypes.DATE,
     data: DataTypes.STRING(50000)
   }, {
@@ -16,4 +15,4 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   return Session;
-};
+}
