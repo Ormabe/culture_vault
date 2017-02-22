@@ -103,6 +103,15 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		image: "http://img.absolutviajes.com/wp-content/uploads/2008/10/bandeja-paisa-png.png",
 		UserId:2
 		}
+		,
+		{
+		name: 'He Taught Me To Cook With Fire',
+		fav: 2,
+		quote: "My ex-boyfriend's dad became the father I never had",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+		UserId:3
+		}
 	])
 	}).then(data => {
 	models.Locations.bulkCreate([
@@ -170,6 +179,11 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	{
   name: 'Bandeja Paisa',
   ExperienceId:5
+	}
+	,
+	{
+  name: 'Not Crococile Dundee Shrimp',
+  ExperienceId:6
 	}
 		])
 	}).then(data => {
@@ -276,17 +290,33 @@ story: "This meal represents family to me. We always have it at gatherings and f
 
 		{
 		ingredients:"Chicarron",
-		quantity:2,
-		unit:"tablespoons",
+		quantity:1/2,
+		unit:"pound",
 		RecipeId:5
 		}
 		,
 
 		{
 		ingredients:"Eggs",
-		quantity:3/4,
-		unit:"pound",
+		quantity: 4,
+		unit:"",
 		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Maple wood chips",
+		quantity: 3,
+		unit:"pounds",
+		RecipeId:6
+		}
+		,
+
+		{
+		ingredients:"Shrimp",
+		quantity:1,
+		unit:"pound",
+		RecipeId:6
 		}
 	])
 	}).then(data => {
@@ -397,6 +427,11 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		ExperienceId:5,
 		UserId:2
 		}
+		,
+		{
+		ExperienceId:6,
+		UserId:2
+		}
 			])
 	}).then(data => {
 		models.Steps.bulkCreate([
@@ -466,6 +501,24 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		steps: 'Cook then enjoy',
 		RecipeId:5
 		}
+		,
+
+		{
+		steps: 'Season shrimp',
+		RecipeId:6
+		}
+		,
+
+		{
+		steps: 'Grill',
+		RecipeId:6
+		}
+		,
+
+		{
+		steps: 'Enjoy',
+		RecipeId:6
+		}
 	])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
@@ -494,6 +547,12 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		{
 		LocationId:6,
 		ExperienceId:5
+		}
+		,
+
+		{
+		LocationId:5,
+		ExperienceId:6
 		}
 
 		])
