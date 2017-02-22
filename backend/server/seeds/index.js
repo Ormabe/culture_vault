@@ -57,14 +57,15 @@ const seedFunction = () => {
 	location: "New York City",
 	bio: "There's nothing not to love about me..."
 	}
+
 	]).then(data => {
 		models.Experiences.bulkCreate([
 		{
-		name: "Mamasan's Chanko Nabe",
+		name: "Oba No Chanko Nabe",
 		fav: 4,
-		quote: `"My gran once told me that, "People are like ingredients. If we made a soup with with just potatoes, it'll taste too bland. But if you mix a variety of ingredients, your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too..."`,
-		story: " more story blah blah.....Every Sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: 'https://s25.postimg.org/bwhxmzu73/chanko_nabe.jpg',
+		quote: `"My Aunt once told me that, "People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorful"`,
+		story: "My favorite person in the world is my Aunt, she has encouraged my individuality like no one else. I was never girly even as a little girl. Dolls and cute sweets didn’t thrill me, it hinted at tendencies to my immediate family that were unacceptable. While others tried to discourage me from being my authentic self to protect me from society's disapproval at the cost of smothering my light. My aunt always encouraged my interests and expression. My Aunt once told me that, People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorfulShe was a career woman that married but never had children, wild and daring for her generation. She taught me that there were different types of strength. That being yourself in a world intent on you being anything but was quiet bravery. Chanko Nabe, well known for being a core diet component of sumo wrestlers is heaven. It’s a hearty mixture of vegetables, meats, and tofu in a miso ( fermented soybean and barley/rice malt) based broth and is nothing like the airy miso soups you’ve likely tried at japanese restaurants outside of Japan.Chanko Nabe became my favorite dish the first time she made it for me when I was 7 years old. I can still remember the rich and almost buttery, yet clear broth. It tasted like bones had been boiling for years to create such a powerful flavor. My aunt would make it with strips of pork, a lot of napa cabbage, some mushrooms, tofu and a variety of extras that changed each time. I always felt like it was her way of acknowledging my differences, nourishing me with the soup of warriors, and urging me to be strong without words. Years later when I came-out of the closet as a lesbian to my family, she was the first person to accept me. And while I waited in the cold for the rest of my family to come to terms ( and mourned those that couldn’t),she continued to love and comfort me with large bowls of soup that represent the same simple honest authentic warmth she always gave to her niece.",
+		image: 'http://www.gotokyo.org/en/tourists/topics_event/topics/150115/images/150115_main.jpg',
 		UserId:1
 		},
 
@@ -80,6 +81,33 @@ const seedFunction = () => {
 		name: 'Cross-cultural Bonds',
 		fav: 2,
 		quote: "When you're stuck with a group of people repeatedly for hours on end, you're not friends until you've shared food. My co-worker Shazia introducing me to Pakistani briyani has changed my life",
+		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
+		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+		UserId:3
+		}
+		,
+		{
+		name: 'Sabillah Family Tajjinn',
+		fav: 44,
+		quote: "Nothing is better that eating your favorite meal with your favorite person.",
+story: "This meal represents family to me. We always have it at gatherings and festivals .I'm from Rabat, Morocco originally, I immigrated to New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of. She brought this same creativity to the previous careers as a seamstress and accountant. and now pursuing becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are passed from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly. traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin, I have no doubt of who I am and that I'm where I belong.",
+			image: "https://es1-ladleandspricell.netdna-ssl.com/wp-content/uploads/2013/12/tagine-chicken-1.jpg",
+		UserId:3
+		}
+		,
+		{
+		name: " Bandeja Paisa (farmer/'s platter)",
+		fav: 2,
+		quote: "This is a slow food meant to fuel hard work. Even though the pace of our culture has changed this dish is timeless.",
+		story: "I was born in Medellin, Colombia and eating bandeja paisa makes me think of home. Meat is prized in our culture and a meal isn't considered adequate without beef or pork ( poultry and seafood do not count, sorry not sorry). This dish is the home run of meat dishes, it has at least 3 kinds of meat and is packed with stick to your ribs nutrition to keep you going during long days and hard work. The traditional bandeja paisa includes beans, rice, ground beef, chorizo with lime, plantain, arepa, avocado, fried egg on top and of course a big slice of chicharron (fried pork belly). It is often served with mazamorra, a cold milk drink made with crushed corn.Strong savory smells dominate the preparation of this meal: grilled steak, stewed beans, fried chorizo, and chicharron. Bean preparation varies based on region and personal taste, it's popular to season them with pata (pork feet). It's not elaborate like what you'd find in a restaurant and you don't make it with the same ingredients every time. Throughout the week families will make variations of this this dish, mine had it twice a week for lunch. It's defines comforting 'home food' for me. I miss it. I don't cook it here in america due to expense and time. The meat tastes different here ( almost like I can taste the antibiotics), beef is so much more expensive, and the traditional beans take hours to make.My favorite thing about this dish is it’s accessibility to all Colombians. Everyone knows, likes, orders, and cooks it. It developed in a region where coffee is produced. The farm laborers there would consume the high calorie bandeja paisa as a means of providing them a full day’s worth of energy and nourishment to keep them going throughout the entire day. The dish has always been from and for working class people, it is the unofficially thought of as the national dish.",
+		image: "http://img.absolutviajes.com/wp-content/uploads/2008/10/bandeja-paisa-png.png",
+		UserId:2
+		}
+		,
+		{
+		name: 'He Taught Me To Cook With Fire',
+		fav: 2,
+		quote: "My ex-boyfriend's dad became the father I never had",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
 		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
 		UserId:3
@@ -109,7 +137,7 @@ const seedFunction = () => {
 	},
 	{
 	continent: "Africa",
-	country: "South Africa",
+	country: "Morocco",
 	city: "Cape Town",
 	image: "https://s25.postimg.org/60g6u8exr/south_africa.png"
 	},
@@ -135,12 +163,27 @@ const seedFunction = () => {
 	},
 
 	{
-	name: 'Humpty Dumpty\'s Wall Flower',
+	name: 'Chanko Nabe',
 	ExperienceId:1
 	},
 	{
   name: 'Shazia\'s Briyani',
   ExperienceId:3
+	}
+	,
+	{
+  name: 'Tajjin',
+  ExperienceId:4
+	}
+	,
+	{
+  name: 'Bandeja Paisa',
+  ExperienceId:5
+	}
+	,
+	{
+  name: 'Not Crococile Dundee Shrimp',
+  ExperienceId:6
 	}
 		])
 	}).then(data => {
@@ -178,6 +221,102 @@ const seedFunction = () => {
 		quantity:1.5,
 		unit:"teaspoons",
 		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"lamb",
+		quantity:1.5,
+		unit:"pounds",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"sea salt, coarse",
+		quantity:1,
+		unit:"teaspoon",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"prunes",
+		quantity:4,
+		unit:"ounces",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"cinnamon",
+		quantity:2,
+		unit:"sticks",
+		RecipeId:4
+		}
+		,
+
+		{
+		ingredients:"Shrimp",
+		quantity:8,
+		unit:"ounces",
+		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"miso paste",
+		quantity:2,
+		unit:"tablespoons",
+		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"chicken meatballs",
+		quantity:3/4,
+		unit:"pound",
+		RecipeId:2
+		}
+		,
+
+		{
+		ingredients:"Chorizo",
+		quantity:8,
+		unit:"ounces",
+		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Chicarron",
+		quantity:1/2,
+		unit:"pound",
+		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Eggs",
+		quantity: 4,
+		unit:"",
+		RecipeId:5
+		}
+		,
+
+		{
+		ingredients:"Maple wood chips",
+		quantity: 3,
+		unit:"pounds",
+		RecipeId:6
+		}
+		,
+
+		{
+		ingredients:"Shrimp",
+		quantity:1,
+		unit:"pound",
+		RecipeId:6
 		}
 	])
 	}).then(data => {
@@ -259,7 +398,7 @@ const seedFunction = () => {
 		models.Likes.bulkCreate([
 		{
 		ExperienceId:1,
-		UserId:3
+		UserId:1
 		},
 		{
 		ExperienceId:2,
@@ -273,6 +412,26 @@ const seedFunction = () => {
 		ExperienceId:1,
 		UserId:1
 		},
+		,
+		{
+		ExperienceId:4,
+		UserId:3
+		},
+		,
+		{
+		ExperienceId:4,
+		UserId:2
+		}
+		,
+		{
+		ExperienceId:5,
+		UserId:2
+		}
+		,
+		{
+		ExperienceId:6,
+		UserId:2
+		}
 			])
 	}).then(data => {
 		models.Steps.bulkCreate([
@@ -300,6 +459,66 @@ const seedFunction = () => {
 		steps: 'scramble some eggs',
 		RecipeId:2
 		}
+		,
+
+		{
+		steps: 'Place ingredients and water in tajjin',
+		RecipeId:4
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:4
+		}
+		,
+
+		{
+		steps: 'Boil in stone pot',
+		RecipeId:1
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:1
+		}
+		,
+
+		{
+		steps: 'Fry all meats',
+		RecipeId:5
+		}
+		,
+
+		{
+		steps: 'Prepare eggs sunny-side up',
+		RecipeId:5
+		}
+		,
+
+		{
+		steps: 'Cook then enjoy',
+		RecipeId:5
+		}
+		,
+
+		{
+		steps: 'Season shrimp',
+		RecipeId:6
+		}
+		,
+
+		{
+		steps: 'Grill',
+		RecipeId:6
+		}
+		,
+
+		{
+		steps: 'Enjoy',
+		RecipeId:6
+		}
 	])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
@@ -310,12 +529,30 @@ const seedFunction = () => {
 
 		{
 		LocationId:2,
-		ExperienceId:1
+		ExperienceId:2
 		},
 
 		{
 		LocationId:3,
 		ExperienceId:3
+		}
+		,
+
+		{
+		LocationId:4,
+		ExperienceId:4
+		}
+		,
+
+		{
+		LocationId:6,
+		ExperienceId:5
+		}
+		,
+
+		{
+		LocationId:5,
+		ExperienceId:6
 		}
 
 		])

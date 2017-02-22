@@ -45,20 +45,20 @@ class ExploreLocations extends Component {
         <div className="most-recent-post">
           MOST RECENT POST:
         </div>
-        <div className="explore-back-most-recent" key={this.state.location[0].ExperienceId}>
-          <Link to={'/experience/' + this.state.location[0].ExperienceId }>
+        <div className="explore-back-most-recent" key={this.state.location.Experience.id}>
+          <Link to={'/experience/' + this.state.location.Experience.id }>
             <div className="pic-and-text">
-              <div className="center-image"> 
-                <img src={this.state.location[0].Experience.image} alt={this.state.location[0].Experience.name} />
+              <div className="center-image">
+                <img src={this.state.location.Experience.image} alt={this.state.location.Experience.name} />
               </div>
               <div className="text-center explore-link">
-                {this.state.location[0].Experience.name}
+                {this.state.location.Experience.name}
               </div>
             </div>
           </Link>
         </div>
         <div>
-          <Link to={'/explore/' + this.state.location[0].LocationId }><button className="orange-button">
+          <Link to={'/explore/' + this.state.location.LocationId }><button className="orange-button">
             SEE ALL
           </button></Link>
         </div>
@@ -67,6 +67,7 @@ class ExploreLocations extends Component {
   }
 
   render() {
+    console.log(this.state.location)
     return <div>{this.apiResults()}</div>
   }
 }
