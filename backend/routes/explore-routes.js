@@ -142,6 +142,7 @@ const getExperiences = (req,res) => {
     Recipe:null,
     CommentsCounter:null
   }
+  
   models.ExperiencesLocations.findAll({
     where:{
       LocationId:dopeObj.LocationId
