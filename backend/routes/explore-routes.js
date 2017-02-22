@@ -134,74 +134,13 @@ const findByCity = ((req, res) => {
 	});
 
 const getExperiences = (req,res) => {
-  let dopeObj = {
-    User:null, 
-    LocationId:req.params.locationId, 
-    Experience:null, 
-    LikesCounter:null,
-    Recipe:null,
-    CommentsCounter:null
-  }
-  
   models.ExperiencesLocations.findAll({
     where:{
-      LocationId:dopeObj.LocationId
+      LocationId:req.params.locationId
     },
     include:[models.Experiences]
   })
-
-  .then(experience => dopeObj.Experience = experience[0].Experience)
-
-  .then(user => {
-    return models.Users.findOne({
-      where: {
-        id:dopeObj.Experience.UserId
-      }
-    })
-  })
-
-  .then(user => dopeObj.User = user)
-
-  .then(like => {
-    return models.Likes.findAll({
-      where: {
-        ExperienceId:dopeObj.Experience.id
-      }
-    })
-  })
-
-  .then(like => dopeObj.LikesCounter = like)
-
-  .then(like => {
-
-   let data = {counter:0}
-   for(var i = 0; i< dopeObj.LikesCounter.length ; i++){
-    data.counter +=1
-   }
-    dopeObj.LikesCounter = data.counter
-  })
-
-  .then(recipe => {
-    return models.Recipes.findAll({
-      where: {
-        ExperienceId: dopeObj.Experience.id
-      }
-    })
-  })
-
-  .then(recipe => dopeObj.Recipe = recipe)
-
-  // .then(comment => {
-  //   return models.Comments.findAll({
-  //     where: {
-  //       Experience: dopeObj.Experience.id
-  //     }
-  //   })
-  // })
-
-  // .then(comment => dopeObj.CommentsCounter = comment)
-  
-  .then(data => res.send(dopeObj))
+  .then(data => res.send(data))
   .catch(err => res.status(500).send(err))
 };
 
