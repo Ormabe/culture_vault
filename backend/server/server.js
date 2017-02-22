@@ -9,8 +9,10 @@ const path = require('path');
 const db = require('./models');
 const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
-// const uuid = require('uuid');
+const uuid = require('uuid');
 const passport = require('./config/passport');
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -24,6 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: process.env.SECRET_LOGIN_KEY,
+  store: new SequelizeStore({
+    genid: function(req) {
+      return uuid()
+    },
+  db: db.sequelize,
+    table: 'Session'
+}),
   saveUninitialized: true,
   resave: false
 }));
@@ -47,7 +56,8 @@ app.use('/api/experiences', indexRouter.Experiences);
 app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
-  console.log('tao');
+  console.log('user', req.user);
+  console.log('isAuthenticated', req.isAuthenticated());
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 

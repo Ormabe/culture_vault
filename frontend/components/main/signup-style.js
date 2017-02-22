@@ -3,13 +3,13 @@ const formStyles = {
     color: "#999999"
   },
   floatingLabelFocusStyle: {
-    color: "#0045FF"
+    color: "#204C69"
   },
-  backgroundSignUp: "#AA0000",
-  backgroundLogIn: "#0000AA",
+  backgroundSignUp: "#FF4100",
+  backgroundLogIn: "#4A97C9",
   color: "#FFFFFF",
   textAlign: "center",
-  fontSize: 20,
+  fontSize: 18,
   button: {
     margin: 12,
     width: 200,

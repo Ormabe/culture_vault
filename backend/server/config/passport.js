@@ -15,18 +15,21 @@ const models = require('../models');
 //   });
 // });
 
-passport.serializeUser((req, user, done) => {
-  console.log("SERIALIZE SESSION ID ====>", req.sessionID)
+passport.serializeUser(function(user, done) {
   console.log("SERIALIZE USER ====>", user.id)
-  console.log("SERIALIZE REQ ====>", req.user.id)
-  const sessionUser = req.user.id ;
-  done(null, sessionUser);
+  done(null, user.id);
 });
 
-passport.deserializeUser((req, sessionUser) => {
-  console.log("DESERIALIZE SESSION ====>", req)
-  // done(null, sessionUser)
-})
+passport.deserializeUser(function(id, done) {
+  console.log("DESERIALIZE USER ====>", id)
+  models.Users.findOne({
+    where: {
+      id,
+    }
+  }).then((user) => {
+    done(null, user.dataValues);
+  })
+});
 
 passport.use('local', new LocalStrategy({
   usernameField: 'email',
@@ -52,7 +55,7 @@ passport.use('local', new LocalStrategy({
         });
       }
       console.log('<====== AUTHENTICATION COMPLETE ======>')
-      return done(null, user);
+      return done(null, user.dataValues);
     })
     .catch((err) => {
       if (err) {

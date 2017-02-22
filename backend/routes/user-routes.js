@@ -95,6 +95,9 @@ const findUserByUsername = ((req, res) => {
 //   });
 //
 const updateUserById = ((req, res) => {
+  if (!req.isAuthenticated() || req.user.id !== req.params.id) {
+    res.status(401).end()
+  }
   return Users.findById(
       req.params.id )
   .then((user) => {

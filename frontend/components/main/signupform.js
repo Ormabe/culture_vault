@@ -13,7 +13,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import TextField from 'material-ui/TextField';
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 
 const muiTheme = getMuiTheme();
 
@@ -53,6 +53,7 @@ class SignUpForm extends Component {
       email:"",
       password:""
     })
+    this.handleDialogClose()
   }
   handleDialogOpen () {
     this.setState({open: true});
@@ -71,7 +72,13 @@ class SignUpForm extends Component {
     return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        <RaisedButton label="SIGN UP" onTouchTap={this.handleDialogOpen} />
+        <RaisedButton
+          label="SIGN UP"
+          labelStyle={{fontSize: styles.fontSize}}
+          backgroundColor={styles.backgroundSignUp}
+          labelColor={styles.color}
+          onTouchTap={this.handleDialogOpen}
+        />
         <Dialog
           title="SIGN UP TO CULTURE VAULT"
           actions={actions}

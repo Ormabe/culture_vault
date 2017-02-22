@@ -53,6 +53,7 @@ class LogInForm extends Component {
       email:"",
       password:""
     })
+    this.handleDialogClose()
   }
   handleDialogOpen () {
     this.setState({open: true});
@@ -71,7 +72,13 @@ class LogInForm extends Component {
     return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
-        <RaisedButton label="LOG IN" onTouchTap={this.handleDialogOpen} />
+        <RaisedButton
+          label="LOG IN"
+          labelStyle={{fontSize: styles.fontSize}}
+          backgroundColor={styles.backgroundLogIn}
+          labelColor={styles.color}
+          onTouchTap={this.handleDialogOpen}
+        />
         <Dialog
           title="LOG IN TO CULTURE VAULT"
           actions={actions}
