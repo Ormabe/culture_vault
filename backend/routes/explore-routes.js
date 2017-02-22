@@ -134,13 +134,26 @@ const findByCity = ((req, res) => {
 	});
 
 const getExperiences = (req,res) => {
+  let dopeObj = {User:null, LocationId:req.params.locationId, Experience:null};
   models.ExperiencesLocations.findAll({
     where:{
-      LocationId:req.params.locationId
+      LocationId:dopeObj.LocationId
     },
     include:[models.Experiences]
   })
-  .then(data => res.send(data))
+
+  .then(experience => dopeObj.Experience = experience[0].Experience)
+
+  .then(user => {
+    return models.Users.findOne({
+      where: {
+        id:dopeObj.Experience.UserId
+      }
+    })
+  })
+
+  .then(user => dopeObj.User = user)
+  .then(data => res.send(dopeObj))
   .catch(err => res.status(500).send(err))
 };
 
