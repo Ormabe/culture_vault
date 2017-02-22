@@ -19,8 +19,6 @@ const models = require('../models');
 //   });
 // });
 
-
-
 passport.serializeUser(function(user, done) {
   console.log("SERIALIZE USER ====>", user.id)
   done(null, user.id);
@@ -33,7 +31,7 @@ passport.deserializeUser(function(id, done) {
       id,
     }
   }).then((user) => {
-    done(null, user);
+    done(null, user.dataValues);
   })
 });
 
@@ -61,7 +59,7 @@ passport.use('local', new LocalStrategy({
         });
       }
       console.log('<====== AUTHENTICATION COMPLETE ======>')
-      return done(null, user);
+      return done(null, user.dataValues);
     })
     .catch((err) => {
       if (err) {
