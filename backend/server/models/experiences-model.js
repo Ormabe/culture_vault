@@ -16,6 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type:DataTypes.STRING(2000)
     }
+    ,
+
+    music: {
+      type:DataTypes.STRING(2000)
+    }
   },
     {
     classMethods: {
