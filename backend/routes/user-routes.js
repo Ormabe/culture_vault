@@ -94,6 +94,8 @@ const findUserByUsername = ((req, res) => {
 //         });
 //   });
 //
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 const updateUserById = ((req, res) => {
   if (!req.isAuthenticated() || req.user.id !== req.params.id) {
     res.status(401).end()
@@ -111,7 +113,6 @@ const updateUserById = ((req, res) => {
   res.send(err)
   })
 })
-
 
 const findLoginUser = (req,res) => {
   let userProfile = {user:null, experiences:null, likes:[]}
@@ -158,15 +159,17 @@ router.route('/')
   .get(getAllUsers)
   .post(createNewUser);
 
+
 router.route('/:username')
   .get(findUserByUsername)
+
 
   // .delete(deleteByUsername)
 
 //this needs another another path or it will mean the same thing as '/:username'
-router.route('/:id')
-  // .get(getUserById)
-  .put(updateUserById)
+// router.route('/:id')
+//   // .get(getUserById)
+//   .put(updateUserById)
 
 
 module.exports = router;

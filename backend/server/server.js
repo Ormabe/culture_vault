@@ -55,6 +55,7 @@ app.use('/api/comments', indexRouter.Comments);
 app.use('/api/likes', indexRouter.Likes);
 app.use('/api/experiences', indexRouter.Experiences);
 app.use('/api/', indexRouter.Login);
+app.use('/api/data', indexRouter.Data);
 
 app.get('/*', (req, res) => {
   console.log('user', req.user);
