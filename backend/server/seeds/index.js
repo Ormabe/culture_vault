@@ -223,18 +223,6 @@ const seedFunction = () => {
 	{
 	  name: 'Not Crococile Dundee Shrimp',
 	  ExperienceId:8
-	},
-	{
-	  name: 'Tajjin',
-	  ExperienceId:4
-	},
-	{
-	  name: 'Bandeja Paisa',
-	  ExperienceId:5
-	},
-	{
-	  name: 'Not Crococile Dundee Shrimp',
-	  ExperienceId:6
 	}
 		])
 	}).then(data => {

@@ -14,7 +14,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import TextField from 'material-ui/TextField';
 
-
 const muiTheme = getMuiTheme();
 
 const styles = require('./signup-style').formStyles
@@ -49,6 +48,11 @@ class LogInForm extends Component {
     e.preventDefault()
     console.log("<====== LOGIN ======>")
     this.props.loginUserFunc(this.state.email,this.state.password)
+      Alert.success('Test message 2', {
+      position: 'top',
+      effect: 'bouncyflip',
+      timeout: '2000'
+      });
     this.setState({
       email:"",
       password:""
@@ -108,6 +112,8 @@ class LogInForm extends Component {
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
         />
         <br />
+        <div className="login-button-container">
+          <div className="login-button">
           <RaisedButton
             label="Log In"
             labelStyle={{fontSize: styles.fontSize}}
@@ -115,6 +121,11 @@ class LogInForm extends Component {
             backgroundColor={styles.backgroundLogIn}
             labelColor={styles.color}
           />
+        </div>
+        <div className="signup-button">
+          <SignUpForm />
+        </div>
+        </div>
       </form>
       <h3>OR</h3>
       <br />

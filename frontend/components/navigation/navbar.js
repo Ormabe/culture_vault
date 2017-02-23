@@ -28,9 +28,6 @@ export default class NavBar extends Component {
             <div>
         		    <LogInForm />
             </div>
-            <div>
-                <SignUpForm />
-            </div>
          	</div>
         </div>
       </div>

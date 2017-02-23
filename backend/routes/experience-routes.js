@@ -16,7 +16,7 @@ const createAnExperience = (req, res) => {
 		quote: req.body.quote,
 		story: req.body.story,
 		image: req.body.image,
-		UserId: req.params.userId,
+		UserId: req.user.id,
 		//*******LOCATION*********//
 		country: req.body.country,
 		city: req.body.city,

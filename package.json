@@ -48,6 +48,8 @@
     "file-loader": "^0.10.0",
     "flexboxgrid": "^6.3.1",
     "graceful-fs": "^4.1.11",
+    "heroku-cli": "^6.2.1",
+    "heroku.js": "^0.12.2",
     "html-loader": "^0.4.4",
     "jquery": "^3.1.1",
     "jsonwebtoken": "^7.3.0",

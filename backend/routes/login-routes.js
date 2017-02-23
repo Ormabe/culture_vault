@@ -15,9 +15,9 @@ router.post('/login',
         if (err) { res.status(401).end(); return; }
         // res.send(JSON.stringify(user)).end();
 
-        res.redirect(302,`/users/${user.id}`)
+        res.send(`http://localhost:2222/users/${user.id}`)
       });
     })(req, res, next);
   })
 
-module.exports = router;
+module.exports = router
