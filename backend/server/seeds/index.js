@@ -42,7 +42,7 @@ const seedFunction = () => {
 	// PASSWORD: ihatepasswords31-00
 	password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
 	email: "niko@zol.com",
-	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
+	image: "https://s25.postimg.org/y3l5y70rj/niko_law.png",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
 	},
