@@ -56,7 +56,7 @@ app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
   console.log('tao');
-  console.log("Session", req.user.id)
+  // console.log("Session", req.user.id)
   // console.log('User ID:',user.id);
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
