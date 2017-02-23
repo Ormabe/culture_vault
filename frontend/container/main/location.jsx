@@ -27,6 +27,14 @@ class LocationContainer extends Component {
                   key={place.ExperienceId} 
                   src={place.Experience.image}>
                   </img>  
+
+                  <div className="card card-5">
+                  </div>
+
+                  <div className="experience-title">
+                    {place.Experience.name}
+                  </div>
+
                 </div>
                 )
             })}
