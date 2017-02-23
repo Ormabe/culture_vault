@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 .experience-page-container {
 	width: 1200px;
 	height: auto;
@@ -120,7 +122,7 @@
 	height: 2px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background-color: #4A97C9;
 }
 
@@ -154,4 +156,129 @@
 	margin-bottom: 10px;
 }
 
+.table-width-600 {
+	width: 610px;
+}
+
+.step-number {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #4A97C9;
+	height: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	font-size: 15px;
+}
+
+.step-text {
+	width: 550px;
+	height: auto;
+	padding: 5px 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.quote-text {
+	text-align: center;
+	color: #B8BBBD;
+	font-family: 'Poiret One';
+	font-size: 35px;
+	line-height: 40px;
+	width: 700px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.green-line-top {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	background-color: #4CB748;
+}
+
+.green-line-bottom {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: #4CB748;
+}
+
+.comments-label {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+	text-align: center;
+	padding: 10px 5px;
+	color: #585A5B;
+}
+
+.comment-entry-box {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.comment-entry-box button {
+	width: 200px;
+	height: 45px;
+	padding: 5px 5px;
+	font-size: 16px;
+	color: white;
+	background-color: #FF4100;
+	border-radius: 6px;
+	border-style: none;
+}
+
+.comment-entry-box textarea {
+	width: 750px;
+	height: 70px;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 2px;
+}
+
+.comment-container {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.comment-outer-container {
+	display: flex;
+	align-content: center;
+	width: 760px;
+	height: auto;
+	padding: 5px 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+	background-color: #F8F8F8;
+}
 
