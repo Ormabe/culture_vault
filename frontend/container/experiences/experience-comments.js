@@ -67,6 +67,14 @@ class Comments extends Component {
 				})
 	}
 
+	buttonRender() {
+		if (this.state.comment.length < 2) {
+			return <button className="disabled" type="submit" disabled>ADD COMMENT</button>
+		} 
+
+		return <button className="enabled" type="submit">ADD COMMENT</button>
+	}
+
 	createAComment() {
 		return (
 			<div>
@@ -79,11 +87,13 @@ class Comments extends Component {
         </div>
         <div className="comment-entry-box">
 					<form onSubmit={this.onFormSubmit}>
-						<textarea 
+						<textarea
 							value={this.state.comment} 
 							placeholder="Enter A Comment Here" 
 							onChange={this.onInputChange}/>
-						<button type="submit">ADD COMMENT</button>
+
+						{this.buttonRender()}
+						
 					</form>
 				</div>
 			</div>
