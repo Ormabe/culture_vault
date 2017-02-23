@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 .experience-page-container {
 	width: 1200px;
 	height: auto;
@@ -31,7 +33,6 @@
 	height: auto;
 	margin-left: 5px;
 	margin-right: 5px;
-	background-color: red;
 	position: relative;
 	z-index: 2;
 	display: flex;
@@ -120,7 +121,7 @@
 	height: 2px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background-color: #4A97C9;
 }
 
@@ -153,5 +154,235 @@
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
+.table-width-600 {
+	width: 610px;
+}
+
+.step-number {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #4A97C9;
+	height: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	font-size: 15px;
+}
+
+.step-text {
+	width: 550px;
+	height: auto;
+	padding: 5px 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.quote-text {
+	text-align: center;
+	color: #B8BBBD;
+	font-family: 'Poiret One';
+	font-size: 35px;
+	line-height: 40px;
+	width: 700px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.green-line-top {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	background-color: #4CB748;
+}
+
+.green-line-bottom {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: #4CB748;
+}
+
+.comments-label {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+	text-align: center;
+	padding: 10px 5px;
+	color: #585A5B;
+}
+
+.comment-entry-box {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.enabled {
+	width: 200px;
+	height: 45px;
+	padding: 5px 5px;
+	font-size: 16px;
+	color: white;
+	background-color: #4CB748;
+	border-radius: 6px;
+	border-style: none;
+	margin-top: 15px;
+}
+
+.disabled {
+	width: 200px;
+	height: 45px;
+	padding: 5px 5px;
+	font-size: 16px;
+	color: white;
+	background-color: #B8BBBD;
+	border-radius: 6px;
+	border-style: none;
+	margin-top: 15px;
+}
+
+.comment-entry-box textarea {
+	width: 750px;
+	height: 70px;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 2px;
+	border-color: #B8BBBD;
+	padding: 10px 10px;
+}
+
+.comment-container {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.comment-outer-container {
+	display: flex;
+	align-content: center;
+	width: 760px;
+	height: auto;
+	padding: 10px 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+	background-color: #F8F8F8;
+	border-radius: 4px;
+}
+
+.comment-element {
+	height: 100%;
+}
+
+.green-button {
+	background-color: #4CB748;
+	color: white;
+	border-style: none;
+	border-radius: 4px;
+	padding: 2px 2px;
+	margin: 3px 3px;
+}
+
+.red-button {
+	background-color: #FF4100;
+	color: white;
+	border-style: none;
+	border-radius: 4px;
+	padding: 2px 2px;
+	margin: 3px 3px;
+}
+
+.blue-button {
+	background-color: #4A97C9;
+	color: white;
+	border-style: none;
+	border-radius: 4px;
+	padding: 2px 2px;
+	margin: 3px 3px;
+}
+
+.center-buttons {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 750px;
+	height: auto;
+	margin-top: 10px;
+	margin-bottom: -25px;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.edit-comment {
+	text-align: center;
+}
+
+.edit-comment textarea {
+	width: 750px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px 5px;
+}
+
+.likes-image img {
+	height: 50px;
+	width: auto;
+}
+
+.likes-container {
+	display: flex;
+	flex-direction: row;
+	width: 200px;
+	height: auto;
+	margin-top: -45px;
+	margin-left: 5px;
+	position: relative;
+	z-index: 5;
+}
+
+.likes-counter {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+
 
 

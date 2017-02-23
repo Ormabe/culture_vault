@@ -6,21 +6,24 @@ export default class UserExperience extends Component {
 		let { userInfo } = this.props;
 
 		return (
-			<ul>	
-				Experiences Posted:
-				<br />
-				{userInfo.experiences.map(experiences => {
-					return (
-						<img 
-						key={experiences.id}
-						onClick={ () => this.props.router(`/experience/${experiences.id}`)}
-						src={experiences.image}
-						>	
-						</img>
-						)
-					})
+			<div>	
+				<div className="blue-line-top">
+				</div>
+					<div className="story-name">Experiences Created by {userInfo.user.first_name}</div>
+				<div className="blue-line-bottom">
+				</div>
+				{userInfo.experiences.map(experiences =>
+					<div className="experience-created-container">	
+						<div className="experience-image">
+							<img 
+								key={experiences.id}
+								onClick={ () => this.props.router(`/experience/${experiences.id}`)}
+								src={experiences.image} />
+						</div>
+					</div>
+					)
 				}
-			</ul>
+			</div>
 		)
 	}
 

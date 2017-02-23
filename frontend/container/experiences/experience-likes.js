@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios'
 import { fetchLikes } from '../../actions/action-likes';
 import LikesImage from './likes-image';
 import LikesCounter from './likes-counter';
-import axios from 'axios'
+import css from '../../styles/experiences/experiences.scss';
 
 
 class Likes extends Component {
@@ -29,10 +30,14 @@ class Likes extends Component {
  		let { likes } = this.props;
 		let counter = likes.length
 
+		if (counter < 2) {
+			return (
+				<div>{counter} Like</div>
+			)
+		}
+
 		return (
-			<div>
-			{counter}
-			</div>
+			<div>{counter} Likes</div>
 		)
  	}
 
@@ -64,8 +69,7 @@ class Likes extends Component {
 	let { likes } = this.props;
 
  		return (
- 		 	<div>
- 				<LikesCounter likesCounter={this.likesCounter.bind(this)} />
+ 		 	<div className="likes-container">
  				<LikesImage 
 	 				likes={this.state.likes}
 	 				addLikes={this.addLikes.bind(this)} 
@@ -73,6 +77,9 @@ class Likes extends Component {
 					experienceId={this.props.id}
 					userId={4}
 	 				 />
+ 		 		<div className="likes-counter">
+ 					<LikesCounter likesCounter={this.likesCounter.bind(this)} />
+ 				</div>
  			</div>
 		)
  	}

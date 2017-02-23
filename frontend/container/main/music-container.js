@@ -14,7 +14,10 @@ class AddSong extends Component{
 		this.showStuff = this.showStuff.bind(this)
 		this.handleArtistChange = this.handleArtistChange.bind(this)
 		this.handleTrackChange = this.handleTrackChange.bind(this)
-		this.controlMusic = this.controlMusic.bind(this)
+		this.playMusic = this.playMusic.bind(this)
+		this.stopMusic = this.stopMusic.bind(this)
+		this.selectTrack = this.selectTrack.bind(this)
+
 
 
 		this.state ={
@@ -22,20 +25,23 @@ class AddSong extends Component{
 			artist: "",
 			track:"",
 			artistInfo: [],
-			playing: false
+			trackId: ""
 		}
 	}
 
-	controlMusic(audioObject){
-		if(this.state.playing === false){
+	playMusic(audioObject){
 			audioObject.play();
-			this.setState({playing: true});
-		}else if (this.state.playing === true){
-			audioObject.pause();
-			this.setState({playing: false});
-		}
 	}
 
+		stopMusic(audioObject){
+			audioObject.pause();
+	}
+
+selectTrack(savedId){
+this.setState({trackId: savedId});
+console.log("trackId=====>>", this.state.trackId)
+
+}
 
 	handleArtistChange(event){
 		event.preventDefault();
@@ -52,8 +58,8 @@ class AddSong extends Component{
 
 	getArtistAlbums(event){
 		event.preventDefault();
-		console.log('track', this.state.artist)
-		console.log('artist', this.state.track)
+		console.log('track=====>', this.state.track)
+		console.log('artist', this.state.artist)
 
     axios.get(`https://api.spotify.com/v1/search?q=track%3A${this.state.track}+artist%3A${this.state.artist}&type=track `)
     	.then((artistInfo)=>{
@@ -76,19 +82,30 @@ class AddSong extends Component{
 
 					{result.map((track, index) => {
 						const audioObject = new Audio(track.preview_url);
+						const savedInfo = track.id
 
 
 						return <li key={index}>
 
 						{track.name}
 						<br/>
-						<div id={index} onClick={() => this.controlMusic(audioObject)}>
+						<img src={track.album.images[1].url} />
+						<br/>
+						<button id={index} onClick={() => this.playMusic(audioObject)}>
+							Play
+						</button>
 
-						  <img src={track.album.images[1].url} />
-						</div>
-
+						<button id={index} onClick={() => this.stopMusic(audioObject)}>
+							Stop
+						</button>
+						<br/>
 						{track.artists[0].name}
 						<br/>
+
+						<button id={index} onClick={() => this.selectTrack(savedInfo)}>
+							choose track
+						</button>
+
 
 						<br/>
 
@@ -102,19 +119,22 @@ class AddSong extends Component{
 
 
 	render(){
-			return(
+
+		console.log("state =====>",this.state)
+					return(
 				<div>
-					<p>"Is there music that would enhance this memory?"</p>
+					<p>Is there music that would enhance this memory?</p>
 
 						<form onSubmit={this.getArtistAlbums.bind(this)}>
 							<input type="text" placeholder="Artist Name" onChange={this.handleArtistChange.bind(this)}/>
 							<br />
 							<input type="text" placeholder="Song Title" onChange={this.handleTrackChange.bind(this)}/>
-							<button type="submit">SUBMIT</button>
+							<button type="submit">search</button>
 						</form>
 
 						<ul>
             {this.showStuff()}
+
             </ul>
 
 

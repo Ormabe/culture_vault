@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { getuserInfo } from '../../actions/userProfile-action.js';
 import { connect, withRouter } from 'react-redux';
-import UserExperience from './userProfile-Experience.jsx'
-import UserLikes from './userExperience-Likes.jsx'
+import { getuserInfo } from '../../actions/userProfile-action';
+import UserExperience from './userProfile-Experience';
+import UserLikes from './userExperience-Likes';
+import css from '../../styles/main/profile.scss';
 
 class UserProfile extends Component {
 	
@@ -20,13 +21,18 @@ class UserProfile extends Component {
 
 
 		return(
-			<h2>
-				Username:{userInfo.user.first_name}
-				<br />
-				Location:{userInfo.user.location}
-				<br />
-				Experiences:{experienceCounter}
-			</h2>
+			<div className="user-header card-5">
+				<div className="user-image">
+					<img src={userInfo.user.image} alt={userInfo.user.id} />
+				</div>
+				<div className="user-information">
+					Username:{userInfo.user.first_name}
+					<br />
+					Location:{userInfo.user.location}
+					<br />
+					Experiences:{experienceCounter}
+				</div>
+			</div>
 			)
 	}
 
@@ -38,7 +44,7 @@ class UserProfile extends Component {
 	render() {
 	let { userInfo } = this.props;
 		return (
-				<div>	
+				<div className="user-container">	
 					{ userInfo ? this.userInfo() : this.renderLoading() }
 					<UserExperience userInfo={userInfo} router={this.props.router.push.bind(this)} />
 					<UserLikes userInfo={userInfo} router={this.props.router.push.bind(this)}/>
