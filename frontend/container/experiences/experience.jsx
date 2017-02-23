@@ -52,35 +52,23 @@ class Experience extends Component {
     )
   }
 
-  user() {
-    const { experience } = this.props;
-    if (!experience.user) {
-      return null;
-    }
-    const userName = `${experience.user.first_name} ${experience.user.last_name}`;
-    const userImage = experience.user.image;
-    const userLocation = experience.user.location;
-
-    return (
-      <div>
-        <img src={userImage} alt={userName} />
-        <h3>{userName}</h3>
-        <h5>{userLocation}</h5>
-      </div>
-    );
-  }
-
   story() {
     const { experience } = this.props;
     const experienceName = experience.experience.name;
-    const quote = experience.experience.quote;
     const story = experience.experience.story;
 
     return (
       <div>
-        <h1>{experienceName}</h1>
-        <h2>{quote}</h2>
-        <p>{story}</p>
+        <div className="orange-line-top">
+        </div>
+        <div className="story-name">
+          {experienceName}
+        </div>
+        <div className="orange-line-bottom">
+        </div>
+        <div className="story-text">
+          <p>{story}</p>
+        </div>
       </div>
     );
   }
@@ -92,13 +80,16 @@ class Experience extends Component {
 
     return (
       <div>
-        <h3>{recipeName}</h3>
-        <img src={recipeImage} alt={recipeName} />
-        <br />
-        <strong>INGREDIENTS:</strong>
+        <div className="blue-line-top">
+        </div>
+        <div className="story-name">
+          The Recipe
+        </div>
+        <div className="blue-line-bottom">
+        </div>
+        <div className="ingredients">
         {this.generateIngredients()}
-
-        <strong>STEPS:</strong>
+        </div>
         {this.generateSteps()}
       </div>
     );
@@ -140,11 +131,16 @@ class Experience extends Component {
 
     return (
       <div>
-        <ul>
-          {experience.steps.map(step =>
-            <li key={step.id}>{step.steps}</li>
+          {experience.steps.map((step, index) =>
+            <div key={step.id}>
+              <div>
+                STEP #{index+1}
+              </div>
+              <div>
+                {step.steps}
+              </div>
+            </div>
           )}
-        </ul>
       </div>
     );
   }
