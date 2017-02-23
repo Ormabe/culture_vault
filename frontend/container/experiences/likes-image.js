@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import css from '../../styles/experiences/experiences.scss';
 
 export default class LikesImage extends Component {
 	constructor(props){
@@ -26,19 +27,19 @@ export default class LikesImage extends Component {
 	render() {
 		if(this.state.isLiked) {
 			return (
-				<div>
+				<div className="likes-image">
 					<img 
 						onClick={this.onUnlikeClick.bind(this)}
-						src="https://s25.postimg.org/8ygsbe1lr/likes_liked.png"/>
+						src="https://s25.postimg.org/l5fz2qun3/liked_culture_vault.png"/>
 				</div>
 			)	
 		}
 
 		return (
-			<div>
+			<div className="likes-image">
 				<img 
 					onClick={this.onLikeClick.bind(this)}
-					src="https://s25.postimg.org/enx0vp7rz/likes_unliked.png" />
+					src="https://s25.postimg.org/7ahoka07z/unliked_culture_vault.png" />
 			</div>
 		)
 	}

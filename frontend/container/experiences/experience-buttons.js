@@ -29,11 +29,13 @@ export default class ExperienceButtons extends Component {
 	generateComment() {
 		if (this.state.isEditing) {
 			return (
-				<form>
-					<textarea 
-						onChange={this.onInputChange.bind(this)}
-						value={this.state.newComment} />
-				</form>
+				<div className="edit-comment">
+					<form>
+						<textarea
+							onChange={this.onInputChange.bind(this)}
+							value={this.state.newComment} />
+					</form>
+				</div>
 			)
 		}
 
@@ -51,26 +53,28 @@ export default class ExperienceButtons extends Component {
 	generateButtons(comment) {
 		if (this.state.isEditing) {
 			return (
-				<div>
-					<button onClick={this.onCancelClick.bind(this)}>CANCEL</button>
-					<button onClick={this.onSaveClick.bind(this)}>SAVE</button>
+				<div className="center-buttons">
+					<button className="red-button" onClick={this.onCancelClick.bind(this)}>CANCEL</button>
+					<button className="green-button" onClick={this.onSaveClick.bind(this)}>SAVE</button>
 				</div>
 			)
 		}
 
 		return(
-			<div>
-				<button onClick={this.props.onDeleteClick.bind(this, this.props.commentId)}>DELETE</button>
-				<button onClick={this.onEditClick.bind(this, this.props.commentId)}>EDIT</button>
+			<div className="center-buttons">
+				<button className="red-button" onClick={this.props.onDeleteClick.bind(this, this.props.commentId)}>DELETE</button>
+				<button className="blue-button" onClick={this.onEditClick.bind(this, this.props.commentId)}>EDIT</button>
 			</div>
 		)
 	}
 
 	render() {
 		return (
-			<div >
+			<div className="comment-element">
 				{this.generateComment()}
-				{this.generateButtons()}
+				<div className="button-wrapper">
+					{this.generateButtons()}
+				</div>
 				<br />
 			</div>
 		)

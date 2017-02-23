@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';	
 import { fetchComments, createComment } from '../../actions/action-comments'
 import ExperienceButtons from './experience-buttons';
+import css from '../../styles/experiences/experiences.scss';
 
 class Comments extends Component {
 	constructor(props) {
@@ -66,15 +67,36 @@ class Comments extends Component {
 				})
 	}
 
+	buttonRender() {
+		if (this.state.comment.length < 2) {
+			return <button className="disabled" type="submit" disabled>ADD COMMENT</button>
+		} 
+
+		return <button className="enabled" type="submit">ADD COMMENT</button>
+	}
+
 	createAComment() {
 		return (
-			<form onSubmit={this.onFormSubmit}>
-				<textarea 
-					value={this.state.comment} 
-					placeholder="Enter A Comment Here" 
-					onChange={this.onInputChange}/>
-				<button type="submit">ADD COMMENT</button>
-			</form>
+			<div>
+				<div className="green-line-top">
+        </div>
+        <div className="comments-label">
+          Comments
+        </div>
+        <div className="green-line-bottom">
+        </div>
+        <div className="comment-entry-box">
+					<form onSubmit={this.onFormSubmit}>
+						<textarea
+							value={this.state.comment} 
+							placeholder="Enter A Comment Here" 
+							onChange={this.onInputChange}/>
+
+						{this.buttonRender()}
+						
+					</form>
+				</div>
+			</div>
 		)
 	}
 
@@ -83,12 +105,9 @@ class Comments extends Component {
 		const { fetchComments } = this.props;
 
 		return(
-			<div >
-				<strong>COMMENTS</strong>
-				<ul>
-					{comments.map(comment => {
-						return(
-							<li key={comment.id}>
+			<div className="comment-container">
+					{comments.map(comment => 
+							<div className="comment-outer-container" key={comment.id}>
 								<ExperienceButtons
 									commentComment={comment.comment}
 									commentId={comment.id}
@@ -96,10 +115,8 @@ class Comments extends Component {
 									onDeleteClick={this.onDeleteClick.bind(this)}
 									onSaveClick={this.onSaveClick.bind(this)}
 									/>
-							</li>
-						)
-					})}
-				</ul>
+							</div>
+					)}
 			</div>		
 		)
 	}

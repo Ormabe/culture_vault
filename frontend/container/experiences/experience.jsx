@@ -45,6 +45,9 @@ class Experience extends Component {
             <div>
               {userLocation}
             </div>
+            <div>
+            <Likes id={this.props.params.id} />
+          </div>
           </div>
 
         </div>
@@ -56,15 +59,19 @@ class Experience extends Component {
     const { experience } = this.props;
     const experienceName = experience.experience.name;
     const story = experience.experience.story;
+    const quote = experience.experience.quote;
 
     return (
       <div>
         <div className="orange-line-top">
         </div>
         <div className="story-name">
-          {experienceName}
+          The Story
         </div>
         <div className="orange-line-bottom">
+        </div>
+        <div className="quote-text">
+          "{quote}"
         </div>
         <div className="story-text">
           <p>{story}</p>
@@ -103,7 +110,8 @@ class Experience extends Component {
         <table
           className="mdl-data-table
           mdl-js-data-table
-          mdl-shadow--2dp"
+          mdl-shadow--2dp
+          table-width-600"
         >
           <thead>
             <tr>
@@ -133,10 +141,10 @@ class Experience extends Component {
       <div>
           {experience.steps.map((step, index) =>
             <div key={step.id}>
-              <div>
+              <div className="step-number">
                 STEP #{index+1}
               </div>
-              <div>
+              <div className="step-text">
                 {step.steps}
               </div>
             </div>
@@ -164,9 +172,8 @@ class Experience extends Component {
         <br />
         {this.recipe()}
         <br />
-        <Likes id={this.props.params.id} />
-        <br />
         <Comments id={this.props.params.id} />
+        <br />
       </div>
     );
   }
