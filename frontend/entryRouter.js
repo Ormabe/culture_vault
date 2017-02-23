@@ -18,6 +18,8 @@ import '../favicon.ico';
 
 
 
+
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 const router = (

@@ -144,6 +144,7 @@ const getExperiences = (req,res) => {
   .catch(err => res.status(500).send(err))
 };
 
+
 const allSearchTerms = ((req,res) => {
   return Search.findAll({
     order: [['id', 'ASC']]

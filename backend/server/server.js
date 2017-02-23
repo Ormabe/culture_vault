@@ -9,8 +9,7 @@ const path = require('path');
 const db = require('./models');
 const seedFunction = require('./seeds');
 const indexRouter = require('../routes').routes;
-// const uuid = require('uuid');
-// const passport = require('passport');
+const uuid = require('uuid');
 const passport = require('./config/passport');
 
 const morgan = require('morgan');
@@ -28,12 +27,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: process.env.SECRET_LOGIN_KEY,
-  saveUninitialized: true,
-  resave: false,
   store: new SequelizeStore({
-    db: db.sequelize,
+    genid: function(req) {
+      return uuid()
+    },
+  db: db.sequelize,
     table: 'Session'
-  })
+  }),
+  saveUninitialized: true,
+  resave: false
 }));
 
 app.use(passport.initialize());
@@ -55,9 +57,8 @@ app.use('/api/experiences', indexRouter.Experiences);
 app.use('/api/', indexRouter.Login);
 
 app.get('/*', (req, res) => {
-  console.log('tao');
-  console.log("Session", session)
-  // console.log('User ID:',user.id);
+  console.log('user', req.user);
+  console.log('isAuthenticated', req.isAuthenticated());
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 

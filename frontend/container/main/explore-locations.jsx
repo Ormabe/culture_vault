@@ -45,10 +45,10 @@ class ExploreLocations extends Component {
         <div className="most-recent-post">
           MOST RECENT POST:
         </div>
-        <div className="explore-back-most-recent" key={this.state.location[0].ExperienceId}>
-          <Link to={'/experience/' + this.state.location[0].ExperienceId }>
+        <div className="explore-back-most-recent" key={this.state.location[0].Experience.id}>
+          <Link to={'/experience/' + this.state.location[0].Experience.id }>
             <div className="pic-and-text">
-              <div className="center-image"> 
+              <div className="center-image">
                 <img src={this.state.location[0].Experience.image} alt={this.state.location[0].Experience.name} />
               </div>
               <div className="text-center explore-link">
@@ -67,6 +67,7 @@ class ExploreLocations extends Component {
   }
 
   render() {
+    console.log(this.state.location)
     return <div>{this.apiResults()}</div>
   }
 }
