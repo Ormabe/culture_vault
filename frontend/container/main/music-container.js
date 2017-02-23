@@ -16,13 +16,16 @@ class AddSong extends Component{
 		this.handleTrackChange = this.handleTrackChange.bind(this)
 		this.playMusic = this.playMusic.bind(this)
 		this.stopMusic = this.stopMusic.bind(this)
+		this.selectTrack = this.selectTrack.bind(this)
+
 
 
 		this.state ={
 			songs:[],
 			artist: "",
 			track:"",
-			artistInfo: []
+			artistInfo: [],
+			trackId: ""
 		}
 	}
 
@@ -34,6 +37,11 @@ class AddSong extends Component{
 			audioObject.pause();
 	}
 
+selectTrack(savedId){
+this.setState({trackId: savedId});
+console.log("trackId=====>>", this.state.trackId)
+
+}
 
 	handleArtistChange(event){
 		event.preventDefault();
@@ -50,8 +58,8 @@ class AddSong extends Component{
 
 	getArtistAlbums(event){
 		event.preventDefault();
-		console.log('track', this.state.artist)
-		console.log('artist', this.state.track)
+		console.log('track=====>', this.state.track)
+		console.log('artist', this.state.artist)
 
     axios.get(`https://api.spotify.com/v1/search?q=track%3A${this.state.track}+artist%3A${this.state.artist}&type=track `)
     	.then((artistInfo)=>{
@@ -74,6 +82,7 @@ class AddSong extends Component{
 
 					{result.map((track, index) => {
 						const audioObject = new Audio(track.preview_url);
+						const savedInfo = track.id
 
 
 						return <li key={index}>
@@ -93,6 +102,11 @@ class AddSong extends Component{
 						{track.artists[0].name}
 						<br/>
 
+						<button id={index} onClick={() => this.selectTrack(savedInfo)}>
+							choose track
+						</button>
+
+
 						<br/>
 
 
@@ -105,7 +119,9 @@ class AddSong extends Component{
 
 
 	render(){
-			return(
+
+		console.log("state =====>",this.state)
+					return(
 				<div>
 					<p>"Is there music that would enhance this memory?"</p>
 
@@ -118,6 +134,7 @@ class AddSong extends Component{
 
 						<ul>
             {this.showStuff()}
+
             </ul>
 
 
