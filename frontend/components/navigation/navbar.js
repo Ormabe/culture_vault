@@ -4,6 +4,9 @@ import LogInForm from '../main/loginform.js';
 import SignUpForm from '../main/signupform.js';
 import css from '../../styles/navigation/navigation.scss';
 
+
+
+
 export default class NavBar extends Component {
   render() {
     return (
@@ -21,7 +24,7 @@ export default class NavBar extends Component {
         	<div className="navbar-about">
         		<Link to="#">About</Link>
         	</div>
-        	<div className="navbar-login">
+        	<div className="login">
             <div>
         		<LogInForm />
           </div>

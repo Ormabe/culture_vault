@@ -2,9 +2,10 @@ import axios from 'axios'
 
 export const EXPLORE_SEARCH = 'EXPLORE_SEARCH'
 
+const ROOT_URL = `http://localhost:2222/api/explore/search`
 
 export function exploreSearch (search) {
-const postSearch = axios.post('api/explore/search', {
+const postSearch = axios.post(`${ROOT_URL}`, {
                         search
                       })
                       .then(function (response) {

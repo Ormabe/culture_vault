@@ -13,7 +13,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import TextField from 'material-ui/TextField';
 
-injectTapEventPlugin();
 
 const muiTheme = getMuiTheme();
 
