@@ -19,6 +19,8 @@ import '../favicon.ico';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin()
 
+
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 const router = (

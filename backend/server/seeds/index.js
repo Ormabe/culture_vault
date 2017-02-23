@@ -383,6 +383,48 @@ const seedFunction = () => {
 			unit:"pounds",
 			RecipeId:8
 		},
+	  {
+			ingredients:"Shrimp",
+			quantity:8,
+			unit:"ounces",
+			RecipeId:8
+		},
+		{
+			ingredients:"miso paste",
+			quantity:2,
+			unit:"tablespoons",
+			RecipeId:8
+		},
+		{
+			ingredients:"chicken meatballs",
+			quantity: 3/4,
+			unit:"pound",
+			RecipeId:8
+		},
+		{
+			ingredients:"Chorizo",
+			quantity:8,
+			unit:"ounces",
+			RecipeId:7
+		},
+		{
+			ingredients:"Chicarron",
+			quantity:1/2,
+			unit:"pound",
+			RecipeId:7
+		},
+		{
+			ingredients:"Eggs",
+			quantity: 4,
+			unit:"",
+			RecipeId:7
+		},
+		{
+			ingredients:"Maple wood chips",
+			quantity: 3,
+			unit:"pounds",
+			RecipeId:8
+		},
 		{
 			ingredients:"Shrimp",
 			quantity:1,
@@ -630,6 +672,46 @@ const seedFunction = () => {
 		{
 			steps: 'Add the quince pulp and cook over a very low heat for two hours, stirring occasionally with a wooden spoon.',
 			RecipeId: 4
+		},
+		{
+			steps: 'Towards the end the paste will really thicken up and leave the sides of the saucepan when you are stirring.',
+			RecipeId: 4
+		},
+		{
+			steps: 'Pour the hot mixture into warm sterilised jars and screw the lid on tightly. Keep in a cool place. Once opened, keep in the refrigerator.',
+			RecipeId: 4
+		},
+		{
+			steps: 'Butter the bread slices liberally',
+			RecipeId: 5
+		},
+		{
+			steps: 'Sprinkle with Hundred and Thousands',
+			RecipeId: 5
+		},
+		{
+			steps: 'Sprinkle even more Hundred and Thousands on top',
+			RecipeId: 5
+		},
+		{
+			steps: 'Place ingredients and water in tajjin',
+			RecipeId:6
+		},
+		{
+			steps: 'Cook then enjoy',
+			RecipeId:6
+		},
+		{
+			steps: 'Boil in stone pot',
+			RecipeId:7
+		},
+		{
+			steps: 'Cook then enjoy',
+			RecipeId:7
+		},
+		{
+			steps: 'Fry all meats',
+			RecipeId:7
 		},
 		{
 			steps: 'Towards the end the paste will really thicken up and leave the sides of the saucepan when you are stirring.',

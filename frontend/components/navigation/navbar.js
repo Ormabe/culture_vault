@@ -25,13 +25,14 @@ export default class NavBar extends Component {
         		<Link to="#">About</Link>
         	</div>
         	<div className="login">
+          <div className="navbar-login">
             <div>
-        		<LogInForm />
-          </div>
-          <div>
-            <SignUpForm />
-          </div>
-        	</div>
+        		    <LogInForm />
+            </div>
+            <div>
+                <SignUpForm />
+            </div>
+         	</div>
         </div>
       </div>
     );

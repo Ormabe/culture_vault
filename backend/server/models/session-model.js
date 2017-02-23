@@ -15,4 +15,4 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   return Session;
-};
+}
