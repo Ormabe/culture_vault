@@ -14,16 +14,17 @@ const getExperienceLikes = (req,res) => {
 	})
 	.catch(error => {
 		res.send(error)
-	})	
+	})
 }
 
 const createLike = (req,res) => {
 	Likes.create({
 		ExperienceId: req.params.experienceId,
-		UserId: req.params.userId
+		UserId: req.user.id
 	})
 	.then(data => {
 		console.log("FROM ROUTES:" + data)
+		console.log('USER LIKES ======>>>>>>', req.user)
 		res.send(data)
 	})
 		.catch(error => {
@@ -35,7 +36,7 @@ const deleteLike = (req,res)=> {
 	Likes.destroy({
 		where:{
 			ExperienceId:req.params.experienceId,
-			UserId: req.params.userId
+			UserId: req.user.id
 		}
 	})
 	.then(data => {
