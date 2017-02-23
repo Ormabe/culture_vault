@@ -10,15 +10,11 @@ import Feature from './container/main/feature-container';
 import ExploreContainer from './container/main/explore-container';
 import LocationContainer from './container/main/location';
 import CultureVault from './cultureVault';
-import UserProfile from './container/main/userProfile.jsx';
+import UserProfile from './container/main/userProfile';
 import CreateExperience from './container/experiences/experience-create';
 import MusicContainter from './container/main/music-container.js';
 import Welcome from './components/main/welcome';
 import '../favicon.ico';
-
-
-
-
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

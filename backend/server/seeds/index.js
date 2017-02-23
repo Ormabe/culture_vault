@@ -42,7 +42,7 @@ const seedFunction = () => {
 	// PASSWORD: ihatepasswords31-00
 	password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
 	email: "niko@zol.com",
-	image: "https://s25.postimg.org/y3l5y70rj/niko_law.png",
+	image: "https://s25.postimg.org/5fhbbdodb/niko_law.jpg",
 	location: "Brooklyn",
 	bio: "Devs Do It Better"
 	},
@@ -123,6 +123,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		quote: "Fishing with my ex-boyfriend's father helped me find peace.",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
 		image: "http://www.seriouseats.com/recipes/assets_c/2015/06/20150625-food-lab-grilled-shrimp-15-thumb-1500xauto-424445.jpg",
+
 		UserId:3
 		}
 	])
@@ -202,7 +203,6 @@ story: "This meal represents family to me. We always have it at gatherings and f
   name: 'He Taught Me To Cook With Fire',
   ExperienceId:8
 	}
-
 		])
 	}).then(data => {
 		models.Ingredients.bulkCreate([
@@ -327,25 +327,19 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			quantity:1,
 			unit:"pound",
 			RecipeId:8
-		}
-		,
-
+		},
 		{
 		ingredients:"Shrimp",
 		quantity:8,
 		unit:"ounces",
 		RecipeId:1
-		}
-		,
-
+		},
 		{
 		ingredients:"miso paste",
 		quantity:2,
 		unit:"tablespoons",
 		RecipeId:1
-		}
-		,
-
+		},
 		{
 		ingredients:"chicken meatballs",
 		quantity:3/4,
@@ -624,3 +618,4 @@ story: "This meal represents family to me. We always have it at gatherings and f
 
 
 module.exports = seedFunction
+
