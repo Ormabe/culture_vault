@@ -123,13 +123,13 @@ console.log("trackId=====>>", this.state.trackId)
 		console.log("state =====>",this.state)
 					return(
 				<div>
-					<p>"Is there music that would enhance this memory?"</p>
+					<p>Is there music that would enhance this memory?</p>
 
 						<form onSubmit={this.getArtistAlbums.bind(this)}>
 							<input type="text" placeholder="Artist Name" onChange={this.handleArtistChange.bind(this)}/>
 							<br />
 							<input type="text" placeholder="Song Title" onChange={this.handleTrackChange.bind(this)}/>
-							<button type="submit">SUBMIT</button>
+							<button type="submit">search</button>
 						</form>
 
 						<ul>
