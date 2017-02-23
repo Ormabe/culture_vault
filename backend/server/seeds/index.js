@@ -86,17 +86,17 @@ const seedFunction = () => {
 		UserId:3
 		},
 		{
-		name: 'My love affair with Qunice',
+		name: 'My love affair with Quince',
 		fav: 16,
 		quote: "There is a reason that the Quince was on the tree of knowledge in the Garden of Eden",
 		story: "One of the best and easiest foods to make is Quince paste. Once you've made it you will never go back to store bought anything.  My quince paste is simply pure quince, sugar and a the juice of a lemon – nothing more!  Just pure, intense quince flavor to accompany everything on your cheese board.",
-		image: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Dulce_de_membrillo.jpg",
+		image: "https://nettleandquince.files.wordpress.com/2010/11/dsc_03051.jpg",
 		UserId:4
 		},
 		{
 			name: 'Fairy Bread, for the child within us all',
 			fav: 2,
-			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with cany sprinkles',
+			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with candy sprinkles',
 			story: 'This bread is simple and delicous. There is nothing better than suprising your guests with a tray of delightful fairy bread and watching their smiles\' come alive',
 			image: "https://c1.staticflickr.com/2/1170/1463485066_6b952055af_b.jpg",
 			UserId:4
@@ -120,36 +120,9 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		{
 		name: 'He Taught Me To Cook With Fire',
 		fav: 2,
-		quote: "My ex-boyfriend's dad became the father I never had",
+		quote: "Fishing with my ex-boyfriend's father helped me find peace.",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
-		UserId:3
-		}
-		,
-		{
-		name: 'Sabillah Family Tajjinn',
-		fav: 44,
-		quote: "Nothing is better that eating your favorite meal with your favorite person.",
-story: "This meal represents family to me. We always have it at gatherings and festivals .I'm from Rabat, Morocco originally, I immigrated to New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of. She brought this same creativity to the previous careers as a seamstress and accountant. and now pursuing becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are passed from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly. traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin, I have no doubt of who I am and that I'm where I belong.",
-			image: "https://es1-ladleandspricell.netdna-ssl.com/wp-content/uploads/2013/12/tagine-chicken-1.jpg",
-		UserId:3
-		}
-		,
-		{
-		name: " Bandeja Paisa (farmer/'s platter)",
-		fav: 2,
-		quote: "This is a slow food meant to fuel hard work. Even though the pace of our culture has changed this dish is timeless.",
-		story: "I was born in Medellin, Colombia and eating bandeja paisa makes me think of home. Meat is prized in our culture and a meal isn't considered adequate without beef or pork ( poultry and seafood do not count, sorry not sorry). This dish is the home run of meat dishes, it has at least 3 kinds of meat and is packed with stick to your ribs nutrition to keep you going during long days and hard work. The traditional bandeja paisa includes beans, rice, ground beef, chorizo with lime, plantain, arepa, avocado, fried egg on top and of course a big slice of chicharron (fried pork belly). It is often served with mazamorra, a cold milk drink made with crushed corn.Strong savory smells dominate the preparation of this meal: grilled steak, stewed beans, fried chorizo, and chicharron. Bean preparation varies based on region and personal taste, it's popular to season them with pata (pork feet). It's not elaborate like what you'd find in a restaurant and you don't make it with the same ingredients every time. Throughout the week families will make variations of this this dish, mine had it twice a week for lunch. It's defines comforting 'home food' for me. I miss it. I don't cook it here in america due to expense and time. The meat tastes different here ( almost like I can taste the antibiotics), beef is so much more expensive, and the traditional beans take hours to make.My favorite thing about this dish is it’s accessibility to all Colombians. Everyone knows, likes, orders, and cooks it. It developed in a region where coffee is produced. The farm laborers there would consume the high calorie bandeja paisa as a means of providing them a full day’s worth of energy and nourishment to keep them going throughout the entire day. The dish has always been from and for working class people, it is the unofficially thought of as the national dish.",
-		image: "http://img.absolutviajes.com/wp-content/uploads/2008/10/bandeja-paisa-png.png",
-		UserId:2
-		}
-		,
-		{
-		name: 'He Taught Me To Cook With Fire',
-		fav: 2,
-		quote: "My ex-boyfriend's dad became the father I never had",
-		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+		image: "http://www.seriouseats.com/recipes/assets_c/2015/06/20150625-food-lab-grilled-shrimp-15-thumb-1500xauto-424445.jpg",
 		UserId:3
 		}
 	])
@@ -198,13 +171,12 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	models.Recipes.bulkCreate([
 
 	{
-	name: 'Charle\'s Survival Pasta',
-	ExperienceId:2
-	},
-
-	{
 	name: 'Chanko Nabe',
 	ExperienceId:1
+	},
+	{
+	name: 'Charle\'s Survival Pasta',
+	ExperienceId:2
 	},
 	{
   name: 'Shazia\'s Briyani',
@@ -227,59 +199,31 @@ story: "This meal represents family to me. We always have it at gatherings and f
   ExperienceId:7
 	},
 	{
-  name: 'Not Crococile Dundee Shrimp',
+  name: 'He Taught Me To Cook With Fire',
   ExperienceId:8
 	}
-	,
-	{
-  name: 'Tajjin',
-  ExperienceId:4
-	}
-	,
-	{
-  name: 'Bandeja Paisa',
-  ExperienceId:5
-	}
-	,
-	{
-  name: 'Not Crococile Dundee Shrimp',
-  ExperienceId:6
-	}
+
 		])
 	}).then(data => {
 		models.Ingredients.bulkCreate([
 		{
-		ingredients:"paprika",
-		quantity:2,
-		unit:'tablespoons',
-		RecipeId:2
-		},
-
-		{
-		ingredients:"cumin seeds, toasted" ,
+		ingredients:"Chef Boyardee Rigatoni",
 		quantity:1,
-		unit:"tablespoon",
+		unit:'can',
 		RecipeId:2
 		},
 
 		{
-		ingredients:"coriander seeds, toasted",
+		ingredients:"Polly-O String Cheese" ,
 		quantity:2,
-		unit:"teaspoons",
+		unit:"sticks",
 		RecipeId:2
 		},
 
 		{
-		ingredients:"black peppercorns",
-		quantity:2,
-		unit:"teaspoons",
-		RecipeId:2
-		},
-
-		{
-		ingredients:"sea salt, coarse",
-		quantity:1.5,
-		unit:"teaspoons",
+		ingredients:"Sriracha ",
+		quantity:3,
+		unit:"squeezes",
 		RecipeId:2
 		},
 		{
@@ -355,24 +299,6 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			RecipeId:6
 		},
 		{
-			ingredients:"Shrimp",
-			quantity:8,
-			unit:"ounces",
-			RecipeId:8
-		},
-		{
-			ingredients:"miso paste",
-			quantity:2,
-			unit:"tablespoons",
-			RecipeId:8
-		},
-		{
-			ingredients:"chicken meatballs",
-			quantity: 3/4,
-			unit:"pound",
-			RecipeId:8
-		},
-		{
 			ingredients:"Chorizo",
 			quantity:8,
 			unit:"ounces",
@@ -405,42 +331,10 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		,
 
 		{
-		ingredients:"lamb",
-		quantity:1.5,
-		unit:"pounds",
-		RecipeId:4
-		}
-		,
-
-		{
-		ingredients:"sea salt, coarse",
-		quantity:1,
-		unit:"teaspoon",
-		RecipeId:4
-		}
-		,
-
-		{
-		ingredients:"prunes",
-		quantity:4,
-		unit:"ounces",
-		RecipeId:4
-		}
-		,
-
-		{
-		ingredients:"cinnamon",
-		quantity:2,
-		unit:"sticks",
-		RecipeId:4
-		}
-		,
-
-		{
 		ingredients:"Shrimp",
 		quantity:8,
 		unit:"ounces",
-		RecipeId:2
+		RecipeId:1
 		}
 		,
 
@@ -448,7 +342,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		ingredients:"miso paste",
 		quantity:2,
 		unit:"tablespoons",
-		RecipeId:2
+		RecipeId:1
 		}
 		,
 
@@ -456,47 +350,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		ingredients:"chicken meatballs",
 		quantity:3/4,
 		unit:"pound",
-		RecipeId:2
-		}
-		,
-
-		{
-		ingredients:"Chorizo",
-		quantity:8,
-		unit:"ounces",
-		RecipeId:5
-		}
-		,
-
-		{
-		ingredients:"Chicarron",
-		quantity:1/2,
-		unit:"pound",
-		RecipeId:5
-		}
-		,
-
-		{
-		ingredients:"Eggs",
-		quantity: 4,
-		unit:"",
-		RecipeId:5
-		}
-		,
-
-		{
-		ingredients:"Maple wood chips",
-		quantity: 3,
-		unit:"pounds",
-		RecipeId:6
-		}
-		,
-
-		{
-		ingredients:"Shrimp",
-		quantity:1,
-		unit:"pound",
-		RecipeId:6
+		RecipeId:1
 		}
 	])
 	}).then(data => {
@@ -613,27 +467,32 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}).then(data => {
 		models.Steps.bulkCreate([
 		{
-		steps: 'boil shit in a pot',
-		RecipeId:2
+			steps: 'Boil ingredients in stone pot',
+			RecipeId:1
+		},
+		{
+			steps: 'Cook then enjoy',
+			RecipeId:1
 		},
 
 		{
-		steps: 'mix some seasoned rice',
+		steps: 'open can and place pasta in a microwave safe bowl',
 		RecipeId:2
 		},
-
 		{
-		steps: 'put some cheese and hot sauce on canned pasta',
+		steps: 'peel string cheese and place evenly distributed over pasta',
 		RecipeId:2
 		},
-
 		{
-		steps: 'boil chicken in a pot',
+		steps: 'Place bowl in Microwave for 2-3 mins or until pasta is hot and cheese is melted',
 		RecipeId:2
 		},
-
 		{
-		steps: 'scramble some eggs',
+		steps: 'drizzle Sriracha on top to taste',
+		RecipeId:2
+		},
+		{
+		steps: 'Enjoy',
 		RecipeId:2
 		},
 		{
@@ -701,14 +560,6 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			RecipeId:6
 		},
 		{
-			steps: 'Boil in stone pot',
-			RecipeId:7
-		},
-		{
-			steps: 'Cook then enjoy',
-			RecipeId:7
-		},
-		{
 			steps: 'Fry all meats',
 			RecipeId:7
 		},
@@ -741,7 +592,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		},
 		{
 			LocationId:2,
-			ExperienceId:2
+			ExperienceId:1
 		},
 		{
 			LocationId:3,
