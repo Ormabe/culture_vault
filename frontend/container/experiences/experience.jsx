@@ -27,9 +27,6 @@ class Experience extends Component {
     return (
       <div>
         <div className="recipe-image-header">
-          <div>
-            <Likes id={this.props.params.id} />
-          </div>
           <div className="recipe-image">
             <img src={recipeImage}/>
           </div>
@@ -48,6 +45,9 @@ class Experience extends Component {
             <div>
               {userLocation}
             </div>
+            <div>
+            <Likes id={this.props.params.id} />
+          </div>
           </div>
 
         </div>
