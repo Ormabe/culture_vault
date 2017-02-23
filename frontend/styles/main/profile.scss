@@ -1,0 +1,108 @@
+.user-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 1200px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background-color: white;
+}
+
+.user-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 600px;
+	height: auto;
+	border-radius: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 10px;
+}
+
+.card-5 {
+	position: relative;
+	z-index: 2;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.user-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 140px;
+	height: 150px;
+	padding: 10px 10px;
+}
+
+.user-image img {
+	width: 150px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.user-information {
+	width: 400px;
+	height: 150px;
+	background-color: green;
+	padding: 10px 10px;
+}
+
+.blue-line-top {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	background-color: #4A97C9;
+}
+
+.blue-line-bottom {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: #4A97C9;
+}
+
+.story-name {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+	text-align: center;
+	padding: 10px 5px;
+	color: #585A5B;
+}
+
+.experience-created-container {
+	display: flex;
+	flex-direction: row;
+	width: 800px;
+	height: auto;
+	background-color: pink;
+}
+
+.experience-image {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 780px;
+	padding: 10px 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.experience-image img {
+	width: 300px;
+	height: auto;
+	max-height: 300px;
+}
