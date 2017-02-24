@@ -16,7 +16,7 @@ const createAnExperience = (req, res) => {
 		quote: req.body.quote,
 		story: req.body.story,
 		image: req.body.image,
-		UserId: req.params.userId,
+		UserId: req.user.id,
 		//*******LOCATION*********//
 		country: req.body.country,
 		city: req.body.city,
@@ -81,11 +81,12 @@ const createAnExperience = (req, res) => {
 	 			})
 	 		)
 	 })
-	.then(sometin => {
-		res.send(storage)
+	.then(something => {
+		console.log('SOMETHING ======>>>>>>',something.datavalues.id)
 	})
-		.catch(error => console.log(error))
+	.catch(error => console.log(error))
 }
+
 
 const getExperience = (req, res) => {
 	let data ={user:null,location:null,recipe:null,experience:null,steps:null,ingredients:null,sneakUserId:null};

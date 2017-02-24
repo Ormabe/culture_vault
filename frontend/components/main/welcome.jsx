@@ -3,12 +3,7 @@ import LogInForm from './loginform.js';
 import SignUpForm from './signupform.js';
 import css from '../../styles/navigation/navigation.scss';
 import { Link } from 'react-router';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-
-
-
-injectTapEventPlugin();
 
 export default class Welcome extends Component {
   render() {

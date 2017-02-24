@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 
 const session = require('express-session');
+const cors = require('cors')
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -19,6 +20,7 @@ const flash = require('express-flash');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+app.use(cors())
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
 app.use(cookieParser());
@@ -49,6 +51,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.options('*', cors());
 app.use('/api/users', indexRouter.Users);
 app.use('/api/explore', indexRouter.Explore);
 app.use('/api/comments', indexRouter.Comments);
@@ -56,16 +59,23 @@ app.use('/api/likes', indexRouter.Likes);
 app.use('/api/experiences', indexRouter.Experiences);
 app.use('/api/', indexRouter.Login);
 
+
 app.get('/*', (req, res) => {
-  console.log('user', req.user);
-  console.log('isAuthenticated', req.isAuthenticated());
+
+  console.log('USER ======>>>>>>', req.user);
+  console.log('isAuthenticated ======>>>>>>', req.isAuthenticated());
+
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-  // app.listen(2222);
-  // console.log('Listening at https://localhost:2222');
 
-  app.listen(process.env.PORT || '2222', () => console.log('Listening on port 2222'));
+  app.listen(2222);
+  console.log('Listening at https://localhost:2222');
 
+
+
+app.listen(process.env.PORT || 2222, function(){
+  console.log('CORS-enabled web server listening at https://localhost:2222');
+});
 
 module.exports = app;
