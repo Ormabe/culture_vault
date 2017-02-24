@@ -11,3 +11,18 @@ export function getuserInfo(userId) {
 		payload: request
 	} 
 }
+
+// *************************************** //\
+
+export const USER_ID = 'USER_ID';
+
+const ROOT_URL2 = 'http://localhost:2222/api/data'
+
+export function getUserId(){
+	const request2 = axios.get(ROOT_URL2)
+	return {
+		type:USER_ID,
+		payload:request2
+	}
+}
+
