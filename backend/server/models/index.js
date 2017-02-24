@@ -20,6 +20,8 @@ if (process.env.DATABASE_URL) {
   );
 }
 
+
+
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
