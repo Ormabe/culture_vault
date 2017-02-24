@@ -16,6 +16,11 @@ import MusicContainter from './container/main/music-container.js';
 import Welcome from './components/main/welcome';
 import '../favicon.ico';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin()
+
+
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 const router = (
@@ -23,13 +28,13 @@ const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={CultureVault} >
 			<IndexRoute component={Welcome} />
-			<Route path="create/:userId" component={CreateExperience} />
-			<Route path="discover" component={Feature} />
-			<Route path="experience/:id" component={Experience} />
-			<Route path="explore" component={ExploreContainer} />
-			<Route path='explore/:countryId' component={LocationContainer}/>
-			<Route path="music" component={MusicContainter} />
-			<Route path="users/:id" component={UserProfile} />
+			<Route path="/create/:userId" component={CreateExperience} />
+			<Route path="/discover" component={Feature} />
+			<Route path="/experience/:id" component={Experience} />
+			<Route path="/explore" component={ExploreContainer} />
+			<Route path='/explore/:countryId' component={LocationContainer}/>
+			<Route path="/music" component={MusicContainter} />
+			<Route path="/users/:id" component={UserProfile} />
 		</Route>
 	</Router>
 </Provider>

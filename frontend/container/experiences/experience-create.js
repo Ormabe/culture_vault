@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';	
+import { connect } from 'react-redux';
 import { createNewExperience } from '../../actions/action-experiences';
 import { Link } from 'react-router';
 import axios from 'axios';
 import _ from 'lodash';
+import Music from '../main/music-container'
 
 class CreateExperience extends Component {
 	constructor(props) {
@@ -91,14 +92,14 @@ class CreateExperience extends Component {
 						recipeTitle: 'success'
 					}
 				)
-	
+
 	}
 
 	newIngredient(e) {
 		e.preventDefault()
 
 		const newIngredient = {}
-		
+
 		const ingredients = this.state.currentIngredient;
 		const quantity = this.state.currentQuantity;
 		const unit = this.state.currentUnit;
@@ -160,7 +161,7 @@ class CreateExperience extends Component {
 			)
 		}
 
-		return ( 
+		return (
 			<div>
 			</div>
 		)
@@ -177,24 +178,24 @@ class CreateExperience extends Component {
 					type="text"
 					placeholder="Enter A Quote"
 					value={this.state.quote}
-					onChange={this.handleChange.bind(this, "quote")} 
+					onChange={this.handleChange.bind(this, "quote")}
 					required />
 				<br />
 				<br />
 
-				<textarea 
-					placeholder="Tell Me Your Story" 
-					value={this.state.story} 
-					onChange={this.handleChange.bind(this, "story")} 
+				<textarea
+					placeholder="Tell Me Your Story"
+					value={this.state.story}
+					onChange={this.handleChange.bind(this, "story")}
 					required/>
 				<br />
-				<br />	
+				<br />
 
-				<input 
+				<input
 					type="text"
 					placeholder="Upload An Image"
 					value={this.state.image}
-					onChange={this.handleChange.bind(this, "image")} 
+					onChange={this.handleChange.bind(this, "image")}
 					required/>
 				<br />
 				<br />
@@ -203,32 +204,32 @@ class CreateExperience extends Component {
 					type="text"
 					placeholder="Country of Origin"
 					value={this.state.country}
-					onChange={this.handleChange.bind(this, "country")} 
+					onChange={this.handleChange.bind(this, "country")}
 					required/>
 				<br />
 				<br />
 
-				<input 
+				<input
 					type="text"
 					placeholder="City of Origin"
 					value={this.state.city}
-					onChange={this.handleChange.bind(this, "city")} 
+					onChange={this.handleChange.bind(this, "city")}
 					required/>
 				<br />
 				<br />
 
-				<input 
+				<input
 					type="text"
 					placeholder="Recipe Title"
 					value={this.state.recipeTitle}
-					onChange={this.handleChange.bind(this, "recipeTitle")} 
+					onChange={this.handleChange.bind(this, "recipeTitle")}
 					required/>
 				<br />
 				<br />
 
 				INGREDIENTS:
 				{this.showIngredients()}
-				
+
 				<br />
 
 				<input type="text"
@@ -253,7 +254,7 @@ class CreateExperience extends Component {
 
 				STEPS:
 				{this.showSteps()}
-					
+
 				<br />
 				<br />
 
@@ -266,6 +267,12 @@ class CreateExperience extends Component {
 
 				<br />
 				<br />
+
+				<Music />
+
+				<br />
+				<br />
+
 
 				<button type="submit">SUBMIT</button>
 			</form>

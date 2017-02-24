@@ -86,17 +86,17 @@ const seedFunction = () => {
 		UserId:3
 		},
 		{
-		name: 'My love affair with Qunice',
+		name: 'My love affair with Quince',
 		fav: 16,
 		quote: "There is a reason that the Quince was on the tree of knowledge in the Garden of Eden",
 		story: "One of the best and easiest foods to make is Quince paste. Once you've made it you will never go back to store bought anything.  My quince paste is simply pure quince, sugar and a the juice of a lemon – nothing more!  Just pure, intense quince flavor to accompany everything on your cheese board.",
-		image: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Dulce_de_membrillo.jpg",
+		image: "https://nettleandquince.files.wordpress.com/2010/11/dsc_03051.jpg",
 		UserId:4
 		},
 		{
 			name: 'Fairy Bread, for the child within us all',
 			fav: 2,
-			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with cany sprinkles',
+			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with candy sprinkles',
 			story: 'This bread is simple and delicous. There is nothing better than suprising your guests with a tray of delightful fairy bread and watching their smiles\' come alive',
 			image: "https://c1.staticflickr.com/2/1170/1463485066_6b952055af_b.jpg",
 			UserId:4
@@ -120,9 +120,10 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		{
 		name: 'He Taught Me To Cook With Fire',
 		fav: 2,
-		quote: "My ex-boyfriend's dad became the father I never had",
+		quote: "Fishing with my ex-boyfriend's father helped me find peace.",
 		story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-		image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+		image: "http://www.seriouseats.com/recipes/assets_c/2015/06/20150625-food-lab-grilled-shrimp-15-thumb-1500xauto-424445.jpg",
+
 		UserId:3
 		}
 	])
@@ -171,13 +172,12 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	models.Recipes.bulkCreate([
 
 	{
-	name: 'Charle\'s Survival Pasta',
-	ExperienceId:2
-	},
-
-	{
 	name: 'Chanko Nabe',
 	ExperienceId:1
+	},
+	{
+	name: 'Charle\'s Survival Pasta',
+	ExperienceId:2
 	},
 	{
   name: 'Shazia\'s Briyani',
@@ -200,44 +200,30 @@ story: "This meal represents family to me. We always have it at gatherings and f
   ExperienceId:7
 	},
 	{
-  name: 'Not Crococile Dundee Shrimp',
+  name: 'He Taught Me To Cook With Fire',
   ExperienceId:8
 	}
 		])
 	}).then(data => {
 		models.Ingredients.bulkCreate([
 		{
-		ingredients:"paprika",
-		quantity:2,
-		unit:'tablespoons',
-		RecipeId:2
-		},
-
-		{
-		ingredients:"cumin seeds, toasted" ,
+		ingredients:"Chef Boyardee Rigatoni",
 		quantity:1,
-		unit:"tablespoon",
+		unit:'can',
 		RecipeId:2
 		},
 
 		{
-		ingredients:"coriander seeds, toasted",
+		ingredients:"Polly-O String Cheese" ,
 		quantity:2,
-		unit:"teaspoons",
+		unit:"sticks",
 		RecipeId:2
 		},
 
 		{
-		ingredients:"black peppercorns",
-		quantity:2,
-		unit:"teaspoons",
-		RecipeId:2
-		},
-
-		{
-		ingredients:"sea salt, coarse",
-		quantity:1.5,
-		unit:"teaspoons",
+		ingredients:"Sriracha ",
+		quantity:3,
+		unit:"squeezes",
 		RecipeId:2
 		},
 		{
@@ -313,24 +299,6 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			RecipeId:6
 		},
 		{
-			ingredients:"Shrimp",
-			quantity:8,
-			unit:"ounces",
-			RecipeId:8
-		},
-		{
-			ingredients:"miso paste",
-			quantity:2,
-			unit:"tablespoons",
-			RecipeId:8
-		},
-		{
-			ingredients:"chicken meatballs",
-			quantity: 3/4,
-			unit:"pound",
-			RecipeId:8
-		},
-		{
 			ingredients:"Chorizo",
 			quantity:8,
 			unit:"ounces",
@@ -359,6 +327,24 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			quantity:1,
 			unit:"pound",
 			RecipeId:8
+		},
+		{
+		ingredients:"Shrimp",
+		quantity:8,
+		unit:"ounces",
+		RecipeId:1
+		},
+		{
+		ingredients:"miso paste",
+		quantity:2,
+		unit:"tablespoons",
+		RecipeId:1
+		},
+		{
+		ingredients:"chicken meatballs",
+		quantity:3/4,
+		unit:"pound",
+		RecipeId:1
 		}
 	])
 	}).then(data => {
@@ -475,27 +461,32 @@ story: "This meal represents family to me. We always have it at gatherings and f
 	}).then(data => {
 		models.Steps.bulkCreate([
 		{
-		steps: 'boil shit in a pot',
-		RecipeId:2
+			steps: 'Boil ingredients in stone pot',
+			RecipeId:1
+		},
+		{
+			steps: 'Cook then enjoy',
+			RecipeId:1
 		},
 
 		{
-		steps: 'mix some seasoned rice',
+		steps: 'open can and place pasta in a microwave safe bowl',
 		RecipeId:2
 		},
-
 		{
-		steps: 'put some cheese and hot sauce on canned pasta',
+		steps: 'peel string cheese and place evenly distributed over pasta',
 		RecipeId:2
 		},
-
 		{
-		steps: 'boil chicken in a pot',
+		steps: 'Place bowl in Microwave for 2-3 mins or until pasta is hot and cheese is melted',
 		RecipeId:2
 		},
-
 		{
-		steps: 'scramble some eggs',
+		steps: 'drizzle Sriracha on top to taste',
+		RecipeId:2
+		},
+		{
+		steps: 'Enjoy',
 		RecipeId:2
 		},
 		{
@@ -563,14 +554,6 @@ story: "This meal represents family to me. We always have it at gatherings and f
 			RecipeId:6
 		},
 		{
-			steps: 'Boil in stone pot',
-			RecipeId:7
-		},
-		{
-			steps: 'Cook then enjoy',
-			RecipeId:7
-		},
-		{
 			steps: 'Fry all meats',
 			RecipeId:7
 		},
@@ -603,7 +586,7 @@ story: "This meal represents family to me. We always have it at gatherings and f
 		},
 		{
 			LocationId:2,
-			ExperienceId:2
+			ExperienceId:1
 		},
 		{
 			LocationId:3,
@@ -635,4 +618,3 @@ story: "This meal represents family to me. We always have it at gatherings and f
 
 
 module.exports = seedFunction
-
