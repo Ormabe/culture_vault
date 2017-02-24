@@ -62,8 +62,10 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-  app.listen(2222);
-  console.log('Listening at https://localhost:2222');
+  // app.listen(2222);
+  // console.log('Listening at https://localhost:2222');
+
+  app.listen(process.env.PORT || '2222', () => console.log('Listening on port 2222'));
 
 
 module.exports = app;

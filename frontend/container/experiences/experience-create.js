@@ -24,7 +24,8 @@ class CreateExperience extends Component {
 			currentQuantity: '',
 			currentUnit: '',
 			currentIngredient: '',
-			currentStep: ''
+			currentStep: '',
+			songURI: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -34,32 +35,40 @@ class CreateExperience extends Component {
 		this.showIngredients = this.showIngredients.bind(this)
 		this.newStep = this.newStep.bind(this)
 		this.showSteps = this.showSteps.bind(this)
-
+		this.handleSongSelect = this.handleSongSelect.bind(this)
 	}
 
 	handleChange(input, event) {
-		if (input === 'quote') {
-			this.setState({ quote: event.target.value })
-		} else if (input === 'story') {
-			this.setState({ story: event.target.value })
-		} else if (input === 'image') {
-			this.setState({ image: event.target.value })
-		} else if (input === 'country') {
-			this.setState({ country: event.target.value })
-		} else if (input === 'city') {
-			this.setState({ city: event.target.value })
-		} else if (input === 'recipeTitle') {
-			this.setState({ recipeTitle: event.target.value })
-		} else if (input === 'currentQuantity') {
-			this.setState({ currentQuantity: event.target.value })
-		} else if (input === 'currentUnit') {
-			this.setState({ currentUnit: event.target.value })
-		} else if (input === 'currentIngredient') {
-			this.setState({ currentIngredient: event.target.value })
-		} else if (input === 'currentStep') {
-			this.setState({ currentStep: event.target.value })
-		}
+		this.setState({
+			[input]: event.target.value
+		})
+		// if (input === 'quote') {
+		// 	this.setState({ quote: event.target.value })
+		// } else if (input === 'story') {
+		// 	this.setState({ story: event.target.value })
+		// } else if (input === 'image') {
+		// 	this.setState({ image: event.target.value })
+		// } else if (input === 'country') {
+		// 	this.setState({ country: event.target.value })
+		// } else if (input === 'city') {
+		// 	this.setState({ city: event.target.value })
+		// } else if (input === 'recipeTitle') {
+		// 	this.setState({ recipeTitle: event.target.value })
+		// } else if (input === 'currentQuantity') {
+		// 	this.setState({ currentQuantity: event.target.value })
+		// } else if (input === 'currentUnit') {
+		// 	this.setState({ currentUnit: event.target.value })
+		// } else if (input === 'currentIngredient') {
+		// 	this.setState({ currentIngredient: event.target.value })
+		// } else if (input === 'currentStep') {
+		// 	this.setState({ currentStep: event.target.value })
+		// }
 	}
+
+  handleSongSelect(e, songURI){
+    e.preventDefault();
+  	this.setState({songURI: songURI})
+  }
 
 	createExperience(userId, state) {
 		const { createNewExperience } = this.props;
@@ -78,7 +87,8 @@ class CreateExperience extends Component {
 			city: this.state.city,
 			name: this.state.recipeTitle,
 			ingredients: this.state.ingredients,
-			steps: this.state.steps
+			steps: this.state.steps,
+			songURI: this.state.songURI
 		})
 
 				this.setState(
@@ -172,6 +182,7 @@ class CreateExperience extends Component {
 	}
 
 	render() {
+		console.log(this.state)
 		return (
 			<form onSubmit={this.axiosCall}>
 				<input
@@ -268,7 +279,7 @@ class CreateExperience extends Component {
 				<br />
 				<br />
 
-				<Music />
+				<Music selectedSong={this.state.songURI} onSelect={this.handleSongSelect} />
 
 				<br />
 				<br />
