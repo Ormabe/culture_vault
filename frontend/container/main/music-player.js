@@ -44,8 +44,6 @@ class playSong extends Component{
 	}
 
 	showStuff(){
-		console.log("showStuff");
-		console.log("song Info:", this.state.songInfo)
 		if (this.state && this.state.songInfo &&
 							this.state.songInfo.name &&
 							this.state.songInfo.album.images[1].url &&

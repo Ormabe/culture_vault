@@ -23,7 +23,6 @@ const seedFunction = () => {
 	location: "Brooklyn",
 	bio: "My presence is a present"
 	},
-
 	{
 	first_name: "Rabiya",
 	last_name: "Watson",
@@ -100,7 +99,8 @@ const seedFunction = () => {
 			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with candy sprinkles',
 			story: 'This bread is simple and delicous. There is nothing better than suprising your guests with a tray of delightful fairy bread and watching their smiles\' come alive',
 			image: "https://c1.staticflickr.com/2/1170/1463485066_6b952055af_b.jpg",
-			UserId:4
+			UserId:4,
+			songURI:'6r2BECwMgEoRb5yLfp0Hca'
 		},
 		{
 		name: 'Sabillah Family Tajjinn',

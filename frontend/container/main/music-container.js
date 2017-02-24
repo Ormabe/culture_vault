@@ -70,7 +70,7 @@ console.log("trackId=====>>", this.state.trackId)
 	showStuff(){
 		console.log(this.state);
 		if(!this.state.artist|| !this.state.track) {
-			return <p>"...no state yet"</p>
+			return ""
 		}
 		else if (this.state && this.state.artistInfo && this.state.artistInfo.data && this.state.artistInfo.data.tracks && this.state.artistInfo.data.tracks.items){
 				const result = this.state.artistInfo.data.tracks.items
