@@ -26,11 +26,17 @@ class UserProfile extends Component {
 					<img src={userInfo.user.image} alt={userInfo.user.id} />
 				</div>
 				<div className="user-information">
-					Username:{userInfo.user.first_name}
-					<br />
-					Location:{userInfo.user.location}
-					<br />
-					Experiences:{experienceCounter}
+					<div className="bubble-container">
+						<div className="user-bubble">
+							{userInfo.user.first_name + " " + userInfo.user.last_name}
+						</div>
+						<div className="user-bubble">
+							{userInfo.user.location}
+						</div>
+						<div className="user-bubble">
+							{`"${userInfo.user.bio}"`}
+						</div>
+					</div>
 				</div>
 			</div>
 			)

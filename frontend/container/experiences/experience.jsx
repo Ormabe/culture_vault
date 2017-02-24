@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { fetchExperience } from '../../actions/action-experiences';
 import Comments from './experience-comments';
 import Likes from './experience-likes';
@@ -20,6 +21,7 @@ class Experience extends Component {
     const { experience } = this.props;
     const recipeName = experience.recipe.name;
     const recipeImage = experience.experience.image;
+    const userId = experience.user.id;
     const userName = `${experience.user.first_name} ${experience.user.last_name}`;
     const userImage = experience.user.image;
     const userLocation = experience.user.location;
@@ -37,10 +39,10 @@ class Experience extends Component {
             <div className="horizontal-line">
             </div>
             <div className="user-header-image">
-              <img src={userImage} alt={userName} />
+              <Link to={"/users/" + userId}><img src={userImage} alt={userName} /></Link>
             </div>
             <div> 
-              by {userName}
+              by <Link to={"/users/" + userId}>{userName}</Link>
             </div>
             <div>
               {userLocation}
