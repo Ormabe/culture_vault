@@ -4,6 +4,7 @@ import { getuserInfo } from '../../actions/userProfile-action';
 import UserExperience from './userProfile-Experience';
 import UserLikes from './userExperience-Likes';
 import css from '../../styles/main/profile.scss';
+import { Link } from 'react-router';
 
 class UserProfile extends Component {
 	
@@ -28,7 +29,7 @@ class UserProfile extends Component {
 				<div className="user-information">
 					<div className="bubble-container">
 						<div className="user-bubble">
-							{userInfo.user.first_name + " " + userInfo.user.last_name}
+							<Link to={`/create/${userInfo.user.id}`}>{userInfo.user.first_name + " " + userInfo.user.last_name}</Link>
 						</div>
 						<div className="user-bubble">
 							{userInfo.user.location}
