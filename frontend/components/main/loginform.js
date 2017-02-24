@@ -48,11 +48,7 @@ class LogInForm extends Component {
     e.preventDefault()
     console.log("<====== LOGIN ======>")
     this.props.loginUserFunc(this.state.email,this.state.password)
-      Alert.success('Test message 2', {
-      position: 'top',
-      effect: 'bouncyflip',
-      timeout: '2000'
-      });
+
     this.setState({
       email:"",
       password:""
