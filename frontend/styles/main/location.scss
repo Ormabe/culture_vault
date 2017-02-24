@@ -56,10 +56,28 @@
 .experience-title {
 	position: relative;
 	z-index: 3;
-	font-family: 'Dancing Script';
-	font-size: 30px;
-	margin-top: -150px;
+/*	font-family: 'Dancing Script';*/
+	font-size: 25px;
+	color: #FF4100;
+	margin-top: -165px;
 	margin-bottom: 120px;
 	color: #82878B;
 	text-align: center;
+	padding: 20px;
+}
+
+.experience-quote {
+	max-width: 500px;
+	position: relative;
+	z-index: 4;
+	font-size: 15px;
+	color: #454D53;
+	margin-top: -125px;
+	margin-bottom: 120px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.orange-font {
+	color: #FF4100;
 }

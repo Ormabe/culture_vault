@@ -78,13 +78,6 @@ class Comments extends Component {
 	createAComment() {
 		return (
 			<div>
-				<div className="green-line-top">
-        </div>
-        <div className="comments-label">
-          Comments
-        </div>
-        <div className="green-line-bottom">
-        </div>
         <div className="comment-entry-box">
 					<form onSubmit={this.onFormSubmit}>
 						<textarea
@@ -105,6 +98,14 @@ class Comments extends Component {
 		const { fetchComments } = this.props;
 
 		return(
+			<div>
+			<div className="green-line-top">
+        </div>
+        <div className="comments-label">
+          Comments
+        </div>
+        <div className="green-line-bottom">
+        </div>
 			<div className="comment-container">
 					{comments.map(comment => 
 							<div className="comment-outer-container" key={comment.id}>
@@ -117,7 +118,8 @@ class Comments extends Component {
 									/>
 							</div>
 					)}
-			</div>		
+			</div>	
+			</div>	
 		)
 	}
 
@@ -134,10 +136,9 @@ class Comments extends Component {
 
 		return (
 			<div >
-				{this.createAComment()}
-				<br />
 				{this.generateComments()}
-
+				<br />
+				{this.createAComment()}
 			</div>
 		)
 	}

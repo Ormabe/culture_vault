@@ -48,10 +48,36 @@
 }
 
 .user-information {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
 	width: 400px;
 	height: 150px;
-	background-color: green;
 	padding: 10px 10px;
+}
+
+.bubble-container{
+	width: auto;
+	height: auto;
+	align-items: center;
+	align-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.user-bubble {
+	display: flex;
+	justify-content: center;
+	width: 380px;
+	height: 20px;
+	padding: 5px 5px;
+	color: #82878B;
+	border: solid 2px #82878B;
+	background-color: white;
+	border-radius: 40px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .blue-line-top {
@@ -72,6 +98,24 @@
 	background-color: #4A97C9;
 }
 
+.green-line-top {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	background-color: #4CB748;
+}
+
+.green-line-bottom {
+	width: 800px;
+	height: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: #4CB748;
+}
+
 .story-name {
 	width: 800px;
 	margin-left: auto;
@@ -82,12 +126,21 @@
 	color: #585A5B;
 }
 
+.created-by-container {
+	width: auto;
+	max-height:600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin-bottom: 35px;
+}
+
 .experience-created-container {
 	display: flex;
+	justify-content: flex-start;
 	flex-direction: row;
 	width: 800px;
 	height: auto;
-	background-color: pink;
+	margin-bottom: 20px;
 }
 
 .experience-image {
@@ -95,14 +148,58 @@
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-	width: 780px;
+	width: 300px;
 	padding: 10px 10px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .experience-image img {
 	width: 300px;
 	height: auto;
 	max-height: 300px;
+	border-radius: 4px;
 }
+
+.experience-card-container {
+	display: flex;
+	flex-direction: column;
+	width: 380px;
+	height: auto;
+	border-radius: 2px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.experience-name {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-size: 30px;
+	line-height: 35px;
+	margin-bottom: 15px;
+}
+
+.experience-quote {
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
