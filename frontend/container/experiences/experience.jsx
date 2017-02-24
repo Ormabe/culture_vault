@@ -8,6 +8,7 @@ import { fetchExperience } from '../../actions/action-experiences';
 import Comments from './experience-comments';
 import Likes from './experience-likes';
 import css from '../../styles/experiences/experiences.scss';
+import Music from '../main/music-player';
 
 class Experience extends Component {
   componentWillMount() {
@@ -25,7 +26,6 @@ class Experience extends Component {
     const userName = `${experience.user.first_name} ${experience.user.last_name}`;
     const userImage = experience.user.image;
     const userLocation = experience.user.location;
-    
     return (
       <div>
         <div className="recipe-image-header">
@@ -165,12 +165,14 @@ class Experience extends Component {
         </div>
       );
     }
-
+    console.log("experience props:", this.props)
     return (
       <div className="experience-page-container">
         {this.header()}
         <br />
         {this.story()}
+        <br />
+        <Music songURI={this.props.experience.experience.songURI} />;
         <br />
         {this.recipe()}
         <br />
