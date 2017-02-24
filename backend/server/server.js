@@ -69,7 +69,7 @@ app.get('/*', (req, res) => {
 });
 
 
-app.listen(2222, function(){
+app.listen(process.env.PORT || 2222, function(){
   console.log('CORS-enabled web server listening at https://localhost:2222');
 });
 
