@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     }
     ,
 
-    music: {
+    songURI: {
       type:DataTypes.STRING(2000)
     }
   },

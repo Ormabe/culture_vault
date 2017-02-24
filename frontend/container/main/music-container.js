@@ -24,8 +24,7 @@ class AddSong extends Component{
 			songs:[],
 			artist: "",
 			track:"",
-			artistInfo: [],
-			trackId: ""
+			artistInfo: []
 		}
 	}
 
@@ -38,6 +37,7 @@ class AddSong extends Component{
 	}
 
 selectTrack(savedId){
+	this.props.onSelect(savedId)
 this.setState({trackId: savedId});
 console.log("trackId=====>>", this.state.trackId)
 
@@ -58,8 +58,8 @@ console.log("trackId=====>>", this.state.trackId)
 
 	getArtistAlbums(event){
 		event.preventDefault();
-		console.log('track=====>', this.state.track)
-		console.log('artist', this.state.artist)
+		//console.log('track=====>', this.state.track)
+		//console.log('artist', this.state.artist)
 
     axios.get(`https://api.spotify.com/v1/search?q=track%3A${this.state.track}+artist%3A${this.state.artist}&type=track `)
     	.then((artistInfo)=>{
@@ -74,7 +74,7 @@ console.log("trackId=====>>", this.state.trackId)
 		}
 		else if (this.state && this.state.artistInfo && this.state.artistInfo.data && this.state.artistInfo.data.tracks && this.state.artistInfo.data.tracks.items){
 				const result = this.state.artistInfo.data.tracks.items
-				console.log('result ====>',result);
+				//console.log('result ====>',result);
 			return (
 				<div>
 
@@ -101,10 +101,12 @@ console.log("trackId=====>>", this.state.trackId)
 						<br/>
 						{track.artists[0].name}
 						<br/>
-
-						<button id={index} onClick={() => this.selectTrack(savedInfo)}>
-							choose track
-						</button>
+						{savedInfo === this.props.selectedSong ?
+								<button> selected </button>
+						    : <button id={index} onClick={(e) => this.props.onSelect(e, savedInfo)}>
+						    	choose track
+									</button>
+						 }
 
 
 						<br/>
@@ -125,12 +127,12 @@ console.log("trackId=====>>", this.state.trackId)
 				<div>
 					<p>Is there music that would enhance this memory?</p>
 
-						<form onSubmit={this.getArtistAlbums.bind(this)}>
+						<div>
 							<input type="text" placeholder="Artist Name" onChange={this.handleArtistChange.bind(this)}/>
 							<br />
 							<input type="text" placeholder="Song Title" onChange={this.handleTrackChange.bind(this)}/>
-							<button type="submit">search</button>
-						</form>
+							<button onClick={this.getArtistAlbums.bind(this)}>search</button>
+						</div>
 
 						<ul>
             {this.showStuff()}

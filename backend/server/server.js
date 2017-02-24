@@ -68,7 +68,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/views/index.html'));
 });
 
-
 app.listen(process.env.PORT || 2222, function(){
   console.log('CORS-enabled web server listening at https://localhost:2222');
 });

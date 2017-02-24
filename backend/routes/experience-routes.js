@@ -27,14 +27,16 @@ const createAnExperience = (req, res) => {
 		steps: req.body.steps,
 		//********RECIPE*********//
 		recipe:req.body.name,
-		experienceId:null
+		experienceId:null,
+		songURI: req.body.songURI
 	};
 
 	 models.Experiences.create({
 				quote: storage.quote,
 				story: storage.story,
 				image: storage.image,
-				UserId: storage.UserId
+				UserId: storage.UserId,
+				songURI: storage.songURI
 	})
 	 .then(data => storage.experienceId = data.id)
 

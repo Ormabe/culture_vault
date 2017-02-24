@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from '../../styles/main/profile.scss';
 
 export default class UserExperience extends Component {
 	
@@ -12,17 +13,26 @@ export default class UserExperience extends Component {
 					<div className="story-name">Experiences Created by {userInfo.user.first_name}</div>
 				<div className="blue-line-bottom">
 				</div>
+				<div className="created-by-container">
 				{userInfo.experiences.map(experiences =>
-					<div className="experience-created-container">	
+					<div key={experiences.id} className="experience-created-container card-5">	
 						<div className="experience-image">
 							<img 
-								key={experiences.id}
 								onClick={ () => this.props.router(`/experience/${experiences.id}`)}
 								src={experiences.image} />
+						</div>
+						<div className="experience-card-container">
+							<div className="experience-name">
+								{experiences.name}
+							</div>
+							<div className="experience-quote">
+								{experiences.quote}
+							</div>
 						</div>
 					</div>
 					)
 				}
+				</div>
 			</div>
 		)
 	}
