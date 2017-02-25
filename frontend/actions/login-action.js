@@ -13,8 +13,10 @@ export function loginUserFunc (email,password) {
                             window.location = response.data;
                         })
 
+
   // return {
   //   type: LOGIN_USER,
   //   payload: loginUser
   // }
+
 }

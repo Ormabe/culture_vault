@@ -40,11 +40,12 @@ export default class NavBar extends Component {
         	<div className="navbar-about">
         		<Link to="#">About</Link>
         	</div>
-          { this.state.userId? 
+
+          { this.state.userId?
              <div>
                 <div> log out </div>
 
-                <div> create </div> 
+                <div> create </div>
              </div>
              : <div className="login">
                 <div>
@@ -52,8 +53,9 @@ export default class NavBar extends Component {
                 </div>
          	    </div>
             }
+
           </div>
-        
+
 
       </div>
     );

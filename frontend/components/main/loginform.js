@@ -92,6 +92,7 @@ class LogInForm extends Component {
 
         <TextField
           name="email"
+          required={true}
           value={this.state.email}
           onChange={this.handleChange}
           floatingLabelText="Enter Email Address"
@@ -101,11 +102,13 @@ class LogInForm extends Component {
         <br />
         <TextField
           name="password"
+          required={true}
           value={this.state.password}
           onChange={this.handleChange}
           floatingLabelText="Enter Password"
           floatingLabelStyle={styles.floatingLabelStyle}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+          type="password"
         />
         <br />
         <div className="login-button-container">
@@ -123,7 +126,7 @@ class LogInForm extends Component {
         </div>
         </div>
       </form>
-      <h3>OR</h3>
+      {/* <h3>OR</h3>
       <br />
       <RaisedButton
         href="https://www.facebook.com"
@@ -141,7 +144,7 @@ class LogInForm extends Component {
         label="Google Sign-In"
         style={styles.button}
         icon={<FaGoogle />}
-      />
+      /> */}
     </Dialog>
     </div>
     </MuiThemeProvider>
