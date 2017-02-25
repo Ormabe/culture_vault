@@ -212,6 +212,11 @@ const seedFunction = () => {
 	{
 		name: 'He Taught Me To Cook With Fire',
 		ExperienceId:8
+	},
+	,
+	{
+		name: 'She Taught Me There Was Strength In Kindness',
+		ExperienceId:9
 	}
 		])
 	}).then(data => {
@@ -621,6 +626,10 @@ const seedFunction = () => {
 		{
 			LocationId:5,
 			ExperienceId:8
+		},
+		{
+			LocationId:1,
+			ExperienceId:9
 		}
 		])
 	})
