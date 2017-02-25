@@ -3,7 +3,7 @@ import promise from 'redux-promise';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware , compose} from 'redux';
 import rootReducer from './reducers';
 import Experience from './container/experiences/experience';
 import Feature from './container/main/feature-container';
@@ -19,9 +19,9 @@ import '../favicon.ico';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin()
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = composeEnhancers(applyMiddleware(promise))(createStore);
 
 const router = (
 <Provider store={createStoreWithMiddleware(rootReducer)}>

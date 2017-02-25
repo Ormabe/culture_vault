@@ -10,11 +10,11 @@ export function loginUserFunc (email,password) {
                           password
                         })
                         .then((response) => {
-                          window.location = response.data;
+                            window.location = response.data;
                         })
 
-  return {
-    type: LOGIN_USER,
-    payload: loginUser
-  }
+  // return {
+  //   type: LOGIN_USER,
+  //   payload: loginUser
+  // }
 }
