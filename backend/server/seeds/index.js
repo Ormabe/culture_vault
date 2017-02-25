@@ -65,7 +65,7 @@ const seedFunction = () => {
 			quote: `"My Aunt once told me that, "People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorful"`,
 			story: "My favorite person in the world is my Aunt, she has encouraged my individuality like no one else. I was never girly even as a little girl. Dolls and cute sweets didn’t thrill me, it hinted at tendencies to my immediate family that were unacceptable. While others tried to discourage me from being my authentic self to protect me from society's disapproval at the cost of smothering my light. My aunt always encouraged my interests and expression. My Aunt once told me that, People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorfulShe was a career woman that married but never had children, wild and daring for her generation. She taught me that there were different types of strength. That being yourself in a world intent on you being anything but was quiet bravery. Chanko Nabe, well known for being a core diet component of sumo wrestlers is heaven. It’s a hearty mixture of vegetables, meats, and tofu in a miso ( fermented soybean and barley/rice malt) based broth and is nothing like the airy miso soups you’ve likely tried at japanese restaurants outside of Japan.Chanko Nabe became my favorite dish the first time she made it for me when I was 7 years old. I can still remember the rich and almost buttery, yet clear broth. It tasted like bones had been boiling for years to create such a powerful flavor. My aunt would make it with strips of pork, a lot of napa cabbage, some mushrooms, tofu and a variety of extras that changed each time. I always felt like it was her way of acknowledging my differences, nourishing me with the soup of warriors, and urging me to be strong without words. Years later when I came-out of the closet as a lesbian to my family, she was the first person to accept me. And while I waited in the cold for the rest of my family to come to terms ( and mourned those that couldn’t),she continued to love and comfort me with large bowls of soup that represent the same simple honest authentic warmth she always gave to her niece.",
 			image: 'http://www.gotokyo.org/en/tourists/topics_event/topics/150115/images/150115_main.jpg',
-			UserId:1,
+			UserId:3,
 			songURI: "2zT5npcA5n2RhhnBiWg3zo"
 		},
 
@@ -128,7 +128,7 @@ const seedFunction = () => {
 		}
 		,
 		{
-			name: "Maw maw Mirabelle’s Creole Seafood Gumbo",
+			name: 'She Taught Me There Was Strength In Kindness',
 			fav: 2,
 			quote: "“People are like spices, without the good blend nothing tastes good. Diversity and inclusion is required for a flavorful life. We are all needed.”",
 			story: "My grandmother Mirabelle passed away recently, she was my favorite person in the world. She a had a razor sharp tongue and take no bs from anyone gruffness to her. But under that hard shell that protected us/demanded we improve...that would read you (set you straight) without delay , was bottomless compassion. She was the person that everyone in our small Louisiana neighborhood could come to with their troubles and leave with a clear mind and full heart and belly. After the katrina she spent her last years demonstrating to anyone who had lost their homes, loved ones, or sense of belonging in life, that they belonged to her now. Their home was hers, that they mattered, and showered them with gestures, clothing, blankets, food, hugs, every cent she received from her social security checks. She was a benevolent force of nature and since she’s died, my world is a noticeably colder. Many of my favorite moments with her were spent in the kitchen. I can still hear the chop of the knife on the cutting board, her scratchy voice singing along with old blue records playing, and the clang of the pots being shifted on the stove. She taught me about life in that kitchen. For years I dreaded that as a religious woman that she would condemn me for being gay. But when I finally came out to her, she told me that people are like spices, if we leave something out our gumbo will taste off. That difference are required for a flavorful life. We are all needed. Then she told me it was ok to cry, but not to burn the onions I was caramelizing on the stove so I needed to handle my business. She taught me about gumbo’s african roots and how the legacy of colonialism in louisiana resulted in a vast range of gumbo-preparation techniques practiced by the different peoples who make up the region's complex ethnic fabric. That what is not in recipes online, or rarely written down, is the element of adding the onions first. That it makes the roux get darker because of the sugars in the onions and then you add the other seasonings--the celery and the bell pepper. She taught me that though the combination of onions, celery, and bell pepper--is often called the 'holy trinity' of Creole cooking, that it is a late 20th-century invention. That celery is not a traditional element of New Orleans cuisine. That the heart of Creole cuisine was really creole mirepoix. diced vegetable cooked for a long time on a gentle heat in fat with the intention to sweeten the ingredients like she gently sweetened the all the lives she touched. I’m not dealing well with her loss and when I recently saw some nonsensical play on cajun style gumbo being passed off as authentic creole gumbo it broke my heart. It made me want to share my Maw maw’s story and real Creole gumbo with the world. I hope that it nourishes and supports you through lifes hardships the way it has for me.",
@@ -215,7 +215,7 @@ const seedFunction = () => {
 	},
 	,
 	{
-		name: 'She Taught Me There Was Strength In Kindness',
+		name: "Maw maw Mirabelle’s Creole Seafood Gumbo",
 		ExperienceId:9
 	}
 		])
@@ -360,7 +360,97 @@ const seedFunction = () => {
 			quantity:3/4,
 			unit:"pound",
 			RecipeId:1
+		},
+		{
+			ingredients:"oil (for frying okra)",
+			quantity:1,
+			unit:"cup",
+			RecipeId:9
+		},
+		{
+			ingredients:"flour",
+			quantity:1 + ( 1 / 2),
+			unit:"pound",
+			RecipeId:9
+		},
+		{
+			ingredients:"gumbo crabs",
+			quantity:4,
+			unit:"",
+			RecipeId:9
+		},
+		{
+			ingredients:"onion, chopped",
+			quantity:1,
+			unit:"",
+			RecipeId:9
+		},
+		{
+			ingredients:"bell pepper, chopped",
+			quantity:1,
+			unit:"",
+			RecipeId:9
+		},
+		{
+			ingredients:"shrimp",
+			quantity:4,
+			unit:"pounds",
+			RecipeId:9
+		},
+		{
+			ingredients:"celery, chopped",
+			quantity:3,
+			unit:"stalks",
+			RecipeId:9
+		},
+		{
+			ingredients:"okra, sliced 1/4 inch thick",
+			quantity:2,
+			unit:"pounds",
+			RecipeId:9
+		},
+		{
+			ingredients:"can of crushed tomatoes",
+			quantity:14.5,
+			unit:"ounces",
+			RecipeId:9
+		},
+		{
+			ingredients:"shrimp stock",
+			quantity:1/2,
+			unit:"gallon",
+			RecipeId:9
+		},
+		{
+			ingredients:"garlic",
+			quantity:1,
+			unit:"clove",
+			RecipeId:9
+		},
+		{
+			ingredients:"dried thyme",
+			quantity:2,
+			unit:"pound",
+			RecipeId:9
+		},
+		{
+			ingredients:"bay leaf",
+			quantity: 1,
+			unit:"",
+			RecipeId:9
+		},
+		{
+			ingredients:"green onions",
+			quantity:1,
+			unit:"bunch",
+			RecipeId:9
+		},
+		{
+			ingredients:"garlic powder, salt, and pepper to taste",
+			unit:"",
+			RecipeId:9
 		}
+
 	])
 	}).then(data => {
 		models.Comment.bulkCreate([
