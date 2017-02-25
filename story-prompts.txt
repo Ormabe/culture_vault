@@ -1,25 +1,37 @@
-1. What is your strongest memory associated with this dish or experience?
+1. Tell me a story. What is the first thing that comes to mind about this experience?
 
-2. Think what your surroundings where when this happened? Where are you? What can you hear? What can you smell? What can you see?
+2. Bring me back to your strongest memory/flashback associated with this dish/experience?
 
-3. Are there any standout characters from your life that are a part of this story that you want to tell me about?
+3. When you eat this meal what does it remind you of? Is it a place? A certain time in your life? A feeling?
+
+4. Who is the most fascinating character in this story?
+  a. I want to know more about them. Describe them to me.
+
+5. Is this is dish from another culture/place? y || n
+	a. if (y) How were you introduced to this meal? Tell me about the people behind the food.
+	b if(n) What is your ethnic and/or regional background? What makes this dish relevant to your family traditions?
+
+6. Think about your surroundings where this story took place? Where are you? What can you hear? What can you smell? What can you see?
+
+7.Tell me about the signature flavor, preparation method, or ingredient addition that makes this dish special? Is there a historical or personal reason why this is used over other options?
+
+8. What has this experience taught you or how has it shaped you? Why did you want to share this story? Or what would you like those that read it to take away from it
+
+9. Is there anything else you want to share with me?
+
+Thanks for sharing that story with me. I'll keep it safe now, promise.
 
 
-4. When you eat this meal ( do this thing) what does it remind you of? Is it a place? A certain time in your life? A feeling?
 
-5. What kind of signaturer flavor, preparation method, or ingredient addition makes this dish special? Is there a history behind why this is used over other options?
 
-6. What is your ethnic and/or regional background? What makes this dish relevant to your family traditions?
 
-7. Tell me about how this dish been passed down in your family or how you were recently introduced to it?
 
-8. What are the flavors notes of this dish?
 
-9.Is there anything you deeply want me to understand or take away from this experience?
 
-10. Tell me about the lessons or feelings you came away with from this experience.
 
-11. How were you introduced to this dish? What was your reaction the first time you tasted it?
+
+
+
 
 12. Is this is dish from another culture/place? Tell us about the people behind the food.
 
