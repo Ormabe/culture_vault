@@ -449,6 +449,12 @@ const seedFunction = () => {
 			ingredients:"garlic powder, salt, and pepper to taste",
 			unit:"",
 			RecipeId:9
+		},
+		{
+			ingredients:"cooked rice",
+			quantity:1,
+			unit:"pot",
+			RecipeId:9
 		}
 
 	])
@@ -681,8 +687,64 @@ const seedFunction = () => {
 		{
 			steps: 'Enjoy',
 			RecipeId:8
+		},
+		{
+			steps: 'Chop peppers, green onions, and celery (reserve tops).',
+			RecipeId:9
+		},
+		{
+			steps: 'Peel and chop onions (reserve skin).',
+			RecipeId:9
+		},
+		{
+			steps: 'Peel shrimp shells (reserve shells).',
+			RecipeId:9
+		},
+		{
+			steps: 'combine veg tops, onion skins, and shrimp shells in a stock pot. Cover with water and boil for 10 minutes.',
+			RecipeId:9
+		},
+		{
+			steps: 'Strain and reserve shrimp stock.',
+			RecipeId:9
+		},
+		{
+			steps: 'Fry okra in very hot oil until lightly browned. Remove from oil and set aside.',
+			RecipeId:9
+		},
+		{
+			steps: 'Make a dark roux with the flour and oil, cooking to the color of milk chocolate brown.',
+			RecipeId:9
+		},
+		{
+			steps: 'Add onions, stirring together until the roux darkens to a bittersweet chocolate brown.',
+			RecipeId:9
+		},
+		{
+			steps: 'Add celery and bellpepper. Saute for five minutes.',
+			RecipeId:9
+		},
+		{
+			steps: 'Add the gumbo crabs, tomatoes okra, herbs, and the shrimp stock. ',
+			RecipeId:9
+		},
+		{
+			steps: 'Add garlic and salt and pepper to taste. ',
+			RecipeId:9
+		},
+		{
+			steps: 'Simmer 45 minutes or longer.',
+			RecipeId:9
+		},
+		{
+			steps: '10 minutes before serving add shrimp and green onions.',
+			RecipeId:9
+		},
+		{
+			steps: 'Serve on top of cooked rice.',
+			RecipeId:9
 		}
-	])
+			])
 	}).then(data => {
 		models.ExperiencesLocations.bulkCreate([
 		{
