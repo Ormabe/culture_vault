@@ -17,7 +17,7 @@ const getUserData = (req,res,err) => {
   })
 }
 
-router.route('/')
-    .get(getUserData)
+router.route('/data')
+    // .get(getUserData)
 
 module.exports = router;

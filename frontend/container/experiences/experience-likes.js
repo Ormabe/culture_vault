@@ -71,11 +71,11 @@ class Likes extends Component {
  		return (
  		 	<div className="likes-container">
  				<LikesImage 
-	 				likes={this.state.likes}
+	 				likes={this.props.likes}
 	 				addLikes={this.addLikes.bind(this)} 
 	 				deleteLikes={this.deleteLikes.bind(this)}
 					experienceId={this.props.id}
-					userId={4}
+					userId={1}
 	 				 />
  		 		<div className="likes-counter">
  					<LikesCounter likesCounter={this.likesCounter.bind(this)} />
