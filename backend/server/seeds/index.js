@@ -35,13 +35,13 @@ const seedFunction = () => {
 		bio: "Politics or bust!"
 	},
 	{
-		first_name: "Niko",
-		last_name: "Bella",
-		username: "nikobellalew",
+		first_name: "Iliass",
+		last_name: "S.",
+		username: "thewindsmademe",
 		// PASSWORD: ihatepasswords31-00
 		password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
-		email: "niko@zol.com",
-		image: "https://s25.postimg.org/y3l5y70rj/niko_law.png",
+		email: "winds@zol.com",
+		image: "https://s25.postimg.org/wkzgxkefz/victor_amos.png",
 		location: "Brooklyn",
 		bio: "Devs Do It Better"
 	},
@@ -103,7 +103,7 @@ const seedFunction = () => {
 			songURI:'6r2BECwMgEoRb5yLfp0Hca'
 		},
 		{
-			name: 'Sabillah Family Tajjinn',
+			name: 'Here in the states I feel like a stranger',
 			fav: 44,
 			quote: "Nothing is better that eating your favorite meal with your favorite person.",
 			story: "This meal represents family to me. We always have it at gatherings and festivals .I'm from Rabat, Morocco originally, I immigrated to New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of. She brought this same creativity to the previous careers as a seamstress and accountant. and now pursuing becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are passed from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly. traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin, I have no doubt of who I am and that I'm where I belong.",
@@ -202,7 +202,7 @@ const seedFunction = () => {
 		ExperienceId: 5
 	},
 	{
-		name: 'Tajjin',
+		name: "My Love's Tajjin",
 		ExperienceId:6
 	},
 	{
@@ -290,27 +290,78 @@ const seedFunction = () => {
 			RecipeId: 5
 		},
 		{
-			ingredients:"lamb",
-			quantity:1.5,
+			ingredients:"lamb shanks trimmed of excess fat (about 4 small or 3 large shanks",
+			quantity:3,
 			unit:"pounds",
 			RecipeId:6
 		},
 		{
-			ingredients:"sea salt, coarse",
+			ingredients:"large onions (about 800 gr), chopped",
+			quantity:4,
+			RecipeId:6
+		},
+		{
+			ingredients:"olive oil",
+			quantity:2,
+			unit:"tablespoons",
+			RecipeId:6
+		},
+		{
+			ingredients:"finely chopped garlic (about 4 cloves)",
+			quantity:1,
+			unit:"tablespoon",
+			RecipeId:6
+		},
+		{
+			ingredients:"ground tumeric",
+			quantity:1,
+			unit:"teaspoon",
+			RecipeId:6
+		},{
+			ingredients:"ground ginger",
 			quantity:1,
 			unit:"teaspoon",
 			RecipeId:6
 		},
 		{
-			ingredients:"prunes",
-			quantity:4,
+			ingredients:"salt (or more to taste)",
+			quantity:1,
+			unit:"teaspoon",
+			RecipeId:6
+		},
+		{
+			ingredients:"ground black pepper",
+			quantity:1/4,
+			unit:"teaspoon",
+			RecipeId:6
+		},
+		{
+			ingredients:"saffron",
+			quantity:1/4,
+			unit:"teaspoon",
+			RecipeId:6
+		},
+		{
+			ingredients:"large coriander bouquet, tied",
+			quantity:1,
+			RecipeId:6
+		},
+		{
+			ingredients:"soft dried prunes",
+			quantity: 10.5,
 			unit:"ounces",
 			RecipeId:6
 		},
 		{
-			ingredients:"cinnamon",
-			quantity:2,
-			unit:"sticks",
+			ingredients:"honey",
+			quantity:3,
+			unit:"tablespoons",
+			RecipeId:6
+		},
+		{
+			ingredients:"ground cinnamon",
+			quantity:1,
+			unit:"teaspoon",
 			RecipeId:6
 		},
 		{
@@ -657,11 +708,27 @@ const seedFunction = () => {
 			RecipeId: 5
 		},
 		{
-			steps: 'Place ingredients and water in tajjin',
+			steps: "In a large casserole, heat the olive oil to medium high heat and brown the lamb shanks on each side. Make sure the pan is very hot before placing the meat in the pan, you should hear a sizzle when the meat touches the pan, if you don't, it means the pan is not warm enough. The meat will be naturally released once browned, don’t be tempted to flip it earlier. If you try to flip too early, you will notice that the meat sticks to the pan and you might damage it . Using tongs will help you to flip the meat on each side",
 			RecipeId:6
 		},
 		{
-			steps: 'Cook then enjoy',
+			steps: "Remove the browned lamb shanks from the pan and set aside. In the same casserole, place the onions and lower the heat to medium. Cover with a lid and leave the onions until they are soft and translucent, about 10 to 15 minutes. This will allow sweating the onions.",
+			RecipeId:6
+		},
+		{
+			steps: "Once you’ve sweated the onions, place the lamb shanks, the spices, the garlic, salt and pepper in the casserole. Cover with a lid. Pour a cup and half of water (320 ml) in the casserole and place the coriander bouquet on top of the meat. Bring to the boil and cover with a lid over medium low heat. Leave to simmer gently for 2 hours or until the meat is soft and separates easily from the bone",
+			RecipeId:6
+		},
+			{
+			steps: "Halfway through cooking, after about 1 hour, reserve ½ cup of liquid from the casserole and set aside. At this stage, if it looks like there is almost no liquid left in the tagine, add a few tablespoons (or 1/4 a cup) of water in the casserole to avoid the tagine from drying out and sticking to the pan.",
+			RecipeId:6
+		},
+			{
+			steps: "Meanwhile, prepare the caramelized prunes. Transfer the prunes in boiling water for 5 minutes to soften them and drain. Then, in a small deep skillet, transfer the liquids you reserved earlier (½ cup) along with the drained prunes, cinnamon and honey over medium low heat. Leave to simmer for 5 minutes until the sauce starts to thicken. Set aside until ready to serve.",
+			RecipeId:6
+		},
+		{
+			steps: "To serve, place the lamb shank and the onion sauce in a plate, arrange the prunes and the syrup (from the prunes) on top Garnish with toasted sesame seeds or chopped roasted almonds. Enjoy with a side of couscous or crusty bread.",
 			RecipeId:6
 		},
 		{
