@@ -57,24 +57,34 @@ table {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-content: center;
+	min-height: 550px;
 	height: auto;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: orange;
-	margin-top: 50px;
+	margin-top:50px;
+	margin-bottom: 50px;
+	background-color: #4CB748;
+	border-radius: 4px;
+	padding: 20px;
 }
 
 .fifth-box {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 300px;
+	align-content: center;
+	min-height: 550px;
+	height: auto;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: purple;
-	margin-top: 50px;
+	margin-top:50px;
+	margin-bottom: 50px;
+	background-color: #4CB748;
+	border-radius: 4px;
+	padding: 20px;
 }
 
 .question-container {

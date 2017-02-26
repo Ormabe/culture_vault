@@ -117,6 +117,7 @@
 }
 
 .story-name {
+	cursor: pointer;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -135,6 +136,7 @@
 }
 
 .experience-created-container {
+	cursor: pointer;
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: row;
@@ -144,6 +146,7 @@
 }
 
 .experience-image {
+	cursor: pointer;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -160,6 +163,7 @@
 }
 
 .experience-card-container {
+	cursor: pointer;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -174,19 +178,22 @@
 }
 
 .experience-name {
+	cursor: pointer;
 	width: 100%;
 	height: auto;
 	text-align: center;
 	font-size: 25px;
 	line-height: 35px;
 	margin-bottom: 15px;
-	margin-top: 15px;
+	margin-top: -85px;
+	position: absolute;
 }
 
 .experience-quote {
+	cursor: pointer;
 	width: 380px;
 	height: auto;
-	margin-top: 15px;
+	margin-top: -15px;
 }
 
 
