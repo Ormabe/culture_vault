@@ -6,12 +6,18 @@ export default class LikesImage extends Component {
 	constructor(props){
 		super(props)
 
-		this.state = { isLiked:false };
+		this.state = { isLiked: false };
 
 		this.onLikeClick = this.onLikeClick.bind(this);
 		this.onUnlikeClick = this.onUnlikeClick.bind(this);
 	} 
 	
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps.likes, 'UserId', nextProps.userId)
+		this.setState  ({ isLiked: nextProps.likes.find((like) => like.UserId === nextProps.userId) });
+		console.log(this.state.isLiked)
+	}
+
 	onLikeClick(experienceId,userId) {
 		this.props.addLikes(this.props.experienceId,this.props.userId)
 

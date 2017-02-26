@@ -41,7 +41,7 @@ class Experience extends Component {
             <div className="user-header-image">
               <Link to={"/users/" + userId}><img src={userImage} alt={userName} /></Link>
             </div>
-            <div> 
+            <div>
               by <Link to={"/users/" + userId}>{userName}</Link>
             </div>
             <div>
