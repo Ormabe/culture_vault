@@ -14,8 +14,8 @@ export default class LikesImage extends Component {
 	
 	componentWillReceiveProps(nextProps) {
 		console.log(nextProps.likes, 'UserId', nextProps.userId)
-		this.setState  ({ isLiked: nextProps.likes.map((like) => like.UserId === nextProps.userId) });
-
+		this.setState  ({ isLiked: nextProps.likes.find((like) => like.UserId === nextProps.userId) });
+		console.log(this.state.isLiked)
 	}
 
 	onLikeClick(experienceId,userId) {
