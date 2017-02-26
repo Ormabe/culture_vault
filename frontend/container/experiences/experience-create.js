@@ -32,7 +32,14 @@ class CreateExperience extends Component {
 			third: true,
 			fourth: false,
 			fifth: false,
-			recipeImagePreview: ''
+			recipeImagePreview: '',
+			input1: '',
+			input2: '',
+			input3: '',
+			input4: '',
+			input5: '',
+			input6: '',
+			input7: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -52,12 +59,14 @@ class CreateExperience extends Component {
 		this.blueInput = this.blueInput.bind(this);
 		this.imageSubmit = this.imageSubmit.bind(this);
 		this.imagePreview = this.imagePreview.bind(this);
+		// this.compileStory = this.compileStory.bind(this);
 	}
 
 	handleChange(input, event) {
 		this.setState({
 			[input]: event.target.value
 		})
+		console.log(this.state)
 		// if (input === 'quote') {
 		// 	this.setState({ quote: event.target.value })
 		// } else if (input === 'story') {
@@ -204,6 +213,10 @@ class CreateExperience extends Component {
 				</div>
 			)
 		}
+	}
+
+	compileStory() {
+		this.setState({ story: this.state.input1 + " " + this.state.input2 + " " + this.state.input3 + " " + this.state.input4 + " " + this.state.input5 + " " + this.state.input6 + " " + this.state.input7 })
 	}
 
 	newIngredient(e) {
@@ -465,15 +478,100 @@ class CreateExperience extends Component {
 		} else if (this.state.third) {
 			return (
 				<div className="third-box">
-					THIRD BOX
-					<button onClick={this.secondBox}>SECOND BOX</button>
-					<button onClick={this.fourthBox}>FOURTH BOX</button>
+					<div className="story-container">
+						<div className="story-questions">
+							When you eat this meal what does it remind you of? Is it a place? A certain time in your life? A feeling?
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.input1}
+								onChange={this.handleChange.bind(this, "input1")}
+							/>
+						</div>	
+						<br />
+
+						<div className="story-questions">
+							Who is the most fascinating character in this story? I want to know more about them. Describe them to me.
+						</div>
+						<div className="story-textarea">
+							<textarea
+								value={this.state.input2}
+								onChange={this.handleChange.bind(this, "input2")}
+							 />
+						</div>
+						<br />
+
+						<div className="story-questions">
+							Tell me about the signature flavor, preparation method, or ingredient addition that makes this dish special? Is there a historical or personal reason why this is used over other options?
+						</div>
+						<div className="story-textarea">
+							<textarea
+								value={this.state.input3}
+								onChange={this.handleChange.bind(this, "input3")}
+							 />
+						</div>
+						<br />
+
+						<div className="story-questions">
+							Think about your surroundings where this story took place. Where are you? What can you hear? What can you smell? What can you see?
+						</div>
+						<div className="story-textarea">
+							<textarea
+								value={this.state.input4}
+								onChange={this.handleChange.bind(this, "input4")}
+							 />
+						</div>
+						<br />
+
+						<div className="story-questions">
+							<div className="story-questions">Is this is dish from another culture?</div>  
+							<div className="story-questions">IF YES: How were you introduced to this meal? Tell me about the people behind the food.</div>
+							<div className="story-questions">IF NOT: What is your ethnic and/or regional background? What makes this dish relevant to your family traditions?</div>
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.input5}
+								onChange={this.handleChange.bind(this, "input5")}
+							/>
+						</div>
+						<br />
+
+						<div className="story-questions">
+							What has this experience taught you or how has it shaped you? Why did you want to share this story? Or what would you like those that read it to take away from it?
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.input6}
+								onChange={this.handleChange.bind(this, "input6")}
+							/>
+						</div>
+						<br />
+
+						<div className="story-questions">
+							Is there anything else you want to share with me?
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.input7}
+								onChange={this.handleChange.bind(this, "input7")}
+							/>
+						</div>
+						<br />
+
+					</div>
+					<div className="button-container">
+						<button 
+							className="next-button shadow"
+							onClick={this.fourthBox}>
+								SAVE STORY
+						</button>
+					</div>
 				</div>
 			)
 		} else if (this.state.fourth) {
 			return (
 				<div className="fourth-box">
-					FOURTH BOX
+					{this.state.story}
 					<button onClick={this.thirdBox}>THIRD BOX</button>
 					<button onClick={this.fifthBox}>FIFTH BOX</button>
 				</div>

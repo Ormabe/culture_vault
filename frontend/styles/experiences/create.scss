@@ -259,3 +259,53 @@ table {
 	border-style: none;
 	padding: 5px 5px 5px 5px;
 }
+
+.story-questions {
+	width: 600px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: white;
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.story-container {
+	width: 600px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	align-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.story-textarea {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: auto;
+	height: auto;
+	background-color: #FF4100;
+	padding: 10px 10px 10px 10px;
+	border-radius: 25px;
+	font-size: 15px;
+}
+
+.story-textarea textarea {
+	width: 600px;
+	height: auto;
+	font-size: 15px;
+	border-radius: 15px;
+	border-style: none;
+	padding: 5px 5px 5px 5px;
+}
