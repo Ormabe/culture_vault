@@ -118,15 +118,15 @@ class Experience extends Component {
           <thead>
             <tr>
               <th className="mdl-data-table__cell--non-numeric">Ingredient</th>
-              <th>Quantity</th>
-              <th>Unit</th>
+              <th className="mdl-data-table__cell--non-numeric">Quantity</th>
+              <th className="mdl-data-table__cell--non-numeric">Unit</th>
             </tr>
           </thead>
           <tbody>
             {experience.ingredients.map(ingredient =>
               <tr key={ingredient.id}>
                 <td className="mdl-data-table__cell--non-numeric">{ingredient.ingredients}</td>
-                <td>{ingredient.quantity}</td>
+                <td className="mdl-data-table__cell--non-numeric">{ingredient.quantity}</td>
                 <td className="mdl-data-table__cell--non-numeric">{ingredient.unit}</td>
               </tr>
             )}
@@ -172,7 +172,14 @@ class Experience extends Component {
         <br />
         {this.story()}
         <br />
-        <Music songURI={this.props.experience.experience.songURI} />
+        <div className="center">
+          <div className="grey-line-top">
+          </div>
+          <div className="enhancement-name">Memory Enhancements</div>
+           <div className="grey-line-enhancement-bottom">
+          </div>
+            <Music songURI={this.props.experience.experience.songURI} />;
+        </div>
         <br />
         {this.recipe()}
         <br />
