@@ -11,11 +11,8 @@ class UserProfile extends Component {
 	
 	componentDidMount() {
 		let { getuserInfo } = this.props;
-		let { getUserId } = this.props;
-
+	
 		getuserInfo(this.props.params.id)
-		//pass userId
-		getUserId()
 	}
 	
 	userInfo(){
@@ -52,9 +49,7 @@ class UserProfile extends Component {
 	
 	render() {
 	let { userInfo } = this.props;
-	let { userId } = this.props;
 	console.log(userInfo)
-	console.log(userId)
 		return (
 				<div className="user-container">	
 					{userInfo ? this.userInfo() : this.renderLoading()}
