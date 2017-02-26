@@ -20,4 +20,11 @@ router.post('/login',
     })(req, res, next);
   })
 
+router.get('/logout', function (req, res) {
+      console.log('<====== LOG OUT USER ======>')
+      req.logout();
+      req.session.destroy();
+      res.send(`http://localhost:2222/`)
+});
+
 module.exports = router

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUserFunc } from '../../actions/login-action';
+import { logOutUserFunc } from '../../actions/login-action';
 import { bindActionCreators } from 'redux';
 import SignUpForm from './signupform.js';
 
@@ -24,12 +24,6 @@ class LogOut extends Component {
   this.handleChange = this.handleChange.bind(this)
   this.logOutUser = this.logOutUser.bind(this)
 
-
-    this.state = {
-      email: "",
-      password: "",
-      open: false
-    }
   }
 	handleChange (e) {
   const target = e.target;
@@ -41,12 +35,11 @@ class LogOut extends Component {
   logOutUser(e) {
     e.preventDefault()
     console.log("<====== LOGOUT ======>")
-    this.props.loginUserFunc(this.state.email,this.state.password)
+    this.props.logOutUserFunc(this.props.userId)
 
-    this.setState({
-      email:"",
-      password:""
-    })
+    this.setState({userId: null})
+
+
   }
 
   render () {
@@ -72,7 +65,7 @@ class LogOut extends Component {
 };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ loginUserFunc  }, dispatch);
+  return bindActionCreators({ logOutUserFunc  }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(LogOut)

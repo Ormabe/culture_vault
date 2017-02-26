@@ -2,7 +2,7 @@
 
 * Culture Vault Tech Reference: https://gist.github.com/#
 
-* Website: https://#
+* Website: https://culture-vault.herokuapp.com
 
 * Culture Vault Video Demo: https://vimeo.com/#
 
@@ -22,7 +22,7 @@ All Visitor's are able to browse posted Food Experiences.
 Once new members fill the 'user profile' form, the explore screen changes to allow them the opportunity to post their Food Experiences.
 The Food Experiences are stored on our database and searchable by the members' username or by location.
 
-## How to run 'Culture Vault'
+## How to run 'Culture Vault' locally:
 
 * Step 1. Install Postgres, Postico and Node.js
 

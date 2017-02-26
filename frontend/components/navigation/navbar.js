@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import LogOut from '../main/logout.js';
 import LogInForm from '../main/loginform.js';
-import SignUpForm from '../main/signupform.js';
+import CreateButton from '../main/create-button.js';
 import css from '../../styles/navigation/navigation.scss';
 import axios from 'axios';
 
@@ -40,12 +41,11 @@ export default class NavBar extends Component {
         	<div className="navbar-about">
         		<Link to="#">About</Link>
         	</div>
-
           { this.state.userId?
              <div>
-                <div> log out </div>
+                <div> <LogOut /> </div>
 
-                <div> create </div>
+                <div><CreateButton /></div>
              </div>
              : <div className="login">
                 <div>
@@ -53,10 +53,7 @@ export default class NavBar extends Component {
                 </div>
          	    </div>
             }
-
-          </div>
-
-
+        </div>
       </div>
     );
   }
