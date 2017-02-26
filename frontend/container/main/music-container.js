@@ -63,12 +63,11 @@ console.log("trackId=====>>", this.state.trackId)
 
     axios.get(`https://api.spotify.com/v1/search?q=track%3A${this.state.track}+artist%3A${this.state.artist}&type=track `)
     	.then((artistInfo)=>{
-    		this.setState({artistInfo: artistInfo});
+    		this.setState({artistInfo: artistInfo})
     	})
 	}
 
 	showStuff(){
-		console.log(this.state);
 		if(!this.state.artist|| !this.state.track) {
 			return ""
 		}
@@ -81,7 +80,7 @@ console.log("trackId=====>>", this.state.trackId)
 
 
 					{result.map((track, index) => {
-						const audioObject = new Audio(track.preview_url);
+						const audioObject = new Audio(track.preview_url)
 						const savedInfo = track.id
 
 
@@ -122,7 +121,6 @@ console.log("trackId=====>>", this.state.trackId)
 
 	render(){
 
-		console.log("state =====>",this.state)
 					return(
 				<div>
 					<p>Is there music that would enhance this memory?</p>

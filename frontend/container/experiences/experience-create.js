@@ -5,7 +5,8 @@ import { createNewExperience } from '../../actions/action-experiences';
 import { Link } from 'react-router';
 import axios from 'axios';
 import _ from 'lodash';
-import Music from '../main/music-container'
+import Music from '../main/music-container';
+import css from '../../styles/experiences/create.scss';
 
 class CreateExperience extends Component {
 	constructor(props) {
@@ -25,7 +26,13 @@ class CreateExperience extends Component {
 			currentUnit: '',
 			currentIngredient: '',
 			currentStep: '',
-			songURI: ''
+			songURI: '',
+			first: false,
+			second: false,
+			third: true,
+			fourth: false,
+			fifth: false,
+			recipeImagePreview: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -36,6 +43,15 @@ class CreateExperience extends Component {
 		this.newStep = this.newStep.bind(this)
 		this.showSteps = this.showSteps.bind(this)
 		this.handleSongSelect = this.handleSongSelect.bind(this)
+		this.guidedEntry = this.guidedEntry.bind(this);
+		this.firstBox = this.firstBox.bind(this);
+		this.secondBox = this.secondBox.bind(this);
+		this.thirdBox = this.thirdBox.bind(this);
+		this.fourthBox = this.fourthBox.bind(this);
+		this.fifthBox = this.fifthBox.bind(this);
+		this.blueInput = this.blueInput.bind(this);
+		this.imageSubmit = this.imageSubmit.bind(this);
+		this.imagePreview = this.imagePreview.bind(this);
 	}
 
 	handleChange(input, event) {
@@ -105,6 +121,91 @@ class CreateExperience extends Component {
 
 	}
 
+	firstBox() {
+		this.setState(
+			{
+				first: true,
+				second: false,
+				third: false,
+				fourth: false,
+				fifth: false
+			}
+		)
+	}
+
+	secondBox() {
+		this.setState(
+			{
+				first: false,
+				second: true,
+				third: false,
+				fourth: false,
+				fifth: false
+			}
+		)
+	}
+
+	thirdBox() {
+		this.setState(
+			{
+				first: false,
+				second: false,
+				third: true,
+				fourth: false,
+				fifth: false
+			}
+		)
+	}
+
+	fourthBox() {
+		this.setState(
+			{
+				first: false,
+				second: false,
+				third: false,
+				fourth: true,
+				fifth: false
+			}
+		)
+	}
+
+	fifthBox() {
+		this.setState(
+			{
+				first: false,
+				second: false,
+				third: false,
+				fourth: false,
+				fifth: true
+			}
+		)
+	}
+
+	blueInput(e) {
+		e.preventDefault()
+		this.setState({ inputBlue: e.target.value })
+	}
+
+	guidedEntry() {
+		if(this.state.blue) {
+			return (
+				<div className="blue-box">
+					{this.state.inputBlue}
+					<input onChange={this.blueInput.bind(this)} value={this.state.inputBlue} />
+					<button onClick={this.pinkBox}>PINK BOX</button>
+				</div>
+			)
+		} else if (this.state.pink) {
+			return (
+				<div className="pink-box">
+					{this.state.inputBlue}
+					<button onClick={this.blueBox}>BLUE BOX</button>
+					}
+				</div>
+			)
+		}
+	}
+
 	newIngredient(e) {
 		e.preventDefault()
 
@@ -137,13 +238,25 @@ class CreateExperience extends Component {
 		if (this.state.ingredients.length > 0) {
 			return (
 				<div>
-					{this.state.ingredients.map((ingredient, index) => {
-						return (
-							<div key={index}>
-								{ingredient.quantity} {ingredient.unit} {ingredient.ingredients}
-							</div>
-						)
-					})}
+					<div className="ingredient-title-spacer"></div>
+					<table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp table-width-600">
+						<thead>
+							<tr>
+								<th className="mdl-data-table__cell--non-numeric">Ingredient</th>
+								<th className="mdl-data-table__cell--non-numeric">Quantity</th>
+								<th className="mdl-data-table__cell--non-numeric">Unit</th>
+							</tr>
+						</thead>
+						<tbody>
+						{this.state.ingredients.map((ingredient, index) =>
+							<tr key={index}>
+								<td className="mdl-data-table__cell--non-numeric">{ingredient.ingredients}</td>
+								<td className="mdl-data-table__cell--non-numeric">{ingredient.quantity}</td> 
+								<td className="mdl-data-table__cell--non-numeric">{ingredient.unit}</td> 
+							</tr>
+						)}
+						</tbody>
+					</table>
 				</div>
 			)
 		}
@@ -160,13 +273,26 @@ class CreateExperience extends Component {
 		if (this.state.steps.length > 0) {
 			return (
 				<div>
-					{this.state.steps.map((step, index) => {
-						return (
-							<div key={index}>
-								{step.steps}
-							</div>
-						)
-					})}
+					<div className="ingredient-title-spacer"></div>
+					<table
+          className="mdl-data-table
+          mdl-js-data-table
+          mdl-shadow--2dp
+          table-width-600"
+        	>
+	        	<thead>
+	            <tr>
+	              <th className="mdl-data-table__cell--non-numeric">Steps</th>
+	            </tr>
+	          </thead>
+	          <tbody>  
+							{this.state.steps.map((step, index) =>
+									<tr className="mdl-data-table__cell--non-numeric" key={index}>
+										<td className="mdl-data-table__cell--non-numeric">{step.steps}</td>
+									</tr>
+								)}
+						</tbody>
+					</table>
 				</div>
 			)
 		}
@@ -177,119 +303,301 @@ class CreateExperience extends Component {
 		)
 	}
 
-	deleteIngredient() {
+	imageSubmit() {
+		this.setState({ recipeImagePreview: this.state.image })
+	}
 
+	imagePreview() {
+		if (this.state.recipeImagePreview) {
+			return (
+				<div className="image-preview">
+					<img
+						className="preview-image"
+						src={this.state.recipeImagePreview} 
+						alt={this.state.recipeTitle} 
+					/>
+				</div>
+			)
+		}
+
+		return (
+			<div>
+			</div>
+		)
 	}
 
 	render() {
-		console.log(this.state)
-		return (
-			<form onSubmit={this.axiosCall}>
-				<input
-					type="text"
-					placeholder="Enter A Quote"
-					value={this.state.quote}
-					onChange={this.handleChange.bind(this, "quote")}
-					required />
-				<br />
-				<br />
+		if (this.state.first) {
+			return (
+				<div className="first-box">
+					<div className="question-container">
+						Recipe Name:
+						<input
+							type="text"
+							value={this.state.recipeTitle}
+							onChange={this.handleChange.bind(this, "recipeTitle")}
+							required
+						/>
+					</div>
+					<div className="question-container">
+						Recipe Image:
+						<input
+							type="text"
+							value={this.state.image}
+							onChange={this.handleChange.bind(this, "image")}
+							required
+						/>
+						<button
+							className="form-button shadow"
+							onClick={this.imageSubmit.bind(this)}>
+								PREVIEW
+						</button>
 
-				<textarea
-					placeholder="Tell Me Your Story"
-					value={this.state.story}
-					onChange={this.handleChange.bind(this, "story")}
-					required/>
-				<br />
-				<br />
+						{this.imagePreview()}
 
-				<input
-					type="text"
-					placeholder="Upload An Image"
-					value={this.state.image}
-					onChange={this.handleChange.bind(this, "image")}
-					required/>
-				<br />
-				<br />
+					</div>
+					<div className="question-container">
+						Country of Origin:
+						<input
+							type="text"
+							value={this.state.country}
+							onChange={this.handleChange.bind(this, "country")}
+							required
+						/>
+					</div>
+					<div className="button-container">
+						{
+							(this.state.recipeTitle && this.state.recipeImagePreview && this.state.country) 
+								? <button 
+										className="next-button shadow"
+										onClick={this.secondBox}>
+											NEXT
+									</button>
+								: <button 
+										className="next-button-disabled"
+										>
+											NEXT
+									</button>
+						}
+					</div>
+				</div>
+			)	
+		} else if (this.state.second) {
+			return (
+				<div className="second-box">
+					<div className="question-container">
+						INGREDIENTS:
+			 		{this.showIngredients()}
 
-				<input
-					type="text"
-					placeholder="Country of Origin"
-					value={this.state.country}
-					onChange={this.handleChange.bind(this, "country")}
-					required/>
-				<br />
-				<br />
+			 		<br />
+			 			<div className="ingredient-input-container">
+					 		<div className="quantity">	
+						 		<input
+						 			className="quantity"
+						 			type="text"
+									placeholder="Quantity"
+									value={this.state.currentQuantity}
+									onChange={this.handleChange.bind(this, "currentQuantity")} />
+							</div>
+							<div className="unit">
+								<input
+									className="unit"
+									type="text"
+									placeholder="Unit"
+									value={this.state.currentUnit}
+									onChange={this.handleChange.bind(this, "currentUnit")} />
+							</div>
+							<div className="ingredient">
+								<input
+									type="text"
+									placeholder="Ingredient"
+									value={this.state.currentIngredient}
+									onChange={this.handleChange.bind(this, "currentIngredient")} />
+							</div>
+						</div>
+					<button 
+						className="form-button shadow"
+						onClick={this.newIngredient}>
+							ADD
+					</button>
+					
+					<div className="ingredient-spacer"></div>
 
-				<input
-					type="text"
-					placeholder="City of Origin"
-					value={this.state.city}
-					onChange={this.handleChange.bind(this, "city")}
-					required/>
-				<br />
-				<br />
+			 		STEPS:
+			 		{this.showSteps()}
 
-				<input
-					type="text"
-					placeholder="Recipe Title"
-					value={this.state.recipeTitle}
-					onChange={this.handleChange.bind(this, "recipeTitle")}
-					required/>
-				<br />
-				<br />
+			 		<br />
+			 		<br />
 
-				INGREDIENTS:
-				{this.showIngredients()}
+			 		<div className="steps-textarea">
+				 		<textarea
+							placeholder="Add A Step"
+							value={this.state.currentStep}
+							onChange={this.handleChange.bind(this, "currentStep")} />
+					</div>
+					<button
+						className="form-button shadow" 
+						onClick={this.newStep}>ADD</button>
 
-				<br />
-
-				<input type="text"
-					placeholder="Quantity"
-					value={this.state.currentQuantity}
-					onChange={this.handleChange.bind(this, "currentQuantity")} />
-
-				<input type="text"
-					placeholder="Unit"
-					value={this.state.currentUnit}
-					onChange={this.handleChange.bind(this, "currentUnit")} />
-
-				<input type="text"
-					placeholder="Ingredient"
-					value={this.state.currentIngredient}
-					onChange={this.handleChange.bind(this, "currentIngredient")} />
-
-				<button onClick={this.newIngredient}>ADD INGREDIENT</button>
-
-				<br />
-				<br />
-
-				STEPS:
-				{this.showSteps()}
-
-				<br />
-				<br />
-
-				<textarea
-					placeholder="Add A Step"
-					value={this.state.currentStep}
-					onChange={this.handleChange.bind(this, "currentStep")} />
-
-				<button onClick={this.newStep}>ADD STEP</button>
-
-				<br />
-				<br />
-
-				<Music selectedSong={this.state.songURI} onSelect={this.handleSongSelect} />
-
-				<br />
-				<br />
-
-
-				<button type="submit">SUBMIT</button>
-			</form>
-		)
+					</div>
+					<div className="button-container">
+						<button 
+							className="back-button shadow"
+							onClick={this.firstBox}>
+								BACK
+						</button>
+						{
+							(this.state.ingredients.length >= 1 && this.state.steps.length >= 1) 
+								? <button 
+										className="next-button shadow"
+										onClick={this.thirdBox}>
+											NEXT
+									</button>
+								: <button 
+										className="next-button-disabled"
+										>
+											NEXT
+									</button>
+						}
+					</div>
+				</div>
+			)
+		} else if (this.state.third) {
+			return (
+				<div className="third-box">
+					THIRD BOX
+					<button onClick={this.secondBox}>SECOND BOX</button>
+					<button onClick={this.fourthBox}>FOURTH BOX</button>
+				</div>
+			)
+		} else if (this.state.fourth) {
+			return (
+				<div className="fourth-box">
+					FOURTH BOX
+					<button onClick={this.thirdBox}>THIRD BOX</button>
+					<button onClick={this.fifthBox}>FIFTH BOX</button>
+				</div>
+			)
+		} else if (this.state.fifth) {
+			return (
+				<div className="fifth-box">
+					FIFTH BOX
+					<button onClick={this.fourthBox}>FOURTH BOX</button>
+				</div>
+			)
+		}
 	}
 }
+		// return (
+		// 	<form onSubmit={this.axiosCall}>
+
+		// 	<div className="form-styling">
+		// 			{this.guidedEntry()}
+		// 	</div>
+
+		// 		<input
+		// 			type="text"
+		// 			placeholder="Enter A Quote"
+		// 			value={this.state.quote}
+		// 			onChange={this.handleChange.bind(this, "quote")}
+		// 			required />
+		// 		<br />
+		// 		<br />
+
+		// 		<textarea
+		// 			placeholder="Tell Me Your Story"
+		// 			value={this.state.story}
+		// 			onChange={this.handleChange.bind(this, "story")}
+		// 			required/>
+		// 		<br />
+		// 		<br />
+
+		// 		<input
+		// 			type="text"
+		// 			placeholder="Upload An Image"
+		// 			value={this.state.image}
+		// 			onChange={this.handleChange.bind(this, "image")}
+		// 			required/>
+		// 		<br />
+		// 		<br />
+
+		// 		<input
+		// 			type="text"
+		// 			placeholder="Country of Origin"
+		// 			value={this.state.country}
+		// 			onChange={this.handleChange.bind(this, "country")}
+		// 			required/>
+		// 		<br />
+		// 		<br />
+
+		// 		<input
+		// 			type="text"
+		// 			placeholder="City of Origin"
+		// 			value={this.state.city}
+		// 			onChange={this.handleChange.bind(this, "city")}
+		// 			required/>
+		// 		<br />
+		// 		<br />
+
+		// 		<input
+		// 			type="text"
+		// 			placeholder="Recipe Title"
+		// 			value={this.state.recipeTitle}
+		// 			onChange={this.handleChange.bind(this, "recipeTitle")}
+		// 			required/>
+		// 		<br />
+		// 		<br />
+
+		// 		INGREDIENTS:
+		// 		{this.showIngredients()}
+
+		// 		<br />
+
+		// 		<input type="text"
+		// 			placeholder="Quantity"
+		// 			value={this.state.currentQuantity}
+		// 			onChange={this.handleChange.bind(this, "currentQuantity")} />
+
+		// 		<input type="text"
+		// 			placeholder="Unit"
+		// 			value={this.state.currentUnit}
+		// 			onChange={this.handleChange.bind(this, "currentUnit")} />
+
+		// 		<input type="text"
+		// 			placeholder="Ingredient"
+		// 			value={this.state.currentIngredient}
+		// 			onChange={this.handleChange.bind(this, "currentIngredient")} />
+
+		// 		<button onClick={this.newIngredient}>ADD INGREDIENT</button>
+
+		// 		<br />
+		// 		<br />
+
+		// 		STEPS:
+		// 		{this.showSteps()}
+
+		// 		<br />
+		// 		<br />
+
+		// 		<textarea
+		// 			placeholder="Add A Step"
+		// 			value={this.state.currentStep}
+		// 			onChange={this.handleChange.bind(this, "currentStep")} />
+
+		// 		<button onClick={this.newStep}>ADD STEP</button>
+
+		// 		<br />
+		// 		<br />
+
+		// 		<Music selectedSong={this.state.songURI} onSelect={this.handleSongSelect} />
+
+		// 		<br />
+		// 		<br />
+
+
+		// 		<button type="submit">SUBMIT</button>
+		// 	</form>
+		// )
 
 function mapDispatchtoProps(dispatch) {
 	return bindActionCreators({ createNewExperience }, dispatch)

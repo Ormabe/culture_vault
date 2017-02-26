@@ -34,6 +34,7 @@ class LocationContainer extends Component {
                   <div className="experience-title orange-font">
                     {place.Experience.name}
                   </div>
+               
                   <div className="experience-quote">
                     {`"${place.Experience.quote}"`}
                   </div>
