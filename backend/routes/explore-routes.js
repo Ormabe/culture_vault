@@ -134,11 +134,9 @@ const findByCity = ((req, res) => {
 	});
 
 const getExperiences = (req,res) => {
-  console.log('get experiences')
-  let obj = {LocationId:req.params.locationId, Experiences:null, Likes:null}
   models.ExperiencesLocations.findAll({
     where:{
-      'LocationId': obj.LocationId
+      'LocationId': req.params.locationId
     },
     include:[
       {
@@ -170,7 +168,7 @@ const allSearchTerms = ((req,res) => {
   .catch((err) => {
     console.log(err)
   })
-});
+lo});
 
 const newSearchTerm = ((req,res) => {
   return Search.findOrCreate({
