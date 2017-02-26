@@ -121,7 +121,7 @@ class LogInForm extends Component {
             labelColor={styles.color}
           />
         </div>
-        <div className="signup-button"  onTouchTap={this.handleDialogClose}>
+        <div className="signup-button">
           <SignUpForm />
         </div>
         </div>
