@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import axios from 'axios';
+import css from '../../styles/experiences/create.scss';
 
 
 
@@ -84,34 +85,38 @@ console.log("trackId=====>>", this.state.trackId)
 						const savedInfo = track.id
 
 
-						return <li key={index}>
-
-						{track.name}
-						<br/>
+						return <div key={index}>
+						<div className="song-info">
+							{track.name}
+							<br/>
+							{track.artists[0].name}
+							<br />
+						</div>
 						<img src={track.album.images[1].url} />
 						<br/>
-						<button id={index} onClick={() => this.playMusic(audioObject)}>
-							Play
+						<button className="next-button" id={index} onClick={() => this.playMusic(audioObject)}>
+							PLAY
 						</button>
 
-						<button id={index} onClick={() => this.stopMusic(audioObject)}>
-							Stop
+						<button className="next-button" id={index} onClick={() => this.stopMusic(audioObject)}>
+							STOP
 						</button>
 						<br/>
-						{track.artists[0].name}
-						<br/>
+						
 						{savedInfo === this.props.selectedSong ?
-								<button> selected </button>
-						    : <button id={index} onClick={(e) => this.props.onSelect(e, savedInfo)}>
-						    	choose track
+								<button className="form-button"> SELECTED </button>
+						    : <button className="form-button" id={index} onClick={(e) => this.props.onSelect(e, savedInfo)}>
+						    	CHOOSE TRACK
 									</button>
 						 }
 
 
-						<br/>
+						<br />
+						<br />
+						<br />
 
 
-						</li>
+						</div>
 					})}
 				</div>
 			)
@@ -123,13 +128,14 @@ console.log("trackId=====>>", this.state.trackId)
 
 					return(
 				<div>
-					<p>Is there music that would enhance this memory?</p>
+					<div className="story-questions">Is There Any Song That Would Enhance This Memory?</div>
 
 						<div>
 							<input type="text" placeholder="Artist Name" onChange={this.handleArtistChange.bind(this)}/>
 							<br />
 							<input type="text" placeholder="Song Title" onChange={this.handleTrackChange.bind(this)}/>
-							<button onClick={this.getArtistAlbums.bind(this)}>search</button>
+							<br />
+							<button className="form-button" onClick={this.getArtistAlbums.bind(this)}>SEARCH</button>
 						</div>
 
 						<ul>

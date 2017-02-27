@@ -578,6 +578,7 @@ class CreateExperience extends Component {
 		} else if (this.state.fourth) {
 			return (
 				<div className="fourth-box">
+					<div className="story-container">
 					<div className="story-questions">
 							Give your experience a name.
 						</div>
@@ -597,6 +598,11 @@ class CreateExperience extends Component {
 							/>
 						</div>
 						<br />
+						<div className="component-music">
+							<Music selectedSong={this.state.songURI} onSelect={this.handleSongSelect} />
+						</div>
+						<br />
+						</div>
 					<div className="button-container">
 						<button 
 							className="back-button shadow"
