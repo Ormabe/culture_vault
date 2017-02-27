@@ -13,6 +13,7 @@ const models = require('../server/models')
 const createAnExperience = (req, res) => {
 	let storage ={
 		locationId:null,
+		name: req.body.experienceName,
 		quote: req.body.quote,
 		story: req.body.story,
 		image: req.body.image,
@@ -32,6 +33,7 @@ const createAnExperience = (req, res) => {
 	};
 
 	 models.Experiences.create({
+	 			name: storage.name,
 				quote: storage.quote,
 				story: storage.story,
 				image: storage.image,

@@ -13,6 +13,7 @@ class CreateExperience extends Component {
 		super(props)
 
 		this.state = {
+			experienceName: '',
 			quote: '',
 			story: '',
 			image: '',
@@ -27,9 +28,9 @@ class CreateExperience extends Component {
 			currentIngredient: '',
 			currentStep: '',
 			songURI: '',
-			first: false,
+			first: true,
 			second: false,
-			third: true,
+			third: false,
 			fourth: false,
 			fifth: false,
 			recipeImagePreview: '',
@@ -39,7 +40,8 @@ class CreateExperience extends Component {
 			input4: '',
 			input5: '',
 			input6: '',
-			input7: ''
+			input7: '',
+			submitted: false
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -59,7 +61,7 @@ class CreateExperience extends Component {
 		this.blueInput = this.blueInput.bind(this);
 		this.imageSubmit = this.imageSubmit.bind(this);
 		this.imagePreview = this.imagePreview.bind(this);
-		// this.compileStory = this.compileStory.bind(this);
+		this.compileStory = this.compileStory.bind(this);
 	}
 
 	handleChange(input, event) {
@@ -105,6 +107,7 @@ class CreateExperience extends Component {
 		e.preventDefault();
 
 		axios.post(`http://localhost:2222/api/experiences/create/${this.props.params.userId}`, {
+			experienceName: this.state.experienceName,
 			quote: this.state.quote,
 			story: this.state.story,
 			image: this.state.image,
@@ -118,13 +121,7 @@ class CreateExperience extends Component {
 
 				this.setState(
 					{
-						quote: 'success',
-						story: 'success',
-						image: 'success',
-						country: 'success',
-						city: 'success',
-						name: 'success',
-						recipeTitle: 'success'
+						submitted: true
 					}
 				)
 
@@ -217,6 +214,7 @@ class CreateExperience extends Component {
 
 	compileStory() {
 		this.setState({ story: this.state.input1 + " " + this.state.input2 + " " + this.state.input3 + " " + this.state.input4 + " " + this.state.input5 + " " + this.state.input6 + " " + this.state.input7 })
+		console.log(this.state.story)
 	}
 
 	newIngredient(e) {
@@ -560,27 +558,82 @@ class CreateExperience extends Component {
 
 					</div>
 					<div className="button-container">
-						<button 
-							className="next-button shadow"
-							onClick={this.fourthBox}>
-								SAVE STORY
-						</button>
+						{
+							(this.state.story.length > 1) 
+								? <button 
+										className="next-button shadow"
+										onClick={this.fourthBox}>
+											NEXT
+									</button>
+								: <button
+										onClick={this.compileStory}
+										className="form-button shadow"
+										>
+											SAVE STORY
+									</button>
+						}
 					</div>
 				</div>
 			)
 		} else if (this.state.fourth) {
 			return (
 				<div className="fourth-box">
-					{this.state.story}
-					<button onClick={this.thirdBox}>THIRD BOX</button>
-					<button onClick={this.fifthBox}>FIFTH BOX</button>
+					<div className="story-questions">
+							Give your experience a name.
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.experienceName}
+								onChange={this.handleChange.bind(this, "experienceName")}
+							/>
+						</div>
+					<div className="story-questions">
+							Give this story a 100-character quote.
+						</div>
+						<div className="story-textarea">
+							<textarea 
+								value={this.state.quote}
+								onChange={this.handleChange.bind(this, "quote")}
+							/>
+						</div>
+						<br />
+					<div className="button-container">
+						<button 
+							className="back-button shadow"
+							onClick={this.firstBox}>
+								BACK
+						</button>
+						{
+							(this.state.submitted) 
+								? <button 
+										className="next-button shadow"
+										onClick={this.fifthBox}>
+											NEXT
+									</button>
+								: <button 
+										onClick={this.axiosCall}
+										className="next-button shadow"
+										>
+											COMPLETE STORY
+									</button>
+						}
+					</div>	
 				</div>
 			)
 		} else if (this.state.fifth) {
 			return (
 				<div className="fifth-box">
-					FIFTH BOX
-					<button onClick={this.fourthBox}>FOURTH BOX</button>
+					<div className="story-container">
+						<div className="story-questions">
+							THANK YOU FOR SHARING YOUR STORY
+						</div>
+					</div>
+					<div className="button-container">
+						<Link to="/users/1"><button 
+							className="next-button shadow">
+								USER PROFILE
+						</button></Link>
+					</div>
 				</div>
 			)
 		}
