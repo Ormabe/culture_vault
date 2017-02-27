@@ -77,6 +77,7 @@
 .recipe-title {
 	margin: 5px 5px 15px 5px;
 	font-size: 30px;
+	line-height: 35px;
 }
 
 .horizontal-line {
@@ -422,4 +423,23 @@
 	color: #585A5B;
 }
 
+.music-component {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: red;
+}
 
+.music-component input {
+	width: 350px;
+	padding: 5px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #FF4100;
+	border-radius: 25px;
+	background-color: #FFFFFF;
+	font-size: 20px;
+	margin-top: 10px; 
+}
