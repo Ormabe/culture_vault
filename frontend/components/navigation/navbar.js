@@ -18,6 +18,7 @@ export default class NavBar extends Component {
     }
   }
   componentDidMount(){
+    console.log("======> Navbar mounted")
     axios.get('/api/data')
     .then((response)=>{
       if (response.data){
