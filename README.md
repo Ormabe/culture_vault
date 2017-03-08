@@ -132,10 +132,10 @@ This is a simple web-based app that uses restful API to create, retrieve, update
 
 To our awesome core team with help of our contributors which have made this project a success.
 
-* [Victor Amos](https://github.com/victoramosjr)
-* [Niko Lewis](https://github.com/NikoLewis)
-* [Chanice St. Louis](https://github.com/ChaniceStl)
-* [Rabiya Watson](https://github.com/Ormabe)
+* [Victor Amos, Technical Lead](https://github.com/victoramosjr)
+* [Niko Lewis, Demo Lead](https://github.com/NikoLewis)
+* [Chanice St. Louis, SCRUM Master](https://github.com/ChaniceStl)
+* [Rabiya Watson, Project Manager](https://github.com/Ormabe)
 
 ## Special Thanks
 
