@@ -10,11 +10,9 @@ export function createUserForm(email, password) {
     password,
   })
   .then((response) => {
-    console.log(response);
+      window.location = response.data;
   })
-  .catch((error) => {
-    console.log(error);
-  });
+
   return {
     type: CREATE_USER,
     payload: postUser,

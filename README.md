@@ -2,7 +2,7 @@
 
 * Culture Vault Tech Reference: https://gist.github.com/#
 
-* Website: https://culture-vault.herokuapp.com
+* Live Demo: https://culture-vault.herokuapp.com
 
 * Culture Vault Video Demo: https://vimeo.com/#
 
@@ -27,8 +27,8 @@ The Food Experiences are stored on our database and searchable by the members' u
 * Step 1. Install Postgres, Postico and Node.js
 
     - Install Postgres, Postico and Node.js
-    - Create data directory in Postico for Postgres store data
-    - Connect using Postico to data directory
+    - Create a new `database` named *culture_vault* in Postico for Postgres store data
+    - Connect using Postico to *culture_vault*
 
 * Step 2. Get Culture Vault source code and install package
 
@@ -37,7 +37,7 @@ The Food Experiences are stored on our database and searchable by the members' u
 
 * Step 3. Populate seed data from file
 
-    - **node populateData.js**
+    - **node backend/server/populateData.js**
 
 * Step 4. Create an `.env` file at your root directory. Set your **SECRET LOGIN SECURITY KEY**, the demo was designed with a 24-digit password. You can generate a truly random secret key yourself: https://lastpass.com/generatepassword.php
 
@@ -132,19 +132,19 @@ This is a simple web-based app that uses restful API to create, retrieve, update
 
 To our awesome core team with help of our contributors which have made this project a success.
 
-* [Victor Amos](https://github.com/victoramosjr)
-* [Niko Lewis](https://github.com/NikoLewis)
-* [Chanice St. Louis](https://github.com/ChaniceStl)
-* [Rabiya Watson](https://github.com/Ormabe)
+* [Victor Amos, Technical Lead](https://github.com/victoramosjr)
+* [Niko Lewis, Demo Lead](https://github.com/NikoLewis)
+* [Chanice St. Louis, SCRUM Master](https://github.com/ChaniceStl)
+* [Rabiya Watson, Project Manager](https://github.com/Ormabe)
 
 ## Special Thanks
 
-* [Christopher Edwards](https://www.linkedin.com/in/christophertayloredwards)
-* [Paul Hine](https://www.linkedin.com/in/mrhpaul)
-* [Charles Kuang](https://www.linkedin.com/in/charleskuang)
-* [Nate Maddrey](http://www.natemaddrey.com/)
-* [Tao Ning](https://www.linkedin.com/in/tao-ning)
-* [Kevin Stewart](https://www.linkedin.com/in/stewartkevin)
+* [Christopher Taylor Edwards, ThoughtWorks, Design Mentor](https://www.linkedin.com/in/christophertayloredwards)
+* [Paul Hine, Coalition for Queens (C4Q), Technical Volunteer](https://www.linkedin.com/in/mrhpaul)
+* [Charles Kuang, C4Q, Web Instructor](https://www.linkedin.com/in/charleskuang)
+* [Nate Maddrey, C4Q, Web Instructor](http://www.natemaddrey.com/)
+* [Tao Ning, LinkedIn, Technical Mentor](https://www.linkedin.com/in/tao-ning)
+* [Kevin Stewart, LinkedIn, Technical Mentor](https://www.linkedin.com/in/stewartkevin)
 
 ## For more information about using Node.js, see these Dev Center articles:
 

@@ -6,9 +6,6 @@ import CreateButton from '../main/create-button.js';
 import css from '../../styles/navigation/navigation.scss';
 import axios from 'axios';
 
-
-
-
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
