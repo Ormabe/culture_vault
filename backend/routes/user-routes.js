@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Users = require('../server/models').Users;
 const models = require('../server/models')
+const passport = require('../server/config/passport');
 
 const getAllUsers = ((req, res) => {
   return Users.findAll({
@@ -14,20 +15,50 @@ const getAllUsers = ((req, res) => {
   });
 });
 //
-const createNewUser = ((req, res) => {
-  return Users.findOrCreate({
-    where: {
-      email: req.body.email,
-      password: req.body.password,
-    },
+// const createNewUser = ((req, res) => {
+//   return Users.findOrCreate({
+//     where: {
+//       email: req.body.email,
+//       password: req.body.password,
+//     },
+//   })
+//   .then((data) => {
+//     res.send(data);
+//   })
+//   .catch((err) => {
+//     res.send(err);
+//   });
+// });
+
+////////////////////////////
+router.post('/',
+
+  function(req, res, next) {
+    return Users.findOrCreate({
+      where: {
+        email: req.body.email,
+        password: req.body.password,
+      }
+    })
+    .then((user) => {
+        console.log('>>>>>> USER ID >>>>>>>>',user)
+        passport.authenticate('local', function(err, user, info) {
+          console.log('AUTH USER >>>>>>', user)
+          if (err) { return next(err); }
+          if (!user) { res.status(401).end(); return; }
+          req.logIn(user, function(err) {
+            if (err) { res.status(401).end(); return; }
+            // res.send(JSON.stringify(user)).end();
+
+            res.send(`http://localhost:2222/users/${user.id}`)
+          });
+
+        })(req, res, next);;
+    })
+    .catch((err) => {
+      res.send(err).end();
+    });
   })
-  .then((data) => {
-    res.send(data);
-  })
-  .catch((err) => {
-    res.send(err);
-  });
-});
 
 // const createNewUser = ((req, res) => {
 //   return Users.findOrCreate({
@@ -36,23 +67,22 @@ const createNewUser = ((req, res) => {
 //       password: req.body.password,
 //     },
 //   })
-//   .then((req, res) => {
-//     passport.authenticate('local', function(err, user, info) {
-//       console.log('AUTH USER >>>>>>', user)
-//       if (err) { return next(err); }
-//       if (!user) { res.status(401).end(); return; }
-//       req.logIn(user, function(err) {
-//         if (err) { res.status(401).end(); return; }
-//         // res.send(JSON.stringify(user)).end();
-
-//         res.send(`http://localhost:2222/users/${user.id}`)
-//       });
-//     })
+//   .then((user) => {
+//     req.logIn(user.dataValues, function(err) {
+//       console.log('login user', user);
+//       if (err) {
+//         console.log('login err', err);
+//         res.status(401).end(); return; }
+//       // res.send(JSON.stringify(user)).end();
+//
+//       res.send(user).end();
+//     });
 //   })
 //   .catch((err) => {
-//     res.send(err);
+//     res.send(err).end();
 //   });
 // });
+//////////////////////////////
 
 const findUserByUsername = ((req, res) => {
   Users.findAll({
@@ -181,7 +211,7 @@ router.route('/profile/:userId')
 
 router.route('/')
   .get(getAllUsers)
-  .post(createNewUser);
+  // .post(createNewUser);
 
 
 router.route('/:username')
