@@ -77,6 +77,7 @@ class SignUpForm extends Component {
           backgroundColor={styles.backgroundSignUp}
           labelColor={styles.color}
           onTouchTap={this.handleDialogOpen}
+          style={styles.cvButton}
         />
         <Dialog
           title="SIGN UP TO CULTURE VAULT"
@@ -112,6 +113,7 @@ class SignUpForm extends Component {
           type="submit"
           backgroundColor={styles.backgroundSignUp}
           labelColor={styles.color}
+          style={styles.cvButton}
         />
       </form>
     </Dialog>

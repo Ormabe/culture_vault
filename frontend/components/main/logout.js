@@ -53,8 +53,9 @@ class LogOut extends Component {
             label="LOG OUT"
             labelStyle={{fontSize: styles.fontSize}}
             type="submit"
-            backgroundColor={styles.backgroundLogIn}
+            backgroundColor={styles.backgroundLogout}
             labelColor={styles.color}
+            style={styles.cvButton}
           />
 
       </form>

@@ -8,9 +8,15 @@ const formStyles = {
   backgroundSignUp: "#FF4100",
   backgroundLogIn: "#4A97C9",
   backgroundCreate: "#FF4100",
+  backgroundLogout: "#4A97C9",
   color: "#FFFFFF",
   textAlign: "center",
   fontSize: 18,
+  cvButton: {
+    width: 130,
+    marginBottom: 6,
+    lineHeight: '18px'
+  },
   button: {
     margin: 12,
     width: 200,
