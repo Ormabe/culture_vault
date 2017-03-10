@@ -42,6 +42,7 @@ class Feature extends Component{
 							<GridTile
 								key={feature.id}
 								title={feature.name}
+								// subtitle={<span>by <b>{feature.username}</b></span>}
 								onClick={() => this.props.router.push(`/experience/${feature.id}`)}
 							>
 								<img src={feature.image} alt={feature.id} />
