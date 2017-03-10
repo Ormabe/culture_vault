@@ -41,9 +41,9 @@ export default class NavBar extends Component {
         	</div>
           { this.state.userId?
              <div>
-                <div> <LogOut /> </div>
+               <div><CreateButton /></div>
 
-                <div><CreateButton /></div>
+                <div> <LogOut /> </div>
              </div>
              : <div className="login">
                 <div>

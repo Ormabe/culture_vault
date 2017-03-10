@@ -78,6 +78,7 @@ class LogInForm extends Component {
           backgroundColor={styles.backgroundLogIn}
           labelColor={styles.color}
           onTouchTap={this.handleDialogOpen}
+          style={styles.cvButton}
         />
         <Dialog
           title="LOG IN TO CULTURE VAULT"
@@ -111,6 +112,8 @@ class LogInForm extends Component {
           type="password"
         />
         <br />
+        <br />
+        <br />
         <div className="login-button-container">
           <div className="login-button">
           <RaisedButton
@@ -119,6 +122,7 @@ class LogInForm extends Component {
             type="submit"
             backgroundColor={styles.backgroundLogIn}
             labelColor={styles.color}
+            style={styles.cvButton}
           />
         </div>
         <div className="signup-button">

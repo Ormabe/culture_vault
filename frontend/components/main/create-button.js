@@ -53,6 +53,7 @@ export default class CreateButton extends Component {
           labelColor={styles.color}
           onTouchTap={this.handleDialogOpen}
           icon={<FaPlusSquare />}
+          style={styles.cvButton}
         />
     </Link>
     </MuiThemeProvider>

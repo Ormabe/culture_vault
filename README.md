@@ -142,7 +142,7 @@ To our awesome core team with help of our contributors which have made this proj
 * [Christopher Taylor Edwards, ThoughtWorks, Design Mentor](https://www.linkedin.com/in/christophertayloredwards)
 * [Paul Hine, Coalition for Queens (C4Q), Technical Volunteer](https://www.linkedin.com/in/mrhpaul)
 * [Charles Kuang, C4Q, Web Instructor](https://www.linkedin.com/in/charleskuang)
-* [Nate Maddrey, C4Q, Web Instructor](http://www.natemaddrey.com/)
+* [Nate Maddrey, C4Q, Web Instructor](https://www.linkedin.com/in/natemaddrey/)
 * [Tao Ning, LinkedIn, Technical Mentor](https://www.linkedin.com/in/tao-ning)
 * [Kevin Stewart, LinkedIn, Technical Mentor](https://www.linkedin.com/in/stewartkevin)
 
