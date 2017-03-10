@@ -8,6 +8,7 @@ const featureStyles = {
     width: '80%',
     height: 450,
     overflowY: 'auto',
+    cursor: 'pointer'
   },
 };
 

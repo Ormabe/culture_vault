@@ -16,17 +16,17 @@ class LocationContainer extends Component {
   }
 
   renderLocations() {
-    let { location } = this.props; 
+    let { location } = this.props;
       return (
         <div className="location-row">
             {location.map(place => {
               return (
                 <div className="experience-container">
-                  <img 
+                  <img
                   onClick={() => this.props.router.push(`/experience/${place.ExperienceId}`)}
-                  key={place.ExperienceId} 
+                  key={place.ExperienceId}
                   src={place.Experience.image}>
-                  </img>  
+                  </img>
 
                   <div className="card card-5">
                   </div>
@@ -34,7 +34,7 @@ class LocationContainer extends Component {
                   <div className="experience-title orange-font">
                     {place.Experience.name}
                   </div>
-               
+
                   <div className="experience-quote">
                     {`"${place.Experience.quote}"`}
                   </div>
@@ -68,4 +68,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {getCountryExperience})(LocationContainer);
-
