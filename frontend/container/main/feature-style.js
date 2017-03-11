@@ -6,7 +6,7 @@ const featureStyles = {
   },
   gridList: {
     width: '80%',
-    height: 450,
+    height: 600,
     overflowY: 'auto',
     cursor: 'pointer'
   },

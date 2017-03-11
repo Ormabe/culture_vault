@@ -91,6 +91,7 @@ class SignUpForm extends Component {
       <form onSubmit={this.enterUser} autoComplete="off">
         <TextField
           name="email"
+          required={true}
           value={this.state.email}
           onChange={this.handleChange}
           floatingLabelText="Enter Email Address"
@@ -100,11 +101,13 @@ class SignUpForm extends Component {
         <br />
         <TextField
           name="password"
+          required={true}
           value={this.state.password}
           onChange={this.handleChange}
           floatingLabelText="Enter Password"
           floatingLabelStyle={styles.floatingLabelStyle}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+          type="password"
         />
         <br />
          <RaisedButton

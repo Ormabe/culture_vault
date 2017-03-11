@@ -18,6 +18,7 @@ const muiTheme = getMuiTheme();
 
 const styles = require('./signup-style').formStyles
 const customContentStyle = require('./signup-style').customContentStyle
+import css from '../../styles/main/buttons.scss';
 
 var FaFacebook = require('react-icons/lib/fa/facebook-square')
 var FaGoogle = require('react-icons/lib/fa/google-plus-square')

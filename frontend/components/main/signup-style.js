@@ -63,7 +63,7 @@ const signUpStyles = {
   };
 
   const customContentStyle = {
-    width: '40%'
+    width: '30%'
   };
 
 module.exports = {
