@@ -91,6 +91,7 @@ class SignUpForm extends Component {
       <form onSubmit={this.enterUser} autoComplete="off">
         <TextField
           name="email"
+          type="email"
           required={true}
           value={this.state.email}
           onChange={this.handleChange}
