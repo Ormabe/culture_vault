@@ -48,13 +48,15 @@ class LogInForm extends Component {
   loginUser(e) {
     e.preventDefault()
     console.log("<====== LOGIN ======>")
-    this.props.loginUserFunc(this.state.email,this.state.password)
 
-    this.setState({
-      email:"",
-      password:""
-    })
-    this.handleDialogClose()
+        this.props.loginUserFunc(this.state.email,this.state.password)
+
+        this.setState({
+          email:"",
+          password:""
+        })
+        this.handleDialogClose()
+
   }
   handleDialogOpen () {
     this.setState({open: true});
@@ -94,6 +96,7 @@ class LogInForm extends Component {
 
         <TextField
           name="email"
+          type="email"
           required={true}
           value={this.state.email}
           onChange={this.handleChange}
