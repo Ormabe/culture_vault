@@ -8,6 +8,18 @@ import _ from 'lodash';
 import Music from '../main/music-container';
 import css from '../../styles/experiences/create.scss';
 
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import TextField from 'material-ui/TextField';
+
+const muiTheme = getMuiTheme();
+
+const styles = require('./experience-style').formStyles
+
 class CreateExperience extends Component {
 	constructor(props) {
 		super(props)
@@ -69,27 +81,6 @@ class CreateExperience extends Component {
 			[input]: event.target.value
 		})
 		console.log(this.state)
-		// if (input === 'quote') {
-		// 	this.setState({ quote: event.target.value })
-		// } else if (input === 'story') {
-		// 	this.setState({ story: event.target.value })
-		// } else if (input === 'image') {
-		// 	this.setState({ image: event.target.value })
-		// } else if (input === 'country') {
-		// 	this.setState({ country: event.target.value })
-		// } else if (input === 'city') {
-		// 	this.setState({ city: event.target.value })
-		// } else if (input === 'recipeTitle') {
-		// 	this.setState({ recipeTitle: event.target.value })
-		// } else if (input === 'currentQuantity') {
-		// 	this.setState({ currentQuantity: event.target.value })
-		// } else if (input === 'currentUnit') {
-		// 	this.setState({ currentUnit: event.target.value })
-		// } else if (input === 'currentIngredient') {
-		// 	this.setState({ currentIngredient: event.target.value })
-		// } else if (input === 'currentStep') {
-		// 	this.setState({ currentStep: event.target.value })
-		// }
 	}
 
   handleSongSelect(e, songURI){
@@ -195,19 +186,33 @@ class CreateExperience extends Component {
 	guidedEntry() {
 		if(this.state.blue) {
 			return (
-				<div className="blue-box">
-					{this.state.inputBlue}
-					<input onChange={this.blueInput.bind(this)} value={this.state.inputBlue} />
-					<button onClick={this.pinkBox}>PINK BOX</button>
-				</div>
+				<MuiThemeProvider muiTheme={muiTheme}>
+					<div className="blue-box">
+						{this.state.inputBlue}
+						<input onChange={this.blueInput.bind(this)} value={this.state.inputBlue} />
+						<RaisedButton
+							label="PINK BOX"
+							labelStyle={{fontSize: styles.expButton.fontSize}}
+							onTouchTap={this.pinkBox}
+							style={styles.expButton}
+						/>
+					</div>
+				</MuiThemeProvider>
 			)
 		} else if (this.state.pink) {
 			return (
-				<div className="pink-box">
-					{this.state.inputBlue}
-					<button onClick={this.blueBox}>BLUE BOX</button>
-					}
-				</div>
+				<MuiThemeProvider muiTheme={muiTheme}>
+					<div className="pink-box">
+						{this.state.inputBlue}
+						<RaisedButton
+							label="BLUE BOX"
+							labelStyle={{fontSize: styles.expButton.fontSize}}
+							onTouchTap={this.blueBox}
+							style={styles.expButton}
+						/>
+						}
+					</div>
+				</MuiThemeProvider>
 			)
 		}
 	}
@@ -262,8 +267,8 @@ class CreateExperience extends Component {
 						{this.state.ingredients.map((ingredient, index) =>
 							<tr key={index}>
 								<td className="mdl-data-table__cell--non-numeric">{ingredient.ingredients}</td>
-								<td className="mdl-data-table__cell--non-numeric">{ingredient.quantity}</td> 
-								<td className="mdl-data-table__cell--non-numeric">{ingredient.unit}</td> 
+								<td className="mdl-data-table__cell--non-numeric">{ingredient.quantity}</td>
+								<td className="mdl-data-table__cell--non-numeric">{ingredient.unit}</td>
 							</tr>
 						)}
 						</tbody>
@@ -296,7 +301,7 @@ class CreateExperience extends Component {
 	              <th className="mdl-data-table__cell--non-numeric">Steps</th>
 	            </tr>
 	          </thead>
-	          <tbody>  
+	          <tbody>
 							{this.state.steps.map((step, index) =>
 									<tr className="mdl-data-table__cell--non-numeric" key={index}>
 										<td className="mdl-data-table__cell--non-numeric">{step.steps}</td>
@@ -324,8 +329,8 @@ class CreateExperience extends Component {
 				<div className="image-preview">
 					<img
 						className="preview-image"
-						src={this.state.recipeImagePreview} 
-						alt={this.state.recipeTitle} 
+						src={this.state.recipeImagePreview}
+						alt={this.state.recipeTitle}
 					/>
 				</div>
 			)
@@ -340,6 +345,7 @@ class CreateExperience extends Component {
 	render() {
 		if (this.state.first) {
 			return (
+				<MuiThemeProvider muiTheme={muiTheme}>
 				<div className="first-box">
 					<div className="question-container">
 						Recipe Name:
@@ -358,12 +364,14 @@ class CreateExperience extends Component {
 							onChange={this.handleChange.bind(this, "image")}
 							required
 						/>
-						<button
-							className="form-button shadow"
-							onClick={this.imageSubmit.bind(this)}>
-								PREVIEW
-						</button>
-
+							<RaisedButton
+								label="PREVIEW"
+								labelStyle={{fontSize: styles.expButton.fontSize}}
+								backgroundColor={styles.backgroundOrange}
+								labelColor={styles.color}
+								onTouchTap={this.imageSubmit.bind(this)}
+								style={styles.expButton}
+							/>
 						{this.imagePreview()}
 
 					</div>
@@ -376,25 +384,34 @@ class CreateExperience extends Component {
 							required
 						/>
 					</div>
-					<div className="button-container">
-						{
-							(this.state.recipeTitle && this.state.recipeImagePreview && this.state.country) 
-								? <button 
-										className="next-button shadow"
-										onClick={this.secondBox}>
-											NEXT
-									</button>
-								: <button 
-										className="next-button-disabled"
-										>
-											NEXT
-									</button>
-						}
-					</div>
+						<div className="button-container-mui">
+							{
+								(this.state.recipeTitle && this.state.recipeImagePreview && this.state.country)
+									?	<RaisedButton
+											label="NEXT"
+											labelStyle={{fontSize: styles.nextButton.fontSize}}
+											backgroundColor={styles.backgroundBlue}
+											labelColor={styles.color}
+											onTouchTap={this.secondBox}
+											style={styles.nextButton}
+										/>
+									:
+										<RaisedButton
+											label="NEXT"
+											labelStyle={{fontSize: styles.nextButton.fontSize}}
+											backgroundColor={styles.backgroundBlue}
+											labelColor={styles.color}
+											style={styles.nextButton}
+											disabled={true}
+										/>
+							}
+						</div>
 				</div>
-			)	
+			</MuiThemeProvider>
+			)
 		} else if (this.state.second) {
 			return (
+				<MuiThemeProvider muiTheme={muiTheme}>
 				<div className="second-box">
 					<div className="question-container">
 						INGREDIENTS:
@@ -402,7 +419,7 @@ class CreateExperience extends Component {
 
 			 		<br />
 			 			<div className="ingredient-input-container">
-					 		<div className="quantity">	
+					 		<div className="quantity">
 						 		<input
 						 			className="quantity"
 						 			type="text"
@@ -426,12 +443,14 @@ class CreateExperience extends Component {
 									onChange={this.handleChange.bind(this, "currentIngredient")} />
 							</div>
 						</div>
-					<button 
-						className="form-button shadow"
-						onClick={this.newIngredient}>
-							ADD
-					</button>
-					
+							<RaisedButton
+								label="ADD"
+								labelStyle={{fontSize: styles.expButton.fontSize}}
+								backgroundColor={styles.backgroundOrange}
+								labelColor={styles.color}
+								onTouchTap={this.newIngredient}
+								style={styles.expButton}
+							/>
 					<div className="ingredient-spacer"></div>
 
 			 		STEPS:
@@ -446,46 +465,62 @@ class CreateExperience extends Component {
 							value={this.state.currentStep}
 							onChange={this.handleChange.bind(this, "currentStep")} />
 					</div>
-					<button
-						className="form-button shadow" 
-						onClick={this.newStep}>ADD</button>
-
+					<RaisedButton
+						label="ADD"
+						labelStyle={{fontSize: styles.expButton.fontSize}}
+						backgroundColor={styles.backgroundOrange}
+						labelColor={styles.color}
+						onTouchTap={this.newStep}
+						style={styles.expButton}
+					/>
 					</div>
-					<div className="button-container">
-						<button 
-							className="back-button shadow"
-							onClick={this.firstBox}>
-								BACK
-						</button>
+					<div className="button-container-mui">
+						<RaisedButton
+							label="BACK"
+							labelStyle={{fontSize: styles.nextButton.fontSize}}
+							backgroundColor={styles.backgroundOrange}
+							labelColor={styles.color}
+							onTouchTap={this.firstBox}
+							style={styles.nextButton}
+						/>
 						{
-							(this.state.ingredients.length >= 1 && this.state.steps.length >= 1) 
-								? <button 
-										className="next-button shadow"
-										onClick={this.thirdBox}>
-											NEXT
-									</button>
-								: <button 
-										className="next-button-disabled"
-										>
-											NEXT
-									</button>
-						}
+							(this.state.ingredients.length >= 1 && this.state.steps.length >= 1)
+							?	<RaisedButton
+									label="NEXT"
+									labelStyle={{fontSize: styles.nextButton.fontSize}}
+									backgroundColor={styles.backgroundBlue}
+									labelColor={styles.color}
+									onTouchTap={this.thirdBox}
+									style={styles.nextButton}
+								/>
+							:
+								<RaisedButton
+									label="NEXT"
+									labelStyle={{fontSize: styles.nextButton.fontSize}}
+									backgroundColor={styles.backgroundBlue}
+									labelColor={styles.color}
+									style={styles.nextButton}
+									disabled={true}
+								/>
+					}
 					</div>
 				</div>
+			</MuiThemeProvider>
 			)
 		} else if (this.state.third) {
 			return (
+				<MuiThemeProvider muiTheme={muiTheme}>
 				<div className="third-box">
 					<div className="story-container">
 						<div className="story-questions">
 							When you eat this meal what does it remind you of? Is it a place? A certain time in your life? A feeling?
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.input1}
 								onChange={this.handleChange.bind(this, "input1")}
 							/>
-						</div>	
+						</div>
 						<br />
 
 						<div className="story-questions">
@@ -522,12 +557,12 @@ class CreateExperience extends Component {
 						<br />
 
 						<div className="story-questions">
-							<div className="story-questions">Is this is dish from another culture?</div>  
+							<div className="story-questions">Is this is dish from another culture?</div>
 							<div className="story-questions">IF YES: How were you introduced to this meal? Tell me about the people behind the food.</div>
 							<div className="story-questions">IF NOT: What is your ethnic and/or regional background? What makes this dish relevant to your family traditions?</div>
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.input5}
 								onChange={this.handleChange.bind(this, "input5")}
 							/>
@@ -538,7 +573,7 @@ class CreateExperience extends Component {
 							What has this experience taught you or how has it shaped you? Why did you want to share this story? Or what would you like those that read it to take away from it?
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.input6}
 								onChange={this.handleChange.bind(this, "input6")}
 							/>
@@ -549,7 +584,7 @@ class CreateExperience extends Component {
 							Is there anything else you want to share with me?
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.input7}
 								onChange={this.handleChange.bind(this, "input7")}
 							/>
@@ -557,33 +592,41 @@ class CreateExperience extends Component {
 						<br />
 
 					</div>
-					<div className="button-container">
+					<div className="button-container-mui">
 						{
-							(this.state.story.length > 1) 
-								? <button 
-										className="next-button shadow"
-										onClick={this.fourthBox}>
-											NEXT
-									</button>
-								: <button
-										onClick={this.compileStory}
-										className="form-button shadow"
-										>
-											SAVE STORY
-									</button>
+							(this.state.story.length > 1)
+								?	<RaisedButton
+										label="NEXT"
+										labelStyle={{fontSize: styles.nextButton.fontSize}}
+										backgroundColor={styles.backgroundBlue}
+										labelColor={styles.color}
+										onTouchTap={this.fourthBox}
+										style={styles.nextButton}
+									/>
+								:
+									<RaisedButton
+										label="SAVE STORY"
+										labelStyle={{fontSize: styles.nextButton.fontSize}}
+										backgroundColor={styles.backgroundOrange}
+										labelColor={styles.color}
+										onTouchTap={this.compileStory}
+										style={styles.nextButton}
+									/>
 						}
 					</div>
 				</div>
+			</MuiThemeProvider>
 			)
 		} else if (this.state.fourth) {
 			return (
+				<MuiThemeProvider muiTheme={muiTheme}>
 				<div className="fourth-box">
 					<div className="story-container">
 					<div className="story-questions">
 							Give your experience a name.
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.experienceName}
 								onChange={this.handleChange.bind(this, "experienceName")}
 							/>
@@ -592,7 +635,7 @@ class CreateExperience extends Component {
 							Give this story a 100-character quote.
 						</div>
 						<div className="story-textarea">
-							<textarea 
+							<textarea
 								value={this.state.quote}
 								onChange={this.handleChange.bind(this, "quote")}
 							/>
@@ -603,44 +646,61 @@ class CreateExperience extends Component {
 						</div>
 						<br />
 						</div>
-					<div className="button-container">
-						<button 
-							className="back-button shadow"
-							onClick={this.firstBox}>
-								BACK
-						</button>
+					<div className="button-container-mui">
+						<RaisedButton
+							label="BACK"
+							labelStyle={{fontSize: styles.nextButton.fontSize}}
+							backgroundColor={styles.backgroundOrange}
+							labelColor={styles.color}
+							onTouchTap={this.firstBox}
+							style={styles.nextButton}
+						/>
 						{
-							(this.state.submitted) 
-								? <button 
-										className="next-button shadow"
-										onClick={this.fifthBox}>
-											NEXT
-									</button>
-								: <button 
-										onClick={this.axiosCall}
-										className="next-button shadow"
-										>
-											COMPLETE STORY
-									</button>
+							(this.state.submitted)
+								?	<RaisedButton
+										label="NEXT"
+										labelStyle={{fontSize: styles.nextButton.fontSize}}
+										backgroundColor={styles.backgroundBlue}
+										labelColor={styles.color}
+										onTouchTap={this.fifthBox}
+										style={styles.nextButton}
+									/>
+								:
+									<RaisedButton
+										label="COMPLETE STORY"
+										labelStyle={{fontSize: styles.nextButton.fontSize}}
+										backgroundColor={styles.backgroundBlue}
+										labelColor={styles.color}
+										onTouchTap={this.axiosCall}
+										style={styles.compButton}
+									/>
 						}
-					</div>	
+					</div>
 				</div>
+			</MuiThemeProvider>
 			)
 		} else if (this.state.fifth) {
 			return (
+				<MuiThemeProvider muiTheme={muiTheme}>
 				<div className="fifth-box">
 					<div className="story-container">
 						<div className="story-questions">
 							THANK YOU FOR SHARING YOUR STORY
 						</div>
 					</div>
-					<div className="button-container">
-						<Link to="/users/1"><button 
-							className="next-button shadow">
-								USER PROFILE
-						</button></Link>
+					<div className="button-container-mui">
+						<Link to={`/users/${this.props.params.userId}`}>
+						<RaisedButton
+								label="USER PROFILE"
+								labelStyle={{fontSize: styles.nextButton.fontSize}}
+								backgroundColor={styles.backgroundBlue}
+								labelColor={styles.color}
+								style={styles.compButton}
+							/>
+						</Link>
 					</div>
 				</div>
+			</MuiThemeProvider>
 			)
 		}
 	}

@@ -129,7 +129,6 @@ This is a simple web-based app that uses restful API to create, retrieve, update
 
 ## Using the Culture Vault App
 
-___
  **Welcome Screen** Users are greeted by the welcome screen, where they are able to login, or explore the multi-sensory experiences.
 
 ![alt text](images/welcome.png "Welcome")
