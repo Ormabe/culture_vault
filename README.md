@@ -1,6 +1,5 @@
 ![alt text](images/culture_vault_logo.png "Culture Vault Logo")
-
-* Culture Vault Tech Reference: https://gist.github.com/#
+<!-- * Culture Vault Tech Reference: https://gist.github.com/# -->
 
 * Live Demo: https://culture-vault.herokuapp.com
 
