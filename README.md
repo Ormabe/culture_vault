@@ -51,7 +51,7 @@ The Food Experiences are stored on our database and searchable by the members' u
 
     - Insert the following code into the newly created `config.json` file:
 
-    ```
+    ```JSON
         {
           "development": {
             "username": "root",
@@ -130,31 +130,38 @@ This is a simple web-based app that uses restful API to create, retrieve, update
 
 ## Using the Culture Vault App
 
-- **Welcome Screen** Users are greeted by the welcome screen, where they are able to login, or explore the multi-sensory experiences.
+___
+ **Welcome Screen** Users are greeted by the welcome screen, where they are able to login, or explore the multi-sensory experiences.
 
 ![alt text](images/welcome.png "Welcome")
 
-- **Explore** Users can explore all of the multi-sensory experiences without a log-in.
+___
+ **Explore** Users can explore all of the multi-sensory experiences without a log-in.
 
 ![alt text](images/explore-1.png "Explore Page")
 
-- **Experiences By Country** On this page our users can explore experiences submitted by other users, sorted by country. Each country shows a featured experience, that highlights the most recently submitted experience for that country. There is also a button where the user can select all the experiences for that country.
+___
+ **Experiences By Country** On this page our users can explore experiences submitted by other users, sorted by country. Each country shows a featured experience, that highlights the most recently submitted experience for that country. There is also a button where the user can select all the experiences for that country.
 
 ![alt text](images/experience-list-aus.png "List of Australian Experiences")
 
-- **Discover** If the user is more interested in looking at all of the experiences at once, they have the option of viewing all experiences at once.
+___
+ **Discover** If the user is more interested in looking at all of the experiences at once, they have the option of viewing all experiences at once.
 
 ![alt text](images/discover.png "List of All Experiences")
 
-- **Login or Sign Up** Users also have the option of creating an account which allows them to create their own culturally-relevant experiences. If they already have an account, they can simply login.
+___
+ **Login or Sign Up** Users also have the option of creating an account which allows them to create their own culturally-relevant experiences. If they already have an account, they can simply login.
 
 ![alt text](images/login.png "Login Screen")
 
-- **User Profile** Once users have created an account or logged into their existing account, they are directed toward their User Profile page, where they can see the experiences they previously created, or the experiences from other Culture Vault users that they had previously liked.
+___
+ **User Profile** Once users have created an account or logged into their existing account, they are directed toward their User Profile page, where they can see the experiences they previously created, or the experiences from other Culture Vault users that they had previously liked.
 
 ![alt text](images/user-profile.png "User Profile")
 
-- **Create Experience** Only once the user is logged in do they get the option to create an experience.
+___
+ **Create Experience** Only once the user is logged in do they get the option to create an experience.
 
 ![alt text](images/create-experience.png "Create Experience")
 
