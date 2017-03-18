@@ -147,9 +147,18 @@ const getExperience = (req, res) => {
 	.then(user => {
 		data.user = user
 	})
-
-
 	.then(() => res.send(data))
+	.catch(error => res.status(500).send(error))
+};
+
+//////////////////////////////////////////////////////////////
+
+const getAllExperienceSummary = (req, res) => {
+	 ExperiencesLocations.findAll({
+		order: [['id', 'ASC']],
+		include:[Experiences,Locations]
+	})
+	.then((data) => res.send(data))
 	.catch(error => res.status(500).send(error))
 };
 
@@ -159,6 +168,9 @@ const getFeature = (req, res) => {
   console.log(userId);
   Experiences.findAll().then(data => res.send(data)).catch(error => res.status(500).send(error))
 };
+
+router.route('/all')
+	.get(getAllExperienceSummary)
 
 router.route('/create/:userId')
 	.post(createAnExperience)
