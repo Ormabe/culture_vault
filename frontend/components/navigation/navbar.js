@@ -34,7 +34,7 @@ export default class NavBar extends Component {
         		<Link to="discover">Discover</Link>
         	</div>
         	<div className="navbar-logo">
-        		<Link to="/"><img src="https://s25.postimg.org/s4cklvyxr/culture_vault_logo.png" alt="Culture Vault" /></Link>
+        		<Link to="/"><img src="https://s3.us-east-2.amazonaws.com/culture-vault/culture-vault-logo.png" alt="Culture Vault" /></Link>
         	</div>
         	<div className="navbar-about">
         		<Link to="#">About</Link>

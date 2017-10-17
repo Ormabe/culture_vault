@@ -36,7 +36,6 @@ export default class CreateButton extends Component {
     .then((response)=>{
       if (response.data){
         this.setState({userId: response.data.id})
-      console.log('CREATE BUTTON -> userId:',this.state.userId)
       }
      })
   }

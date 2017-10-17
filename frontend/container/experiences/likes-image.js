@@ -36,7 +36,7 @@ export default class LikesImage extends Component {
 				<div className="likes-image">
 					<img 
 						onClick={this.onUnlikeClick.bind(this)}
-						src="https://s25.postimg.org/l5fz2qun3/liked_culture_vault.png"/>
+						src="https://s3.us-east-2.amazonaws.com/culture-vault/cv-liked-sq.png"/>
 				</div>
 			)	
 		}
@@ -45,7 +45,7 @@ export default class LikesImage extends Component {
 			<div className="likes-image">
 				<img 
 					onClick={this.onLikeClick.bind(this)}
-					src="https://s25.postimg.org/7ahoka07z/unliked_culture_vault.png" />
+					src="https://s3.us-east-2.amazonaws.com/culture-vault/cv-unliked-sq.png" />
 			</div>
 		)
 	}

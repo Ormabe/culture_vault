@@ -10,7 +10,7 @@ export default class Welcome extends Component {
     return (
     	<div>
       <div className="welcome-container">
-        <video src="http://probeautyblog.com/wp-content/uploads/2017/02/culture-vault-opener-10mb.mp4" autoPlay loop />
+        <video src="https://s3.us-east-2.amazonaws.com/culture-vault/cv-video-10mb.mp4" autoPlay loop />
       </div>
 
       <div className="welcome-text">
@@ -22,7 +22,7 @@ export default class Welcome extends Component {
           <b>Experience</b> how others’ food, culture, and identity overlap.
         </div>
         <div className="welcome-button">
-          <Link to="/explore"><img src="https://s25.postimg.org/wnwmcrgrj/welcome_journey_button.png" alt="Explore Culture Vault" /></Link>
+          <Link to="/explore"><img src="https://s3.us-east-2.amazonaws.com/culture-vault/welcome-journey-button.png" alt="Explore Culture Vault" /></Link>
         </div>
       </div>
       </div>

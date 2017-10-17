@@ -9,6 +9,8 @@ import login from './login-reducer.js';
 import search from './search-reducer.js';
 import likes from './likes-reducer.js';
 import user from './userProfile-reducer.js';
+import navbar from './nav-reducer.js';
+import {reducer as notifications} from 'react-notification-system-redux';
 
 const rootReducer = combineReducers({
 	feature ,
@@ -20,6 +22,8 @@ const rootReducer = combineReducers({
 	search,
 	comments,
 	likes,
+	notifications,
+	navbar,
 	user
 })
 
