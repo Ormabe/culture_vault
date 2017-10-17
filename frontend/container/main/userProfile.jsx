@@ -8,17 +8,18 @@ import css from '../../styles/main/profile.scss';
 import { Link } from 'react-router';
 
 class UserProfile extends Component {
-	
+
 	componentDidMount() {
 		let { getuserInfo } = this.props;
-	
+
 		getuserInfo(this.props.params.id)
 	}
-	
+
 	userInfo(){
 		let { userInfo } = this.props;
-		
+
 		let experienceCounter = userInfo.experiences.length
+
 
 
 		return(
@@ -44,14 +45,14 @@ class UserProfile extends Component {
 	}
 
 	renderLoading() {
-		return (<h1>...Loading</h1>) 
+		return (<img src={`${"https://s3.us-east-2.amazonaws.com/culture-vault/default-avatar.png"}`} alt="Default Profile Picture" />)
 	}
-	
+
 	render() {
 	let { userInfo } = this.props;
 	console.log(userInfo)
 		return (
-				<div className="user-container">	
+				<div className="user-container">
 					{userInfo ? this.userInfo() : this.renderLoading()}
 					<UserExperience userInfo={userInfo} router={this.props.router.push.bind(this)} />
 					<UserLikes userInfo={userInfo} router={this.props.router.push.bind(this)}/>
@@ -70,4 +71,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile)
-

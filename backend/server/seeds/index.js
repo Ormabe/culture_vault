@@ -19,7 +19,7 @@ const seedFunction = () => {
 		// PASSWORD: gangstaboo45
 		password: "$2a$10$sVGZGrr4Psswx/6jgSvBe.ok1.EEAUfrFM7GNY1fr336qaHT4rTGK",
 		email: "chanice@zol.com",
-		image: "https://s25.postimg.org/5i4wwqw0v/chanice_stlouis.png",
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/csl.png",
 		location: "Brooklyn",
 		bio: "My presence is a present"
 	},
@@ -30,7 +30,7 @@ const seedFunction = () => {
 		// PASSWORD: darthcheeto2017
 		password: "$2a$10$jGz5PkNbw8USxid6cvyzR.hO6WroPwGNT3GGs89zse43sD.ZmeiyC",
 		email: "rabiya@zol.com",
-		image: "https://s25.postimg.org/45n7uuylb/rabiya_watson.png",
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/rw.png",
 		location: "Manhattan, NY",
 		bio: "Politics or bust!"
 	},
@@ -41,7 +41,7 @@ const seedFunction = () => {
 		// PASSWORD: ihatepasswords31-00
 		password: "$2a$10$C3LQE66CVilaPKYwQMmh0OM.a3eaU7WvKMy6Vz/5/ILCt2xk7IUbm",
 		email: "winds@zol.com",
-		image: "https://s25.postimg.org/wkzgxkefz/victor_amos.png",
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/is.png",
 		location: "Brooklyn",
 		bio: "Devs Do It Better"
 	},
@@ -52,7 +52,7 @@ const seedFunction = () => {
 		// PASSWORD: bkisthebest7102
 		password: "$2a$10$5pLqKLaxsMsBAdjZ/m.CNOB6GO7FH7qYHO0Xo/UsBPysVVgbmKIYm",
 		email: "victor@zol.com",
-		image: "https://s25.postimg.org/wkzgxkefz/victor_amos.png",
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/va.png",
 		location: "New York City",
 		bio: "There's nothing not to love about me..."
 	}
@@ -64,7 +64,7 @@ const seedFunction = () => {
 			fav: 4,
 			quote: `"My Aunt once told me that, "People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorful"`,
 			story: "My favorite person in the world is my Aunt, she has encouraged my individuality like no one else. I was never girly even as a little girl. Dolls and cute sweets didn’t thrill me, it hinted at tendencies to my immediate family that were unacceptable. While others tried to discourage me from being my authentic self to protect me from society's disapproval at the cost of smothering my light. My aunt always encouraged my interests and expression. My Aunt once told me that, People are like ingredients. If we made the soup with with just potatoes, it'd taste too bland. But with a variety of ingredients, your soup will be flavorful. Different types of people make life flavorfulShe was a career woman that married but never had children, wild and daring for her generation. She taught me that there were different types of strength. That being yourself in a world intent on you being anything but was quiet bravery. Chanko Nabe, well known for being a core diet component of sumo wrestlers is heaven. It’s a hearty mixture of vegetables, meats, and tofu in a miso ( fermented soybean and barley/rice malt) based broth and is nothing like the airy miso soups you’ve likely tried at japanese restaurants outside of Japan.Chanko Nabe became my favorite dish the first time she made it for me when I was 7 years old. I can still remember the rich and almost buttery, yet clear broth. It tasted like bones had been boiling for years to create such a powerful flavor. My aunt would make it with strips of pork, a lot of napa cabbage, some mushrooms, tofu and a variety of extras that changed each time. I always felt like it was her way of acknowledging my differences, nourishing me with the soup of warriors, and urging me to be strong without words. Years later when I came-out of the closet as a lesbian to my family, she was the first person to accept me. And while I waited in the cold for the rest of my family to come to terms ( and mourned those that couldn’t),she continued to love and comfort me with large bowls of soup that represent the same simple honest authentic warmth she always gave to her niece.",
-			image: 'http://www.gotokyo.org/en/tourists/topics_event/topics/150115/images/150115_main.jpg',
+			image: 'https://s3.us-east-2.amazonaws.com/culture-vault/oba-no-chanko-nabe.jpg',
 			UserId:3,
 			songURI: "2zT5npcA5n2RhhnBiWg3zo"
 		},
@@ -74,7 +74,7 @@ const seedFunction = () => {
 			fav: 3,
 			quote: "Spicy pasta with a gang of cheese",
 			story: "My programming instructor Charles taught us this tasty 'struggle recipe' to fuel our studies when hunger is serious but money and time are tight. He was so sure that we would enjoy this meal he brough cans of pasta, heaps of cheese and shared it with half the class. Delicious. Fast, easy, tasty . . . and cost effective everything that you could ask for",
-			image: "https://s25.postimg.org/hzuwt5v33/spaghettios.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/spaghettios.jpg",
 			UserId:2
 		},
 		{
@@ -82,7 +82,7 @@ const seedFunction = () => {
 			fav: 2,
 			quote: "When you're stuck with a group of people repeatedly for hours on end, you're not friends until you've shared food. My co-worker Shazia introducing me to Pakistani briyani has changed my life",
 			story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-			image: "https://s25.postimg.org/5wpl5lk0v/biryani.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/biryani.jpg",
 			UserId:3
 		},
 		{
@@ -90,7 +90,7 @@ const seedFunction = () => {
 			fav: 16,
 			quote: "There is a reason that the Quince was on the tree of knowledge in the Garden of Eden",
 			story: "One of the best and easiest foods to make is Quince paste. Once you've made it you will never go back to store bought anything.  My quince paste is simply pure quince, sugar and a the juice of a lemon – nothing more!  Just pure, intense quince flavor to accompany everything on your cheese board.",
-			image: "https://nettleandquince.files.wordpress.com/2010/11/dsc_03051.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/quince.jpg",
 			UserId:4
 		},
 		{
@@ -98,7 +98,7 @@ const seedFunction = () => {
 			fav: 2,
 			quote: 'Sometimes you want molocular gastronomy and deconstructed lasagne othertimes you want bread with candy sprinkles',
 			story: 'This bread is simple and delicous. There is nothing better than suprising your guests with a tray of delightful fairy bread and watching their smiles\' come alive',
-			image: "https://c1.staticflickr.com/2/1170/1463485066_6b952055af_b.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/fairy-bread.jpg",
 			UserId:4,
 			songURI:'6r2BECwMgEoRb5yLfp0Hca'
 		},
@@ -107,7 +107,7 @@ const seedFunction = () => {
 			fav: 44,
 			quote: "Nothing is better that eating your favorite meal with your favorite person.",
 			story: "This meal represents family to me. We always have it at gatherings and festivals .I'm from Rabat, Morocco originally, I immigrated to New York, U.S. when I was 21.My strongest memory of this dish is eating it alone with my wife. Whenever she cooks it we share it. Eating out the same pot makes me feel loved. Nothing is better that eating your favorite meal with your favorite person.This stew always reminds me of the people I love close and far. I've eaten it since I was a child surrounded by parents and siblings in another country and eat it now with the family I've created in America.my wife is a lovely person. She's incredibly smart and kind. And is pursuing becoming a immigration lawyer. Cooking is her favorite hobby. She tries to cook all cuisines from all over the world always trading recipes with her friends from Pakistan and other places. She will take these recipes and mix in moroccan touches that her friends fall in love with the results of. She brought this same creativity to the previous careers as a seamstress and accountant. and now pursuing becoming an immigration lawyer. Tajjin is a nationally prized dish in Morocco. The family recipes are passed from mother to daughter through the generations. It's slightly different in each region, where I'm from we add prunes and veal, other places use chicken and almonds instead. Sitting in in my kitchen in bayside queens across from my wife. The room is quiet other then the sound of utensil dinging the clay pot () , I smell a sweet delicious smell of the roasting prunes and cinnamon. and I see my life partner and the most delicious stew.what makes it special is you cook it slowly. traditionally it's cooked oven low low heated coals for many hours making the meat extra tender and flavorful. These moments eating Tajjin with my wife gives me the feeling of being at home. Often struggling to make a way for myself and my family here in the states I feel like a stranger. When I eat Tajjin, I have no doubt of who I am and that I'm where I belong.",
-			image: "https://es1-ladleandspricell.netdna-ssl.com/wp-content/uploads/2013/12/tagine-chicken-1.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/tagine.jpg",
 			UserId:3
 		},
 		{
@@ -115,7 +115,7 @@ const seedFunction = () => {
 			fav: 2,
 			quote: "This is a slow food meant to fuel hard work. Even though the pace of our culture has changed this dish is timeless.",
 			story: "I was born in Medellin, Colombia and eating bandeja paisa makes me think of home. Meat is prized in our culture and a meal isn't considered adequate without beef or pork ( poultry and seafood do not count, sorry not sorry). This dish is the home run of meat dishes, it has at least 3 kinds of meat and is packed with stick to your ribs nutrition to keep you going during long days and hard work. The traditional bandeja paisa includes beans, rice, ground beef, chorizo with lime, plantain, arepa, avocado, fried egg on top and of course a big slice of chicharron (fried pork belly). It is often served with mazamorra, a cold milk drink made with crushed corn.Strong savory smells dominate the preparation of this meal: grilled steak, stewed beans, fried chorizo, and chicharron. Bean preparation varies based on region and personal taste, it's popular to season them with pata (pork feet). It's not elaborate like what you'd find in a restaurant and you don't make it with the same ingredients every time. Throughout the week families will make variations of this this dish, mine had it twice a week for lunch. It's defines comforting 'home food' for me. I miss it. I don't cook it here in america due to expense and time. The meat tastes different here ( almost like I can taste the antibiotics), beef is so much more expensive, and the traditional beans take hours to make.My favorite thing about this dish is it’s accessibility to all Colombians. Everyone knows, likes, orders, and cooks it. It developed in a region where coffee is produced. The farm laborers there would consume the high calorie bandeja paisa as a means of providing them a full day’s worth of energy and nourishment to keep them going throughout the entire day. The dish has always been from and for working class people, it is the unofficially thought of as the national dish.",
-			image: "http://img.absolutviajes.com/wp-content/uploads/2008/10/bandeja-paisa-png.png",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/bandeja-paisa.png",
 			UserId:2
 		},
 		{
@@ -123,7 +123,7 @@ const seedFunction = () => {
 			fav: 2,
 			quote: "Fishing with my ex-boyfriend's father helped me find peace.",
 			story: " more story blah blah.....Every sunday my gran would make soup and teach me about life. My gran oncetold me 'people are like ingredients, if we made a soup with with just potatoes it'd taste too bland, but if you mix a variety of ingredients your stew will be flavorful. If you have a variety of types of people in your life your life will be flavorful too.",
-			image: "http://www.seriouseats.com/recipes/assets_c/2015/06/20150625-food-lab-grilled-shrimp-15-thumb-1500xauto-424445.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/grilled-shrimp.jpg",
 			UserId:3
 		}
 		,
@@ -132,7 +132,7 @@ const seedFunction = () => {
 			fav: 2,
 			quote: "People are like spices, without the good blend nothing tastes good. Diversity and inclusion is required for a flavorful life. We are all needed.",
 			story: "My grandmother Mirabelle passed away recently, she was my favorite person in the world. She a had a razor sharp tongue and take no bs from anyone gruffness to her. But under that hard shell that protected us/demanded we improve...that would read you (set you straight) without delay , was bottomless compassion. She was the person that everyone in our small Louisiana neighborhood could come to with their troubles and leave with a clear mind and full heart and belly. After the katrina she spent her last years demonstrating to anyone who had lost their homes, loved ones, or sense of belonging in life, that they belonged to her now. Their home was hers, that they mattered, and showered them with gestures, clothing, blankets, food, hugs, every cent she received from her social security checks. She was a benevolent force of nature and since she’s died, my world is a noticeably colder. Many of my favorite moments with her were spent in the kitchen. I can still hear the chop of the knife on the cutting board, her scratchy voice singing along with old blue records playing, and the clang of the pots being shifted on the stove. She taught me about life in that kitchen. For years I dreaded that as a religious woman that she would condemn me for being gay. But when I finally came out to her, she told me that people are like spices, if we leave something out our gumbo will taste off. That difference are required for a flavorful life. We are all needed. Then she told me it was ok to cry, but not to burn the onions I was caramelizing on the stove so I needed to handle my business. She taught me about gumbo’s african roots and how the legacy of colonialism in louisiana resulted in a vast range of gumbo-preparation techniques practiced by the different peoples who make up the region's complex ethnic fabric. That what is not in recipes online, or rarely written down, is the element of adding the onions first. That it makes the roux get darker because of the sugars in the onions and then you add the other seasonings--the celery and the bell pepper. She taught me that though the combination of onions, celery, and bell pepper--is often called the 'holy trinity' of Creole cooking, that it is a late 20th-century invention. That celery is not a traditional element of New Orleans cuisine. That the heart of Creole cuisine was really creole mirepoix. diced vegetable cooked for a long time on a gentle heat in fat with the intention to sweeten the ingredients like she gently sweetened the all the lives she touched. I’m not dealing well with her loss and when I recently saw some nonsensical play on cajun style gumbo being passed off as authentic creole gumbo it broke my heart. It made me want to share my Maw maw’s story and real Creole gumbo with the world. I hope that it nourishes and supports you through lifes hardships the way it has for me.",
-			image: "http://cdn-image.foodandwine.com/sites/default/files/recipe1115-xl-seafood-gumbo.jpg",
+			image: "https://s3.us-east-2.amazonaws.com/culture-vault/seafood-gumbo.jpg",
 			UserId:1,
 			songURI:'4Hhv2vrOTy89HFRcjU3QOx'
 		}
@@ -145,37 +145,37 @@ const seedFunction = () => {
 		state: "New York",
 		region: "Tri-State Area",
 		city: "New York City",
-		image: "https://s25.postimg.org/wdzo70vq7/united_states.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/united-states.png"
 	},
 	{
 		continent: "Asia",
 		country: "Japan",
 		city: "Tokyo",
-		image: "https://s25.postimg.org/t4l90k7mn/japan.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/japan.png"
 	},
 	{
 		continent: "Europe",
 		country: "United Kingdom",
 		city: "London",
-		image: "https://s25.postimg.org/6h5zues2n/united_kingdom.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/united-kingdom.png"
 	},
 	{
 		continent: "Africa",
 		country: "Morocco",
 		city: "Cape Town",
-		image: "https://s25.postimg.org/60g6u8exr/south_africa.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/south-africa.png"
 	},
 	{
 		continent: "Australia",
 		country: "Australia",
 		city: "Sydney",
-		image: "https://s25.postimg.org/kxt98zhjz/australia.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/australia.png"
 	},
 	{
 		continent: "South America",
 		country: "Colombia",
 		city: "Cartagena",
-		image: "https://s25.postimg.org/rycno0ty7/colombia.png"
+		image: "https://s3.us-east-2.amazonaws.com/culture-vault/colombia.png"
 	}
 	])
 	}).then(data => {
